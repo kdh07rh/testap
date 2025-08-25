@@ -1,0 +1,25 @@
+SQL 수행시 예외가 발생하면 "SQL_EXCEPTION" 이벤트를 발생할지 설정하는 옵션이다.
+
+기본값은 false 인데 예외 발생시 트랜잭션의 프로파일 정보에 해당 예외의 "ToString()" 메시지를 추가 한다.
+
+다음은 추가된 프로파일 예제이다.
+
+    ...
+    [0021][13:25:18 086][    3][  320] SQL-EXECUTE-QUERY [10 ms]
+                                       select * from crud2
+
+    [0022][13:25:18 097][   11][     ] System.Data.OracleClient.OracleException (0x80131938): ORA-00001: unique constraint (HR.REG_ID_PK) violated
+    ...
+
+옵션을 true 로 활성화 하면 예외 발생시 "SQL_EXCEPTION" 을 이벤트로 발생 시킨다.
+
+    해당 이벤트를 알림으로 받기 위해서는 "관리 -> 이벤트 룰" 에서 알림 설정을 해야 한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean 
+* 재시작 : 안함 
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=2)
+* 지원 버전 : 5.2.2.1

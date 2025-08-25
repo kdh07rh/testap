@@ -1,0 +1,9 @@
+Set whether or not to show the XML contents in the LoadXml profile.
+
+---
+
+* Default: False
+* Type : Boolean
+* Sample Value: True
+* Restart : Not Required
+* Supported Version: 5.4.0.6

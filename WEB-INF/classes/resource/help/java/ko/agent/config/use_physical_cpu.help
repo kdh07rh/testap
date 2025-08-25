@@ -1,0 +1,9 @@
+이 옵션은 AIX 환경에서 JNI를 통해 CPU 데이터를 가져오는 경우만 유효하다.
+이 값이 true이면 physical CPU 데이터를 가져오며, false 이면 logical CPU 데이터를 가져온다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.0.14.3

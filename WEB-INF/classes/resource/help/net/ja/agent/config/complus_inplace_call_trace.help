@@ -1,0 +1,9 @@
+ライブラリ活性化タイプのCOM+に対してexternalcallプロファイリングを中止することができます。
+
+---
+    
+* デフォルト値 : true
+* タイプ  : Boolean
+* 関連オプション
+    * [profile_externalcall_nested](./agentHelp?key=profile_externalcall_nested&type=2)
+* サポートバージョン : 5.3.3.3

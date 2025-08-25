@@ -1,0 +1,8 @@
+이 옵션 값이 true이면 JENNIFER Front로 측정한 Front 데이터를 front.jennifersoft.com로만 전송한다.(응답받을 URL로 Front 모니터링 데이터를 전송하지 않는다.)
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.5.0

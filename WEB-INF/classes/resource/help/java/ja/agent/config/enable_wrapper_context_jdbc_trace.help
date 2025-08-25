@@ -1,0 +1,26 @@
+[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)オプションを活性化すると、javax.naming.InitialContextからjavax.sql.DataSourceがlookupされるとSQLを追跡します。ただ、以下の例のように、他のjavax.naming.Contextを実装したオブジェクトを使用してjavax.sql.DataSourceをlookupするとデフォルトではSQL追跡されません。
+
+この場合、このオプションをtrueに設定しSQL追跡します。
+
+    javax.naming.Context jndiContext = new javax.naming.InitialContext();
+    javax.naming.Context jdbcContext = (javax.naming.Context) jndiContext.lookup(“java:comp/env/jdbc”);
+    javax.sql.DataSource dataSource = (javax.sql.DataSource) jdbcContext.lookup(“SampleDS”);
+    java.sql.Connection connection = dataSource.getConnection();
+
+
+このオプションをtrueに設定した場合は、EJB環境ではjava.lang.ClassCastExceptionが発生する可能性があります。その場合なら、[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)を無効化し、他の方法でJDBCやSQLを追跡して下さい。
+
+例えば、既知のJDBCドライバのコネクションは登録済みなので別途の設定なしでモニタリングできますが、ユーザ定義のコネクションを使用する環境や未登録のコネクションのクラスは、[db_connection_get](./agentHelp?key=db_connection_get&type=1)オプションにて手動で登録する必要があります。登録後には正常にモニタリングできます。
+
+また、JDBCコネクションの追跡のときに、トランザクションを処理するJAVAスレッドが別のJAVAスレッドを生成してそのスレッドからJDBC関連処理を行う場合は、正常にモニタリングできません。ベッドのスレッドでJDBC関連処理が行っている場合は、[enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1) オプションをtrueに設定して下さい。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+    * [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1)
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1) 
+* サポートバージョン：5.0.0

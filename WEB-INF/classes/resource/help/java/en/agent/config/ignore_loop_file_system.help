@@ -1,0 +1,8 @@
+When displaying disk usage in a Linux environment, there is a problem that the loop device (/dev/loop) is displayed on the file system, causing the disk usage to be displayed as 100% when an event occurs, so this option shows the file system without that device.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart: never
+* Supported Versions: 5.6.2.7

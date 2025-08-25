@@ -1,0 +1,16 @@
+このオプションをtrueに設定すると、エージェントで使用するWMONIDクッキーを発行するときにSecure 属性を追加します。
+    
+注意事項
+
+    
+クッキーのSecure属性はSSL(Secure Sockets Layer)を使用してクッキーの転送可否を設定する属性です。一般的なHTTPを使用する場合はクッキーを発行しません。
+Secure属性を使用する場合は必ずHTTPSプロトコルを使用してください。
+
+---
+
+* デフォルト値 : false 
+* タイプ : Boolean 
+* 再起動 : 不要
+* 関連オプション
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=3)
+* サポートバージョン: 5.0.10

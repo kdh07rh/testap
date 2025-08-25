@@ -1,0 +1,21 @@
+エージェントで使用するWMONIDクッキーの追加属性を設定します。
+
+基本生成のクッキー内容は次の通りです。
+
+    Set-Cookie:WMONID=g9Q0Tv8Tth9; Expires=Fri, 26 Jun 2022 14:29:23 GMT; Path=/; HttpOnly
+    
+このオプションに "; SameSite=Lax" を設定するとクッキーの内容は次のようになります。
+
+    Set-Cookie:WMONID=g9Q0Tv8Tth9; Expires=Fri, 26 Jun 2022 14:29:23 GMT; Path=/; HttpOnly; SameSite=Lax
+
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* 再起動 : 不要
+* サンプル値 : ; SameSite=Lax
+* 連関オプション
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=1)
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=1)
+* サポートバージョン : 5.5.2.5, 5.5.3.2

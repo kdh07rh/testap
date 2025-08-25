@@ -1,0 +1,24 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain": true,
+    "multiinstance" : true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+ 
+  "charts": [
+    {"i18nTitle":"ui.label.cpu.sys.rate.realtime", "charttype": "equalizer.cpu", "datatype": "agent", "domainBarSync": true, "fixedmax": 100, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "sys_cpu_by_section", "origin": {"startx": 0, "endx": 50, "starty": 0, "endy": 25}, "extend": {"startx": 0, "endx": 50, "starty": 0, "endy": 25}},
+    {"i18nTitle":"ui.label.cpu.proc.rate.realtime", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.proc_cpu", "fixedmax": 100, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LAST_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 0, "endy": 25}, "extend": {"startx": 50, "endx": 100, "starty": 0, "endy": 25}},
+
+    {"i18nTitle":"ui.label.cpu.sys.rate.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.sys_cpu", "fixedmax": 100, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 50, "starty": 25, "endy": 50}, "extend": {"startx": 0, "endx": 50, "starty": 25, "endy": 50}},
+    {"i18nTitle":"ui.label.mem.sys.usage.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.sys_mem_rate", "fixedmax": 100, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 25, "endy": 50}, "extend": {"startx": 50, "endx": 100, "starty": 25, "endy": 50}},
+
+    {"i18nTitle":"ui.label.cpu.proc.rate.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.proc_cpu", "fixedmax": 100, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 50, "starty": 50, "endy": 75}, "extend": {"startx": 0, "endx": 50, "starty": 50, "endy": 75}},
+    {"i18nTitle":"ui.label.mem.sys.used.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.sys_mem", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 50, "endy": 75}, "extend": {"startx": 50, "endx": 100, "starty": 50, "endy": 75}},
+
+    {"i18nTitle":"ui.label.mem.proc.usage.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.proc_mem", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 50, "starty": 75, "endy": 100}, "extend": {"startx": 0, "endx": 50, "starty": 75, "endy": 100}},
+    {"i18nTitle":"ui.label.heapmem.used.realtime", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.heap_used", "metricsmax": "MxDef.heap_committed", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 75, "endy": 100}, "extend": {"startx": 50, "endx": 100, "starty": 75, "endy": 100}}
+
+  ]
+}

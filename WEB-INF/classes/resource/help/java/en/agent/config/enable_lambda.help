@@ -1,0 +1,22 @@
+This option is for method profiing of Lamda expression with JDK 8 or highter
+
+Class name is shown like below if class is created with Lamda expression..
+
+    Example$$Lambda$1
+
+
+Basically, profiling for anonymous classes is not allowed, so it can work with the following options in the configuration file.
+
+    _ignore_anonymous_class = false
+
+
+Note :
+Even if the option is used, it is not possible to profile all lambda expressions and anonymous classes.. 
+
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Version supported : 5.4.0

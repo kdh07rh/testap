@@ -1,0 +1,27 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain": true,
+    "multiinstance" : true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+
+  "charts": [
+    {"i18nTitle":"ui.label.cpu.container", "charttype": "equalizer.external.k8s", "datatype": "agent", "domainBarSync": true,
+      "jenniferK8SAPI":  "/api/j5/metric-last-v2/container", "jenniferK8SMetric": "CPU_USAGE,CPU_REQUEST,CPU_LIMIT",
+      "origin": {"startx": 0, "endx": 100, "starty": 0, "endy": 25}, "extend": {"startx": 0, "endx": 100, "starty": 0, "endy": 25}},
+    {"i18nTitle":"ui.label.mem.container", "charttype": "equalizer.external.k8s", "datatype": "agent", "domainBarSync": true,
+      "jenniferK8SAPI":  "/api/j5/metric-last-v2/container", "jenniferK8SMetric":  "MEMORY_USAGE,MEMORY_REQUEST,MEMORY_LIMIT",
+      "origin": {"startx": 0, "endx": 100, "starty": 25, "endy": 50}, "extend": {"startx": 0, "endx": 100, "starty": 25, "endy": 50}},
+    {"i18nTitle":"ui.label.disk.pod", "charttype": "equalizer.external.k8s", "datatype": "agent", "domainBarSync": true,
+      "jenniferK8SAPI": "/api/j5/metric-last-v2/pod", "jenniferK8SMetric":  "VOLUME_USAGE,VOLUME_CAPACITY",
+      "origin": {"startx": 0, "endx": 100, "starty": 50, "endy": 75}, "extend": {"startx": 0, "endx": 100, "starty": 50, "endy": 75}},
+    {"i18nTitle":"ui.label.network.pod.rx", "charttype": "line.runtime.external.k8s", "datatype": "agent", "domainBarSync": true,  "otype": "OTypeDef.SYSTEM",
+      "jenniferK8SAPI": "/api/j5/metric-range-v2/pod", "jenniferK8SMetric":  "NETWORK_RX",
+      "origin": {"startx": 0, "endx": 50, "starty": 75, "endy": 100}, "extend": {"startx": 0, "endx": 50, "starty": 75, "endy": 100}},
+    {"i18nTitle":"ui.label.network.pod.tx", "charttype": "line.runtime.external.k8s", "datatype": "agent", "domainBarSync": true,  "otype": "OTypeDef.SYSTEM",
+      "jenniferK8SAPI":  "/api/j5/metric-range-v2/pod", "jenniferK8SMetric":  "NETWORK_TX",
+      "origin": {"startx": 50, "endx": 100, "starty": 75, "endy": 100}, "extend": {"startx": 50, "endx": 100, "starty": 75, "endy": 100}}
+  ]
+}

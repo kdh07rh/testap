@@ -1,0 +1,8 @@
+If this option value is true, the front data measured by JENNIFER Front is sent only to front.jennifersoft.com (It does not send data to URL to reponse.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.5.0

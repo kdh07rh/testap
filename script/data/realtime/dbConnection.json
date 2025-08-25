@@ -1,0 +1,21 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain": true,
+    "multiinstance" : true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+ 
+  "charts": [
+    {"charttype": "speedhorizon", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 0, "endx": 100, "starty": 0, "endy": 11.11}, "extend": {"startx": 0, "endx": 100, "starty": 0, "endy": 11.11}},
+    {"i18nTitle":"ui.label.activeService", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "active_service", "origin": {"startx": 0, "endx": 100, "starty": 11.11, "endy": 33.33}, "extend": {"startx": 0, "endx": 100, "starty": 11.11, "endy": 33.33}},
+    {"i18nTitle":"ui.label.dbconnection", "charttype": "equalizer.dbcon", "datatype": "agent", "domainBarSync": true, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "db_connection", "defaultmax": 10, "origin": {"startx": 0, "endx": 100, "starty": 33.33, "endy": 55.55}, "extend": {"startx": 0, "endx": 100, "starty": 33.33, "endy": 55.55}},
+
+    {"i18nTitle":"ui.label.idleDbConnection", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_idle_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 50, "starty": 55.55, "endy": 77.77}, "extend": {"startx": 0, "endx": 50, "starty": 55.55, "endy": 77.77}},
+    {"i18nTitle":"ui.label.activeDbConnection", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_active_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 55.55, "endy": 77.77}, "extend": {"startx": 50, "endx": 100, "starty": 55.55, "endy": 77.77}},
+
+    {"i18nTitle":"ui.label.idleDbConnection.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_idle_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 0, "endx": 50, "starty": 77.77, "endy": 100}, "extend": {"startx": 0, "endx": 50, "starty": 77.77, "endy": 100}},
+    {"i18nTitle":"ui.label.activeDbConnection.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_active_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 50, "endx": 100, "starty": 77.77, "endy": 100}, "extend": {"startx": 50, "endx": 100, "starty": 77.77, "endy": 100}}
+  ]
+}

@@ -1,0 +1,10 @@
+SQL 매개 변수들을 수집할 때 수집하는 매개 변수의 최대 개수를 설정하는 옵션이다.
+
+---
+
+* 기본값 : 1000
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_collect_sql_param](./agentHelp?key=enable_collect_sql_param&type=3)
+* 지원 버전 : 5.6.2.8

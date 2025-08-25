@@ -1,0 +1,204 @@
+Used when using the default tracking method as a user-defined method at the time of tracking the transaction for an HTTP service.
+
+** Interface Description **
+
+    package aries.runtime;
+
+    public interface IAdapterHttpService {
+        /**
+        *
+        * Rejects an HTTP service. Although a PLC is generally processed through the reject settings, this method is used in order 
+        * to process the PLC function based on the user IP or other input value.
+        * If the return value is true, the user request is rejected.
+        *
+        * @param request HttpServletRequest Object
+        * @param response HttpServletResponse Object
+        * @param activeObjectWrapper ActiveObjectWrapper Object
+        * @return reject boolean value indicates if the user request is rejected
+        */
+        boolean reject(Object request, Object response, Object activeObjectWrapper);
+
+        /**
+        *
+        * Processes a customized message when rejecting an HTTP service. Sends a message to the user when the rejectMessage user request is rejected. 
+        * This method is used when the set value is exceeded. Indicates that a message has already been sent to the user when the return value is true.
+        * boolean b = rejectMessage(request, response, o);
+        * if (b == false)
+        *     Default message processing
+        *
+        * @param request HttpServletRequest Object
+        * @param response HttpServletResponse Object
+        * @param activeObjectWrapper ActiveObjectWrapper Object
+        * @return reject boolean value indicates if the message was sent as reject message.
+        boolean rejectMessage(Object request, Object response, Object activeObjectWrapper);
+
+        /**
+        *
+        * Used to initialize additional tracking information when an HTTP service starts.
+        *
+        * @param request HttpServletRequest Object
+        * @param response HttpServletResponse Object
+        * @param activeObjectWrapper ActiveObjectWrapper Object
+        */
+        void start(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+        *
+        * Used to verify or modify the information tracked with AGENT when an HTTP service ends.
+        *
+        * @param request HttpServletRequest Object
+        * @param response HttpServletResponse Object
+        * @param activeObjectWrapper ActiveObjectWrapper Object
+        * @param throwable The exception if an exception occurs.
+        */
+        void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable);
+        
+        /**
+        * Used immediately before transmitting the service performance information (XViewPoint) to the server.
+        *
+        * @param xviewPointRecordWrapper XviewPointRecordWrapper Object
+        */
+        void interceptServicePerformance(Object xviewPointRecordWrapper);
+
+        /**
+        *
+        * Used to additionally track service exceptions.
+        *
+        * @param throwable The exception if an exception occurs.
+        */
+        String catchException(Throwable throwable);
+    }
+
+- - -
+
+**Method Description of the main object**
+
+###### ActiveObjectWrapper Description
+    public Thread getThread() : Return the Thread of the currently Active Object
+    public long getTxid() : Return Transaction ID
+    public String getGuid() : Returns GUID
+    public void setGuid(String guid) : Set the GUID
+    public String getUserId() : Returns the User ID
+    public void setUserId(String userId) : Set the User ID
+    public long getWmonId() : Returns WMONID
+    public long getStartTime() : Returns the Transaction Start Time
+    public long getStartCpu() : Returns Thread CPU Time after the transaction starts
+    public int getServiceHash() : Returns transaction name hash value
+    public String getServiceName() : Returns the transaction name
+    public void setServiceName(String serviceName) :Set transaction name
+    public String getHttpQuery() : Return the query string used during the HTTP call
+    public int getStatus() : Return current ActiveObject status
+    public short getErrorTypeOrZero() : If there was an error during the transaction execution, this method returns error type. It returns 0 if there was no error.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : Set error type if there was an error during the transactions execution.
+    public byte[] getIpAddr() : Returns IP address
+    public int getSqlCount() : Returns the number of SQL executed in the transaction 
+    public int getSqlTime() : Returns the sum of SQL time executed in the transaction 
+    public int getSqlStartTime() : Return the start time of SQL
+    public int getFetchCount() : Returns the fetch count.
+    public int getFetchTime() : Returns the fetch time.
+    public String getExternalCallName() : Returns the name of external call being executed
+    public void setExternalCallName(String externalCallName) : Set external call name.
+    public int getExternalCallCount() : Returns the number of external call executed in the transaction
+    public int getExternalCallTime() : Returns the sum of external calls executed in the transaction 
+    public String getHttpMethod() : Returns HTTP method (GET/POST)
+    public String getBrowserInfo() : Returns browsers information when connected through a web browser
+    public int getRecursiveCallCount() : Returns the number of recursive calls in the transaction
+    public void addProfile(PiData profile) : Add profile data to the transaction
+    public void pushProfile(PiData profile) : Add profile data to the transaction (Profile is not transmitted to the server yet)
+    public void popProfile(PiData profile) : Push profile to the transaction (Profile is transmitted to the server when using pop method)
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, boolean raiseEvent) : Raise and exception in case of an event or profile added. The default error type is "METHOD_EXCEPTION".
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, short errorType, boolean raiseEvent) : Raise and exception in case of an event or profile added
+
+##### xviewPointRecordWrapper Description
+    public long getEndTime() : Returns the transaction end time.
+    public int getSysOid() : Retusn agent ID
+    public int getElapsedTime() : Returns the transaction elapsed time.
+    public int getCpuTime() : Returns the Thread CPU time 
+    public int getSqlCount() : Returns the number of SQL executed in the transaction
+    public int getSqlTime() : Returns the sum of all SQL executed in the transaction
+    public int getFetchCount() : Returns the entire SQL fetch number that are executed in the transaction
+    public int getFetchTime() : Returns the sum of SQL fetch time in the transaction
+    public int getExternalCallCount() : Returns the number of External calls executed in the transaction.
+    public int getExternalCallTime() : Returns the sum of External calls executed in the transaction.
+    public int getServiceHash() : Returns transaction name hash value
+    public long getTxid() : Return transaction ID
+    public short getErrorTypeOrZero() : If there was an error during the transaction execution, this method returns error type. It returns 0 if there was no error.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : Set error type if there was an error during the transactions execution.
+    public byte[] getGuid() : Returns GUID
+    public long getWmonId() : Returns WMONID
+    public byte[] getIpAddr() : Returns IP address
+    public int getBrowserHash() :  Returns browsers information hash when connected through a web browser
+    public int getUserHash() : Returns user ID hash.
+
+
+** How to configure **
+
+When the class implementing the adapter in the format of jennifer.impl.XXX.jar is placed at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar enables version control.
+
+
+** Default Implementation **
+
+Contains the default implementation entity, which returns a StackTrace for an exception. The following class is an adapter which implements the catchException(Throwable throwable) option.
+
+    aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl
+
+- - -
+
+**Utility Class**
+
+aries.runtime.tracer.adapter.AbstractDefaultAdapter : Include method that help implementing the adapter
+        protected String order(String classMethod, Parameter parameter)
+            : Order of various parameter in the paramter class connected with "+"
+        protected String getStackTrace(Throwable throwable)
+            : Returns the stack trace when an exception occurs 
+
+- - -
+
+**Sample Implementaion**
+
+    public class SampleHttpServiceAdapterImpl extends AbstractDefaultAdapter implements IAdapterHttpService
+    {
+        public boolean reject(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public boolean rejectMessage(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public void start(Object request, Object response, Object activeObjectWrapper)
+        {}
+
+        public void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable)
+        {}
+
+        public void interceptServicePerformance(Object xviewPointWrapper)
+        {
+            if(xviewPointWrapper instanceof XViewPointRecordWrapper)
+            {
+                XViewPointRecordWrapper xviewPoint = (XViewPointRecordWrapper) xviewPointWrapper;
+                xviewPoint.getTxid();
+                // ...
+                
+            }
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            // If an exception occurs during transaction execution, returns the stacktrace otherwise returns null
+            return super.getStackTrace(throwable);
+        }
+    }
+
+---
+    
+* Default value: None
+* Type: string
+* Sample value: aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl
+* Restart: Not required
+* Related Option
+    * [userid_by_http_session](./agentHelp?key=userid_by_http_session&type=1)
+* Supported version: 5.0.0

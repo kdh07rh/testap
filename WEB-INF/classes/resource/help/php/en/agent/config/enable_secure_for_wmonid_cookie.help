@@ -1,0 +1,16 @@
+"When this option is set to True, Secure property is configured at the time of issuing a WMONID cookie used by the agent.
+    
+※Precautions
+
+    As the Secure property of cookie determines whether the cookie is sent using SSL (Secure Sockets Layer) or not, a cookie is not issued when using ordinary HTTP.
+    When using the Secure property, you must use the HTTPS protocol.
+
+---
+
+* Default value: false 
+* Format: Boolean 
+* Restart: Not required
+* Related options
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=3)
+* Supported version: 5.0.10
+"

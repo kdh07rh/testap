@@ -1,0 +1,32 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain": true,
+    "multiinstance": true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+  "charts": [
+    {"charttype": "speedhorizon", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 0, "endx": 66.66, "starty": 0, "endy": 8.33}, "extend": {"startx": 0, "endx": 66.66, "starty": 0, "endy": 8.33}},
+    {"i18nTitle":"ui.label.activeServiceStatus", "charttype": "speedvertical", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 66.66, "endx": 100, "starty": 0, "endy": 45}, "extend": {"startx": 66.66, "endx": 100, "starty": 0, "endy": 45}},
+
+    {"i18nTitle":"ui.label.activeService", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 8.33, "endy": 26.66}, "extend": {"startx": 0, "endx": 33.33, "starty": 8.33, "endy": 26.66}},
+    {"i18nTitle":"ui.label.responseTimeChart", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_time", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 8.33, "endy": 26.66}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 8.33, "endy": 26.66}},
+
+    {"i18nTitle":"ui.label.activeDbConnection", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_active_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 26.66, "endy": 45}, "extend": {"startx": 0, "endx": 33.33, "starty": 26.66, "endy": 45}},
+    {"i18nTitle":"ui.label.serviceRate", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 26.66, "endy": 45}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 26.66, "endy": 45}},
+
+
+    {"i18nTitle":"ui.front.chart.pageLoadTime", "charttype": "line.external", "datatype": "domain", "domainBarSync": true, "metrics": "", "otype": "OTypeDef.SYSTEM", "ptype": "", "externalChartType":"1","metricsFromJenniferFront":"page-load-time","origin": {"startx": 0, "endx": 33.33, "starty": 45, "endy": 63.33}, "extend": {"startx": 0, "endx": 33.33, "starty": 45, "endy": 63.33}},
+    {"i18nTitle":"ui.label.serviceRate.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 45, "endy": 63.33}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 45, "endy": 63.33}},
+
+    {"i18nTitle":"ui.front.chart.resourceDownloadTimePerHost", "charttype": "line.external", "datatype": "agent", "domainBarSync": true, "metrics": "", "otype": "OTypeDef.SYSTEM", "ptype": "", "externalChartType":"1","metricsFromJenniferFront":"resource-download-time","origin": {"startx": 0, "endx": 33.33, "starty": 63.33, "endy": 81.66}, "extend": {"startx": 0, "endx": 33.33, "starty": 63.33, "endy": 81.66}},
+    {"i18nTitle":"ui.label.concurrentUser.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.concurrent_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 63.33, "endy": 81.66}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 63.33, "endy": 81.66}},
+
+    {"i18nTitle":"ui.label.xview", "charttype": "xview.dashboard", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 66.66, "endx": 100, "starty": 45, "endy": 81.66}, "extend": {"startx": 66.66, "endx": 100, "starty": 45, "endy": 81.66}},
+
+    {"i18nTitle":"ui.front.chart.jsErrorCount", "charttype": "line.external", "datatype": "agent", "domainBarSync": true, "metrics": "", "otype": "OTypeDef.SYSTEM", "ptype": "", "externalChartType":"1","metricsFromJenniferFront":"js-error-count","origin": {"startx": 0, "endx": 33.33, "starty": 81.66, "endy": 100}, "extend": {"startx": 0, "endx": 33.33, "starty": 81.66, "endy": 100}},
+    {"i18nTitle":"ui.label.hitHour", "charttype": "column.daily", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2", "origin": {"startx": 33.33, "endx": 66.66, "starty": 81.66, "endy": 100}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 81.66, "endy": 100}},
+    {"i18nTitle":"ui.label.visitHour", "charttype": "column.daily", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.visit_hour", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2", "origin": {"startx": 66.66, "endx": 100, "starty": 81.66, "endy": 100}, "extend": {"startx": 66.66, "endx": 100, "starty": 81.66, "endy": 100}}
+  ]
+}

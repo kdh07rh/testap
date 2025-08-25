@@ -1,0 +1,11 @@
+PHP Application 디렉토리 변경 이벤트 수집 여부를 결정한다.
+수집된 정보는 XView 차트에 세로 라인으로 표시가 되며 해당 라인을 선택시 디플로이 된 이벤트 단위 정보와 리소스 단위의 정보를 확인할 수 있다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_deploy_resource_trace](./agentHelp?key=enable_deploy_resource_trace&type=3)
+* 지원 버전 : 5.5.0

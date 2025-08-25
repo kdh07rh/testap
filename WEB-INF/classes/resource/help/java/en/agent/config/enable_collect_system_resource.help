@@ -1,0 +1,8 @@
+This option prevents data from being collected when collecting system information (CPU, memory) using JNI.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.2.1.6, 5.3.3.4

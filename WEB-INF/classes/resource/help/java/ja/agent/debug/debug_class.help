@@ -1,0 +1,84 @@
+[debug_mode](./agentHelp?key=debug_mode&type=1)オプションを活性化し、遂行対象クラスをログとして記録するときに使用するオプションです。
+
+ターゲットクラスの種類は以下のとおりです。
+
+    aries.base.profile.IProfileException
+    aries.base.profile.IProfileThread
+    aries.base.profile.IProfileFile
+    aries.base.profile.IProfileSocket
+    aries.base.profile.IProfileSQL
+    aries.base.profile.IProfileMethod
+    aries.base.profile.IServiceNaming
+    aries.base.profile.IProfileExternalCall
+    aries.base.profile.IProfileTopology
+    aries.base.profile.IProfileService
+
+    aries.control.bci.pointcut.CustomPointCut
+    aries.control.bci.pointcut.AccessPointCut
+    aries.control.bci.pointcut.SqlPointCutMain
+    aries.control.bci.pointcut.ConnectionPointCut
+    aries.control.bci.pointcut.JDBCConnectionPointCut
+    aries.control.bci.pointcut.VendorWrapSuperPointCut
+    aries.control.bci.pointcut.ContextPointCut
+    aries.control.bci.pointcut.DBKindPointCut
+    aries.control.bci.pointcut.MethodParameterPointCut
+    aries.control.bci.pointcut.MethodReturnPointCut
+    aries.control.bci.pointcut.MethodPointCut
+    aries.control.bci.pointcut.ServiceAppendNamingPointCut
+    aries.control.bci.pointcut.ServiceAppendNamingParameterPointCut
+    aries.control.bci.pointcut.ServiceAppendNamingReturnPointCut
+    aries.control.bci.pointcut.ExternalCallNamingParameterPointCut
+    aries.control.bci.pointcut.ExternalCallNamingReturnPointCut
+    aries.control.bci.pointcut.ExternalCallPointCut
+    aries.control.bci.pointcut.ServiceNamingParameterPointCut
+    aries.control.bci.pointcut.ServiceNamingReturnPointCut
+    aries.control.bci.pointcut.ServiceGuidParameterPointCut
+    aries.control.bci.pointcut.ServiceGuidReturnPointCut
+    aries.control.bci.pointcut.ServiceGuidUrlConnectionPointCut
+    aries.control.bci.pointcut.ServiceUserParameterPointCut
+    aries.control.bci.pointcut.ServiceUserReturnPointCut
+    aries.control.bci.pointcut.ServicePointCut
+
+** このオプションを設定すると、性能低下の可能性があるため、デバッグ目的で使用して下さい。**
+
+使用例として、以下のように設定すると、サービスのスタートポイントとなるクラスのメソッド、およびSQLが正常に追跡されているかを確認できます。 
+
+    aries.base.profile.IProfileService
+    aries.base.profile.IProfileSQL
+
+以下は、出力の例です。
+
+    2015-04-24/13:54:19 [DEBUG] aries.control.bci.pointcut.ServicePointCut end method perform
+    2015-04-24/13:54:20 [DEBUG] aries.control.bci.pointcut.ServicePointCut start method refresh param[null]
+    2015-04-24/13:54:20 [DEBUG] aries.control.bci.pointcut.ServicePointCut end method refresh
+    2015-04-24/13:54:23 [DEBUG] aries.control.bci.pointcut.ServicePointCut start method refresh param[null]
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method stmtOpen
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method setKind param[1] => 1=24, 
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method setKind
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method start param[3] => 1=com.mysql.jdbc.StatementImpl@41ffadad, 2=1, 3=SELECT * FROM people, 
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method start
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method rsOpen param[2] => 1=com.mysql.jdbc.JDBC4ResultSet@7c7217a7, 2=null, 
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method rsOpen
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method end param[2] => 1=PiSqlExec 48 14:0 stime=234 scpu=221 xtype=STMT_EXE_QRY key=817700212 time=0 cpu=0 dbc=0 param1=null param2=null inlineParameters=[] boundParameters=[], 2=null, 
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method end
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method rsNext param[3] => 1=false, 2=com.mysql.jdbc.JDBC4ResultSet@7c7217a7, 3=aries.base.sql.JdbcResultSet@266f14c5, 
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL end method rsNext
+    2015-04-24/14:05:19 [DEBUG] aries.base.profile.IProfileSQL start method stmtClose param[2] => 1=com.mysql.jdbc.StatementImpl@41ffadad, 2=null, 
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+    
+        aries.base.profile.IProfileSQL
+        aries.control.bci.pointcut.ServicePointCut
+
+* 再起動：必要
+* 関連オプション
+    * [debug_mode](./agentHelp?key=debug_mode&type=1)
+    * [debug_param](./agentHelp?key=debug_param&type=1)
+    * [debug_method](./agentHelp?key=debug_method&type=1)
+    * [ignore_debug_class](./agentHelp?key=ignore_debug_class&type=1)
+    * [ignore_debug_method](./agentHelp?key=ignore_debug_method&type=1)
+* サポートバージョン：5.0.0

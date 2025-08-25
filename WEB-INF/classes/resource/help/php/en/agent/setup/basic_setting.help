@@ -1,0 +1,8 @@
+PHP agent is operated as an external extension of Apache PHP module. 
+To load a PHP agent PHP extension, it is necessary to configure jenniferAgent.agent_file_root and extension in php.ini. 
+ 
+
+#### Example
+
+extension=/usr/local/jennifer-php/bin/jennifer5-php-5.4.x-ZTS.so
+jenniferAgent.agent_file_root=/usr/local/jennifer-php

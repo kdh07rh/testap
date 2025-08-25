@@ -1,0 +1,9 @@
+Oracle.ManagedDataAccess를 사용하는 경우 성능 카운터 설정을 활성화시킨다.
+
+Oracle.ManagedDataAccess는 .NET Framework과 .NET Core 환경에서 지원되는데, .NET Fraemwork의 경우 이 옵션만 enable로 설정하면 된다. 반면 .NET Core의 경우에는 Oracle.ManagedDataAccess의 내부 구현에 의해 반드시 System.Diagnostics.PerformanceCounter 패키지를 해당 응용 프로그램에서 참조하고 있어야 한다.
+
+---
+
+* 기본값: false
+* 형식: Boolean
+* 지원 버전: 5.6.0.19

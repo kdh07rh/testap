@@ -1,0 +1,15 @@
+프로파일 대상이 되는 메서드의 이름은 서버로 전송 후, 그 해시값이 에이전트 내부의 캐시에 보관된다. 이를 통해 동일한 메서드 이름이 서버로 중복 전송되지 않을 수 있다. 이 옵션은 그 캐시의 크기를 설정한다.
+
+캐시 데이터가 설정값을 넘으면 FIFO(First In First Out) 방식으로 먼저 들어간 메소드의 해시가 삭제되고 새로운 메서드의 이름에 대한 해시값이 추가된다.
+
+---
+
+* 기본값 : 30000
+* 형식 : 숫자(Number)
+* 샘플값 : 50000
+* 재시작 : 필요
+* 연관옵션
+    * [max_number_of_text](./agentHelp?key=max_number_of_text&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+* 지원 버전 : 5.0.7

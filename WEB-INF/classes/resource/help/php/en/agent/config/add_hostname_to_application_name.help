@@ -1,0 +1,8 @@
+When this value is set to True, $_SERVER['SERVER_HOST'] is added to the application name. For example, assuming that www.example.com/index.php is called, if the value is set to false, the application name becomes index.php. If set to True, the name becomes example.com/index.php.  
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.6

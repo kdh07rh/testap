@@ -1,0 +1,27 @@
+staticのコレクションオブジェクトのエレメント数をダンプするために使用します。
+
+オプションの設定は、ダンプ対象のコレクションオブジェクトのフィールド名を登録します。
+
+    com.example.Sample.collectionField
+
+ダンプの内容は、サービスダンプ画面で確認できます。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）。
+* サンプル値
+
+        com.example.Sample.collectionField
+        com.example.StaticClass.staticCollectionField
+
+* 再起動：不要
+* 関連オプション
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_syscpu](./agentHelp?key=dump_syscpu&type=1)
+    * [dump_syscpu_over_count](./agentHelp?key=dump_syscpu_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* サポートバージョン：5.0.0

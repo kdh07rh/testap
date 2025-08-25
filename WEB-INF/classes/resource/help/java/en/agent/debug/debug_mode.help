@@ -1,0 +1,39 @@
+This option is used to record whether the methods of classes related to the BCI(ByteCode Instrumentation) operation at the agent are operated properly.
+When creating an object of a class, this option records the start and end of the method using java.lang.reflect.Proxy.
+
+For the target created through the [debug_dump](./agentHelp?key=debug_dump&type=1) option, you can refer to the [debug_class](./agentHelp?key=debug_class&type=1) option.
+
+** As this option may cause performance problems, it should be used for debugging purposes.**
+
+The following is an example of a case output when the option is activated.
+
+    2015-04-23/15:01:48 Agent Enable : true
+    2015-04-23/15:01:48 Agent Base Version 5.0.7.2
+    2015-04-23/15:01:48 Agent Implementation Version 5.0.7.2
+    2015-04-23/15:01:48 Data Server address : 127.0.0.1
+    2015-04-23/15:01:48 Data Server port : 5000
+    2015-04-23/15:01:48 Domain ID : 1000
+    2015-04-23/15:01:48 Instance ID : 1
+    ...
+    2015-04-23/15:01:48 debug mode : true
+    ...
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.SqlPointCutMain start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.SqlPointCutMain end method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ConnectionPointCut start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ConnectionPointCut end method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ContextPointCut start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ContextPointCut end method refresh
+    ...
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [debug_param](./agentHelp?key=debug_param&type=1)
+    * [debug_class](./agentHelp?key=debug_class&type=1)
+    * [debug_method](./agentHelp?key=debug_method&type=1)
+    * [ignore_debug_class](./agentHelp?key=ignore_debug_class&type=1)
+    * [ignore_debug_method](./agentHelp?key=ignore_debug_method&type=1)
+* Supported version: 5.0.0

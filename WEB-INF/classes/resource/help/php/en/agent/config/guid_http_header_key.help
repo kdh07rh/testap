@@ -1,0 +1,16 @@
+This option is used to configure the name of the key which is used when transferring or receiving the HTTP Header GUID value, in order to track the transaction operated in a multi-tier structure with the [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=3) option activated.
+Although the default value is set to "_J_GUID_", it can be renamed when the key overlaps.
+
+The value configured is used when extracting the value from the header as follows.
+
+    request.getHeader("_J_GUID_");
+
+---
+
+* Default value: _J_GUID_
+* Type: string
+* Sample value: _X_GUID_
+* Restart: Not required
+* Related options
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=3)
+* Supported version: 5.0.0

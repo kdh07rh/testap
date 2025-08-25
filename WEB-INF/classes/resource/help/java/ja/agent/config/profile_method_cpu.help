@@ -1,0 +1,11 @@
+このオプションをtrueに設定すると、メソッド、ファイル、例外およびユーザ定義プロファイルに関するCPU情報を収集します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [profile_db_cpu](./agentHelp?key=profile_db_cpu&type=1)
+    * [profile_externalcall_cpu](./agentHelp?key=profile_externalcall_cpu&type=1)
+* サポートバージョン：5.0.6

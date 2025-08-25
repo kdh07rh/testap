@@ -1,0 +1,21 @@
+쓰레드에서 발생하는 OOM(OutOfMemory) 에러를 잡아 OUT_OF_MEMORY 이벤트를 생성하는 설정이다.
+
+이 옵션이 활성화 되어 있으면 로그 파일에서 다음과 같은 로그를 확인 할 수 있다.
+
+    ...
+    2015-09-07/11:30:38 [I001] Agent Control Module initialized(8958855603872953309)
+    2015-09-07/11:30:38 [I001] Agent Control Module loading complete... 
+
+    ...
+    2015-09-07/11:30:41 [I002] RT Class redefine java.lang.Thread
+
+    ...
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [trace_oom](./agentHelp?key=trace_oom&type=1)
+* 지원 버전 : 5.0.11

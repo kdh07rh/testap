@@ -1,0 +1,10 @@
+The default operation performs the BCI(ByteCode Instrumentation) task for the classes registered in the [db_connection_count](./agentHelp?key=db_connection_count&type=1) option.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [db_connection_count](./agentHelp?key=db_connection_count&type=1)
+* Supported version: 5.0.10

@@ -1,0 +1,17 @@
+액티스 서비스가 설정된 값을 넘기면 [제니퍼 설치폴더]\service_dump 폴더에 서비스 덤프가 자동으로 남겨 진다.
+
+서비스 덤프가 남겨 질 때 로그 파일에서 다음과 같은 로그를 확인 할 수 있다. 
+
+    ...
+    12116,2015-07-14/02:24:02 [INFO] [JENNIFER5-EventHandler] Service dump generated. [D:\V5profiler\.\service_dump\service_dump_225_20150714_142400.txt]
+    ...
+
+---
+
+* 기본값 : 100
+* 형식 : 숫자(Number)
+* 샘플값 : 1000
+* 재시작 : 안함
+* 연관 옵션
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=2)
+* 지원 버전 : 5.0.7

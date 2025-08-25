@@ -1,0 +1,12 @@
+Depending on the vendor, the javaagent option may not work correctly in the JVM state.
+In particular, when redefining classes, it sometimes behaves abnormally or affects performance. Previously, the redefine-classes option was disabled and recompressed to set up the agent.
+To handle this in the program, we added this option.
+
+It is important to note that the behavior of disabling this option may be different from the behavior of handling it in the program.
+
+---
+
+* Default: true
+* Type: Boolean
+* Restart: never
+* Supported Versions: 5.6.2.5

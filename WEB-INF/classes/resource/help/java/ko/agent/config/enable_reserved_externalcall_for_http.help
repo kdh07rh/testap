@@ -1,0 +1,12 @@
+외부 트랜잭션 Apache HttpComponents에 대해 기본으로 다음과 같은 클래스가 등록되어 있다.
+
+    org.apache.http.impl.client.CloseableHttpClient
+
+기본으로 등록되어 있는 클래스를 사용하지 않고자 할 경우 옵션을 설정한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.4.3

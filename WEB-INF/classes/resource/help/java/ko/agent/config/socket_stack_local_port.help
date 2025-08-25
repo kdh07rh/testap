@@ -1,0 +1,22 @@
+이 옵션은 소켓이 생성될 때 설정된 로컬 포트가 열리면 스택을 생성한다.
+
+생성된 스택은 분석화면 -> 소켓 부분을 통해 확인 할 수 있다.
+
+이 옵션이 사용하려면 java.net.Socket 에 대한 BCI(ByteCode Instrumentation) 작업이 이루어져야 한다. 로그 파일에서 다음과 같은 로그를 확인 해야 정상 동작 한다.
+
+    ...
+    2015-04-28/12:04:27 Agent Control Module initialized(-8803105291542107178)
+    2015-04-28/12:04:27 Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.net.Socket
+    ...
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 샘플값 : 32000
+* 재시작 : 안함
+* 연관 옵션
+    * [socket_stack_remote_port](./agentHelp?key=socket_stack_remote_port&type=1)
+* 지원 버전 : 5.0.0

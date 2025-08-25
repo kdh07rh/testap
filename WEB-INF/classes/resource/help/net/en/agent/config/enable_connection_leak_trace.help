@@ -1,0 +1,8 @@
+This option determines whether to generate the "DB_CONNECTION_UNCLOSED" event by tracking the leak of ADO.NET Connection object.
+ 
+ ---
+ 
+ * Default value: false
+ * Type: Boolean
+ * Restart: Not required
+ * Supported version: 5.0.7

@@ -1,0 +1,16 @@
+This option sets those to be excluded from tracking targets when tracking the transactions of an application to "URL".
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string (able to configure multiple settings using the line change).
+ * Sample value
+ 
+  /login
+  /user/register
+ 
+ * Restart: Not required
+ * Related options
+  * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=2)
+  * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=2)
+ * Supported version: 5.6.3.1

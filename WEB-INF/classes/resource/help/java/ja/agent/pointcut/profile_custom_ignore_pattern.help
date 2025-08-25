@@ -1,0 +1,40 @@
+ユーザがprofile_custom_xxxxに関連オプションを利用して対象クラスを指定するとき、該当リストから特定のクラスの名前のパターンを除外するとき使用します。
+
+## 設定例 ##
+
+基本的に、改行の機能を使用して複数項目の設定可能。
+
+除外するクラス名パターンとメソッドを同時に指定する場合
+
+    a.b.My* f()V
+    a.b.* f()V
+
+除外するクラス名パターンとメソッドを同時に指定し、シグネチャを無視する場合
+
+    a.b.My* f
+
+除外するクラス名パターンのすべてのメソッドを指定する場合
+
+    a.b.MyClass
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        example.ExampleIgnore* test
+        example.ExampleIgnoreTest* test
+
+* 再起動：不要
+* 関連オプション
+    * [profile_custom_class](./agentHelp?key=profile_custom_class&type=1)
+    * [profile_custom_super](./agentHelp?key=profile_custom_super&type=1)
+    * [profile_custom_interface](./agentHelp?key=profile_custom_interface&type=1)
+    * [profile_custom_pattern](./agentHelp?key=profile_custom_pattern&type=1)
+    * [profile_custom_access](./agentHelp?key=profile_custom_access&type=1)
+    * [profile_custom_ignore_class](./agentHelp?key=profile_custom_ignore_class&type=1)
+    * [profile_custom_ignore_super](./agentHelp?key=profile_custom_ignore_super&type=1)
+    * [profile_custom_ignore_interface](./agentHelp?key=profile_custom_ignore_interface&type=1)
+    * [adapter_custom_method](./agentHelp?key=adapter_custom_method&type=1)
+* サポートバージョン：5.0.0

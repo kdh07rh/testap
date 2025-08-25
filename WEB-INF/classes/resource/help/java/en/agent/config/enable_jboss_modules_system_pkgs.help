@@ -1,0 +1,13 @@
+When installing the agent in a JBoss EAP/Wildfly environment, you may encounter problems with class loading.
+In this case, you need to register the problematic class packages through the "jboss.modules.system.pkgs" system property so that the classes are loaded through the system class loader.
+
+    ex) -Djboss.modules.system.pkgs=aries,...
+
+This is an option to enable this process without any configuration, but it is added separately because you may need to configure it manually in case of conflicts with other agents.
+
+---
+
+* Default : true
+* Type: Boolean
+* Restart : never
+* Supported Versions: 5.6.2.7

@@ -1,0 +1,32 @@
+HTTP Headerに含まれている値を利用してデフォルトアプリケーション名に追加して設定する場合使用するオプションです。
+管理画面から一般的な設定が可能ですが、特定状況に HTTP Header値を利用してアプリケーション名に追加設定する場合利用します。
+
+HTTP Header内容が次のような場合、アプリケーション名を追加設定する例です。
+
+    HTTP Header = { user=Tester, guid=1234567890 }
+
+    オプションに HTTP Headerキーを入力する。(改行を利用して複数の設定が可能)
+    user
+    guid
+
+    index.jspリクエスト時、予想されるアプリケーション名
+    ex) /index.jsp+Tester+1234567890
+
+
+使用するとき注意事項はアプリケーション名の設定管理画面と重複設定する場合、管理画面で設定する値が優先順位が高いため、HTTP Headerを利用して追加設定されたアプリケーション名を上書きします。
+
+---
+
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* サンプル値
+
+    header_1
+    header_2
+
+* 再起動 : 不要
+* 関連オプション
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+    * [service_naming_by_http_header](./agentHelp?key=service_naming_by_http_header&type=1)
+* サポートバージョン : 5.3.1.3

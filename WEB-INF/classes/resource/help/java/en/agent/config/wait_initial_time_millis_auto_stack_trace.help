@@ -1,0 +1,12 @@
+This option sets the warm-up time when the automatic stack trace collector is initialized.
+
+If the time is set too low, unnecessary stacks may be collected when the application is initialized, so it is necessary to set a sufficient time value.
+
+---
+
+* Default : 60000
+* Type : Number
+* Restart : required
+* Option related
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=1)
+* Version supported : 5.6.1.2

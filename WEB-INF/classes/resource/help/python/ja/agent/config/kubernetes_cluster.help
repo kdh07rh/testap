@@ -1,0 +1,10 @@
+k8sのクラスター名を登録します。
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* 再起動 : 必要
+* 連関オプション
+    * [kubernetes_namespace](./agentHelp?key=kubernetes_namespace&type=1)
+* サポートバージョン : 5.6.1.21

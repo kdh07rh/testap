@@ -1,0 +1,14 @@
+This option determines whether to perform BCI(ByteCode Instrumentation) operation for the JDBC class to track the JDBC information (SQL).
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+* Supported version: 5.0.0

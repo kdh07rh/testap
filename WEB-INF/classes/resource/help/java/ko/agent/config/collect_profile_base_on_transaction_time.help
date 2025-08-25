@@ -1,0 +1,14 @@
+**collect_profile_base_on_transaction_time** 옵션을 설정하면 설정된 시간보다 작은 트랜잭션의 프로파일을 버리게 되는 옵션이다.
+
+TPS가 높거나 수집되는 프로파일이 많을 경우 데이터 조절을 위해 사용되는 기능이다.
+
+주의할 점은 [profile_buffer_size](./agentHelp?key=profile_buffer_size&type=1) 옵션 기본값 512개를 기준으로 데이터 전송을 하기 때문에 버퍼 크기를 충분히 늘려줘야 프로파일이 전송되지 않는다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_buffer_size](./agentHelp?key=profile_buffer_size&type=1)
+* 지원 버전 : 5.5.2.12, 5.6.1

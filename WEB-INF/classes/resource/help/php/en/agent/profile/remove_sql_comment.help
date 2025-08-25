@@ -1,0 +1,8 @@
+If this value is set to True, SQL comment is deleted when parse SQL query
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.4.1.1

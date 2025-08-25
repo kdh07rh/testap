@@ -1,0 +1,22 @@
+このオプションで追跡したいHTTPヘッダーキーを設定すると、トランザクションのプロファイル情報で該当のヘッダー内容を確認できます。
+
+サンプル値の設定内容で、トランザクションのプロファイルから以下のような情報が確認できます。
+
+     HTTP-HEAD: user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb...; Cookie=WMONID=GaGYw_l9V81; org.springframework....
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+  　　user-agent
+        Cookie
+
+* 再起動：不要
+* 関連オプション
+    * [profile_http_header_all](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_parameter_all](./agentHelp?key=profile_http_parameter_all&type=3)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+* サポートバージョン：5.0.0

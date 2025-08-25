@@ -1,0 +1,11 @@
+To get system memory utilization, use the /proc/meminfo file on Linux.
+It uses the "MemFree" column for free memory, which does not include the "Buffers/Cached" value.
+
+This can sometimes result in a high utilization rate, and you have the option to use the "MemAvailable" value instead of the "MemFree" value when calculating this number.
+
+---
+
+* Default: false
+* Format: Boolean
+* Restart: never
+* Supported Versions: 5.6.2.7

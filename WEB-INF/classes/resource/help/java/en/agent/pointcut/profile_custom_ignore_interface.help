@@ -1,0 +1,40 @@
+This option is used to exclude classes which implement a specific interface from the list when the user designates a target class using profile_custom_xxxx related option.
+
+## Configuration Example ##
+
+Basically, multiple configuration is available using the line change function.
+
+When intending to designate an interface and a method to exclude at the same time.
+
+    a.b.MyClass f()V
+    a.b.YourClass f()V
+
+When intending to designate an interface and a method to exclude at the same time and ignore the signature
+
+    a.b.MyClass f
+
+When intending to designate all methods of an interface to exclude
+
+    a.b.MyClass
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        example.ExampleIgnoreInterface
+        example.ExampleIgnoreTestInterface
+
+* Restart: Not required
+* Related options
+    * [profile_custom_class](./agentHelp?key=profile_custom_class&type=1)
+    * [profile_custom_super](./agentHelp?key=profile_custom_super&type=1)
+    * [profile_custom_interface](./agentHelp?key=profile_custom_interface&type=1)
+    * [profile_custom_pattern](./agentHelp?key=profile_custom_pattern&type=1)
+    * [profile_custom_access](./agentHelp?key=profile_custom_access&type=1)
+    * [profile_custom_ignore_class](./agentHelp?key=profile_custom_ignore_class&type=1)
+    * [profile_custom_ignore_super](./agentHelp?key=profile_custom_ignore_super&type=1)
+    * [profile_custom_ignore_pattern](./agentHelp?key=profile_custom_ignore_pattern&type=1)
+    * [adapter_custom_method](./agentHelp?key=adapter_custom_method&type=1)
+* Supported version: 5.0.0

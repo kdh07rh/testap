@@ -1,0 +1,103 @@
+메소드 성능이나 에러를 추적할 때 호출 된다.
+
+
+** 인터페이스 설명 **
+
+    package aries.runtime;
+
+    public interface IAdapterMethod {
+        /**
+         * 메소드의 파라미터를 추적한다. 파라미터들을 조합해서 하나의 값을 프로파일에 추가할 때 사용한다.
+         *
+         * @param fullDescriptor 메소드의 전체 디스크립터
+         * @param parameterWrapper 메소드의 파라미터를 정보를 가지고 있는 클래스
+         * @return 메소드의 파라미터값을 반환한다.
+         */
+        String captureParameter(String fullDescriptor, ParameterWrapper parameterWrapper);
+
+        /**
+         * 메소드의 리턴 값을 추적할 때 사용한다.
+         *
+         * @param fullDescriptor 메소드의 전체 디스크립터
+         * @param returnValue 메소드의 리턴 값
+         * @return 메소드의 리턴값을 반환한다.
+         */
+        String captureReturn(String fullDescriptor, Object returnValue);
+
+        /**
+         * 메소드 에러를 추적할 때 사용한다.
+         *
+         * @param throwable  예외가 발생했을 경우 해당 예외
+         * @return 프로파일 또는 이벤트 기록할 예외 메시지를 반환한다.
+         */
+        String catchException(Throwable throwable);
+    }
+
+- - -
+
+**주요 객체의 메소드 설명**
+
+###### ParameterWrapper 객체
+    public int size() : 파라미터 개수를 리턴한다.
+    public Object getThis() : 파라미터를 수집한 메소드의 객체를 반환한다.
+    public Object[] getValues() : 메소드의 파라미터 배열을 반환한다.
+    public Object get(int idx) : 해당 위치의 파라미터를 반환한다.
+    public Parameter getParameter() : 원본 Parameter 객체를 반환한다.
+
+- - -
+
+**설정방법**
+
+어댑터를 구현한 클래스를 jennifer.impl.XXX.jar 형태로 jennifer.jar 와 동일한 위치에 놓으면 별도의 설정 없이 해당 라이브러리를 자동으로 인식한다.
+버전관리를 위해서 jennifer.impl.custom-1.0.1.jar 와 같은 형식을 사용하면 편리하다.
+
+라이브러리 추가후 옵션에 구현한 어댑터 클래스 명을 등록하면 된다.
+
+    ex) aries.runtime.custom.SampleMethod
+    
+
+**기본구현**
+
+어댑터는 기본 구현체를 포함하고 있다.
+
+예외에 대한 StackTrace 를 반환하는 기본 구현체를 포함하고 있다. 아래 클래스는 catchException(Throwable throwable) 옵션을 구현한 어댑터이다.
+
+    aries.runtime.tracer.adapter.MethodAdapterCatchErrorImpl
+
+- - -
+
+**예제**
+
+    public class SampleMethod extends AbstractDefaultAdapter implements IAdapterMethod
+    {
+        public String captureParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+    
+        public String captureReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return (returnValue == null) ? null: returnValue.toString();
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            return null;
+        }
+    }
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : aries.runtime.custom.SampleMethod
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_method_exception_event](./agentHelp?key=enable_method_exception_event&type=1)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=1)
+* 지원 버전 : 5.0.0

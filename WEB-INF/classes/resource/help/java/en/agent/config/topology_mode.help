@@ -1,0 +1,18 @@
+When activating the topology mode, transactions for DB, HTTP(Apache http component) and EJB are tracked by default and the topology information is displayed on the topology dashboard and the X-view.
+
+EJB has been tested in the following environments.
+
+    WebSphere 7, 8.0, 8.5
+    WebLogic 10.3.6, 12.1.1, 12.1.2
+    JEUS 6.0.X, 7.0.X
+    JBoss 6.1.0, 6.2.0, 6.3.0
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=1)
+* Supported version: 5.0.6

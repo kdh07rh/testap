@@ -1,0 +1,10 @@
+This option is used to specify the provider version when using  using a DB2 database provider.
+
+The version of the provider being used by the application can be checked through the "DataProvider: DB2" item in the ".NET" category on the "Analysis" / "System Environment Variables" screen.
+
+---
+
+* Default : 9.7.4.4
+* Format : string
+* Restart : Required
+* Supported Version : 5.0.14

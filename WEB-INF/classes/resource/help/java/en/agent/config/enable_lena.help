@@ -1,0 +1,12 @@
+This is an option for LG CNS LENA WAS support.
+
+LENA WAS is an option used to avoid connecting an agent to an administrative process that runs two processes and does not require monitoring.
+
+The "agent.conf" property of the system properties is used to distinguish the management process.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: required
+* Supported Versions: 5.6.2.13

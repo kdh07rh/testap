@@ -1,0 +1,15 @@
+스레드에 대한 호출 스택을 남기는 역할을 맡은 스레드가 이 값으로 지정된 시간 동안 응답이 없으면 스레드가 종료된다.
+
+* 기본값 : 4000 (단위: 밀리초)
+* 형식 : 숫자
+* 샘플값 : 2000
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+* 지원 버전 : 5.3.0.1

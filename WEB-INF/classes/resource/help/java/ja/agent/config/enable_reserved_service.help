@@ -1,0 +1,35 @@
+一般的なWebアプリケーションの場合、次のように基本的に開始点が登録されています。
+
+    javax.servlet.http.HttpServlet
+    allaire.jrun.jsp.HttpJSPServlet
+    jrun.jsp.runtime.HttpJSPServlet
+    com.caucho.jsp.JavaPage
+    weblogic.servlet.jsp.JspBase
+    com.evermind.server.http.JSPServlet
+    org.apache.jasper.servlet.JspServlet
+
+該当クラスが ロードされて初期化されると、Runtime Moduleが初期化されます。
+
+次のようなログの内容を確認できます。
+
+    ...
+    2015-09-11/14:09:06 [I001] Load runtime module : /home/agent.java/agent.impl-5.0.11.jar;/home/agent.java/agent.impl.jdk16-1.0.1.jar
+    2015-09-11/14:09:06 [I001] Load ClassLoader : agent.base.AgentClassLoader@5b3fb1ab, org.apache.catalina.loader.StandardClassLoader@117bcd8f
+    2015-09-11/14:09:06 [I002] RT Class redefine java.io.FileOutputStream
+    2015-09-11/14:09:06 [I002] RT Class redefine java.net.Socket
+    2015-09-11/14:09:06 [I002] RT Class redefine java.lang.Thread
+    2015-09-11/14:09:06 [I001] Agent Runtime Module initialized
+    2015-09-11/14:09:06 [I005] CPU : loaded the procstat(14454) 
+    2015-09-11/14:09:07 [I006] Memory : loaded the procstat(14454) 
+    ...
+    2015-09-11/14:09:07 [I001] Agent Runtime Module loading complete... 
+    ...
+
+Runtime Moduleが初期化されない場合、トランザクションデータの収集ができません。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* サポートバージョン: 5.0.11

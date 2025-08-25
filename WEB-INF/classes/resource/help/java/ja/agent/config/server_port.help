@@ -1,0 +1,12 @@
+データサーバのポート番号を設定します。
+
+    ex)server_port=5000
+
+---
+
+  * デフォルト値 : 5000
+  * タイプ : 数字(Number)
+  * 再起動 : 不要
+  * 連関オプション
+    * [server_address](./agentHelp?key=server_address&type=1)
+  * サポートバージョン : 5.0.0

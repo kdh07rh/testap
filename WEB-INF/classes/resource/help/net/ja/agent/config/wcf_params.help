@@ -1,0 +1,23 @@
+WCFペイロード(payload)がXML形式の場合、指定されたメソッドと因子名が一致する場合、それに該当するノードの値を読んでプロファイルデータに追加します。 多重に設定する場合、コンマ(,)を区切り記号として設定します。
+
+    [wcf_method_name]:[wcf_paramter_name][,[...:...],...]
+
+例えば、WCFサービスでMyMethod1、MyMethod2名についてそれぞれの因子名が connectionString、modeについてその値をX-Viewプロファイルに追加する場合、次のように設定してください。
+
+    MyMethod1:connectionString,MyMethod2:mode
+
+以降、WCFサービス側のMyMethod1、MyMethod2が呼び出しになるとそれぞれ以下のようなX-Viewプロファイル情報を確認できます。
+
+
+    WCF_PARAM=[...connectionstring...]
+    WCF_PARAM=[...mode...]
+
+---
+    
+* デフォルト値 : なし
+* タイプ : 文字列
+* サンプル値 : MyMethod1:connectionString,MyMethod2:mode
+* 再起動 : 不要
+* 関連オプション
+    * [wcf_trace](./agentHelp?key=wcf_trace&type=2)
+* サポートバージョン: 5.0.7

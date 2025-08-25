@@ -1,0 +1,9 @@
+This option is used to view the information of a section in which a transaction is processed by dividing the time in which a transaction is performed into 4 sections.
+ 
+ ** The unit for the default value is ms (millisecond).
+ 
+ ** Default value: 0, 1000, 3000, 8000
+ * Type: numeric type sequential value (required to input 4 values using ',')
+ * Sample value: 1000, 3000, 5000, 10000 
+ * Restart: Not required
+ * Supported version: 5.0.7

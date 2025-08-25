@@ -1,0 +1,13 @@
+When [topology_mode](./agentHelp?type=3&key=topology_mode) is activated, transaction connection information is transmitted via the HTTP Header, and this option configures the HTTP Header key.
+
+Although the key value is set to "X-J_HTTP_TUID_" by default, if the same key is already in use, you can designate a different value.  
+
+---
+
+* Default value: X-J_HTTP_TUID_
+* Type: string
+* Sample value: X-CUSTOM_TOPOLOGY_ID_
+* Restart: Not required
+* Related options
+    * [topology_mode](./agentHelp?key=topology_mode&type=3)
+* Supported version: 5.0.6

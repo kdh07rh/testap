@@ -1,0 +1,10 @@
+이 옵션은 java.sql.ResultSet 객체의 릭을 추적하여 "DB_RESULTSET_UNCLOSED" 이벤트를 발생할지 여부를 설정한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관옵션
+    * [enable_resultset_fullstack_trace](./agentHelp?key=enable_resultset_fullstack_trace&type=1)
+* 지원 버전 : 5.0.0

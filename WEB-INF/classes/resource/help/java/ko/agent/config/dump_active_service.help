@@ -1,0 +1,21 @@
+액티스 서비스가 설정된 값을 넘기면 [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)에 설정한 디렉토리에 서비스 덤프가 자동으로 남겨 진다.
+
+서비스 덤프가 남겨 질 때 로그 파일에서 다음과 같은 로그를 확인 할 수 있다. 
+
+    ...
+    2015-04-27/12:06:12 [J-ServiceDumpWorker] Service dump generated. [/home/agent.java/service_dump/service_dump_8000-1_2015-04-27_120612.txt]
+    ...
+
+---
+
+* 기본값 : 100
+* 형식 : 숫자(Number)
+* 샘플값 : 1000
+* 재시작 : 안함
+* 연관 옵션
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* 지원 버전 : 5.0.0

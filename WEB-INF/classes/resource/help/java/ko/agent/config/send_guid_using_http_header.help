@@ -1,0 +1,15 @@
+기본적으로 HTTP를 이용한 토폴로지 연결시 HTTP Header를 이용해 별도의 데이터를 전달한다.
+
+토폴로지 연결 이외에 GUID 값을 사용하고자 할때  [guid_http_header_key] (./agentHelp?key=guid_http_header_key&type=1) 키 값을 이용해서 HTTP Header에 추가로 GUID를 설정해주는 옵션이다.
+
+이 옵션은 GUID 값이 없을 때는 동작하지 않는다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* 지원 버전 : 5.3.2.12, 5.4.2.2, 5.4.3

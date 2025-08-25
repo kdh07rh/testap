@@ -1,0 +1,8 @@
+Determines whether to collect DB connection object data and SQL data.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.0

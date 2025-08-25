@@ -1,0 +1,13 @@
+This option is listed as [collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1) option and creates a call stack of add/put method when the size of a collection object being monitored is identical to or larger than the registered value.
+
+Note that the value to be set should be bigger than the value set in [collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1) to view the stack information. 
+
+---
+
+* Default value: 50000
+* Type: Number
+* Sample value: 10000
+* Restart: Not required
+* Related options
+    * [collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1)
+* Supported version: 5.0.0

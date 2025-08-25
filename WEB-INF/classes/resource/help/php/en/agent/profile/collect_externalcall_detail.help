@@ -1,0 +1,8 @@
+Determines whether to collect an original URI when collect URI external transaction call.
+If this value is set to false, Agent collects only HOST of the URI. 
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.3.3.1

@@ -1,0 +1,14 @@
+It is an option to track the disk usage of the analysis screen.
+
+This option was created as a separate option because it can cause lock due to a bug with a specific OS and JDK..
+
+The below is bug case
+
+    Linux + JDK 1.7.0.80
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* Version supported : 5.2.2

@@ -1,0 +1,12 @@
+すべてのHTTP Request Parameter名をトランザクションのプロファイル情報で確認できます。
+
+設定内容により、トランザクションのプロファイルで下記のような情報を確認できます。
+
+     HTTP-PARAMETER-NAMES : Field1,Field2,Field3
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン:  5.2.2

@@ -1,0 +1,16 @@
+If you use PreparedStatement to execute the same SQL query, and only changing the parameters through a loop, you may experience performance problems when the number of profiles is increased.
+
+This option option can be used to collect profile data limited by the number defined by the [repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1) option and the rest of the profile information is summarized
+
+The following summarized information is added to the profile.
+
+    ex) "REPEAT_SQL : total count = 10000, total time = 34892 (19719030)"
+
+---
+
+* Default : false
+* Type : Boolean
+* Related Options
+    * [repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1)
+* Restart : Not Required
+* Supported Version : 5.3.3.4

@@ -1,0 +1,16 @@
+現在コネクションされているソケット（Socket）情報をモニタリグできます。
+
+ソケット情報をモニタリングするためには[enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1) オプションが活性化されている必要があります。
+
+    デフォルト設定で動作しない特定アプリケーション環境でテスト後、使用してください。
+
+
+---
+
+* デフォルト値 : false
+* タイプ :Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+* サポートバージョン:  5.2.2.1

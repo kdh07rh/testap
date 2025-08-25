@@ -1,0 +1,8 @@
+This option is used to se the hostname manually
+
+---
+
+* Default : none 
+* Type : String
+* Restart : required
+* Version supported : 5.0.0

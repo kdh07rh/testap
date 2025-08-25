@@ -1,0 +1,17 @@
+PLC 설정을 통해 PLC에 해당되는 트랜잭션을 로그에 기록한다.
+
+기록되는 로그는 다음과 같은 형태이다.
+
+[PLC] REJECTED: limit = 90, # of active = 100, /example/sample(-2030781745), queryString=parameter
+
+부하가 많이 발생할 경우 로그 파일에 과도한 로그가 기록될 수 있어 이를 기록하지 않도록 비활성화하는 옵션이다.
+
+
+---
+
+* 기본값 : true
+* 형식 : Boolean 
+* 재시작 : 안함
+* 연관 옵션
+    * [include_query_string_in_reject_log](./agentHelp?key=include_query_string_in_reject_log&type=1)
+* 지원 버전 : 5.5.1.2

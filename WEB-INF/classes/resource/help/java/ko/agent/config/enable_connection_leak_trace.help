@@ -1,0 +1,12 @@
+이 옵션은 java.sql.Connection 객체의 누수를 추적하여 "DB_CONNECTION_UNCLOSED" 이벤트를 발생할지 여부를 설정한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관옵션
+    * [enable_connection_fullstack_trace](./agentHelp?key=enable_connection_fullstack_trace&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* 지원 버전 : 5.0.0

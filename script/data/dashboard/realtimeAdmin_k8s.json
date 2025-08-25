@@ -1,0 +1,27 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain" : true,
+    "multiinstance": true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+  "charts": [
+    {"charttype": "speedhorizon", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 0, "endx": 75, "starty": 0, "endy": 8.33}, "extend": {"startx": 0, "endx": 100, "starty": 0, "endy": 8.33}},
+    {"i18nTitle":"ui.label.activeServiceStatus", "charttype": "speedvertical", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 75, "endx": 100, "starty": 0, "endy": 45}},
+
+    {"i18nTitle":"ui.label.activeService", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 8.33, "endy": 26.66}},
+    {"i18nTitle":"ui.label.activeService", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "active_service", "origin": {"startx": 25, "endx": 75, "starty": 8.33, "endy": 26.66}, "extend": {"startx": 0, "endx": 100, "starty": 8.33, "endy": 26.66}},
+
+    {"i18nTitle":"ui.label.responseTimeChart", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_time", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 26.66, "endy": 45}},
+    {"i18nTitle":"ui.label.cpu.container", "charttype": "equalizer.external.k8s", "datatype": "agent", "domainBarSync": true,
+      "jenniferK8SAPI":  "/api/j5/metric-last-v2/container", "jenniferK8SMetric": "CPU_USAGE,CPU_REQUEST,CPU_LIMIT",
+      "origin": {"startx": 25, "endx": 75, "starty": 26.66, "endy": 45}, "extend": {"startx": 0, "endx": 100, "starty": 26.66, "endy": 45}},
+
+    {"i18nTitle":"ui.label.workloadStatus.k8s", "charttype": "vue.workload.external.k8s", "datatype": "agent", "domainBarSync": true,
+      "jenniferK8SAPI": "/api/j5/container-status-v2",
+      "origin": {"startx": 0, "endx": 75, "starty": 45, "endy": 100}, "extend": {"startx": 0, "endx": 75, "starty": 45, "endy": 100}},
+    {"i18nTitle":"ui.label.xview", "charttype": "xview.dashboard", "datatype": "agent", "domainBarSync": true, "optimized": true, "origin": {"startx": 75, "endx": 100, "starty": 45, "endy": 81.66}, "extend": {"startx": 75, "endx": 100, "starty": 45, "endy": 81.66}},
+    {"i18nTitle":"ui.label.serviceRate", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 75, "endx": 100, "starty": 81.66, "endy": 100}, "extend": {"startx": 75, "endx": 100, "starty": 81.66, "endy": 100}}
+  ]
+}

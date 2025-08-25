@@ -1,0 +1,14 @@
+Depending on the specific environment, the java.lang.Thread option may affect the timing of the patch, which may slow down the patch time.
+
+If the option is false, the java.lang.Thread class is patched at the agent initialization time.
+
+If the option is true, the patch point of the java.lang.Thread class is patched after the first transaction is performed.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Required
+* Supported Version : 5.3.2.5
+
+

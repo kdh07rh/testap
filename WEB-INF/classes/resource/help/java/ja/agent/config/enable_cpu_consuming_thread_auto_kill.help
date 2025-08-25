@@ -1,0 +1,19 @@
+トランザクションスレッドが一定時間以上CPUを使用するとき、該当トランザクションスレッドを自動的に終了するとき、使用するオプションです。
+
+オプションをtrueに設定して[cpu_consuming_thread_auto_kill_threshold](./agentHelp?key=cpu_consuming_thread_auto_kill_threshold&type=1) オプションの値を0より大きい値に設定すると動作します。
+
+指定した時間より多く実行されているトランザクション スレッドを強制的に終了するため、適用するときは注意が必要です。
+
+スレッドを終了ためにトライを行うとエージェントログに次のような内容が出力されます。
+
+    2018-04-30/16:16:42 [TRACE] [I033] tried to kill cpu consuming thread /cpu_and_sleep.jsp (77 ms) 
+
+---
+
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [cpu_consuming_thread_auto_kill_threshold](./agentHelp?key=cpu_consuming_thread_auto_kill_threshold&type=1)
+* サポートバージョン : 5.3.2.3

@@ -1,0 +1,23 @@
+에이전트에서 로그를 기록할 때 사용하는 레벨을 설정한다.
+
+레벨을 통해서 기록되는 로그 양이 다르기 때문에 특정 로그 확인 후에는 1(info) 레벨로 설정해서 사용하는 걸 권장한다.
+
+기본값은 1(info)이며 총 3개의 레벨을 가지고 있다.
+
+    1(info)
+    2(debug)
+    3(trace)
+
+---
+
+  * 기본값 : 1
+  * 형식 : 숫자(Number)
+  * 재시작 : 안함
+  * 연관 옵션
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * 지원 버전 : 5.0.0

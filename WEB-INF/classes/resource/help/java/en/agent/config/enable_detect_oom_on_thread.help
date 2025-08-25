@@ -1,0 +1,21 @@
+Settings to detect an OOM (OutOfMemory) error generatd from a thread and create an OUT_OF_MEMORY event.
+
+When this option is activated, you can see the following log in the log file.
+
+    ...
+    2015-09-07/11:30:38 [I001] Agent Control Module initialized(8958855603872953309)
+    2015-09-07/11:30:38 [I001] Agent Control Module loading complete... 
+
+    ...
+    9/7/2015/11:30:41 AM [I002] RT Class redefine java.lang.Thread
+
+    ...
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [trace_oom](./agentHelp?key=trace_oom&type=1)
+* Supported version: 5.0.11

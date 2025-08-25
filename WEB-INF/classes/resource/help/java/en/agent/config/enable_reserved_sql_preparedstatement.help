@@ -1,0 +1,18 @@
+Basically, when collecting JDBC information (SQL) through the [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1) option, BCI (ByteCode Instrumentation) method is used for the already analyzed class.
+
+In case of using a separate connection or connection pool method other than the already registered class, a method of tracing JDBC information using the wrapper method can be used.
+If the wrapper method is used, performance may be affected because all JDBC classes are wrapped in a wrapper.
+
+In order to improve the performance degradation, the already analyzed part is processed without using Wrapper.
+
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart: required
+* Option related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+* Version supported : 5.6.1.4

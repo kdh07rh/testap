@@ -1,0 +1,16 @@
+PreparedStatement를 이용하여 반복문을 통해 동일한 SQL을 매개변수만 변경하여 실행하는 경우 프로파일 개수가 많아질 경우 성능 문제가 발생 할 수 있다.
+
+이에 대비하여 [repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1) 옵션으로 정해진 숫자 만큼만 프로파일 데이터를 수집하고 나머지 프로파일 정보는 요약해서 보여주는 옵션이다.
+
+다음과 같은 요약된 정보가 프로파일에 추가 된다.
+
+    ex) "REPEAT_SQL : total count = 10000, total time = 34892 (19719030)"
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 연관 옵션
+    * [repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1)
+* 재시작 : 안함
+* 지원 버전 : 5.3.3.4

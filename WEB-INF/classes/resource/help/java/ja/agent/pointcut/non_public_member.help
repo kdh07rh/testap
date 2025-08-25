@@ -1,0 +1,15 @@
+BCI(ByteCode Instrumentation)の対象であるクラス間でアクセス制限がpublicになっていないメンバー変数またはメソッドのアクセス制限を、publicに変更します。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        example.ExamplePrivateClass.filedName
+        example.ExampleProtectedClass.methodName
+
+* 再起動：必要
+* 関連オプション
+    * [non_public_class](./agentHelp?key=non_public_class&type=1)
+* サポートバージョン：5.0.0

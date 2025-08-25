@@ -1,0 +1,2 @@
+<link rel="stylesheet" type="text/css" media="all" href="<tags:cacheUrl url="/css2/colors.${themeName}.css"/>"/>
+<link rel="shortcut icon" href="<tags:cacheUrl url="/image/favicon.ico"/>" sizes="16x16" type="image/png"/>

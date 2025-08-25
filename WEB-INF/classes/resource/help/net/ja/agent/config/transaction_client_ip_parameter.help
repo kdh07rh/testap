@@ -1,0 +1,22 @@
+トランザクションのクライアントIPを特定メソッドのパラメータの値に設定するオプションです。
+
+設定は全体メソッドディスクリプタを入力後、後ろに "{}" を利用して何番目のパラメータの値を使用するか設定する必要がある。
+(サポートするパラメータの値は文字列とバイト配列です。)
+
+次はWebApplication.DefaultPageタイプに定義されているSetClientIPメソッドの１番目のパラメータをIPとして収集するサンプルです。
+
+    WebApplication.DefaultPage SetClientIP {1}
+
+
+---
+* デフォルト値 : なし
+* タイプ :  文字列
+* サンプル値
+
+        example.clientIp getClientIp {1}
+        example.clientIp getClientIp {2}
+
+* 再起動 : 必要
+* 関連オプション
+    * [transaction_client_ip_return](./agentHelp?key=transaction_client_ip_return&type=1)
+* サポートバージョン:  5.6.0.23

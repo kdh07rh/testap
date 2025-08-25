@@ -1,0 +1,21 @@
+When the active service exceeds the set value, a service dump is left in the directory set in the [service_dump_dir](./agentHelp?key=service_dump_dir&type=1).
+
+You can see the following log in the log file when a service dump is left. 
+
+    ...
+    2015-04-27/12:06:12 [J-ServiceDumpWorker] Service dump generated. [/home/agent.java/service_dump/service_dump_8000-1_2015-04-27_120612.txt]
+    ...
+
+---
+
+* Default value: 100
+* Type: Number
+* Sample value: 1000
+* Restart: Not required
+* Related options
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* Supported version: 5.0.0

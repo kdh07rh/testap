@@ -1,0 +1,8 @@
+Option configured to enable interoperation with Sherpa Oracle, a DB monitoring solution.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.3.0.14

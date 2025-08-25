@@ -1,0 +1,9 @@
+If this value is set to True, collect native call stack as well as PHP call stack(applied at Details of Active Service, Service Dump)
+
+
+---
+
+* Default : false
+* Type : Boolean 
+* Restart : Not Required
+* Supported Versions : 5.2.0

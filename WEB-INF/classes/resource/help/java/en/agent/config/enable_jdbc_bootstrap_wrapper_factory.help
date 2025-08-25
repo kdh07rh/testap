@@ -1,0 +1,23 @@
+This option is used to JDBC trace information from  the Boot Delegation setting in OSGI-based application.
+
+For example when using JBoss AS 7, the following settings should be added when installing the agebt 
+
+    JBOSS_MODULES_SYSTEM_PKGS = aries, org.jboss.byteman
+
+To trace JDBC information it is necessary to add the following settings:
+
+    JBOSS_MODULES_SYSTEM_PKGS = aries, org.jboss.byteman, javax.sql, javax.naming
+
+However, settings this option's value to true ommit the need to set the above settings to trace JDBC information.
+
+To apply this option, depending on the circumstances, it is recommended to set the  [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) option to false, and the [db_connection_get](./agentHelp?key=db_connection_get&type=1) must be used.
+
+---
+
+* Default: false
+* Type: Boolean
+* Restart: Required
+* Associated option
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1)
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+* Support Version: 5.1.3

@@ -1,0 +1,41 @@
+このオプションを活性化すると、BCI（ByteCode Instrumentation）対象のクラスをBCI後にダンプし、ファイルに保存します。その保存可否を設定するオプションです。
+
+[dump_mode](./agentHelp?key=dump_mode&type=1)オプションは、クラスがローディングするときに一回だけ実行されますが、クラス生成する方式のアプリケーションの場合はこのオプションによって、性能低下の可能性がありますので必要な場合のみ使用して下さい。
+
+クラスに対するBCI操作時のバイトコードを分析するバッグ目的で使用するオプションですので、オプションの使用後は無効にして下さい。
+
+オプションの適用は、エージェントログファイルのdump mode部分で確認できます。
+
+    2015-04-27/11:20:22  Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 debug mode : false
+    2015-04-27/11:20:22 dump mode : true
+    2015-04-27/11:20:22 dump dir : /home/agent.java/class_dump
+    ...
+
+[dump_dir](./agentHelp?key=dump_dir&type=1)で設定したパスで確認すると、以下のような内容が保存されます。
+
+    drwxr-xr-x  3 albert albert 4096 Mar 31 14:01 com
+    drwxr-xr-x  5 albert albert 4096 Mar 31 14:01 java
+    drwxr-xr-x  4 albert albert 4096 Mar 31 14:01 javax
+    drwxr-xr-x  2 albert albert 4096 Apr  1 14:46 jdbc
+    drwxr-xr-x  6 albert albert 4096 Apr  1 14:46 original
+
+ここでは、BCI操作前のオリジナルクラスのバイトコードが保存されます。他のディレクトリはBCI操作後のクラスのバイトコードがパッケージ形式で保存されます。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [dump_dir](./agentHelp?key=dump_dir&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+    * [dump_class](./agentHelp?key=dump_class&type=1)
+* サポートバージョン：5.0.0

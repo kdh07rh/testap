@@ -1,0 +1,26 @@
+It is an option to set whether to generate an "EXTERNALCALL_EXCEPTION" event when an exception occurs when performing EXTERNALCALL.
+
+The default value is true. When an exception occurs, "EXTERNALCALL_EXCEPTION" is raised as an event.
+
+To receive the event as a notification, you need to set the notification in "Administration -> Event Rules".
+
+When the option is set to false, the "toString ()" message of the exception is added to the profile information of the transaction when an exception occurs.
+
+Example of the added profile: 
+
+    ...
+    [0004][16:57:57 452][    1][    4] EXTERNAL-CALL [HTTP] APACHE_HTTP_CLIENT (url=http://192.168.0.76:8080) [1 ms]
+    [0005][16:57:57 453][    1][     ] org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.76:8080 [/192.168.0.76] failed: Connection Refused
+
+
+If you want to see the stack information of the exception, add a "toString ()" message for the exception, and you will see a simple message. See the [adapter_externalcall] (./agentHelp? Key = adapter_externalcall & type = 1) option.
+
+
+---
+
+* Default : false
+* Format : Boolean
+* Restart : Not Required
+* Related Options
+    * [adapter_externalcall](./agentHelp?key=adapter_externalcall&type=1)
+* Supported Version : 5.2.2.1

@@ -1,0 +1,13 @@
+Sherpaと連動するためのオプションです。
+設定時間以上のSQLのみ連動します。
+
+
+---
+
+* デフォルト値 : 1000
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+* サポートバージョン : 5.6.1.13

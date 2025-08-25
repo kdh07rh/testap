@@ -1,0 +1,22 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain": true,
+    "multiinstance" : true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+ 
+  "charts": [
+    {"charttype": "speedhorizon", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 0, "endx": 100, "starty": 0, "endy": 11.11}, "extend": {"startx": 0, "endx": 100, "starty": 0, "endy": 11.11}},
+    {"i18nTitle":"ui.label.activeService", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "active_service", "origin": {"startx": 0, "endx": 100, "starty": 11.11, "endy": 33.33}, "extend": {"startx": 0, "endx": 100, "starty": 11.11, "endy": 33.33}},
+    {"i18nTitle":"ui.label.activeSql", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "active_sql", "origin": {"startx": 0, "endx": 100, "starty": 33.33, "endy": 55.55}, "extend": {"startx": 0, "endx": 100, "starty": 33.33, "endy": 55.55}},
+
+    {"i18nTitle":"ui.label.activeService", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 55.55, "endy": 77.77}, "extend": {"startx": 0, "endx": 33.33, "starty": 55.55, "endy": 77.77}},
+    {"i18nTitle":"ui.label.activeSql", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_sql", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 55.55, "endy": 77.77}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 55.55, "endy": 77.77}},
+    {"i18nTitle":"ui.label.xview", "charttype": "xview.dashboard", "datatype": "agent", "viewpoint": "sqlTime", "domainBarSync": true, "origin": {"startx": 66.66, "endx": 100, "starty": 55.55, "endy": 100}, "extend": {"startx": 66.66, "endx": 100, "starty": 55.55, "endy": 100}},
+
+    {"i18nTitle":"ui.label.sqlCount", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.sql_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 77.77, "endy": 100}, "extend": {"startx": 0, "endx": 33.33, "starty": 77.77, "endy": 100}},
+    {"i18nTitle":"ui.label.fetchCount", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.fetch_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 77.77, "endy": 100}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 77.77, "endy": 100}}
+  ]
+}

@@ -1,0 +1,12 @@
+오랜시간 동안 처리가 지연되고 있는 트랜잭션을 종료시키고자 할 때 그 기준을 지정하는 옵션이다.
+
+옵션 값의 단위는 밀리세컨드이며 값을 0으로 설정시 enable_long_running_thread_auto_kill 옵션을 true로 적용해도 기능이 동작하지 않는다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number), 밀리세컨드
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_long_running_thread_auto_kill](./agentHelp?key=enable_long_running_thread_auto_kill&type=1)
+* 지원 버전 : 5.0.12

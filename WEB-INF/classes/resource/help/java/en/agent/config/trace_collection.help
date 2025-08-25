@@ -1,0 +1,21 @@
+This option is used for memory (collection) related tracking.
+
+The classes to be traced are:
+
+    java.util.ArrayList
+    java.util.Vector
+    java.util.LinkedList
+    java.util.Hashtable
+    java.util.HashMap
+    java.util.TreeMap
+
+
+Note that this function may cause problems because it patches the classes in the rt.jar file.
+
+It must be used after confirmation.
+---
+
+* Default : false 
+* Type : Boolean
+* Restart : not required
+* Version supported : 5.0.0

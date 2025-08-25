@@ -1,0 +1,9 @@
+If this value is set to True, PHP Warnings are collected and transmitted. Collected warnings can be viewed in the ERROR tab of X-view.
+However, if this value is True, PHP Warning values are not delivered from the user error processing handler.  
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.7

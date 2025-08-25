@@ -1,0 +1,14 @@
+If the option value is set to True, enable PHP Agent to hook PHP internal function in runtime. Changing this option only effects in PHP ZTS(Thread Safe)
+
+PHP internal function hook in runtime is safe only if thread counts is 1. Therefore, the PHP internal function hook in runtime is not safe if PHP running in ZTS. However, if the option value was True, PHP Agent hooks PHP internal function in runtime. 
+
+Set the option value to True only if you can guarantee thread count of PHP process is 1. 
+eg) Setting the option value to True is safe in Apache Prefork with PHP ZTS environment. 
+
+
+---
+
+* Default : false
+* Type : Boolean 
+* Restart : Not Required
+* Supported Version : 5.5.1.1

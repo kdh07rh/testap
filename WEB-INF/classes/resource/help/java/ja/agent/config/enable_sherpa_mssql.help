@@ -1,0 +1,12 @@
+DBモニタリングソリューションであるセルパMSSQLと連動するために設定するオプションです。
+
+--- ---...
+
+* 既定値 : false
+* 形式 : Boolean
+* 再起動：しない
+* 関連オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [sql_elapsed_time_for_sherpa](./agentHelp?key=sql_elapsed_time_for_sherpa&type=1)
+    * [enable_profile_guid_for_sherpa](./agentHelp?key=enable_profile_guid_for_sherpa&type=1)
+* サポートバージョン : 5.6.4

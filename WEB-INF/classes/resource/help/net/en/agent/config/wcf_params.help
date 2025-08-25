@@ -1,0 +1,22 @@
+When the WCF payload is in an XML file format, if the name of a designated method is identical to the name of a factor, the value of the corresponding node is read and added to the profile data. In a multiple configuration, comma (,) is used as a separator. 
+ 
+  [wcf_method_name]:[wcf_paramter_name][,[...:...],...]
+ 
+ For example, if the names of factors for the names of MyMethod1 and MyMethod 2 in the WCF service are connectionString and mode, respectively, and you want to add the values to the XView profile, you can configure them as follows. 
+ 
+  MyMethod1:connectionString,MyMethod2:mode
+ 
+ Subsequently, if MyMethod1 and MyMethod2 are called from the WCF service, you will see the following X-View profile information.
+ 
+  WCF_PARAM=[...connectionstring...]
+  WCF_PARAM=[...mode...]
+ 
+ ---
+  
+ * Default value: None
+ * Type: string
+ * Sample value: MyMethod1:connectionString,MyMethod2:mode
+ * Restart: Not required
+ * Related options
+  * [wcf_trace](./agentHelp?key=wcf_trace&type=2)
+ * Supported version: 5.0.7

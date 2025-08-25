@@ -1,0 +1,12 @@
+When configuring the remote address using HTTP Header, it is possible to specify separator when multiple values of the header are displayed.
+
+     ex) X-Forwarded-For: 192.168.0.1, 192.168.0.99
+---
+
+* Default: ,
+* Type: String
+* Restart: Not Required
+* Related Options
+     * [remote_address_header_key](./agentHelp?key=remote_address_header_key&type=1)
+     * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=1)
+* Supported version: 5.6.1.20

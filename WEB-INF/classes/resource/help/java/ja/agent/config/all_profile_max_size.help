@@ -1,0 +1,14 @@
+トランザクション当たりの最大プロファイル数(収集・保存)を指定します。
+
+**[profile_max_size](./agentHelp?key=profile_max_size&type=1)** オプションと異なる点は、SQLと外部呼び出しのプロファイルを含めて数えます。
+
+ファイル関連データは常に収集します。
+
+---
+
+* デフォルト値 : 0
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [profile_max_size](./agentHelp?key=profile_max_size&type=1)
+* サポートバージョン : 5.5.2.6

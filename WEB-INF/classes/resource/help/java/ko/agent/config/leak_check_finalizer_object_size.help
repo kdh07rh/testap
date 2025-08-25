@@ -1,0 +1,16 @@
+JDBC Statement, ResultSet 객체에 대한 Leak 체크시에 finalize 메소드를 이용해 체크하여 성능 문제가 발생할 수 있다.
+
+이 문제를 피하기 위해 지정된 크기 만큼 Leak 발생할 때 일괄 검사를 통해 처리하고 있다.
+
+필요에 따라 지정된 크기를 설정 할 수 있는 옵션이다.
+
+---
+
+* 기본값: 1024
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+    * [each_send_for_leak_object](./agentHelp?key=each_send_for_leak_object&type=1)
+* 지원 버전 : 5.3.1

@@ -1,0 +1,19 @@
+기본 설정 값에 의해 시스템 리소스(CPU, Memory)에 대한 데이터 수집시에 리눅스 기반의 OS를 제외하고 JMX(Java Management Extensions) 를 이용한다.
+
+하지만 일부 JMX 를 지원하지 않는 JVM 이나 특정 값에 대해서 JMX 데이터를 지원 하지 않는 경우 이 옵션을 "false" 로 설정 하고 JNI 설정을 통해서 시스템 리소스 정보를 수집 해야 한다.
+
+이 옵션이 활성화 되어 있고 리눅스 머신이 아니라면 로그 파일에서 다음과 같은 로그를 확인 할 수 있다.
+
+    ...
+    2015-09-21/14:33:27 [I001] Agent Runtime Module initialized
+    2015-09-21/14:33:27 [I003] CPU : loaded jmx for Java HotSpot(TM) 64-Bit Server VM(24.75-b04)
+    2015-09-21/14:33:27 no agent5 native lib on '/home/agent.java/libs
+    2015-09-21/14:33:27 [I004] Memory : loaded jmx for Java HotSpot(TM) 64-Bit Server VM(24.75-b04)
+    ...
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.11

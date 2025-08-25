@@ -1,0 +1,60 @@
+해당 옵션은 DB Connection이 오픈되는 곳의 스택을 로그 파일에 남기도록 설정하는 옵션이다.
+메시지 코드 *B001*로 시작하는 스택이 남게 된다.   
+
+로그파일에 기록되는 로그 예제는 다음과 같다.
+
+    2015-02-24/13:33:11  INF jdbc.GhostConnection is a JDBC Connection
+    2015-02-24/13:33:11 [B001] [ConnectionOpen(NOT TRACE)] Oraiginal: org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+        at aries.runtime.tracer.a.if(SourceFile:43)
+        at aries.runtime.tracer.c.i.connectionOpen(SourceFile:746)
+        at aries.base.profile.ProfileSQL.connectionOpen(ProfileSQL.java:130)
+        at aries.runtime.tracer.sql.Connection.init(SourceFile:92)
+        at aries.runtime.tracer.sql.Connection.<init>(SourceFile:61)
+        at aries.runtime.b.a.a.a(SourceFile:470)
+        at aries.runtime.b.a.a.getConnection(SourceFile:373)
+        at aries.base.WrapperFactory.getConnection(WrapperFactory.java:52)
+        at aries.base.WrapperFactory.getConnection(WrapperFactory.java:47)
+        at aries.runtime.tracer.a.a(SourceFile:79)
+        at aries.runtime.tracer.a.a(SourceFile:90)
+        at aries.runtime.tracer.c.i.getConnection(SourceFile:1267)
+        at aries.base.profile.ProfileSQL.getConnection(ProfileSQL.java:276)
+        at aries.base.jdk.DataSource.getConnection(DataSource.java:69)
+        at org.apache.jsp.common.connection_jsp.getConnection(connection_jsp.java:34)
+        at org.apache.jsp.common.connection_jsp._jspService(connection_jsp.java:84)
+        at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+        at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+        at java.lang.Thread.run(Thread.java:745)
+
+
+이 옵션은 [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) 옵션을 활성화 해서 추적하는 javax.sql.DataSource 객체를 사용하여 가져온 java.sql.Connection 에 대한 스택은 남기지 않는다.   
+
+** 오버헤드가 발생하므로 디버깅 목적으로 사용해야 한다. **
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1)
+* 지원 버전 : 5.0.0

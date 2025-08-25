@@ -1,0 +1,12 @@
+This option is used to collect parameters only for SQL statements executed for a certain period of time by specifying SQL execution time when collecting SQL statements.
+
+
+
+---
+
+* Default : 0
+* Format : Number, Milliseconds
+* Restart : Not Required
+* Related Options
+    * [enable_collect_sql_param](./agentHelp?key=enable_collect_sql_param&type=3)
+* Supported Version : 5.6.2.8

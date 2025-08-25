@@ -1,0 +1,21 @@
+This option is used to limit the length of a parameter which is bound using the setString method among the classes that implement java.sql.PreparedStatement or java.sql.CallableStatement provided by JDBC driver.
+
+If the length of a parameter exceeds the default length of 50, the parameter is displayed using an ellipsis ("...:).
+
+---
+
+* Default value: 50
+* Type: Number
+* Sample value: 100
+* Restart: Not required
+* Related options
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_preparedstatement_trace](./agentHelp?key=enable_preparedstatement_trace&type=1)
+    * [enable_callablestatement_trace](./agentHelp?key=enable_callablestatement_trace&type=1)  
+* Supported version: 5.0.6

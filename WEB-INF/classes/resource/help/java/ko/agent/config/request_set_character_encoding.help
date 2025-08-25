@@ -1,0 +1,24 @@
+아파치 톰켓과 같이 웹 애플리케이션 서버 차원에서 다국어 문자 지원이 미비할 때, HttpServletRequest의 getParameter 메소드가 다국어(예: 한국어)를 지원하지 않을 수 있다.
+
+이럴경우 서블릿 2.3부터는 HttpServletRequest의 setCharacterEncoding 메소드를 통해서 다국어에 대한 처리를 쉽게 할 수 있다.
+
+그런데 만약, [http_post_request_tracking_list](./agentHelp?type=1&key=http_post_request_tracking_list)이나 [url_additional_request_keys](./agentHelp?type=1&key=url_additional_request_keys) 속성을 사용하면 모니터링 대상 애플리케이션에서 HttpServletRequest의 setCharacterEncoding 메소드를 호출하여도 에이전트가 먼저 HttpServletRequest의 getParameter 메소드를 호출하기 때문에 다국어에 대한 처리가 올바르게 되지 않을 수 있다.
+
+이 문제를 해결하기 위해서 이 속성을 지정하면 에이전트가 맨 앞단에서 setCharacterEncoding 메소드를 호출한다.
+
+    UTF-8
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : UTF-8
+* 재시작 : 안함
+* 연관 옵션
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [url_additional_request_keys](./agentHelp?key=url_additional_request_keys&type=1) 
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=1) 
+    * [http_post_request_tracking_list](./agentHelp?key=http_post_request_tracking_list&type=1)
+    * [service_naming_by_http_header](./agentHelp?key=service_naming_by_http_header&type=1)
+    * [user_by_http_header](./agentHelp?key=user_by_http_header&type=1)
+* 지원 버전 : 5.0.0

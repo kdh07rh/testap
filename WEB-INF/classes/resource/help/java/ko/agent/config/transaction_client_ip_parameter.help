@@ -1,0 +1,28 @@
+트랜잭션의 클라이언트 IP 를 특정 메소드의 파라미터 값으로 설정하는 옵션이다.
+
+설정은 전체 메소드 디스크립터를 입력한 후 뒷 부분에 "{}" 를 이용하여 몇 번째 파라미터 값을 사용할지 표시 해야한다.
+(지원하는 파라미터값은 문자열과 바이트 배열을 지원한다.)
+
+다음은 설정 예제이다.
+
+    org.apache.jsp.example.clientIp_jsp clientIp(Ljava/lang/String;)Ljava/lang/String;{1}
+
+
+옵션을 설정하여 해당 설정이 적용되면 Instrument 로그에 다음과 같은 로그가 기록된다.
+
+    2017-04-21/17:15:22 [I001] [BCI TransactionClientIpParameterPointCut] org.apache.jsp.example.clientIp_jsp.clientIp(Ljava/lang/String;)Ljava/lang/String;
+
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값
+
+        example.clientIp getClientIp(Ljava/lang/String;)Ljava/lang/String;{1}
+        example.clientIp getClientIp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;{2}
+
+* 재시작 : 필요
+* 연관 옵션
+    * [transaction_client_ip_return](./agentHelp?key=transaction_client_ip_return&type=1)
+* 지원 버전 : 5.2.2.1

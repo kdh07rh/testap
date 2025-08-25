@@ -1,0 +1,13 @@
+サービスダンプの実行後、次のサービスダンプ実行までの最小間隔を指定します。
+アクティブサービス数またはシステムCPU使用率の状態が設定値を超える状態が続いたときに、連続的に発生するサービスダンプによる、性能低下が発生することを防ぐために使用します。
+
+---
+
+* デフォルト値：5000
+* タイプ：数字(Number)
+* 再起動：不要
+* 関連オプション
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=3)
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=3)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=3)
+* サポートバージョン：5.0.0

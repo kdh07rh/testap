@@ -1,0 +1,9 @@
+If Microsoft.Data.SqlXml database provider is used, the version has to be specified.
+ 
+ ---
+  
+ * Default value: 3.2.2917.0
+ * Type: string (version)
+ * Sample value: 4.2.0.0
+ * Restart: Required
+ * Supported version: 5.0.7

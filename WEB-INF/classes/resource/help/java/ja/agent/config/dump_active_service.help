@@ -1,0 +1,21 @@
+アクティブサービスが設定値を超えると、[service_dump_dir](./agentHelp?key=service_dump_dir&type=1)に設定したディレクトリにサービスダンプが生成されます。
+
+サービスダンプが生成されるとログファイルから以下の内容が表示されます。
+
+    ...
+    2015-04-27/12:06:12 [J-ServiceDumpWorker] Service dump generated. [/home/agent.java/service_dump/service_dump_8000-1_2015-04-27_120612.txt]
+    ...
+
+---
+
+* デフォルト値：100
+* タイプ：数字(Number)
+* サンプル値：1000
+* 再起動：不要
+* 関連オプション
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* サポートバージョン：5.0.0

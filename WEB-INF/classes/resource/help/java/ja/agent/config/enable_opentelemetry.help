@@ -1,0 +1,27 @@
+"エージェント設定ファイルに設定するOpenTelemetryとの統合のためのオプションです。
+
+オプションを有効にして使うためには2つのことが必要ですが、まずデータサーバーにOpenTelemetryデータを収集するためのオプションを設定する必要があります。
+
+jennifer_data.sh設定ファイルに次のようなオプションが設定されていないとデータを収集することができません。
+
+    JAVA_OPTS="" ${JAVA_OPTS}-Djennifer.unofficial.opentelemetry.collect.port=4317""
+    
+ここで設定されたポートは[server_grpc_port](./agentHelp?key=server_grpc_port&type=1)に設定する必要があるgrpcポートです。
+
+次はOpenTelemetryエージェントを追加で設定する必要があります。
+
+    JENNIFER_JAVA_OPTS="" -javaagent:${JENNIFER_HOME}/agent.java/jennifer.jdk8.jar""
+    JENNIFER_JAVA_OPTS=""${JENNIFER_JAVA_OPTS}-javaagent:${JENNIFER_HOME}/agent.java/ext/opentelemetry-javaagent.jar""
+
+    
+このプロセスが含まれた状態でオプションを有効にした時、正常な動作をします。
+    
+---
+
+* デフォルト値 : false
+* 形式 : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [server_address](./agentHelp?key=server_address&type=1)
+    * [server_grpc_port](./agentHelp?key=server_grpc_port&type=1)
+* サポートバージョン : 5.6.1.16, 5.6.2"

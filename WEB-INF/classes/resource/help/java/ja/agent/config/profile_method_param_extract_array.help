@@ -1,0 +1,19 @@
+プロファイル対象メソッドのパラメータに配列がある場合、その配列の値を表示します。
+配列のサイズが大きすぎると収集されるテキストデータの量も大きくなるので、データの確認後オプションの値をfalseに変更することをお勧めします。
+オプションをtrueに設定した場合は、プロファイルのPARAM情報が次のとおりに表示されます。
+
+    [0003][14:22:26 711][    1][     ] PARAM [
+    1:type=String, value=sam
+    2:type=String, value=Yoon Sam
+    3:type=Object[], size=3
+    3-1:type=String, value=test is so // 「3-1」は3つ目のパラメータでの1つ目の値を意味します。
+    3-2:type=Integer, value=222
+    3-3:type=Long, value=333
+    ] java.lang.Object[] org.apache.jsp.methodtest_jsp.pleaseMakeIt(String,String,Object[])
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン : 5.0.14

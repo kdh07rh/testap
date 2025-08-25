@@ -1,0 +1,24 @@
+This option is used to keep track of URL call information in a transaction using the HttpURLConnection
+
+The following information are gathered when this option is enabled
+
+        1. Request Information: profile the request parts, the parameters information that sent to the the remote destination
+        2. Response Information: profile the response back from the remote destination, the part of the response, the service call, the response code and the URL that called.
+        3. Topology: the call connection using the HTTPURLConnection
+
+If this option is enabled, the log file may contain the following log
+
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;Lsun/net/www/http/PosterOutputStream;)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;Lsun/net/www/http/PosterOutputStream;Z)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.parseHTTP(Lsun/net/www/MessageHeader;Lsun/net/ProgressSource;Lsun/net/www/protocol/http/HttpURLConnection;)Z
+
+
+---
+
+* Default value : true
+* Type: Boolean
+* Restart : Required
+* Related options
+    * [enable_reserved_externalcall_for_http](./agentHelp?key=enable_reserved_externalcall_for_http&type=1)
+* Supported version : 5.0.11 (points 2,3,4 are supported in version 5.0.12)

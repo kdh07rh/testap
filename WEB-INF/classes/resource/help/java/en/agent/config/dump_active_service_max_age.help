@@ -1,0 +1,10 @@
+This option sets the service dump file retention period.
+
+To disable this option, set the value to 0. The maximum value that can be set is an integer number between 1 and 365.
+
+---
+
+* Default: 0
+* Format: Number
+* Restart: Not Required
+* Supported version: 5.2.3.3

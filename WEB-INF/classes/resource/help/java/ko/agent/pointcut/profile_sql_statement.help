@@ -1,0 +1,20 @@
+이 옵션은 [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1) 옵션을 사용했을 경우 누락된 Statement 클래스를 추가로 등록하는 옵션이다.
+추가로 등록하는 클래스는 java.sql.Statement 인터페이스를 구현한 클래스이어야 한다. 
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        com.mysql.jdbc.Statement
+        oracle.jdbc.driver.OracleStatement
+
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+* 지원 버전 : 5.0.0

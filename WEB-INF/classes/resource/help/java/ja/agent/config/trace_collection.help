@@ -1,0 +1,20 @@
+メモリ(コレクション)のためのオプションです。
+
+このオプションをtrueに設定すると、次のクラスに対して追跡します。
+
+    java.util.ArrayList
+    java.util.Vector
+    java.util.LinkedList
+    java.util.Hashtable
+    java.util.HashMap
+    java.util.TreeMap
+
+rt.jarファイルのクラスをパッチするため、使用には注意が必要です。
+検証環境で確認した上、使用することを推奨します。
+
+---
+
+  * デフォルト値 : false 
+  * タイプ : Boolean
+  * 再起動 : 必要
+  * サポートバージョン : 5.0.0

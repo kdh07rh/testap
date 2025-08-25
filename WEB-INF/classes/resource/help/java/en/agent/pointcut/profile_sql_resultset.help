@@ -1,0 +1,20 @@
+This option is used to register an omitted ResultSet class when using the [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1) option.
+The class that must be additionally registered should be a class that implements the java.sql.ResultSet interface. 
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        com.mysql.jdbc.ResultSetImpl
+        oracle.jdbc.driver.OracleResultSetImpl
+
+* Restart: Required
+* Related options
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+* Supported version: 5.0.0

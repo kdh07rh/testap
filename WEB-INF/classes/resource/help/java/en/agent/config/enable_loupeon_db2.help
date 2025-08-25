@@ -1,0 +1,11 @@
+This option is for LOUPEON DB2 monitirong connection.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : not required
+* Options related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [get_instance_name_through_query](./agentHelp?key=get_instance_name_through_query&type=1)    
+* Version Supported: 5.4.4

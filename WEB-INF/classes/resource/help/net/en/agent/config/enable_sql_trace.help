@@ -1,0 +1,13 @@
+Determines whether to perform monitoring on DB Connection and SQL.
+When this option is set to false, all DB and SQL settings are disabled.
+
+---
+
+* Default value: true
+* Type: Boolean
+* Restart: Not required
+* Related options
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=2)
+    * [sql_fetch_warning_count](./agentHelp?key=sql_fetch_warning_count&type=2)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=2)
+* Supported version: 5.2.2.1

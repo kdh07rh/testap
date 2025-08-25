@@ -1,0 +1,23 @@
+This option sends the text collected by an agent to the data server and caches the hash information of the applicable text. The hash of text is cached separately to ensure that the same text is not sent to the data server multiple times.
+ 
+ If the cache data exceeds the set value, the hash of the text entered earlier is deleted according to the FIFO (First In First Out) principle.
+ 
+ The kinds of texts cached by the max_number_of_text options are as follows.
+ 
+ * Application name
+ * External call name
+ * Error information
+ * Browser information
+ * Thread name
+ 
+ ---
+ 
+ * Default value: 20000
+ * Type: Number
+ * Sample value: 30000
+ * Restart: Required
+ * Related options
+  * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+  * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+  * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+ * Supported version: 5.6.0.22

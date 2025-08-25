@@ -1,0 +1,38 @@
+이 옵션은 [debug_mode](./agentHelp?key=debug_mode&type=1) 옵션을 활성화 했을 때 수행되는 [대상 클래스](./agentHelp?key=debug_class&type=1)의 메소드를 지정하여 로그를 남기고 싶을 경우 설정한다.
+
+**해당 옵션은 성능 문제를 발생 시킬 수 있기 때문에 디버그 용도로만 사용해야 한다.**
+
+다음과 같이 설정 하면 SQL 대상이 된 클래스의 메소드가 정상적으로 추적이 되고 있는지 확인 할 수 있다. 
+
+    start
+
+참고로 [대상 클래스](./agentHelp?key=debug_class&type=1) 설정은 aries.base.profile.IProfileSQL 를 설정 했다.
+
+다음은 설정에 대한 출력되는 예제 이다.
+
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL start method start param[3] => 1=com.mysql.jdbc.StatementImpl@1b98e780, 2=1, 3=/* mysql-connector-java-5.1.6 ( Revision: ${svn.Revision} ) */SHOW VARIABLES WHERE Variable_name ='language' OR Variable_name = 'net_write_timeout' OR Variable_name = 'interactive_timeout' OR Variable_name = 'wait_timeout' OR Variable_name = 'character_set_client' OR Variable_name = 'character_set_connection' OR Variable_name = 'character_set' OR Variable_name = 'character_set_server' OR Variable_name = 'tx_isolation' OR Variable_name = 'transaction_isolation' OR Variable_name = 'character_set_results' OR Variable_name = 'timezone' OR Variable_name = 'time_zone' OR Variable_name = 'system_time_zone' OR Variable_name = 'lower_case_table_names' OR Variable_name = 'max_allowed_packet' OR Variable_name = 'net_buffer_length' OR Variable_name = 'sql_mode' OR Variable_name = 'query_cache_type' OR Variable_name = 'query_cache_size' OR Variable_name = 'init_connect', 
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL end method start
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL start method start param[3] => 1=com.mysql.jdbc.StatementImpl@b3ef702, 2=1, 3=SHOW COLLATION, 
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL end method start
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL start method start param[3] => 1=com.mysql.jdbc.StatementImpl@dc486d, 2=1, 3=SELECT USER(), 
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL end method start
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL start method start param[3] => 1=com.mysql.jdbc.StatementImpl@38f50e63, 2=1, 3=SELECT * FROM people, 
+    2015-04-24/14:31:51 [DEBUG] aries.base.profile.IProfileSQL end method start
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+    
+        start
+        end
+
+* 재시작 : 필요
+* 연관 옵션
+    * [debug_mode](./agentHelp?key=debug_mode&type=1)
+    * [debug_param](./agentHelp?key=debug_param&type=1)
+    * [debug_class](./agentHelp?key=debug_class&type=1)
+    * [ignore_debug_class](./agentHelp?key=ignore_debug_class&type=1)
+    * [ignore_debug_method](./agentHelp?key=ignore_debug_method&type=1)
+* 지원 버전 : 5.0.0

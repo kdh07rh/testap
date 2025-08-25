@@ -1,0 +1,15 @@
+This option determines whether to create a wrapper of java.sql.CallableStatement object when activating the [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) option.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)  
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_resultset](./agentHelp?key=enable_wrapper_resultset&type=1)
+* Supported version: 5.0.6

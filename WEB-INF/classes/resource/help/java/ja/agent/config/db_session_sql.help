@@ -1,0 +1,20 @@
+DBセッションIDを照会するため、該当DBに別途SQLを実行してDBセッションIDを照会して設定できるオプションです。
+
+設定は実際Connectionオブジェクトコネクション時、使用されるクラスとDBセッションIDを照会するSQLをコロン(:)で繋げて設定する。
+
+次はOracle DBの設定例です。
+
+    oracle:select SYS_CONTEXT ('USERENV','SESSIONID') sid from dual
+
+
+注意点： DBセッションID追跡機能は Connectionオブジェクトが追跡可能状態のみ機能が動作する。
+
+---
+
+* デフォルト値 : なし 
+* タイプ :文字列(DB:SQL)
+* 再起動 : 不要
+* 関連オプション
+  * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+  * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+* サポートバージョン: 5.2.2

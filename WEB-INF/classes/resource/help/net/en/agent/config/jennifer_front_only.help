@@ -1,0 +1,8 @@
+If the jennifer_front_only option is set to true, front data measured by JENNIFER Front will be sent only to front.jennifersoft.com. (Front monitoring data is not returned to the response URL.)
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.5.0

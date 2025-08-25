@@ -1,0 +1,25 @@
+This option is used to dump the number of elements of a Collection object declared to be static.
+
+To configure this option, you just need to register the field name of the collection object to be dumped.
+
+    com.example.Sample.collectionField
+
+You can check the contents dumped on the service dump screen.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        com.example.Sample.collectionField
+        com.example.StaticClass.staticCollectionField
+
+* Restart: Not required
+* Related options
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* Supported version: 5.0.0

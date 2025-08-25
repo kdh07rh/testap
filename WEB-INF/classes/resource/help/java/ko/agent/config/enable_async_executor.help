@@ -1,0 +1,12 @@
+**enable_async_executor** 옵션이 활성화 되면 이미 분석된 클래스에 대해 BCI(ByteCode Instrumentation) 작업을 수행한다. 
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [profile_reactive_cpu](./agentHelp?key=profile_reactive_cpu&type=1)
+    * [collect_reactive_elapsed_time](./agentHelp?key=collect_reactive_elapsed_time&type=1)
+* 지원 버전 : 5.6.0.12

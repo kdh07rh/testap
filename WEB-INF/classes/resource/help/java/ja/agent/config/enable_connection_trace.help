@@ -1,0 +1,13 @@
+ [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)を活性化して使用するときにjava.sql.Connectionオブジェクトを追跡するために使用するオプションです。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)  
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)
+* サポートバージョン：5.0.6

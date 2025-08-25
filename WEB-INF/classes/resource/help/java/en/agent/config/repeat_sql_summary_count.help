@@ -1,0 +1,10 @@
+ This option sets the reference value that summarizes the profile when using the [enable_repeat_sql_summary](./agentHelp?key=enable_repeat_sql_summary&type=1) option.
+
+---
+
+* Default : 100
+* Type : Number
+* Related Option
+    * [enable_repeat_sql_summary](./agentHelp?key=enable_repeat_sql_summary&type=1)
+* Restart : Not Required
+* Related Option : 5.3.3.4

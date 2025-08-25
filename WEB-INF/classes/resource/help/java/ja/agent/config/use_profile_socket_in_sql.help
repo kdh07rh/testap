@@ -1,0 +1,14 @@
+トポロジー機能を使用する際、ソケット情報をプロファイルに残すオプションです。
+
+次はプロファイルの例です。
+
+    ex) SOCKET_STREAM [127.0.0.1:8080]
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* 連関オプション
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+* サポートバージョン : 5.6.0.15

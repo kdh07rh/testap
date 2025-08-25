@@ -1,0 +1,20 @@
+This option is used to designate a class to exclude from the list of [target class] (./agentHelp?key=debug_class&type=1) operated when the [debug_mode](./agentHelp?key=debug_mode&type=1) option is activated.
+
+** As this option may cause performance problems, it should be used for debugging purposes.**
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+    
+        aries.base.profile.IProfileSQL
+        aries.control.bci.pointcut.ServicePointCut
+
+* Related options
+  * [debug_mode](./agentHelp?key=debug_mode&type=1)
+  * [debug_param](./agentHelp?key=debug_param&type=1)
+  * [debug_class](./agentHelp?key=debug_class&type=1)
+  * [debug_method](./agentHelp?key=debug_method&type=1)
+  * [ignore_debug_method](./agentHelp?key=ignore_debug_method&type=1)
+* Supported version: 5.0.0

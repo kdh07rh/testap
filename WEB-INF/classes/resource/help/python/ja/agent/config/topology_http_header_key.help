@@ -1,0 +1,13 @@
+[topology_mode](./agentHelp?type=1&key=topology_mode)が活性化されていると、HTTPヘッダでトランザクションの接続情報が転送されます。その時のHTTPヘッダキーを設定するオプションです。
+
+デフォルトのキー値は「X-J_HTTP_TUID_」に設定されていますが、同一キーを既に使用中の場合は、別の値を指定できます。
+
+---
+
+* デフォルト値：X-J_HTTP_TUID_
+* タイプ：文字列
+* サンプル値：X-CUSTOM_TOPOLOGY_ID_
+* 再起動：不要
+* 関連オプション
+    * [topology_mode](./agentHelp?key=topology_mode&type=1)
+* サポートバージョン：5.6.1.18

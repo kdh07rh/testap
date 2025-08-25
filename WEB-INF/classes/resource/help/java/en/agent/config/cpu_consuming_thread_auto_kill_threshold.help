@@ -1,0 +1,14 @@
+This option is used to set threshold limit to automatically terminate transaction thread when the CPU is used for certain period of time.
+
+The option value is in milliseconds. To use this option, the value must be greater than 0 and the [enable_cpu_consuming_thread_auto_kill] (./agentHelp? Key = enable_cpu_consuming_thread_auto_kill & type = 1) option value must be set to true.
+ 
+---
+
+* Default : 0
+* Type : Number (Millisecond)
+* Restart : Not Required
+* Related Options 
+    * [enable_cpu_consuming_thread_auto_kill](./agentHelp?key=enable_cpu_consuming_thread_auto_kill&type=1)
+* Supported Version : 5.3.2.3
+
+

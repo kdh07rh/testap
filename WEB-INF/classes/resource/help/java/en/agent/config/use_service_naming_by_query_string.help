@@ -1,0 +1,12 @@
+This option allows you to set the service name as a query string when setting the application name.
+
+The basic form is to connect the value of the service name followed by the '+' sign of the javax.servlet.http.HttpServletRequest.getQueryString () method call.
+
+     Ex) / example / serviceName + queryString
+
+---
+
+* Default: false
+* Format: Boolean
+* Restart: Not Required
+* Supported version: 5.2.2.2

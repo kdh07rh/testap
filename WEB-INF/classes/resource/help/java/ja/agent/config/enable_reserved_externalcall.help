@@ -1,0 +1,15 @@
+外部呼び出しについて、基本的に以下のクラスが登録されています。
+
+    com.ibm.ctg.client.JavaGateway
+    weblogic.wtc.gwt.TuxedoConnection
+    bea.jolt.pool.SessionPool
+    tmax.webt.WebtRemoteService
+
+デフォル登録クラスを使用しない場合、このオプションを"false"に設定します。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* サポートバージョン: 5.0.11

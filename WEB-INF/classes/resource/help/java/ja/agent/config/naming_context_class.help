@@ -1,0 +1,28 @@
+[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)オプションがtrueに設定される場合、基本的に*javax.naming.InitialContext*クラスを追跡します。
+    
+このクラスの代わりにjavax.naming.Contextインターフェースを実装して使用する場合は、該当javax.naming.Contextインターフェースの実装クラスを登録して使用するオプションです。
+
+javax.naming.Contextインターフェースを実装するクラスのみ、登録可能です。
+
+** javax.naming.Contextのlookupメソッドを追跡するため、該当インターフェースを実装しないクラスは追跡されません。**
+
+設定は詳細オプションで次のとおりに設定します。
+
+    com.soft.SampleContext
+    com.soft.RealContext
+    ...
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        com.soft.SampleContext
+        com.soft.RealContext
+
+* 再起動：必要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+* サポートバージョン：5.0.0

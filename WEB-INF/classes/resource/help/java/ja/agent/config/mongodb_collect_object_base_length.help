@@ -1,0 +1,17 @@
+MongoDBの各メソッドが呼び出されるときに転送されるオブジェクトのtoString値の長さを設定できます。
+
+収集するオブジェクトのtoString値はjsonタイプの文字列ですが、その文字列が非常に長い場合があります。
+そのため、収集する文字列の長さを50で制限されますが、このオプションを利用して収集する長さを変更することができます。
+
+0に設定すると、全文字列を収集します。
+
+---
+
+* デフォルト値 : 50
+* タイプ : 数字(Number), 長さ
+* 再起動 : 不要 
+* 関連オプション
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_elpased_time](./agentHelp?key=mongodb_collect_object_base_elpased_time&type=1)
+* サポートバージョン: 5.0.12

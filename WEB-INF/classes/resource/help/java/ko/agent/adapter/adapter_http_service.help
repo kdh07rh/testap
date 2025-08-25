@@ -1,0 +1,216 @@
+HTTP 서비스에 대한 트랜잭션 추적시 기본 추적 방법을 사용자 정의로 사용해야 할 경우 사용한다.
+
+____
+
+** 인터페이스 설명 **
+
+    package aries.runtime;
+
+    public interface IAdapterHttpService {
+        /**
+         * HHTTP 서비스를 reject 처리한다
+         * reject 설정에 의한 PLC 처리가 일반적이지만 사용자 IP나 혹은 기타 다른 입력값을 기준으로 PLC 기능을 처리하고자 할 경우에 이메소드를 사용한다.
+         * 리턴값이 true 이면 사용자 요청이 reject 된다.
+         *
+         * @param request HttpServletRequest 객체
+         * @param response HttpServletResponse 객체
+         * @param activeObjectWrapper ActiveObjectWrapper 객체
+         * @return reject 대상이 되는지를 나타낸다.
+         */
+        boolean reject(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTP 서비스 reject 시의 사용자 정의 메시지를 처리한다.
+         * rejectMessage 사용자 요청이 reject 될 때 사용자에게 메시지를 보낸다 설정에 의한 수준을 넘어서면 이메소드를 사용한다.
+         * 리턴값이 true이면 사용자에게 이미 적절한 메시지를 보냈다는 의미이다.
+         *
+         * boolean result = rejectMessage(request, response, activeObjectWrapper);
+         * 
+         * if(result == false) {
+         *     기본 메시지 처리
+         * }
+         *
+         * @param request HttpServletRequest 객체
+         * @param response HttpServletResponse 객체
+         * @param activeObjectWrapper  ActiveObjectWrapper 객체
+         * @return reject 메시지를 보냈는지 여부를 나타낸다.
+         */
+        boolean rejectMessage(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTP 서비스가 시작될 때 별도 추적 정보를 초기화할 때 사용한다.
+         *
+         * @param request HttpServletRequest 객체
+         * @param response HttpServletResponse 객체
+         * @param activeObjectWrapper ActiveObjectWrapper 객체
+         */
+        void start(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTP 서비스가 종료된 시점에서 에이전트로 추적한 정보를 검증하거나 변형하려고 할 때 사용한다.
+         *
+         * @param request HttpServletRequest 객체
+         * @param response HttpServletResponse 객체
+         * @param throwable throwable 예외가 발생했을 경우 해당 예외
+         */
+        void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable);
+
+        /**
+         * 서비스 성능 정보(XViewPoint)를 서버에 전송하기 직전에 사용된다.
+         *
+         * @param xviewPointRecordWrapper XViewPointRecordWrapper 객체
+         */
+        void interceptServicePerformance(Object xviewPointRecordWrapper);
+
+        /**
+         * 서비스 예외를 별도로 추적할 때 사용한다.
+         *
+         * @param throwable 예외가 발생했을 경우 해당 예외
+         */
+        String catchException(Throwable throwable);
+    }
+
+- - -
+
+**주요 객체의 메소드 설명**
+
+###### ActiveObjectWrapper 객체
+    public Thread getThread() : 현재 ActiveObject 의 쓰레드를 반환한다
+    public long getTxid() : 트랜잭션 아이디를 반환한다.
+    public String getGuid() : GUID 를 반환한다.
+    public void setGuid(String guid) : GUID 를 설정한다.
+    public String getUserId() : 사용자 아이디를 반환한다.
+    public void setUserId(String userId) : 사용자 아이디를 설정한다.
+    public long getWmonId() : WMONID 를 반환한다.
+    public long getStartTime() : 트랜잭션의 시작 시간을 반환한다.
+    public long getStartCpu() : 트랜잭션 시작 쓰레드의 총 CPU 시간을 반환한다.
+    public int getServiceHash() : 트랜잭션명의 해시 값을 반환한다.
+    public String getServiceName() : 트랜잭션명을 반환한다.
+    public void setServiceName(String serviceName) : 트랜잭션명을 설정한다.
+    public String getHttpQuery() : HTTP 호출시 사용된 Query 문자열을 반환한다.
+    public int getStatus() : ActiveObject 의 현재 상태를 반환한다.
+    public short getErrorTypeOrZero() : 트랜잭션 수행중 에러가 발생 했을 경우 해당 에러 값을 반환한다. 0 이면 에러가 발생하지 않았다는 걸 나타낸다.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : 트랜잭션 수행중 에러가 발생 했을 경우 에러 코드를 설정한다.
+    public byte[] getIpAddr() : IP 주소를 반환한다.
+    public int getSqlCount() : 트랜잭션에서 실행된 SQL 횟수를 반환한다.
+    public int getSqlTime() : 트랜잭션에서 실행된 SQL 시간의 합을 반환한다.
+    public int getSqlStartTime() : 실행중인 SQL 시작 시간을 반환한다.
+    public int getFetchCount() : 실행중인 Fetch 횟수를 반환한다.
+    public int getFetchTime() : 실행중인 Fetch 시간을 반환한다.
+    public String getExternalCallName() : 실행중인 외부콜 이름을 반환한다.
+    public void setExternalCallName(String externalCallName) : 실행중인 외부콜 이름을 설정한다.
+    public int getExternalCallCount() : 트랜잭션에서 실행된 외부콜 횟수를 반환한다.
+    public int getExternalCallTime() : 트랜잭션에서 실행된 외부콜 시간의 합을 반환한다.
+    public String getHttpMethod() : HTTP 메소드(GET/POST)를 반환한다.
+    public String getBrowserInfo() : 웹 브라우져를 통해 접속한 경우 브라우져 정보를 반환한다.
+    public int getRecursiveCallCount() : 트랜잭션이 재귀 호출된 횟수를 반환한다.
+    public void addProfile(PiData profile) : 트랜잭션에 프로파일을 추가한다.
+    public void pushProfile(PiData profile) : 트랜잭션에 프로파일을 추가한다.(프로파일을 서버에 전송하지 않는 상태)
+    public void popProfile(PiData profile) : 트랜잭션에 push 된 프로파일을 꺼낸다. (pop 메소드를 호출하면 프로파일을 서버에 전송한다.)
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, boolean raiseEvent) : 예외 발생시 이벤트를 발생시키거나 또는 프로파일에 추가한다. 기본 에러타입은 "METHOD_EXCEPTION" 이다.
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, short errorType, boolean raiseEvent) : 예외 발생시 이벤트를 발생시키거나 또는 프로파일에 추가한다.
+
+##### XViewPointRecordWrapper
+
+    public long getEndTime() : 트랜잭션 종료 시간을 반환한다.
+    public int getSysOid() : 에이전트 아이디를 반환하다.
+    public int getElapsedTime() : 트랜잭션 수행 시간을 반환한다.
+    public int getCpuTime() : 쓰레드의 CPU 사용 시간을 반환한다.
+    public int getSqlCount() : 트랜잭션에서 실행된 전체 SQL 횟수를 반환한다.
+    public int getSqlTime() : 트랜잭션에서 실행된 전체 SQL 시간의 합을 반환한다.
+    public int getFetchCount() : 트랜잭션에서 실행된 전체 SQL Fetch 횟수를 반환한다.
+    public int getFetchTime() : 트랜잭션에서 실행된 전체 SQL Fetch 시간의 합을 반환한다.
+    public int getExternalCallCount() : 트랜잭션에서 실행된 외부콜에 대한 횟수를 반환한다.
+    public int getExternalCallTime() : 트랜잭션에서 실행된 외부콜 시간의 합을 반환한다.
+    public int getServiceHash() : 트랜잭션명의 해시 값을 반환한다.
+    public long getTxid() : 트랜잭션 아이디를 반환한다.
+    public short getErrorTypeOrZero() : 트랜잭션 수행중 에러가 발생 했을 경우 해당 에러 값을 반환한다. 0 이면 에러가 발생하지 않았다는 걸 나타낸다.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : 트랜잭션 수행중 에러가 발생 했을 경우 에러 코드를 설정한다.
+    public byte[] getGuid() : GUID 를 반환한다.
+    public long getWmonId() : WMONID 를 반환한다.
+    public byte[] getIpAddr() : IP 주소를 반환한다.
+    public int getBrowserHash() :  웹 브라우져를 통해 접속한 경우 브라우져의 해시 정보를 반환한다.
+    public int getUserHash() : 사용자 아이디의 해시 값을 반환한다.
+
+- - -
+
+
+**설정방법**
+
+어댑터를 구현한 클래스를 jennifer.impl.XXX.jar 형태로 jennifer.jar 와 동일한 위치에 놓으면 별도의 설정 없이 해당 라이브러리를 자동으로 인식한다.
+버전관리를 위해서 jennifer.impl.custom-1.0.1.jar 와 같은 형식을 사용하면 편리하다.
+
+라이브러리 추가후 옵션에 구현한 어댑터 클래스 명을 등록하면 된다.
+
+    ex) aries.runtime.custom.SampleHttpServiceAdapterImpl
+
+**기본구현체**
+
+어댑터는 두개의 기본 구현체를 포함하고 있다.
+
+먼저 예외에 대한 StackTrace 를 반환하는 구현체가 있다. 아래 구현체는 catchException(Throwable throwable) 옵션을 구현한 어댑터이다.
+
+    aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl
+    
+다음 구현체는 세션에서 사용자 아이디를 가져와 트랜잭션에 사용자 정보를 설정해주는 어댑터이다.
+
+    aries.runtime.tracer.adapter.HttpServiceAdapterUserIdInSessionImpl
+
+- - -
+
+**유틸클래스**
+
+    aries.runtime.tracer.adapter.AbstractDefaultAdapter : 어댑터를 구현할 때 도움이되는 메소드를 포함하고 있다.
+        protected String order(String classMethod, Parameter parameter)
+            : 파라미터 클래스에 여러 파리미터가 있을 경우 순서대로 "+" 를 사용하여 연결 해준다.
+        protected String getStackTrace(Throwable throwable)
+            : 예외가 발생하면 스택을 생성해서 반환한다.
+    
+
+**예제**
+
+    public class SampleHttpServiceAdapterImpl extends AbstractDefaultAdapter implements IAdapterHttpService
+    {
+        public boolean reject(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public boolean rejectMessage(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public void start(Object request, Object response, Object activeObjectWrapper)
+        {}
+
+        public void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable)
+        {}
+
+        public void interceptServicePerformance(Object xviewPointWrapper)
+        {
+            if(xviewPointWrapper instanceof XViewPointRecordWrapper)
+            {
+                XViewPointRecordWrapper xviewPoint = (XViewPointRecordWrapper) xviewPointWrapper;
+                xviewPoint.getTxid();
+                // ...
+                // File 또는 DB 등 XView 점 데이터를 별도로 남기려고 할 경우
+            }
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            // 트랜잰셕 수행중 예외가 발생 했을 경우 스택정보를 남기고 싶을 경우. 그렇지 않을 경우에는 null 을 반환하면 된다.
+            return super.getStackTrace(throwable);
+        }
+    }
+
+---
+    
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl
+* 재시작 : 안함
+* 연관 옵션
+    * [userid_by_http_session](./agentHelp?key=userid_by_http_session&type=1)
+* 지원 버전 : 5.0.0

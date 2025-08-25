@@ -1,0 +1,11 @@
+[remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key_delimiter&type=1) 설정시 결과 값들 중에 몇 번째 값을 사용할지 지정하는 옵션이다.
+
+---
+
+* 기본값: 0
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [remote_address_header_key](./agentHelp?key=remote_address_header_key&type=1)
+    * [remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key_delimiter&type=1)
+* 지원 버전 : 5.3.0.7

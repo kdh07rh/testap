@@ -1,0 +1,10 @@
+This option allows you to stop external call profiling for library-activated types of COM +.
+
+
+---
+    
+* Default : true
+* Type : Boolean
+* Related Options
+    * [profile_externalcall_nested](./agentHelp?key=profile_externalcall_nested&type=2)
+* Supported Version : 5.3.3.3

@@ -1,0 +1,16 @@
+MongoDBの各メソッドが呼び出されるときに転送されるオブジェクトの情報収集を制限する基準応答時間を設定できます。
+
+メソッドの実行時間がこの応答時間より長いものに対してのみオブジェクト情報を収集します。
+
+0に設定すると、すべてのメソッド呼び出しに対するオブジェクト情報を収集します。
+
+---
+
+* デフォルト値 : 0
+* タイプ : 数字(Number), ミリ秒
+* 再起動 : 不要 
+* 関連オプション
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* サポートバージョン: 5.0.12

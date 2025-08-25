@@ -1,0 +1,12 @@
+トランザクションスレッドが一定時間以上 CPUを使用するとき、該当トランザクションスレッドを自動的に終了するとき、基準を設定するオプションです。
+
+オプションの値の単位はミリセカンドです。値を 0に設定時 [enable_cpu_consuming_thread_auto_kill](./agentHelp?key=enable_cpu_consuming_thread_auto_kill&type=1) オプションをtrueに適用しても機能が動作しません。
+---
+
+
+* デフォルト値 : 0
+* タイプ : 数字(Number)、ミリセカンド
+* 再起動 : 不要
+* 関連オプション
+    * [enable_cpu_consuming_thread_auto_kill](./agentHelp?key=enable_cpu_consuming_thread_auto_kill&type=1)
+* サポートバージョン : 5.3.2.3

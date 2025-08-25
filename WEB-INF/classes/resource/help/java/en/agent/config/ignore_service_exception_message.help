@@ -1,0 +1,16 @@
+When a SERVICE_EXCEPTION exception occurs in a transaction, if the string set is included in the exception message, this option processes it as a normal transaction.
+
+    java.lang.Exception: Error ...
+    ...
+
+
+When the above exception occurs, a part of the exception message is registered and is used  to process the exception normally. ("Error ...")
+
+If the option is set, SERVICE_EXCEPTION errors and events in transaction data are ignored.
+
+---
+
+* Default : none
+* Type : String
+* Restart : not required
+* Version supported : 5.3.3.12, 5.6.1.14

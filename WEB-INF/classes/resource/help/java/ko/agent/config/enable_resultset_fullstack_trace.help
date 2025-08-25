@@ -1,0 +1,11 @@
+이 옵션은 [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1) 옵션을 활성화 했을 경우 java.sql.ResultSet 객체 사용 시점에 대한 풀스택을 추출하도록 설정하는 옵션이다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관옵션
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+    * [check_resultset_unclosed](./agentHelp?key=check_resultset_unclosed&type=1)
+* 지원 버전 : 5.0.0

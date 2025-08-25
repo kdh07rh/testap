@@ -1,0 +1,25 @@
+자바 웹 애플리케이션에서 서블릿/JSP가 설정값를 초과하여 다른 서블릿/JSP를 계속 호출하면 RECURRSIVE_CALL 예외가 발생한다.
+
+서블릿/JSP 다른 서블릿/JSP를 호출한다는 것은 자바 코드 상에서 javax.servlet.RequestDispatcher 객체의 forward 혹은 include 메소드를 호출 하는 것을 의미한다.
+
+    RequestDispatcher dispatcherForward = request.getRequestDispatcher("recurrsive_forward.jsp");
+    dispatcherForward.forward(reqeust, response);
+
+    RequestDispatcher dispatcherInclude = request.getRequestDispatcher("recurrsive_include.jsp");
+    dispatcherInclude.include(reqeust, response);
+
+    <jsp:forward page="recurrsive_forward.jsp" />
+    <jsp:include page="recurrsive_include.jsp" />
+
+**주의 사항**
+RECURRSIVE_CALL 예외가 발생하면 해당 트랜잭션을 종료시킨다. 따라서 너무 작은 값을 옵션에 설정하면 서비스가 정상적으로 이루어지지 않을 수 있다.
+
+---
+
+* 기본값 : 50000
+* 형식 : 숫자
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1)
+    * [recursive_call_stacktrace_size](./agentHelp?key=recursive_call_stacktrace_size&type=1)
+* 지원 버전 : 5.0.7

@@ -1,0 +1,19 @@
+When the user initially uses a web application provided in the http://www.domain.com domain name, a wmonid cookie value is assigned.
+However, as it is not possible to read the wmonid cookie value assigned in the foregoing application even if this user accesses a web service provided in the http://sales.domain.com domain name, a new wmonid cookie value is assigned. 
+Therefore, this user is counted twice even though the access is made by the same user.
+
+Depending on the situation, it would be appropriate to distinguish by domain name even when it is physically the same user, as stated above.
+However, to identify this user as a single user, this option should be used.
+
+    .domain.com
+
+wmonid_cookie_domain option value must start with [.].
+If this option is activated, a user accessing via IP address rather than domain name does not affect the number of concurrent users and visitors.
+
+---
+
+* Default value: None
+* Type: string
+* Sample value: .domain.com
+* Restart: Not required
+* Supported version: 5.0.0

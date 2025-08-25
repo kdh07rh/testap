@@ -1,0 +1,16 @@
+アプリケーションのトランザクションを追跡するときに追跡から除外する対象を"postfix"に設定します。 主に静的(static)コンテンツを除外するときに使用します。
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列(改行を利用して複数設定が可能)
+* サンプル値
+
+        .gif
+        .js
+
+* 再起動 : 不要
+* 関連オプション
+    * [ignore_url](./agentHelp?key=ignore_url&type=2)
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=2)
+* サポートバージョン: 5.0.7

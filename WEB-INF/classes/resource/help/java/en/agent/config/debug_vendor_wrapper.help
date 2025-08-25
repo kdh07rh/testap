@@ -1,0 +1,38 @@
+This option records the class used after the actual test query is operated in the log file when the [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) option is activated to facilitate configuring the settings when using the vendor wrapper method.
+
+This option is basically required to be used with [vendor_wrapper_test_sqll](./agentHelp?type=1&key=vendor_wrapper_test_sql).
+
+The configuration example and the content recorded in the log file are as follows.
+
+    select * from tab
+
+    ...
+    2015-05-02/14:46:07 Connection get: org/apache/tomcat/dbcp/dbcp/BasicDataSource.getConnection()Ljava/sql/Connection;
+    2015-05-02/14:46:07 Connection get: org/apache/tomcat/dbcp/dbcp/BasicDataSource.getConnection(Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
+    2015-05-02/14:46:34 [DEBUG] Vendor Wrap
+    2015-05-02/14:46:34  
+    ================ super of wrapper classes ==============
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+    ...
+    ===================================================
+
+To test the vendor wrapper method, "org.apache.tomcat.dbcp.dbcp.BasicDataSource getConnection" option is configured in the [db_connection_get](./agentHelp?key=db_connection_get&type=1) option.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+    * [vendor_wrapper_test_sql](./agentHelp?key=vendor_wrapper_test_sql&type=1)  
+    * [jdbc_vendor_wrapper_supers](./agentHelp?key=jdbc_vendor_wrapper_supers&type=1) 
+* Supported version: 5.0.6

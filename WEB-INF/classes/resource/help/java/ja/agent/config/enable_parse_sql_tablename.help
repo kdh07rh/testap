@@ -1,0 +1,21 @@
+テンポラリテーブルを使用するアプリケーションで、SQLの種類が大きく生成される現象を防ぐために使用します。
+テンポラリテーブルは、テーブル名に数値が含まれますので、名前と数値を分離して収集することで、重複を最小限に抑えてSQLを追跡することができます。
+
+以下は、頻繁に使用するテンポラリテーブルの例です。 
+
+    SELECT * FROM EXAMPLE_20150101
+    SELECT * FROM EXAMPLE_20150102
+    SELECT * FROM EXAMPLE_001
+    SELECT * FROM EXAMPLE_002
+
+** テンポラリテーブルは頻繁に使用されないので、確認後には設定値をtrueに変更することをおすすめします。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_parse_sql](./agentHelp?key=enable_parse_sql&type=1)
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)    
+* サポートバージョン：5.0.0

@@ -1,0 +1,21 @@
+When this option is set to True, the information of the URL additionally configured to the DB_OPEN_CONNECTION profile collected by the agend is displayed.
+
+The URL information is included in the profile information of a transaction in the following form.
+
+DB_OPEN_CONNECTION (jdbc/oracle, jdbc:oracle:thin:@127.0.0.1:1521:xe)
+
+
+※Precautions
+
+As this information uses Connection.getMetaData(), additional information is not collected if JDBC driver does not provide the applicable information.
+
+---
+
+* Default value: false 
+* Format: Boolean 
+* Restart: Not required
+* Related options
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+* Supported version: 5.0.9

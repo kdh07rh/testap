@@ -1,0 +1,25 @@
+トランザクションのクライアントIPを特定メソッドのリターン値に設定するオプションです。
+
+設定はリターン値がある、全体メソッドのスクリプトを入力して設定する。
+(サポートするリターン値は文字列とバイト配列をサポート)
+
+次は設定例です。
+
+    org.apache.jsp.example.clientIp_jsp clientIp([B)[B
+
+
+オプションを設定して該当設定が適用されると Instrumentログに次のようなログが記録される。
+    2017-04-21/17:25:04 [I001] [BCI TransactionClientIpReturnPointCut] org.apache.jsp.example.clientIp_jsp.clientIp([B)[B
+
+
+---
+* デフォルト値 : なし
+* タイプ :  文字列
+* サンプル値
+
+        example.clientIp getClientIp([B)[B
+
+* 再起動 : 必要
+* 関連オプション
+    * [transaction_client_ip_parameter](./agentHelp?key=transaction_client_ip_parameter&type=1)
+* サポートバージョン: 5.2.2.1

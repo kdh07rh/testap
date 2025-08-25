@@ -1,0 +1,17 @@
+アクティブサービスが設定された値を超えると[JENNIFERインストールフォルダ]\service_dumpフォルダにサービスダンプが自動的に残されます。
+
+サービスダンプが残されるとログファイルで次のようなログを確認できます。
+
+    ...
+    12116,2015-07-14/02:24:02 [INFO] [JENNIFER5-EventHandler] Service dump generated. [D:\V5profiler\.\service_dump\service_dump_225_20150714_142400.txt]
+    ...
+
+---
+
+* デフォルト値 : 100
+* タイプ : 数字(Number)
+* サンプル値 : 1000
+* 再起動 : 不要
+* 関連オプション
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=2)
+* サポートバージョン: 5.0.7

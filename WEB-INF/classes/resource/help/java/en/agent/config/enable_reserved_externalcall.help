@@ -1,0 +1,15 @@
+The following classes are registered by default for external transactions identification
+
+    com.ibm.ctg.client.JavaGateway
+    weblogic.wtc.gwt.TuxedoConnection
+    bea.jolt.pool.SessionPool
+    tmax.webt.WebtRemoteService
+
+If you do not want to use the default classes, set this option to false
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Supported version : 5.0.11

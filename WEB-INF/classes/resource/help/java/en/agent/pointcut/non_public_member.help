@@ -1,0 +1,15 @@
+This option converts a member variable or method access constraint which is not public among the classes subject to BCI (ByteCode Instrumentation) into public.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        example.ExamplePrivateClass.filedName
+        example.ExampleProtectedClass.methodName
+
+* Restart: Required
+* Related options
+    * [non_public_class](./agentHelp?key=non_public_class&type=1)
+* Supported version: 5.0.0

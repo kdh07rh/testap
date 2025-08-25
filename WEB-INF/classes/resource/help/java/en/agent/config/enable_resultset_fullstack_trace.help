@@ -1,0 +1,11 @@
+This option is used to extract the full stack of the time when the java.sql.ResultSet object is used, when the [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1) option is activated.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+    * [check_resultset_unclosed](./agentHelp?key=check_resultset_unclosed&type=1)
+* Supported version: 5.0.0

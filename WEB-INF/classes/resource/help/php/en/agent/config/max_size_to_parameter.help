@@ -1,0 +1,10 @@
+This option sets the maximum number of parameters to collect when collecting SQL parameters.
+
+---
+
+* Default : 1000
+* Type : Number
+* Restart : Not Required
+* Related Options
+    * [enable_collect_sql_param](./agentHelp?key=enable_collect_sql_param&type=3)
+* Supported Version : 5.6.2.8

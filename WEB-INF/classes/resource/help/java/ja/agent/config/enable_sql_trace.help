@@ -1,0 +1,32 @@
+JDBCおよびSQLのモニタリング可否を決定します。
+このオプションをfalseに設定すると、JDBCおよびSQL関連モニタリングは停止されます。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_wrapper_context_jdbc_trace](./agentHelp?key=enable_wrapper_context_jdbc_trace&type=1)
+    * [debug_connection_open](./agentHelp?key=debug_connection_open&type=1)
+    * [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [profile_ignore_connection](./agentHelp?key=profile_ignore_connection&type=1)
+    * [rollback_uncommited_close](./agentHelp?key=rollback_uncommited_close&type=1)
+    * [ignore_rollback_uncommited_error](./agentHelp?key=ignore_rollback_uncommited_error&type=1)
+    * [auto_connection_close](./agentHelp?key=auto_connection_close&type=1)
+    * [auto_statement_close](./agentHelp?key=auto_statement_close&type=1)
+    * [auto_preparedstatement_close](./agentHelp?key=auto_preparedstatement_close&type=1)
+    * [auto_callablestatement_close](./agentHelp?key=auto_callablestatement_close&type=1)
+    * [auto_resultset_close](./agentHelp?key=auto_resultset_close&type=1)
+    * [check_connection_unclosed](./agentHelp?key=check_connection_unclosed&type=1)
+    * [check_statement_unclosed](./agentHelp?key=check_statement_unclosed&type=1)
+    * [check_preparedstatement_unclosed](./agentHelp?key=check_preparedstatement_unclosed&type=1)
+    * [check_callablestatement_unclosed](./agentHelp?key=check_callablestatement_unclosed&type=1)
+    * [check_resultset_unclosed](./agentHelp?key=check_resultset_unclosed&type=1)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=1)
+    * [min_sql_time_to_collect_parameter](./agentHelp?key=min_sql_time_to_collect_parameter&type=1)
+    * [min_sql_time_to_collect](./agentHelp?key=min_sql_time_to_collect&type=1)
+    * [min_sql_fetch_time_to_collect](./agentHelp?key=min_sql_fetch_time_to_collect&type=1)
+* サポートバージョン：5.0.0

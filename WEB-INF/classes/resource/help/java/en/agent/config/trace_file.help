@@ -1,0 +1,10 @@
+This option is used for file tracking.
+
+If this option is enabled, it starts tracking all files accessed through FileInputStream and FileOutputStream.
+
+---
+
+  * Default : true
+  * Type : Boolean
+  * Restart : not required
+  * Vesion supported : 5.0.0

@@ -1,0 +1,11 @@
+[enable_opentelemetry](./agentHelp?key=enable_opentelemetry&type=1)オプションを活性化してOpenTelemetryデータを収集する際に設定するポート番号です。
+
+---
+
+* デフォルト値 : 0
+* タイプ : 数字(Number)
+* 再起動 : 必要
+* 連関オプション
+    * [server_address](./agentHelp?key=server_address&type=1)
+    * [enable_opentelemetry](./agentHelp?key=enable_opentelemetry&type=1)
+* サポートバージョン : 5.6.1.16, 5.6.2

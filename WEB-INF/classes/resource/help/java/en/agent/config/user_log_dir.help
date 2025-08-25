@@ -1,0 +1,10 @@
+You can view text files in the paths added to the option in the live log view.
+
+This option is added to view WAS logs in real time.
+
+---
+
+* Default : None
+* Format: String
+* Restart: Never
+* Supported versions: 5.6.2.5

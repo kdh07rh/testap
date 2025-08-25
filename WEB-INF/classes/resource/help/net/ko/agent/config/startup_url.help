@@ -1,0 +1,13 @@
+설정한 URL로 [startup_duration](./agentHelp?type=2&key=startup_duration) 옵션에 설정한 주기에 맞춰 요청을 발생시킨다.
+
+보통 IIS에서 호스팅하는 웹 애플리케이션의 경우 20분 동안 요청이 없으면 w3wp.exe 프로세스가 자동 종료하게 되고 이로 인해 제니퍼 콘솔 화면에서 해당 에이전트가 STOPPED로 표시된다. 이런 상황에서 항상 웹 애플리케이션을 실행 상태로 두고 싶을 때 startup_url을 설정해 두면 제니퍼 닷넷 에이전트 제품 설치 시 함께 등록되는 AriesService NT 서비스가 startup_url 설정을 읽어들여 요청을 전송한다.
+
+---
+
+* 기본값 : null
+* 형식 : 문자열
+* 샘플값 : http://localhost:9000/defatul.aspx
+* 재시작 : 안함
+* 연관 옵션
+  * [startup_duration](./agentHelp?type=2&key=startup_duration)
+* 지원 버전 : 5.6.1.4

@@ -1,0 +1,19 @@
+**[enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)** 또는 **[enable_profile_spring_batch](./agentHelp?key=enable_profile_spring_batch&type=1)** 옵션이 활성화되어 있을 때만 동작하는 옵션이다.
+
+옵션이 활성화되면 Spring Batch 프로파일에 대한 CPU 정보를 수집한다.
+
+기본적으로 CPU 정보를 수집하는 데는 리소스가 사용되기 때문에 성능상에 이슈가 있는 경우에는 옵션을 비활성화해서 사용하면 된다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_profile_spring_batch](./agentHelp?key=enable_profile_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* 지원 버전 : 5.5.3

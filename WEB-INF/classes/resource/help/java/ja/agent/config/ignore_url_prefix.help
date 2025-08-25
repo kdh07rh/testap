@@ -1,0 +1,16 @@
+アプリケーションのトランザクションを追跡するとき、追跡対象から除外する対象を「prefix」で指定します。設定値から始まるトランザクションはモニタリングしません。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        /user
+        /event
+
+* 再起動：不要
+* 関連オプション
+    * [ignore_url](./agentHelp?key=ignore_url&type=1)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=1)
+* サポートバージョン：5.0.0

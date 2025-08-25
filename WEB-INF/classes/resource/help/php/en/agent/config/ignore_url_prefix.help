@@ -1,0 +1,16 @@
+This option sets the items to be excluded from tracking targets when tracking the transactions of an application to "prefix".
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        /user
+        /event
+
+* Restart: Not required
+* Related options
+    * [ignore_url](./agentHelp?key=ignore_url&type=3)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=3)
+* Supported version: 5.0.0

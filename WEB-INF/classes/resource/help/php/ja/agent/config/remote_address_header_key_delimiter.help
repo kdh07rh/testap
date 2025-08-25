@@ -1,0 +1,12 @@
+remote addressをHTTP Headerを利用して設定するときHeader値が複数表示される場合、区分子を指定して分離することができるオプションです。
+
+    ex) X-Forwarded-For:192.168.0.1, 192.168.0.99
+
+---
+* デフォルト値 : なし
+* タイプ : 文字列
+* 再起動 : 不要
+* 関連オプション
+    * [remote_address_header_key](./agentHelp?key=remote_address_header_key&type=3)
+    * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=3)
+* サポートバージョン : 5.3.1.1

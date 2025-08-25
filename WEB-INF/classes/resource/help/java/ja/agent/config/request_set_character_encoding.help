@@ -1,0 +1,22 @@
+Apache Tomcatのように、Webアプリケーションサーバの多言語サポートが不十分な環境では、HttpServletRequestのgetParameterメソッドが多言語(例:日本語)をサポートしないので、サブレット2.3からは、HttpServletRequestのsetCharacterEncodingメソッドで多言語に関する設定を行います。
+
+ただ、 [http_post_request_tracking_list](./agentHelp?type=1&key=http_post_request_tracking_list) または [url_additional_request_keys](./agentHelp?type=1&key=url_additional_request_keys)プロパティを使用すると、モニタリング対象アプリケーション側でHTTP ServletRequestのsetCharacterEncodingメソッドが呼ばれる前に エージェントのHttpServletRequestのgetParameterメソッドが先に呼ばれるため、多言語が正常に処理できない可能性があります。
+
+上記の問題を解決するため、このプロパティを設定すると、エージェントが最初からsetCharacterEncodingメソッドを呼出しします。
+
+    UTF-8
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル値：UTF-8
+* 再起動：不要
+* 関連オプション
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [url_additional_request_keys](./agentHelp?key=url_additional_request_keys&type=1) 
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=1) 
+    * [http_post_request_tracking_list](./agentHelp?key=http_post_request_tracking_list&type=1)
+    * [service_naming_by_http_header](./agentHelp?key=service_naming_by_http_header&type=1)
+    * [user_by_http_header](./agentHelp?key=user_by_http_header&type=1)
+* サポートバージョン：5.0.0

@@ -1,0 +1,10 @@
+Option configured to enable interoperation with Sherpa Oracle, a DB monitoring solution.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+* Supported version: 5.0.10

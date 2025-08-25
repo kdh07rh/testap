@@ -1,0 +1,13 @@
+K8S環境ではinst名を利用してインスタンスを区別できないので、host名を利用してインスタンスを区別するために使います。
+
+ex) otel_service_name_source = host_name
+
+---例)
+
+* デフォルト値 : inst_name
+* 形式 : 文字列
+* サンプル値
+    inst_name
+    host_name
+* 再起動 : 必要
+* サポートバージョン : 5.6.2.15, 5.6.3.1

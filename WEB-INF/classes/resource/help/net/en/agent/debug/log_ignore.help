@@ -1,0 +1,19 @@
+The contents left in the log file are classified into INFO, DEBUG and ERROR, and this option specifies the category to exclude. For example, the values of INFO, DEBUG, ERROR are integers, as follows:
+ 
+  INFO = 1
+  DEBUG = 2
+  ERROR = 3
+ 
+ and if the log_ignore value is set to 3,
+ 
+  log_ignore = 3
+ 
+ all the logs subject to the Error grade will be excluded henceforth.
+ 
+ ---
+  
+ * Default value: None
+ * Type: Numeric
+ * Sample value: 3
+ * Restart: Not required
+ * Supported version: 5.0.7

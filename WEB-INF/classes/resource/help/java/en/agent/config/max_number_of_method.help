@@ -1,0 +1,17 @@
+This option is the number with which the method name is transmitted to the data server and the hash information of the applicable method is cached when the BCI(ByteCode Instrumentation) operation for the method is performed.
+
+When the cache data exceeds the set value the hash of the method entering earlier is deleted in a FIFO (First In First Out) method, and when the CBI operation is performed again, the name of the applicable method is re-sent.
+
+Generally, as the BCI operation is not performed several times on a single method, this value does not need to cover the entire method number.
+
+---
+
+* Default value: 30000
+* Type: Number
+* Sample value: 50000
+* Restart: Required
+* Related options
+    * [max_number_of_text](./agentHelp?key=max_number_of_text&type=1)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=1)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=1)
+* Supported version: 5.0.0

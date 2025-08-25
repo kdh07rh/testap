@@ -1,0 +1,159 @@
+{
+  "domainBar": {
+    "type": "domain",
+    "multidomain": false,
+    "multiinstance": false,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+  "charts": [
+    {
+      "charttype": "vue.heatmap.sfr",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "pkey": "realtime_sfr_heatmap",
+      "i18nTitle": "ui.label.stacktrace",
+      "origin": {
+        "startx": 0,
+        "starty": 56.666666666666664,
+        "endx": 33.333333333333336,
+        "endy": 78.33333333333333
+      }
+    },
+    {
+      "charttype": "vue.heatmap.problem",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "domainBarMulti": false,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "pkey": "realtime_problem_heatmap",
+      "i18nTitle": "word.realtimeProblemList",
+      "origin": {
+        "startx": 66.66666666666667,
+        "starty": 10,
+        "endx": 100,
+        "endy": 33.333333333333336
+      }
+    },
+    {
+      "charttype": "xview.dashboard",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "ui.label.charttype.xview",
+      "viewpoint": "elapsedTime",
+      "origin": {
+        "startx": 66.66666666666667,
+        "starty": 56.666666666666664,
+        "endx": 100,
+        "endy": 100
+      }
+    },
+    {
+      "averageMetrics": "elapsedTimeAverage",
+      "charttype": "vue.treemap.app",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "word.applicationWeight",
+      "origin": {
+        "startx": 33.333333333333336,
+        "starty": 56.666666666666664,
+        "endx": 66.66666666666667,
+        "endy": 100
+      }
+    },
+    {
+      "charttype": "vue.active.bubble",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "word.activeServiceDist",
+      "origin": {
+        "startx": 0,
+        "starty": 10,
+        "endx": 33.333333333333336,
+        "endy": 56.666666666666664
+      }
+    },
+    {
+      "charttype": "line.confidence.runtime",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "metrics": "MxDef.concurrent_user",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.REALTIME_LINE_SINGLE",
+      "i18nTitle": "ui.mx.concurrent_user",
+      "origin": {
+        "startx": 66.66666666666667,
+        "starty": 33.333333333333336,
+        "endx": 100,
+        "endy": 56.666666666666664
+      }
+    },
+    {
+      "charttype": "speedhorizon",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "",
+      "origin": {
+        "startx": 0,
+        "starty": 0,
+        "endx": 100,
+        "endy": 10
+      }
+    },
+    {
+      "charttype": "line.runtime",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "metrics": "MxDef.service_rate",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.REALTIME_LINE_SINGLE",
+      "i18nTitle": "ui.mx.service_rate",
+      "origin": {
+        "startx": 33.333333333333336,
+        "starty": 10,
+        "endx": 66.66666666666667,
+        "endy": 33.333333333333336
+      }
+    },
+    {
+      "charttype": "column.daily",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "metrics": "MxDef.service_count",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.STANDARD_HOUR_SINGLE",
+      "i18nTitle": "ui.label.hit.hourly",
+      "origin": {
+        "startx": 0,
+        "starty": 78.33333333333333,
+        "endx": 33.333333333333336,
+        "endy": 100
+      }
+    },
+    {
+      "charttype": "line.confidence.runtime",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "metrics": "MxDef.service_time",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.REALTIME_LINE_SINGLE",
+      "i18nTitle": "ui.mx.service_time",
+      "origin": {
+        "startx": 33.333333333333336,
+        "starty": 33.333333333333336,
+        "endx": 66.66666666666667,
+        "endy": 56.666666666666664
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+This option is used to detect not present application or resources.
+
+The default value is false.
+
+The following information is displayed in the agent log
+
+     2016-02-15 / 11: 49: 58 [DEBUG] [I001] BCI implementation class of HttpServletResponse: org.apache.catalina.connector.ResponseFacade
+    
+---
+
+* Default: false
+* Type: Boolean
+* Restart: required
+* Supported Version: 5.0.13

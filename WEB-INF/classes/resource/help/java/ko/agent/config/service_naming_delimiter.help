@@ -1,0 +1,22 @@
+애플리케이션 이름에 추가 작업을 할 때 연결 문자로 '+' 값을 사용하는데 이 부분을 변경할 수 있는 옵션이다. 
+
+    ex) /index.jsp -> /inex.jsp+login
+
+위의 경우 옵션값을 '_' 으로 설정하면 다음과 같이 변경된다.
+
+    ex) /index.jsp -> /inex.jsp_login
+
+---
+
+* 기본값 : +
+* 형식 : 문자
+* 샘플값
+  
+        -
+        =
+
+* 재시작 : 안함
+* 연관옵션
+    * [append_service_naming_by_http_header](./agentHelp?key=append_service_naming_by_http_header&type=2)
+    * [service_append_naming_use_first_execute](./agentHelp?key=service_append_naming_use_first_execute&type=2)
+* 지원 버전 : 5.6.3.3

@@ -1,0 +1,12 @@
+This option designates the maximum size of a class file to perform the BCI (ByteCode Instrumentation) operation. If the set value is larger than the class size, BCI operation is not performed.
+
+---
+
+* Default value: 1048576
+* Type: Number, Byte
+* Sample value: 1000000
+* Restart: Required
+* Related options
+    * [bci_method_min_size](./agentHelp?key=bci_method_min_size&type=1)
+    * [bci_method_max_size](./agentHelp?key=bci_method_max_size&type=1)
+* Supported version: 5.0.0

@@ -1,0 +1,32 @@
+By default, in the web application, the request URL becomes the name of the application service. However, due to the development of the application framework, there are more cases in which the application service is not classified by the URL alone.
+ 
+ In such a case, you can configure the application service name using the request parameter.
+ 
+  key1
+  key2
+ 
+ In the aforementioned case, the name of the application service is determined using the parameter value returned by the following code.
+ 
+  request.Params["key1"];
+  request.Params["key2"];
+ 
+ For example, the name of the application service of a specific request is determined as follows.
+ 
+  http://127.0.0.1:8080/app.aspx?key1=a&key2=b => /app.aspx+(key1=a&key2=b)
+  http://127.0.0.1:8080/app.aspx?key1=a => /app.aspx+(key1=a)
+  http://127.0.0.1:8080/app.aspx?key1=a&key2= => /app.aspx+(key1=a)
+  http://127.0.0.1:8080/app.aspx => /app.aspx
+ 
+ If the length of the parameter exceeds 80 characters, only 80 characters from the start are accepted.
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string
+ * Sample value
+ 
+  parameter1
+  parameter2
+ 
+ * Restart: Not required
+ * Supported version: 5.0.7

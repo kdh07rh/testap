@@ -1,0 +1,160 @@
+Used when configuring additional settings for the service naming.
+
+    package aries.runtime;
+
+    public interface IAdapterServiceName {
+        /**
+        *
+        * Extracts the service name from the web. Some special servers such as URL or portal set to RESTful often use an atypical URL. 
+        * Ignored when the return value is null.
+        *
+        * @param request HttpServletRequest Object
+        * @return Service name
+        */
+        public String getHttpServiceName(Object request);
+        
+        /**
+        *
+        * Extracts the Standalone service name. Used when determining the service name based on the method parameter.
+        *
+        *
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return Service name
+        */
+        public String getServiceName(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Used when determining the service name using the class name or parameter.
+        * 
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return Service name
+        */
+        public String changeServiceName(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+        *
+        * Used when determining the service name using the class name or return value.
+        *
+        * @param classMethod  Class + Method name
+        * @param returnValue Method return value
+        * @return Service name
+        */
+        public String changeServiceName(String classMethod, Object returnValue);
+
+        /**
+        *
+        * The default implementation is performed by passing the full descriptor over the append information, which additionally configures the designated value behind 
+        * the already configured service name using a '+' symbol. Used to change this content.
+        *
+        * @param name  The service name that already has been set
+        * @param append  The value to be added to the service name
+        * @return Service name
+        */
+        public String appendServiceName(String name, String append);
+
+        /**
+        *
+        * Basically the same as appendServiceName(String name, String append); parameter information is also handed over.
+        *
+        * @param name  The service name that already has been set
+        * @param append  The value to be added to the service name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return Service name
+        */
+        public String appendServiceName(String name, String append, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Basically the same as appendServiceName(String name, String append); the return value is also handed over.
+        *
+        * @param name  The service name that already has been set
+        * @param append  The value to be added to the service name
+        * @param returnValue Method return value
+        * @return Service name
+        */
+        public String appendServiceName(String name, String append, Object returnValue);
+    }
+
+- - -
+
+**Method Description of the main object**
+
+ ###### ParameterWrapper Description
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+- - - 
+
+** How to configure **
+
+When the class implementing the adapter in the format of jennifer.impl.XXX.jar is placed at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar facilitates version control.
+
+    aries.runtime.custom.SampleServiceName
+
+- - - 
+
+**Sample Implementation**
+
+    public class SampleServiceName extends AbstractDefaultAdapter implements IAdapterServiceName
+    {
+        public String getHttpServiceName(Object request)
+        {
+            if (request != null && request instanceof HttpServletRequest)
+            {
+                return ((HttpServletRequest) request).getRequestURI();
+            }
+
+            return null;
+        }
+
+        public String getServiceName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeServiceName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeServiceName(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+
+        public String appendServiceName(String name, String append)
+        {
+            return name + '+' + append;
+        }
+
+        public String appendServiceName(String name, String append, ParameterWrapper parameterWrapper)
+        {
+            return name + '+' + order(append, parameterWrapper);
+        }
+
+        public String appendServiceName(String name, String append, Object returnValue)
+        {
+            return name + '+' + returnValue;
+        }
+    }
+
+
+---
+
+* Default value: None
+* Type: string
+* Sample Value : aries.runtime.custom.SampleServiceName
+* Restart: Not required
+* Supported version: 5.0.0

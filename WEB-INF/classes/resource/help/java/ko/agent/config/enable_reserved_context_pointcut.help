@@ -1,0 +1,12 @@
+기본으로 javax.naming.Context 인터페이스를 구현한 javax.naming.InitialContext에 대해서 BCI(ByteCode Instrumentation) 작업을 수행하는데
+이 기본 동작을 수행하지 않고 특정 Context 를 등록해서 사용하려고 하는 경우 옵션값을 "false" 로 설정한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+    * [naming_context_class](./agentHelp?key=naming_context_class&type=1)
+* 지원 버전 : 5.0.10

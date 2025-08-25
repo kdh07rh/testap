@@ -1,0 +1,15 @@
+基本的にHTTPを利用したトポロジーを連結する際、HTTP Headerを利用してデータを転送します。
+
+トポロジー連結以外にGUIDで連結する場合、[guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)に設定されたキーでHTTP HeaderにGUIDを追加して設定するオプションです。
+
+このオプションはGUID値がないときは動作しません。
+
+---
+
+* デフォルト値：true
+* タイプ：Boolean
+* 再起動：不要
+* 連関オプション：
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* サポートバージョン: 5.3.2.12, 5.4.2.2, 5.4.3

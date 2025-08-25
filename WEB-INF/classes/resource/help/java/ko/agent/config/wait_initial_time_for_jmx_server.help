@@ -1,0 +1,11 @@
+에이전트는 JMX(Connection Pool)모니터링을 활성화 하기 위해 JMX 서비스 초기화 시점을 기다리는데, 이 옵션으로 JMX 서비스 초기화 wait 시간을 설정할 수 있다. 
+이 옵션에 지정된 값 이상 기다렸음에도 JMX 서비스가 초기화 되지 않았다면 JMX(Connnection Pool) 모니터링이 비활성화되며, 다음 로그가 에이전트 로그에 기록된다.
+
+    [I012] JMX Connection pool list not found.
+
+--- 
+
+* 기본값 : 60000
+* 형식 : 숫자(Number), 밀리세컨드
+* 재시작 : 안함
+* 지원 버전 : 5.1.2

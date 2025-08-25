@@ -1,0 +1,14 @@
+This option is used if you want to collect automatic stack trace information at the same time as the transaction starts.
+It can help you find the cause of the application's initial delay or gap in the application's ending quickly.
+Select and register the target application names that you want to monitor to reduce the performance impact of all transactions.
+
+If the transaction's rename has been applied, you will need to set the collect_original_service_naming advanced option to register the name of the application that is output to the profile.
+
+---
+
+* Default : None
+* Type : String(multiple settings can be set using line breaks)
+* Restart : Not Required
+* Related Options
+    * [collect_original_service_naming](./agentHelp?key=collect_original_service_naming&type=1)
+* Supported Version : 5.4.1

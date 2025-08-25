@@ -1,0 +1,12 @@
+長時間処理が遅れているトランザクションを終了させたいとき、その閾値を指定するオプションです。
+
+値の単位はミリ秒であり、値を0に設定するとき、enable_long_running_thread_auto_killオプションをtrueに設定しても機能が動作しません。
+
+---
+
+* デフォルト値 : 0
+* タイプ : 数字(Number), ミリ秒
+* 再起動 : 不要
+* 関連オプション
+    * [enable_long_running_thread_auto_kill](./agentHelp?key=enable_long_running_thread_auto_kill&type=1)
+* サポートバージョン: 5.0.12

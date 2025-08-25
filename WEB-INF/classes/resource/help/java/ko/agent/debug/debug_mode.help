@@ -1,0 +1,39 @@
+이 옵션은 에이전트에서 BCI(ByteCode Instrumentation) 작업과 관련된 클래스들의 메소드가 정상적으로 실행 되는지 여부를 기록 하는 옵션이다.
+클래스의 객체를 생성 할 때 java.lang.reflect.Proxy 를 이용하여 메소드의 시작과 종료에 대한 로그를 기록 한다.
+
+[debug_dump](./agentHelp?key=debug_dump&type=1) 옵션을 통해 생성되는 대상은 [debug_class](./agentHelp?key=debug_class&type=1) 옵션을 참고 하면 된다.
+
+**해당 옵션은 성능 문제를 발생 시킬 수 있기 때문에 디버그 용도로만 사용해야 한다.**
+
+다음은 옵션이 활성화 했을 경우 출력되는 예제 이다.
+
+    2015-04-23/15:01:48 Agent Enable : true
+    2015-04-23/15:01:48 Agent Base Version 5.0.7.2
+    2015-04-23/15:01:48 Agent Implementation Version 5.0.7.2
+    2015-04-23/15:01:48 Data Server address : 127.0.0.1
+    2015-04-23/15:01:48 Data Server port : 5000
+    2015-04-23/15:01:48 Domain ID : 1000
+    2015-04-23/15:01:48 Instance ID : 1
+    ...
+    2015-04-23/15:01:48 debug mode : true
+    ...
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.SqlPointCutMain start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.SqlPointCutMain end method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ConnectionPointCut start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ConnectionPointCut end method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ContextPointCut start method refresh
+    2015-04-23/15:00:43 [DEBUG] aries.control.bci.pointcut.ContextPointCut end method refresh
+    ...
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [debug_param](./agentHelp?key=debug_param&type=1)
+    * [debug_class](./agentHelp?key=debug_class&type=1)
+    * [debug_method](./agentHelp?key=debug_method&type=1)
+    * [ignore_debug_class](./agentHelp?key=ignore_debug_class&type=1)
+    * [ignore_debug_method](./agentHelp?key=ignore_debug_method&type=1)
+* 지원 버전 : 5.0.0

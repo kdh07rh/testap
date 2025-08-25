@@ -1,0 +1,8 @@
+URI 외부 트랜잭션 콜을 EXTERNAL_CALL로 수집할 때 URI 원본을 수집할지 설정한다. 
+이 값이 false라면 URI의 HOST만을 수집한다.
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.3.3.1

@@ -1,0 +1,9 @@
+Specifies the number of threads handling transmission to the data server.
+ 
+ ---
+  
+ * Default value: 1
+ * Type: Numeric
+ * Sample value: 2
+ * Restart: Required
+ * Supported version: 5.0.7

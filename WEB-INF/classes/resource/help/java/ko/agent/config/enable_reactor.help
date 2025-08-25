@@ -1,0 +1,15 @@
+**enable_reactor** 옵션이 활성화 되어 있을 경우 Reactor 관련 라이브러리 모니터링을 위해 이미 분석된 클래스에 대해 BCI(ByteCode Instrumentation) 작업을 수행한다.
+
+Reactor 관련 모니터링을 하고 싶지 않을 경우 옵션을 비활성화 한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [profile_reactive_cpu](./agentHelp?key=profile_reactive_cpu&type=1)
+    * [collect_reactive_elapsed_time](./agentHelp?key=collect_reactive_elapsed_time&type=1)
+    * [enable_async_executor](./agentHelp?key=enable_async_executor&type=1)
+* 지원 버전 : 5.5.3

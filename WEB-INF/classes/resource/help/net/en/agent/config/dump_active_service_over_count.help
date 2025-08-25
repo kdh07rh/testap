@@ -1,0 +1,15 @@
+The number of active services is collected every second, and a service dump is left when the number of times that the number of active services exceeds the value set in [dump_active_service](./agentHelp?key=dump_active_service&type=2) is equal to or larger than the value set in this option.
+ 
+ In other words, if the value of this option is 3, a service dump is left when the number of active services collected for 3 seconds (active service collection interval (1 second) * [dump_active_service_over_count]) is equal to or larger than the value set in the [dump_active_service](./agentHelp?key=dump_active_service&type=2).
+ 
+ For reference, if only the default value is used, a service dump is left only when the number of active services exceeds 100 for 3 seconds.
+ When the number of active services goes below 100 for 3 seconds, the time is counted again from the beginning.
+ 
+ ---
+ 
+ * Default value: 3
+ * Type: Number
+ * Restart: Not required
+ * Related options
+  * [dump_active_service](./agentHelp?key=dump_active_service&type=2)
+ * Supported version: 5.0.7

@@ -1,0 +1,22 @@
+このオプションは[object_leak_checker_close](./agentHelp?key=object_leak_checker_close&type=1)オプションとペアで特定オブジェクトのメソッドの実行可否を把握するオプションです。
+
+二つオプションを利用してリソースのリークを追跡するとき使用可能です。チェック範囲はトランザクション範囲内のみサポートして最大10個まで設定できます。
+
+例えば、DB Connection関連Connectionを取得するメソッドを設定すると設定されたメソッドが実行されるときOPENプロファイルを記録します。
+
+以降、トランザクションが終わるとき[object_leak_checker_close](./agentHelp?key=object_leak_checker_close&type=1)オプションを設定してないか設定した場合も実際設定されたメソッドが実行されない場合USER_DEFINED_LEAKエラーが発生してリークを予防することができます。
+
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列(改行を利用して複数設定可能)
+* アンプル値
+
+    A:package.SampleA method()Ljava/lang/String;
+    B:package.SampleB method()Ljava/lang/String;
+
+* 関連オプション
+    * [object_leak_checker_close](./agentHelp?key=object_leak_checker_close&type=1)
+* 再起動 : 必要
+* サポートバージョン : 5.3.3.4

@@ -1,0 +1,11 @@
+Automatically performs profiling on methods and functions whose operation time exceeds the profile_function_exceed_time. It is necessary to set the profile_function_exceed_time in units of 1/1,000 second. If this value is -1, the automatic profiling function is not activated. However, the function from which an error occurs and the call tree node of the applicable function is not collected as profile_function_exceed_time. If the profile is explicitly profiled using profile_target, the applicable function is displayed as a call tree node.
+
+If the value is set to 10, methods and functions over 10ms are automatically profiled.
+
+---
+
+* Default value: -1
+* Type: Number
+* Sample value: 300
+* Restart: Not required
+* Supported version: 5.0.0

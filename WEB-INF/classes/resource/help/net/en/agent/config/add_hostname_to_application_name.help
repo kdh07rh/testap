@@ -1,0 +1,8 @@
+When this value is set to True, HTTP Header/HOST is added to the application name. For example, assuming that www.example.com/index.aspx is called, if the value is set to false, the application name becomes index.aspx. If set to True, the name becomes example.com/index.aspx.  
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.6.1.4

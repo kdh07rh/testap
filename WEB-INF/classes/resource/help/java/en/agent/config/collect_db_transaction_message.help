@@ -1,0 +1,8 @@
+This option is not to collect DB AUTO_COMMIT_FALSE, COMMIT, and ROLLBACK profiles..
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart: Not required
+* Version supported : 5.5.2

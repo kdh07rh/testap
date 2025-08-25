@@ -1,0 +1,19 @@
+When the active service exceeds the set value, a service dump is left in the directory set in the [service_dump_dir](./agentHelp?key=service_dump_dir&type=3).
+
+You can see the following log in the log file when a service dump is left. 
+
+    ...
+    2015-07-02/10:19:28 INFO--Agent 25099: [ServiceDumpWorker] Service dump generated. [ /usr/local/jennifer5-release//servicedump/service_dump_10000_2015-07-02_10:19:21.txt]
+    ...
+
+---
+
+* Default value: 100
+* Type: Number
+* Sample value: 1000
+* Restart: Not required
+* Related options
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=3)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=3)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=3)
+* Supported version: 5.0.0

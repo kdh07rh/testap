@@ -1,0 +1,12 @@
+This is an option for HttpClient support added in JDK11.
+
+To use this option, you must add the "--add-opens=java.net.http/jdk.internal.net.http=ALL-UNNAMED" option via JAVA_OPTS to enable it.
+
+HttpClient supports synchronous send and asynchronous sendAsync methods, and supports topology connections when using the synchronous (send) method, but when using the asynchronous (sendAsync) method, it only gets the execution time.
+
+---.
+
+* Default : false
+* Format : Boolean
+* Restart: required
+* Supported versions: 5.6.3.5

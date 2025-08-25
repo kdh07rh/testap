@@ -1,0 +1,10 @@
+This option is avaiable only if you imported the CPU data using JNI on AIX envrionment
+
+If this option is set to true, it gets the physical CPU data. False result in logical CPU data
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart: Not Required
+* Supported Version : 5.0.14.3

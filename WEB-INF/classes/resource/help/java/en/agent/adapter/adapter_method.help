@@ -1,0 +1,101 @@
+Called when tracking the method performance or error.
+
+** Interface Description **
+
+    package aries.runtime;
+
+    public interface IAdapterMethod {
+        /**
+        * 
+        * Tracks the parameter of a method. Used when combining parameters and adding a single value to a profile.
+        *
+        * @param fullDescriptor Entier method description
+        * @param parameterWrapper  Method paramter wrapper class information
+        * @return The value of the parameter of the method.
+        */
+        public String captureParam(String fullDescriptor, Parameter param);
+
+        /**
+        *
+        * Used when tracking the return value of a method.
+        * 
+        * @param fullDescriptor Entier method description
+        * @param returnValue Method return value
+        * @return Returns the return value of the method
+        */
+        public String captureReturn(String fullDescriptor, Object rtn);
+
+        /**
+        *
+        * Used when tracking a method error.
+        * @param throwable The exception, if an exception occurs during method execution  
+        * @return Returns exception messages or profiles to record the event.
+        */
+        public String catchException(Throwable throwable);
+    }
+
+- - -
+
+**Method Description of the main object**
+
+###### ParameterWrapper Description
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+
+- - -
+
+** How to configure **
+
+When the class implementing the adapter in the format of jennifer.impl.XXX.jar is placed at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar enables version control.
+
+    aries.runtime.custom.SampleMethod
+    
+
+** Default Implementation **
+
+Contains the default implementation entity which returns a StackTrace for an exception. The following class is an adapter which implements the catchException(Throwable throwable) option.
+
+    aries.runtime.tracer.adapter.MethodAdapterCatchErrorImpl
+
+- - - 
+
+**Sample Implementation**
+
+     public class SampleMethod extends AbstractDefaultAdapter implements IAdapterMethod
+    {
+        public String captureParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+    
+        public String captureReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return (returnValue == null) ? null: returnValue.toString();
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            return null;
+        }
+    }
+
+---
+
+* Default value: None
+* Type: string
+* Sample Value : aries.runtime.custom.SampleMethod
+* Restart: Not required
+* Related options
+    * [enable_method_exception_event](./agentHelp?key=enable_method_exception_event&type=1)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=1)
+* Supported version: 5.0.0

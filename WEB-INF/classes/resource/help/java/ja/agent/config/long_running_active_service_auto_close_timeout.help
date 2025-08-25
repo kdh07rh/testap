@@ -1,0 +1,16 @@
+Reactorモニタリング中、このオプションに指定した時間より長く実行されているアクティブサービスを自動で終了させます。
+
+Reactorの実装パターンによって、実際トランザクションは終了してもアクティブサービスには残ってしまう場合があります。
+そのとき、このオプションを設定してアクティブサービスを終了させます。
+
+
+---
+
+* デフォルト値 : 0
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [enable_reactor](./agentHelp?key=enable_reactor&type=1)
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [enable_async_servlet](./agentHelp?key=enable_async_servlet&type=1)
+* サポートバージョン : 5.5.2.7, 5.5.6

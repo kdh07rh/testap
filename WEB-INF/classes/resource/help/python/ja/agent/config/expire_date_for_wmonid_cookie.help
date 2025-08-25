@@ -1,0 +1,13 @@
+エージェントが発行するWMONIDクッキーの有効期間を設定するオプションです。
+WMONIDクッキーは基本365日間維持されますが、このオプションでその有効期間を変更できます。
+セキュリティ上WMONIDクッキーをブラウザのセッションに限って有効にしたい場合、オプション値を-1に設定します。既にWMONIDクッキーが 発行されている場合は、 発行されているクッキーを削除する必要があります。
+
+---
+
+* デフォルト値 : 365
+* タイプ : 数字(Number), 日
+* 再起動 : 不要
+* 関連オプション
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=1)
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=1)
+* サポートバージョン: 5.6.0.23

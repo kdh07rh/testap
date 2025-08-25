@@ -1,0 +1,8 @@
+PHP 에이전트는 아파치 PHP 모듈의 외부 확장(extension)으로 동작한다. 
+PHP 에이전트 PHP 확장이 로드되기 위해 php.ini에 jenniferAgent.agent_file_root 와 
+extension를 설정해야 한다. 
+
+####예시
+
+extension=/usr/local/jennifer-php/bin/jennifer5-php-5.4.x-ZTS.so
+jenniferAgent.agent_file_root=/usr/local/jennifer-php

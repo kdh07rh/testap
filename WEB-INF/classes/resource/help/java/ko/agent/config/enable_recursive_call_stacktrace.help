@@ -1,0 +1,63 @@
+[recurrsive_call_max_count](./agentHelp?key=recurrsive_call_max_count&type=1) 옵션을 사용하여 RECURRSIVE_CALL 예외의 원인을 파악하기 위해 스택을 남기는 옵션이다.
+
+옵션을 true 로 설정하면 이벤트에 스택정보가 추가 되고 에이전트 로그 파일에 메시지 코드 *B010* 으로 시작하는 관련 스택을 기록한다.
+
+다음은 로그 파일에 출력되는 예제이다.
+
+    [B010] Recurrsive Call Stack Trace (ERRRCS)
+    at aries.runtime.tracer.c.a.startService(Unknown Source)
+    at aries.base.profile.ProfileService.startService(ProfileService.java:41)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+    at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:487)
+    at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:412)
+    at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:339)
+    at org.apache.jasper.runtime.PageContextImpl.doForward(PageContextImpl.java:746)
+    at org.apache.jasper.runtime.PageContextImpl.forward(PageContextImpl.java:716)
+    at org.apache.jsp.example.recurrsive_005ffrom_jsp._jspService(recurrsive_005ffrom_jsp.java:73)
+    at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:108)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+    at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+    at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+    at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+    at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+    at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+    at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+    at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+    at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+    at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+    at java.lang.Thread.run(Thread.java:745)
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+  * [recurrsive_call_max_count](./agentHelp?key=recurrsive_call_max_count&type=1)
+  * [recursive_call_stacktrace_size](./agentHelp?key=recursive_call_stacktrace_size&type=1)
+* 지원 버전 : 5.0.7

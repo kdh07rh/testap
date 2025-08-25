@@ -1,0 +1,16 @@
+트랜잭션의 최대 프로파일 수집 및 저장 개수를 설정한다.
+
+이 값이 1000이면 트랜잭션당 프로파일 수집 수는 1000개를 초과할 수 없다.
+
+**[profile_max_size](./agentHelp?key=profile_max_size&type=1)** 옵션과 다른 점은 SQL과, ExternalCall 프로파일이 이 옵션에 포함되었다.
+
+File 관련 프로파일 데이터는 항상 수집된다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_max_size](./agentHelp?key=profile_max_size&type=1)
+* 지원 버전 : 5.5.2.6

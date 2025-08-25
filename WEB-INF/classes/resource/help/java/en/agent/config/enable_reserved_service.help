@@ -1,0 +1,37 @@
+In general web application, the following basic starting point are automatically registered
+
+    javax.servlet.http.HttpServlet
+    allaire.jrun.jsp.HttpJSPServlet
+    jrun.jsp.runtime.HttpJSPServlet
+    com.caucho.jsp.JavaPage
+    weblogic.servlet.jsp.JspBase
+    com.evermind.server.http.JSPServlet
+    org.apache.jasper.servlet.JspServlet
+
+Once the class is loaded and initialized, the Runtime Module is initiated
+
+You can see similar log information like follow
+
+    ...
+    2015-09-11/14:09:06 [I001] Load runtime module : /home/agent.java/agent.impl-5.0.11.jar;/home/agent.java/agent.impl.jdk16-1.0.1.jar
+    2015-09-11/14:09:06 [I001] Load ClassLoader : agent.base.AgentClassLoader@5b3fb1ab, org.apache.catalina.loader.StandardClassLoader@117bcd8f
+    2015-09-11/14:09:06 [I002] RT Class redefine java.io.FileOutputStream
+    2015-09-11/14:09:06 [I002] RT Class redefine java.net.Socket
+    2015-09-11/14:09:06 [I002] RT Class redefine java.lang.Thread
+    2015-09-11/14:09:06 [I001] Agent Runtime Module initialized
+    2015-09-11/14:09:06 [I005] CPU : loaded the procstat(14454) 
+    2015-09-11/14:09:07 [I006] Memory : loaded the procstat(14454) 
+    ...
+    2015-09-11/14:09:07 [I001] Agent Runtime Module loading complete... 
+    ...
+
+If the Runtime Module is not initialized, then you must set start point using the Management Screen
+
+---
+
+* Default value : true
+* Type : Boolean
+* Restart : Required
+* Related options
+    * [enable_reserved_externalcall_for_http](./agentHelp?key=enable_reserved_externalcall_for_http&type=1)
+* Supported version : 5.0.11

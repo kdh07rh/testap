@@ -1,0 +1,17 @@
+プロファイル対象メソッドのリターンが配列の場合、その配列の値を表示します。
+配列のサイズが大きすぎると収集されるテキストデータの量も大きくなるので、データの確認後オプションの値をfalseに変更することをお勧めします。
+オプションをtrueに設定した場合は、プロファイルのRETURN情報が次のとおりに表示されます。
+
+  
+    [0004][14:37:26 303][    0][     ] RETURN [
+    type=Object[], size=3
+    1:type=String, value=hello
+    2:type=String, value=world
+    3:type=String, value=aries
+    ] java.lang.Object[] org.apache.jsp.methodtest_jsp.pleaseMakeIt(String,String,Object[])
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン : 5.0.14

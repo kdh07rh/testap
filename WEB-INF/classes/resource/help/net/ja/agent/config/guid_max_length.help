@@ -1,0 +1,10 @@
+GUID収集数する際、GUIDの最大長さを指定します。
+
+---
+
+* デフォルト値 : -1
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* サポートバージョン : 5.5.0.9

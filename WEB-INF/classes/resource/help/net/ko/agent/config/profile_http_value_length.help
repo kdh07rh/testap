@@ -1,0 +1,17 @@
+이 옵션은 HTTP Header 또는 HTTP Request Parameter를 추적할 때 값의 최대 길이를 설정한다. 설정된 값을 넘으면 "..." 말줄임표로 대체한다.
+
+설정값이 넘을 경우 프로파일 정보에서 확인할 수 있는 예제이다.
+
+     HTTP-HEAD: user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb...; Cookie=WMONID=GaGYw_l9V81; org.springframework....
+
+---
+
+* 기본값 : 40
+* 형식 : 숫자(Number)
+* 샘플값 : 1000
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_http_header_all](./agentHelp?key=profile_http_header_all&type=2)
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=2)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=2)
+* 지원 버전 : 5.0.7

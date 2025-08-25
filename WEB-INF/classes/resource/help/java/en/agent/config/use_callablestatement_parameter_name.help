@@ -1,0 +1,28 @@
+When using JDBC CallableStatement, this option can be used to support parameter setting when using string instead of index.
+
+By default, parameter tracing only tracks when using the index, and if you use the string key, you also track it.
+
+Here is a list of additional method signatures that are tracked.
+
+    SetNull (Ljava / lang / String; I) V
+    SetByte (Ljava / lang / String; B) V
+    SetBoolean (Ljava / lang / String; Z) V
+    SetShort (Ljava / lang / String; S) V
+    SetInt (Ljava / lang / String; I) V
+    SetFloat (Ljava / lang / String; F) V
+    SetLong (Ljava / lang / String; J) V
+    SetDouble (Ljava / lang / String; D) V
+    SetBigDecimal (Ljava / lang / String; Ljava / math / BigDecimal;) V
+    SetObject (Ljava / lang / String; Ljava / lang / Object;) V
+    SetString (Ljava / lang / String; Ljava / lang / String;) V
+    SetDate (Ljava / lang / String; Ljava / sql / Date;) V
+    SetTime (Ljava / lang / String; Ljava / sql / Time;) V
+    SetTimestamp (Ljava / lang / String; Ljava / sql / Timestamp;) V
+    SetURL (Ljava / lang / String; Ljava / net / URL;) V
+
+---
+
+* Default: false
+* Format: Boolean
+* Restart Required
+* Supported version: 5.2.3

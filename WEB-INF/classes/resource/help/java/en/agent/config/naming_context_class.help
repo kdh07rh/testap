@@ -1,0 +1,28 @@
+If [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) option is set to true, tracking of *javax.naming.InitialContext* class is commenced by default. 
+    
+When implementing a javax.naming.Context interface separately, rather than using this class, this option is used to register the class implementing the javax.naming.Context.
+
+Only classes implementing the javax.naming.Context interface are configured here.
+
+** As tracking is performed on the lookup method of javax.naming.Context, a class not implementing the interface is not tracked. **
+
+Settings can be configured as follows through the advanced options.
+
+    com.soft.SampleContext
+    com.soft.RealContext
+    ...
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        com.soft.SampleContext
+        com.soft.RealContext
+
+* Restart: Required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+* Supported version: 5.0.0

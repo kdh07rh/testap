@@ -1,0 +1,10 @@
+This option can be used to set SQL execution time threshold that will be used to collect profile only when SQL execution time exceeds the value specified in this option
+    
+---
+
+* Default : 0
+* Type : Number, millisecond
+* Restart : Not Required
+* Related Options
+  * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* Supported Version : 5.6.1.20

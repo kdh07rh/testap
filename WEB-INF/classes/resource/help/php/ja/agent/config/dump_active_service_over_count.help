@@ -1,0 +1,15 @@
+アクティブサービス数は秒単位にデータを収集しますが、アクティブサービス数が[dump_active_service](./agentHelp?key=dump_active_service&type=3)に設定された値を超える回数が、このオプションに設定された値、以上の場合はサービスダンプを残します。
+
+即ち、このオプション値が3の場合、3秒（アクティブサービス収集間隔（秒）*dump_active_service_over_count)間[dump_active_service](./agentHelp?key=dump_active_service_over_count&type=3)）に設定した値以上になるとサービスダンプが残されます。
+
+参考に、デフォルト値が使用されている場合、アクティブサービス数が3秒間100以上になった場合にサービスダンプが残されます。アクティブサービス数が3秒以内に100未満となったとき、また最初から時間をチェックします。
+
+---
+
+* デフォルト値：3
+* タイプ：数字(Number)
+* 再起動：不要
+* 関連オプション
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=3)
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=3)
+* サポートバージョン：5.0.0

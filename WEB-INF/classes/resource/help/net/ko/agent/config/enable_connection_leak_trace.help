@@ -1,0 +1,8 @@
+이 옵션은 ADO.NET Connection 객체의 누수를 추적하여 "DB_CONNECTION_UNCLOSED" 이벤트를 발생할지 여부를 설정한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.0.7

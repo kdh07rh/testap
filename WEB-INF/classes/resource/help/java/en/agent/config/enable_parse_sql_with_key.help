@@ -1,0 +1,24 @@
+This option supports the variable binding method using a key when running the SQL with a specific framework.
+In the actual execution, the key value is converted into "?" using java.sql.PreparedStatement to run the SQL.
+
+An example of using an SQL is as follows.
+
+    INSERT INTO table VALUES (:ID, :NAME...) 
+    SELECT * FROM table WHERE ID = :ID AND NAME = :NAME 
+
+Such SQL syntax is a method which is not stated in the basic JDBC specifications. As a method of converting, ":KEY => ?" is used in the framework when actually executing an SQL,
+and you can check what is converted through the profile.
+
+When this option is enabled, this key is parsed to make it executable on the screen through the SQL builder.
+
+    As this method is not used by default in the JAVA environment, the default value is set to false.
+    When this value is set to true, SQL parsing is performed once again, so it is necessary to check it again before using this option if the case is performance sensitive.
+
+---
+
+* Default value: false
+* Format: Boolean 
+* Restart: Not required 
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* Supported version: 5.0.9.1

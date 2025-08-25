@@ -1,0 +1,34 @@
+[dump_mode](./agentHelp?key=dump_mode&type=1) 활성화 시에 클래스의 바이트 코드를 저장하기 위한 디렉토리를 지정한다. 
+
+옵션 설정여부는 에이전트 로그 파일에 dump dir부분을 확인하면 된다. 
+
+    2015-04-27/11:20:22 Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 debug mode : false
+    2015-04-27/11:20:22 dump mode : true
+    2015-04-27/11:20:22 dump dir : /home/agent.java/class_dump
+    ...
+
+기본값은 상대 경로로 "../logs/class_dump"로 설정되어 있는데 에이전트의 구분을 위해 설정된 값에 도메인 아이디와 인스턴스 아이디가 추가로 붙어서 디렉토리가 생성된다.
+
+최종적으로 생성되는 디렉토리 정보는 다음과 같다.
+
+    /home/agent.java/class_dump_8000_1
+
+---
+
+* 기본값 : ../logs/class_dump
+* 형식 : 문자열
+* 샘플값 : /var/log/class_dump
+* 재시작 : 안함
+* 연관 옵션
+    * [dump_mode](./agentHelp?key=dump_mode&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+    * [dump_class](./agentHelp?key=dump_class&type=1)
+* 지원 버전 : 5.0.0

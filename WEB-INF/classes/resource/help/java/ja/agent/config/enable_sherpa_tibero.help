@@ -1,0 +1,11 @@
+Sherpaと連動のためのオプションです。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* 連関オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [sql_elapsed_time_for_sherpa](./agentHelp?key=sql_elapsed_time_for_sherpa&type=1)
+* サポートバージョン : 5.6.1.13

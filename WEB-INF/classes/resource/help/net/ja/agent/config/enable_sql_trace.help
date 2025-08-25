@@ -1,0 +1,13 @@
+DB接続およびSQLクエリに対するモニタリング可否を設定します。
+このオプションをfalseに設定すると、すべてのDB接続およびSQLの設定が非活性化されます。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=2)
+    * [sql_fetch_warning_count](./agentHelp?key=sql_fetch_warning_count&type=2)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=2)
+* サポートバージョン：5.2.2.1

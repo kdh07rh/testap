@@ -1,0 +1,20 @@
+[url_additional_request_keys](./agentHelp?type=1&key=url_additional_request_keys) オプションが設定された場合、ignore_url_post_request_parsing_prefixオプションに指定された名前で始まるURIについて[url_additional_request_keys](./agentHelp?type=1&key=url_additional_request_keys)の設定を無視するオプションです。
+
+    /kesa.web
+    /insa/x_servlet
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        /sample.web
+        /examples/sample
+
+* 再起動：不要
+* 関連オプション
+    * [url_additional_request_keys](./agentHelp?key=url_additional_request_keys&type=1)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=1) 
+    * [http_post_request_tracking_list](./agentHelp?key=http_post_request_tracking_list&type=1) 
+* サポートバージョン：5.0.0

@@ -1,0 +1,9 @@
+This option is used to collect SQL fetch time. 
+If this option value is set to "false", the SQL fetch time will not be collected
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not Required
+* Supported Versions : 5.4.0.2

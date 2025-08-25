@@ -1,0 +1,26 @@
+[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) 옵션을 활성화 하면 javax.naming.InitialContext로 부터 javax.sql.DataSource가 lookup되면 SQL을 추적하지만, 그 이외에 아래 예제 처럼 다른 javax.naming.Context를 구현한 객체를 이용하여 javax.sql.DataSource를 lookup하면 기본 옵션 상태에서 SQL추적이 되지 않는다.
+
+이럴 경우 해당 옵션을 true 로 설정 해야 한다.
+
+    javax.naming.Context jndiContext = new javax.naming.InitialContext();
+    javax.naming.Context jdbcContext = (javax.naming.Context) jndiContext.lookup(“java:comp/env/jdbc”);
+    javax.sql.DataSource dataSource = (javax.sql.DataSource) jdbcContext.lookup(“SampleDS”);
+    java.sql.Connection connection = dataSource.getConnection();
+
+
+이 옵션을 true로 설정하면 EJB를 사용하는 경우에 java.lang.ClassCastException이 발생할 수 있다. 이런 경우는 [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) 을 비활성화하고 다른 방법을 이용해 JDBC 및 SQL 을 추적해야 한다.
+
+이미 알려진 드라이버의 Connection들은 등록되어 있어서 별다른 설정 없이 동작하지만 사용자 정의 Connection 이거나 미처 등록되지 못한 Connection 클래스들은 [db_connection_get](./agentHelp?key=db_connection_get&type=1) 옵션을 사용해서 해당 Connection 클래스를 등록해주면 정상 동작한다. 
+
+주의 할 점으로 JDBC 커넥션을 추적하는 경우에 트랜잭션을 처리하는 자바 쓰레드가 다른 자바 쓰레드를 만들어서 JDBC 처리를 하면 해당 자바 쓰레드가 작업한 JDBC 내용이 모니터링되지 않는다. 이 경우 [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1) 옵션을 true로 설정하여 사용해야 한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+    * [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1)
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1) 
+* 지원 버전 : 5.0.0

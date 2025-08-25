@@ -1,0 +1,8 @@
+Collects the user browser information using the **user-agent** header in the HTTP Request Header.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.0

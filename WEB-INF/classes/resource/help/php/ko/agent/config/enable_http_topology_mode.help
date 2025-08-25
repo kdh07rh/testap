@@ -1,0 +1,11 @@
+HTTP 토폴로지 모드를 활성화 하면 file, file_get_contents로 수행한 HTTP 외부 트랜잭션을 추적하여 대시보드와 XView 에 관련 정보를 보여 주며, 토폴로지 뷰에 연결 정보를 표시한다. 
+이 옵션은 HTTP 요청시 HTTP 헤더에 DOMAIN_ID, AGENT_ID, 그리고 topology 키를 삽입한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 없음
+* 연관 옵션
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=3)
+* 지원 버전 : 5.0.6

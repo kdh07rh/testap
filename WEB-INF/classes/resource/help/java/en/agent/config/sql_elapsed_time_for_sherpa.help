@@ -1,0 +1,13 @@
+This option is set to link SQL with a certain execution time with Sherpa, a DB monitoring solution.
+
+Only SQL that exceeds the set value is interlocked.
+
+---
+
+* Default : 1000
+* Type : Number
+* Restart : not required
+* Option related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+* Version supported : 5.6.1.13

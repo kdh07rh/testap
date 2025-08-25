@@ -1,0 +1,9 @@
+Determines whether to perform profiling on a .NET remoting call.
+ 
+ ---
+  
+ * Default value: false
+ * Type: Boolean
+ * Sample value: false
+ * Restart: Required
+ * Supported version: 5.0.7

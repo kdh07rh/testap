@@ -1,0 +1,8 @@
+It's set when users need to get GC heap memory from .NET Core 2.2 or higher. (Basically, GC heap memory is not collected in all environments of .NET Core.)
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Supported version : 5.5.3.5

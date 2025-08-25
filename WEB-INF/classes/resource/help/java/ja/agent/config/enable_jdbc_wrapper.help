@@ -1,0 +1,19 @@
+基本的に、[enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)オプションでJDBC情報（SQL）を収集するときには、把握済みのクラスをBCI（ByteCode Instrumentation）する方法ですが、この方法ではなく、別途コネクションまたはコネクションプールを使用する環境で、Wrapper方法でJDBC情報を追跡する場合は、このオプションを使用します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+    * [enable_statement_trace](./agentHelp?key=enable_statement_trace&type=1)  
+    * [enable_preparedstatement_trace](./agentHelp?key=enable_preparedstatement_trace&type=1)
+    * [enable_callablestatement_trace](./agentHelp?key=enable_callablestatement_trace&type=1)  
+    * [enable_resultset_trace](./agentHelp?key=enable_resultset_trace&type=1)
+    * [auto_connection_close](./agentHelp?key=auto_connection_close&type=1)
+    * [auto_statement_close](./agentHelp?key=auto_statement_close&type=1)
+    * [auto_preparedstatement_close](./agentHelp?key=auto_preparedstatement_close&type=1)
+    * [auto_callablestatement_close](./agentHelp?key=auto_callablestatement_close&type=1)
+    * [auto_resultset_close](./agentHelp?key=auto_resultset_close&type=1)
+* サポートバージョン：5.0.6

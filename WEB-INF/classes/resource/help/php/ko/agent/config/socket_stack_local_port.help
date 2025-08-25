@@ -1,0 +1,11 @@
+이 옵션은 소켓이 생성될 때 설정된 로컬 포트가 열리면 스택을 생성한다.
+
+생성된 스택은 분석화면 -> 소켓을 통해 확인 할 수 있다.
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 샘플값 : 32000
+* 재시작 : 안함
+* 연관 옵션
+    * [socket_stack_remote_port](./agentHelp?key=socket_stack_remote_port&type=3)
+* 지원 버전 : 5.0.0

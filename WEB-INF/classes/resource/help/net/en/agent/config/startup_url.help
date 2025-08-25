@@ -1,0 +1,14 @@
+A  request is generated according to the period set in the [startup_duration](./agentHelp?type=2&key=startup_duration) option to specified URL
+Usually, in the case of a web application hosted by IIS, the w3wp.exe process automatically terminates if there is no request for 20 minutes.
+As a result, the agent is displayed as STOPPED on the JENNIFER console screen.
+In this situation, if you want to keep the web application running all the time, set startup_url. The AriesService NT service, which is registered together when the JENNIFER .NET agent is installed, reads the startup_url setting and sends a request.
+
+---
+
+* Default : null
+* Type : String
+* Sample Value : http://localhost:9000/defatul.aspx
+* Restart : None
+* Related option
+  * [startup_duration](./agentHelp?type=2&key=startup_duration)
+* Supported version : 5.6.1.4

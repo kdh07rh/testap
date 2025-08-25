@@ -1,0 +1,179 @@
+"Collected when performing profiling on the performance of external transactions called.
+
+** Interface Description **
+
+    package aries.runtime;
+
+    public interface IAdapterExternalCall {
+        /**
+        *
+        * Used to correct the default naming settings of an external transaction. Basically, when there is a class name and a parameter, 
+        * the first parameter is connected with : '+'
+        *
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return ExternalCall name
+        */
+        String getName(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        * Designates the type of an external transaction other than those that are already registered. The default value is set to CUSTOM.
+        *
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return ExternalCall type.
+        */
+        byte getType(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Used to change the default naming based on the parameter.
+        *
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return ExternalCall name
+        */
+        String changeNameByParameter(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Used to change the default naming based on the return value.
+        *
+        * @param classMethod  Class + Method name
+        * @param returnValue Method return value
+        * @return ExternalCall name
+        */
+        String changeNameByReturn(String classMethod, Object returnValue);
+
+        /**
+        *
+        * The default implementation is performed by passing the full descriptor over the append information, which additionally configures the designated value 
+        * behind the already configured service name using a '+' symbol. Used to change this content.
+        * 
+        * @param name  ExternalCall name that has already been set
+        * @param append  The value to be added to the external call name
+        * @return ExternalCall name
+        */        
+        String appendName(String name, String append);
+
+        /**
+        *
+        * Basically same as appendName (String name, String append) and parameter information is additionally handed over.
+        *
+        * @param name  ExternalCall name that has already been set
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return ExternalCall name
+        */        
+        String appendNameByParameter(String name, String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Basically same as appendName (String name, String append) and the return value is additionally handed over.
+        *
+        * @param name  ExternalCall name that has already been set
+        * @param classMethod  Class + Method name
+        * @param returnValue Method return value
+        * @return ExternalCall name
+        */ 
+        String appendNameByReturn(String name, String classMethod, Object returnValue);
+
+        /**
+        *
+        * Used when intending to add processing of exceptions generated while performing an external transaction. toString() value is used as the default value to 
+        * show exceptions to the user.
+        *
+        * @param returnValue Method return value
+        * @param stat Profile method information
+        * @param throwable Returns exception, if an exception occurs during method execution
+        */
+        String catchException(Object returnValue, Object stat, Throwable throwable);
+    }
+
+
+- - -
+
+**Method Description of the main object**
+
+ ###### ParameterWrapper Description
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+- - -
+
+** How to configure **
+
+When placing the class implementing the adapter in the format of jennifer.impl.XXX.jar at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar facilitates the version control.
+
+    ex) aries.runtime.custom.SampleExternalCall
+
+- - -
+
+**Sample Implementation**
+
+public class SampleExternalCall extends AbstractDefaultAdapter implements IAdapterExternalCall
+    {
+        public String getName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            if (parameterWrapper != null && parameterWrapper.getParameter().getFirstString() != null)
+            {
+                return classMethod + '+' + parameterWrapper.getParameter().getFirstString();
+            }
+
+            return classMethod;
+        }
+
+        public String changeNameByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeNameByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return removeDummyText(classMethod, BCI_TYPE.EXTERNAL_CALL_NAMING_RETURN.getType());
+        }
+
+        public String appendName(String name, String append)
+        {
+            return name + '+' + append;
+        }
+
+        public String appendNameByParameter(String name, String append, ParameterWrapper parameterWrapper)
+        {
+            return name + '+' + order(append, parameterWrapper);
+        }
+
+        public String appendNameByReturn(String name, String append, Object returnValue)
+        {
+            return name + '+' + returnValue;
+        }
+
+        public String catchException(Object rtn, Object stat, Throwable throwable)
+        {
+            return null;
+        }
+
+        public byte getType(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return RemoteCallTypeDef.CUSTOM;
+        }
+
+
+---
+
+* Default value: None
+* Type: string
+* Sample Value : aries.runtime.custom.SampleExternalCall
+* Restart: Not required
+* Related options
+    * [enable_externalcall_exception_event](./agentHelp?key=enable_externalcall_exception_event&type=1)
+* Supported version: 5.0.0"

@@ -1,0 +1,9 @@
+이 값이 true일때 HTTP Method를 애플리케이션 이름 앞에 추가한다.
+예를 들어 HTTP Method가 GET이고 애플리케이션 이름이 /test.php일 경우 [GET]/test.php로 애플리케이션 이름이 설정된다.
+
+---
+
+* 기본값: false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.0.15

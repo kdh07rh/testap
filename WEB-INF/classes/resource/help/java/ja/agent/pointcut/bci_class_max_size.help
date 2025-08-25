@@ -1,0 +1,12 @@
+BCI(ByteCode Instrumentation）対象クラスファイルの最大サイズを指定します。設定値がクラスサイズよりも大きい場合、BCI操作を実行しません。
+
+---
+
+* デフォルト値：1048576
+* タイプ：数字(Number)、バイト
+* サンプル値：1000000
+* 再起動：必要
+* 関連オプション
+    * [bci_method_min_size](./agentHelp?key=bci_method_min_size&type=1)
+    * [bci_method_max_size](./agentHelp?key=bci_method_max_size&type=1)
+* サポートバージョン：5.0.0

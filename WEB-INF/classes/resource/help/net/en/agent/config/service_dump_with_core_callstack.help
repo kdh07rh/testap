@@ -1,0 +1,13 @@
+The .NET Core 3/5+ environment operates asynchronously, so you cannot get the call stack. Instead, if you set this option to true, you can use the same tool, such as dotnet-dump, to include the call stack of all running applications in the service dump.
+
+It's important to note that obtaining the call stack with this option temporarily halts the application's runtime. In most cases, this will be for a few tens milliseconds to tens of seconds, which you can see in the logs left in the service dump file as "# snapshot: ...".
+
+(This option is not supported for .NET Core 1.0 through 3.0 environments)
+
+---]
+
+* Default value: false
+* Format: Boolean
+* Sample Value: true
+* Restart: never
+* Supported Version : 5.6.2.18

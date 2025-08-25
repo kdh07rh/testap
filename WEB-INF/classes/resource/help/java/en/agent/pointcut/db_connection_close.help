@@ -1,0 +1,17 @@
+Designates the the method used when the application returns the DB connection from the DB connection pool.
+
+When configuring this method, the [enable_sql_pointcut](./agentHelp?type=1&key=enable_sql_pointcut) option should be set to false (to prevent redundant tracking).
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        db.DBManager closeConnection
+        db.DBConnectionManager releaseConnection
+
+* Restart: Required
+* Related options
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1)
+* Supported version: 5.0.0

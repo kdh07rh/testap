@@ -1,0 +1,24 @@
+MongoDBプロファイリングする場合に設定するオプションです。
+
+デフォルト値はtrueであり、MongoDBドライバーが認識できるとモニタリングを開始します。プロファイルのタイプはRDBのDBドライバーとほぼ同じです。
+
+次は収集されたプロファイルの例です。
+
+    [0014][13:34:28 170][   15][  240] SQL-EXECUTE [24 ms]
+                                       MONGODB-INSERT(test.testCollection)
+
+    [0015][13:34:28 195][   25][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database1" , "count" : 1}
+    [0016][13:34:28 195][    0][  263] SQL-EXECUTE [1 ms]
+                                       MONGODB-INSERT(test.testCollection)
+
+    [0017][13:34:28 196][    1][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database2" , "count" : 2}
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean 
+* 再起動 : 不要
+* 関連オプション
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* サポートバージョン: 5.6.2.11

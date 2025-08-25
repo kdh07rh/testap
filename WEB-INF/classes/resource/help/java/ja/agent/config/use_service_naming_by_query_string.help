@@ -1,0 +1,11 @@
+アプリケーション名を設定する際にクエリストリングでサービス名を設定するオプションです。
+設定方法はサービス名の後尾にjavax.servlet.http.HttpServletRequest.getQueryString()メソッドのパラメータを'+'文字を使用し追加します。
+
+    ex) /example/serviceName+queryString
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン : 5.2.2.2

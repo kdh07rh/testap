@@ -1,0 +1,8 @@
+이 값이 true일때 $_SERVER['SERVER_HOST']를 애플리케이션 이름에 추가한다. 예를 들어 www.example.com/index.php가 호출 되었다고 가정 했을때 이 설정 값이 false이면 애플리케이션 이름은 index.php가 된다. true이면 example.com/index.php가 된다.  
+
+---
+
+* 기본값: false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.0.6

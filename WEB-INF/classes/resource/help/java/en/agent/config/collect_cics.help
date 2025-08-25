@@ -1,0 +1,8 @@
+This is for CICS connection
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Version supported : 5.5.2

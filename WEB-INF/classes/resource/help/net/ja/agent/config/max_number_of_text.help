@@ -1,0 +1,23 @@
+エージェントで収集されたテキストをデータサーバに転送してそのテキストのハッシュ情報がキャッシュされる数字です。 別途にテキストのハッシュをキャッシュする理由は、データサーバに同じテキストに対して再転送を防ぐためです。
+
+キャッシュデータが設定値を超えるとFIFO(First In First Out)方式で先に入ったテキストのハッシュが削除されます。
+
+max_number_of_textオプションにより、キャッシュされるテキスト種類は次のとおりです。
+
+*アプリケーション名
+*外部呼出し(ExternalCall)名
+*エラー情報
+*ブラウザ情報
+*スレッド名
+
+---
+
+* デフォルト値 : 20000
+* タイプ : 数字 (Number)
+* サンプル値 : 30000
+* 再起動 : 必要
+* 関連オプション
+    * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+* サポートバージョン: 5.0.7

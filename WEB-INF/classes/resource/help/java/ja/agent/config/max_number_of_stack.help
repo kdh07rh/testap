@@ -1,0 +1,15 @@
+エージェントが収集したステックをデータサーバへ送信し、該当ステックのハッシュ情報がキャッシュされる数字です。別途ステックのハッシュをキャッシュする理由は、データサーバへの同一ステックの再転送を防ぐためです。
+
+キャッシュデータが設定値を超えた場合、、FIFO（First In First Out）方式で先入れしたステックのハッシュが削除されます。
+
+---
+
+* デフォルト値：30000
+* タイプ：数字(Number)
+* サンプル値：50000
+* 再起動：必要
+* 関連オプション
+    * [max_number_of_method](./agentHelp?key=max_number_of_method&type=1)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=1)
+    * [max_number_of_text](./agentHelp?key=max_number_of_text&type=1)
+* サポートバージョン：5.0.0

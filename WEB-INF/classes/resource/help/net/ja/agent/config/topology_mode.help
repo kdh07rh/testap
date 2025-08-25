@@ -1,0 +1,10 @@
+トポロジーモードを活性化すると、WCF、SOAP、HTTP呼び出しについてトランザクションを追跡してトポロジーのダッシュボードとX-Viewにトポロジー情報を示します。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=2)
+* サポートバージョン: 5.0.8

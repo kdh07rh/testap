@@ -1,0 +1,18 @@
+When a SQL_EXCEPTION exception occurs in a transaction, this options processes as normal SQL when a specific string is included in the exception message.
+
+The following is an example of SQLException.
+
+    java.sql.SQLException: JDBC-0000: Error ...
+    ...
+
+
+When the above exception occurs, the exception message("JDBC-0000" or "Error ...") can registerto handle exception as normal message. 
+
+If the option is set, SQL_EXCEPTION errors and events in transaction data are ignored.
+
+---
+
+* Default : No
+* Type : String
+* Restart: Not required
+* Version supported : 5.4.3.9, 5.5.2

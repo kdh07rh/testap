@@ -1,0 +1,19 @@
+HTTPヘッダまたはHTTPリクエストパラメータを追跡するときに、対象値の最大長さを設定します。
+設定値を超えた場合、省略符号「...」で表示されます。
+
+以下は設定値を超過する時の表示例です。
+
+     HTTP-HEAD: user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb...; Cookie=WMONID=GaGYw_l9V81; org.springframework....
+
+---
+
+* デフォルト値：40
+* タイプ：数字(Number)
+* サンプル値：1000
+* 再起動：不要
+* 関連オプション
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=3)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_header_all](./agentHelp?key=profile_http_header_all&type=3)
+    * [profile_http_parameter_all](./agentHelp?key=profile_http_parameter_all&type=3)
+* サポートバージョン：5.0.0

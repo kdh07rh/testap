@@ -1,0 +1,24 @@
+There are cases to judge whether or not the connection is normal by removing the dummy SQL for test purposes when FrameWork is used, and in such case, a large amount of SQLs are left in the profile, which makes it difficult to view the actual SQL.
+In this case, when you are registering SQLs that you want to remove from the profile, the applicable SQLs don't collect the profile information.
+
+    select 1
+    select 1 from dual
+
+In addition to such SQLs, you can remove SQLs from the profile by registering specific SQLs.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        SELECT 1 FROM DUAL
+        SELECT COUNT(*) FROM DUAL
+
+* Restart: Not required
+* Related options
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [ignore_profile_sql_hash](./agentHelp?key=ignore_profile_sql_hash&type=1)
+* Supported version: 5.0.6

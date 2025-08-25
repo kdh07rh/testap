@@ -1,0 +1,20 @@
+Using this option, you can check the value of an HTTP Header to track through the profile information of a transaction.
+ 
+ Through the contents configured in the set value, you can check the following information in the transaction profile.
+ 
+  HTTP-HEAD: user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb...; Cookie=WMONID=GaGYw_l9V81; org.springframework....
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string (able to configure multiple settings using the line change).
+ * Sample value
+ 
+  user-agent
+  Cookie
+ 
+ * Restart: Not required
+ * Related options
+  * [profile_http_header_all](./agentHelp?key=profile_http_header_all&type=2)
+  * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=2)
+ * Supported version: 5.0.7

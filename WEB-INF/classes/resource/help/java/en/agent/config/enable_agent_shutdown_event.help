@@ -1,0 +1,10 @@
+This option causes the AGENT_SHUTDOWN event to be raised instead of the AGENT_STOP event on normal shutdown of the WAS.
+
+If you need to recognize an abnormal AGENT_STOP as a failure, you can utilize the AGENT_SHUTDOWN event.
+
+---.
+
+* Default value: false
+* Format: Boolean
+* Restart: never
+* Supported Versions: 5.6.3.2

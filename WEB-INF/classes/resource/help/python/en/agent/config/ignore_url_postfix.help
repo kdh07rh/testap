@@ -1,0 +1,13 @@
+This option sets those to be excluded from tracking targets when tracking the transactions of an application to "postfix". Usually this option is used when excluding static content.
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string (able to configure multiple settings using the line change).
+ * Sample value
+ 
+  .gif
+  .js
+ 
+ * Restart: Not required
+ * Supported version: 5.6.0.20

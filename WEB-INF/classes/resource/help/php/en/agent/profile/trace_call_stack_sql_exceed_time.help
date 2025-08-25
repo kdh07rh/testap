@@ -1,0 +1,9 @@
+If the time in milliseconds spent performing an SQL query is greater than this value, PHP call stack is delivered as a message. If this value is 0, the operating time is not checked.
+
+---
+
+* Default value: 0
+* Type: Number
+* Sample value: 300
+* Restart: Not required
+* Supported version: 5.0.0

@@ -1,0 +1,14 @@
+If the server is down or rebooted before leaving the service dump on the application server, it will not be possible to leave any information about the running active service.
+
+To complement this part, set the appropriate option to leave a service dump if there are more active services than the specified time.
+
+Avoid setting small value because it may cause the service dump to persist
+
+---
+
+* Default : 0
+* Type : Number, millisecond
+* Restart : Not Required
+* Related Options
+  * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+* Supported Version : 5.3.1

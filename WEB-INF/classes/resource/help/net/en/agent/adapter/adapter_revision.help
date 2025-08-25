@@ -1,0 +1,12 @@
+This option is used to reload a customized adapter (adapter_http_service, adapter_service, etc.) by JENNIFER's .NET agent while running.
+ 
+ For example, if the value of current adapter_revision is changed from 0 to 1, JENNIFER's .NET agent reloads the customized adapter registered. Regardless of whether the value is increased or decreased, it is only necessary to change to a value that is not equal to the previous one.
+ 
+ ---
+ * Default value: 0
+ * Type: Number
+ * Restart: Not required
+ * Related options
+  * [adapter_http_service](./agentHelp?key=adapter_http_service&type=2)
+  * [adapter_service](./agentHelp?key=adapter_service&type=2)
+ * Supported version: 5.0.8.2

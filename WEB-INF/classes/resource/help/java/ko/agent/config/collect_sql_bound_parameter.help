@@ -1,0 +1,11 @@
+SQL 문을 수집시에 바운드 파라미터를 수집 하도록 설정하는 옵션이다.
+
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* 지원 버전 : 5.4.3.5

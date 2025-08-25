@@ -1,0 +1,27 @@
+EXTERNALCALL実行時に例外が発生すると "EXTERNALCALL_EXCEPTION"イベントの発生有無を設定するオプションです。
+
+デフォルト値は trueです。例外が発生したとき "EXTERNALCALL_EXCEPTION" をイベントに発生させる。
+
+    該当イベントをアラートで受信するためには "管理 -> イベントルール" でアラート設定を行う必要があります。
+
+
+オプションを falseに設定すると、例外が発生したときトランザクションのプロファイル情報に該当例外の "toString()" メッセージを追加する。
+
+次は追加されたプロファイル例です。
+
+    ...
+    [0004][16:57:57 452][    1][    4] EXTERNAL-CALL [HTTP] APACHE_HTTP_CLIENT (url=http://192.168.0.76:8080) [1 ms]
+    [0005][16:57:57 453][    1][     ] org.apache.http.conn.HttpHostConnectException: Connect to 192.168.0.76:8080 [/192.168.0.76] failed: コネクションが拒否されました。
+    ...
+
+例外の "toString()" メッセージを追加するため、メッセージが出力される。該当例外のスタック情報を確認するためには [adapter_externalcall](./agentHelp?key=adapter_externalcall&type=1) オプションを参照
+
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean 
+* 再起動 : 不要
+* 関連オプション
+    * [adapter_externalcall](./agentHelp?key=adapter_externalcall&type=1)
+* サポートバージョン:5.2.2.1

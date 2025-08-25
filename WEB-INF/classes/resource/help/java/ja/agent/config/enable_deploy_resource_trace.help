@@ -1,0 +1,11 @@
+このオプションがtrueの場合は、APサーバに配布されるアプリケーションのリソース情報を収集します。
+収集データはX-Viewチャートの縦ラインに表示されます。該当ラインを選択すると配布されるアプリケーションのリソース情報が確認できます。
+「enable_deploy_event_trace」オプションがtrueの場合に動作します。
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [enable_deploy_event_trace](./agentHelp?key=enable_deploy_event_trace&type=1)
+* サポートバージョン : 5.0.15

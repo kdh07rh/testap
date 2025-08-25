@@ -1,0 +1,9 @@
+System.Web.HttpRequest.UserHostAddress attribute is used when obtaining a user IP address, and the address of a proxy server may be returned depending on the network environment. Sometimes, the user address is delivered from the proxy server via a separate HTTP header, and you can designate the name of header with the remote_address_header_key option.
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string
+ * Sample value: X-REMOTE_ADDRESS
+ * Restart: Not required
+ * Supported version: 5.0.7

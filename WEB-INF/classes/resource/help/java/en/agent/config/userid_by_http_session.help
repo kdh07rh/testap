@@ -1,0 +1,17 @@
+By default, the [adapter_http_service] (./ agentHelp? Key = adapter_http_service & type = 1) option is used to set the key value to be used to import user information from session
+
+If you have not set a value separately *userid* is used as Default value.
+
+If you create an adapter directly in addition to the default implementation, you can use the following optional values in the adapter.
+
+     String userKey = ConfigCacheUtil.getValue (userid_by_http_session);
+
+---
+    
+* Default Value : None
+* Type : String
+* Sample Value : userid
+* Restart : Not Required
+* Related Option
+    * [adapter_http_service](./agentHelp?key=adapter_http_service&type=1)
+* Supported Version : 5.0.12

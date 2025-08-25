@@ -1,0 +1,19 @@
+**enable_profile_spring_batch** 옵션은 Spring Batch에 대한 정보를 프로파일 정보로 수집하여 보여주는 작업이다.
+
+기본적인 동작은 프로파일로 수집하여 보여주지만, 필요에 따라서 별도의 트랜잭션으로 취급하여 보고 싶을 경우 사용하는 옵션이다.
+
+이 옵션을 사용할 때 주의할 점은 옵션을 비활성화하면 트랜잭션이 갑자기 늘어날 수 있기 때문에 통계에 영향을 미치는 옵션이다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* 지원 버전 : 5.5.3

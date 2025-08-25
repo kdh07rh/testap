@@ -1,0 +1,10 @@
+This option is used to collect parameters only for SQL statements executed for a certain period of time by specifying SQL execution time when collecting SQL statements.
+
+
+
+---
+
+* Default : 0
+* Format : Number, Milliseconds
+* Restart : Not Required
+* Supported Version : 5.5.3.3

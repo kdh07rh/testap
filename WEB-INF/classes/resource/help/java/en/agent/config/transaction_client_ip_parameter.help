@@ -1,0 +1,29 @@
+This option sets the client IP of the transaction using the parameter value of a particular method.
+
+After setting the entire method descriptor, set "{}" to indicate the number of parameter values ​​to be used.
+(Supported return values are strings and byte arrays.)
+
+Sample configuration:
+
+  org.apache.jsp.example.clientIp_jsp clientIp(Ljava/lang/String;)Ljava/lang/String;{1}
+
+When the option is set and the setting is applied, the following log is recorded in the Instrument log.
+
+  [I001] [BCI TransactionClientIpParameterPointCut] org.apache.jsp.example.clientIp_jsp.clientIp(Ljava/lang/String;)Ljava/lang/String;
+
+
+
+
+---
+
+* Default : None
+* Format : String
+* Sample Value
+
+    example.clientIp getClientIp(Ljava/lang/String;)Ljava/lang/String;{1}
+    example.clientIp getClientIp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;{2}
+    
+* Restart : Required
+* Related Options
+    * [transaction_client_ip_return](./agentHelp?key=transaction_client_ip_return&type=1)
+* Supported Version : 5.2.2.1

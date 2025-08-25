@@ -1,0 +1,16 @@
+自動スタックトレースに残すスレッドのトータル数を指定します。例えば、値が10の場合、自動スタックトレース対象になるスレッド中、10個に対してのみ呼出しスタックを残します。
+
+
+* デフォルト値 : 1000
+* タイプ : 数字
+* サンプル値 : 10
+* 再起動 : 不要
+* 関連オプション
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* サポートバージョン : 5.3.0.1

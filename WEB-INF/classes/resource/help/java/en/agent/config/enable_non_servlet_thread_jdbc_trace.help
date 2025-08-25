@@ -1,0 +1,9 @@
+Basically, only a JDBC request from the Servlet/JSP thread is tracked when collecting the JDBC information of a transaction.
+If a transaction is to track the JDBC information generated from a non Servlet/JSP thread, this option is set to True.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Supported version: 5.0.0

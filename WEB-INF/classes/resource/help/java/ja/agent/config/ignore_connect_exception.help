@@ -1,0 +1,11 @@
+トランザクションで発生するjava.net.ConnectionExceptionの検知可否を指定します。
+
+このオプションをtrueにすると、トランザクションで発生するjava.net.ConnectionExceptionを検知しません。
+そのため、SOCKET_EVENTも発生しません。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン : 5.5.3

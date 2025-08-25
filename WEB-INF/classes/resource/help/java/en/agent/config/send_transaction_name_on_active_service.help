@@ -1,0 +1,12 @@
+To collect the application name, the application name is sent to the server at the beginning of the transaction.
+
+If the application name is changed and collected separately, the changed application name is transmitted to the server again before the transaction is completed while keeping the change.
+
+Te **send_transaction_name_on_active_service** option is required to prevent unnecessary application name transmission at the beginning of a transaction when the application name is long.
+
+---
+
+*Default : false
+* Type : Boolean
+* Restart : Not required
+* Version supported : 5.5.3

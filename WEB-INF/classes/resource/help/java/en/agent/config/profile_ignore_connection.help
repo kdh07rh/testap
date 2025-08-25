@@ -1,0 +1,10 @@
+OPEN/CLOSE/ROLLBACK/SETAUTOCOMMIT/COMMIT for JDBC connection are recorded in the profile information, and this option is used to avoid leaving the applicable information in the profile information.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* Supported version: 5.0.0

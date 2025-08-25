@@ -1,0 +1,16 @@
+This option is used to log rejected transaction information when PLC is active
+
+The recorded log will look as follow.
+
+    2018-12-25/18:00:23 [I014] REJECTED : number of active = 100, , elapsedTime(ms) = 0, /example/sample, queryString=parameter
+
+This option prevents excessive logs from being recorded in log files when heavy loads occur.
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not Required
+* Related Options
+    * [include_query_string_in_reject_log](./agentHelp?key=include_query_string_in_reject_log&type=1)
+* Supported Version : 5.3.1.9, 5.4.0.2

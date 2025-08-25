@@ -1,0 +1,13 @@
+ [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)を活性化して使用する場合java.sql.CallableStatementオブジェクトを追跡するために使用します。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [auto_callablestatement_close](./agentHelp?key=auto_callablestatement_close&type=1)
+* サポートバージョン：5.0.6

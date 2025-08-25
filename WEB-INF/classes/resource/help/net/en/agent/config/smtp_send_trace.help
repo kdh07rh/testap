@@ -1,0 +1,8 @@
+controls the profile for calls to SmtpClient.Send.
+
+* Default: True
+* Type : Boolean
+* Sample : False
+* Restart : false
+* Supported Version : 5.6.1.6
+"

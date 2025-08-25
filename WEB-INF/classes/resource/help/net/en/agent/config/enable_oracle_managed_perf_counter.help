@@ -1,0 +1,9 @@
+This enables perfomrnacne count when Oracle.ManagedDataAccess is used.
+
+Oracle.ManagedDataAccess is supported by .NET Framework and .NET Core. .NET Fraemwork only needs this option activated,but  .For NET Core,  The Oracle.ManagedDataAccess internal implementation must reference the System.Diagnostics.PerformanceCounter package in the corresponding application.
+
+---
+
+* Default: false
+* Type: Boolean
+* Supported Version: 5.6.0.19

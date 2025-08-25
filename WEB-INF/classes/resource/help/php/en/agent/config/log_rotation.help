@@ -1,0 +1,11 @@
+This is for adding if date to log file name or not
+
+If this option is false log file name is created like jennifer_<php_sapi>.log, but this is true, log file name is created like jennifer_<php_sapi>_20150730.log.  
+
+---
+    
+* Default : true
+* Type : Boolean
+* Sample Value : false
+* Restart : Not required
+* Version supported : 5.5.3.2

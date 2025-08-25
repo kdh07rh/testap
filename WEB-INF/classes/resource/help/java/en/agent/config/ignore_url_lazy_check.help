@@ -1,0 +1,15 @@
+When setting [ignore_url](./agentHelp?key=ignore_url&type=1), this option checks the URL at the start of the transaction and ignores the transaction.
+If the function of the  application name change is used, the function could not be used.
+When using the function of the  application name change , this option allows you to ignore the transaction by checking the application name at the end point rath in order to use this function.
+
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Option related
+    * [ignore_url_url](./agentHelp?key=ignore_url_url&type=1)
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=1)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=1)
+* Version supported : 5.4.3.6

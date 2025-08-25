@@ -1,0 +1,8 @@
+Generates data for "analysis" / "socket" dashboards. You can set this value to false for Socket performance.
+
+---
+
+* Default: true
+* Type: Boolean
+* Restart: Not Required
+* Supported version: 5.3.0.11

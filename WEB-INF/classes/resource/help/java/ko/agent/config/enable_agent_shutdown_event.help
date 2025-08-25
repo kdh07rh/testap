@@ -1,0 +1,10 @@
+WAS 정상 종료할 때 AGENT_STOP 이벤트 대신 AGENT_SHUTDOWN 이벤트를 발생시키는 옵션이다.
+
+비정상적인 AGENT_STOP을 장애로 인식해야 하는 경우 AGENT_SHUTDOWN 이벤트를 활용할 수 있다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.6.3.2

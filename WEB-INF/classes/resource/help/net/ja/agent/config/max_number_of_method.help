@@ -1,0 +1,15 @@
+プロファイルの対象になるメソッド名はサーバへ転送後、そのハッシュ値が、エージェントの内部のキャッシュに保存されます。 これを通じて、同一メソッド名がサーバに重複して転送されないことがあります。 そのキャッシュのサイズを設定します。
+
+キャッシュデータが設定値を超えるとFIFO(First In First Out)方式で先に入ったメソッドのハッシュが削除され、新たなメソッド名についてのハッシュ値が追加されます。
+
+---
+
+* デフォルト値 : 30000
+* タイプ : 数字(Number)
+* サンプル値 : 50000
+* 再起動 : 必要
+* 関連オプション
+    * [max_number_of_text](./agentHelp?key=max_number_of_text&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+* サポートバージョン: 5.0.7

@@ -1,0 +1,15 @@
+JENNIFER server processes all strings in UTF-8 format. Therefore, PHP agent is required to transmit the strings collected in UTF-8 format. To do this, JENNIFER PHP Agent administrator is required to set the encoding value of the current PHP application to current_encoding. 
+
+Strings subject to conversion into UTF-8 are as follows.
+
+1. Method parameter string
+2. Method return string 
+3. SQL parameter string
+
+---
+
+* Default value: UTF-8
+* Type: string
+* Sample value: euc-kr
+* Restart: Not required
+* Supported version: 5.0.0

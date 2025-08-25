@@ -1,0 +1,14 @@
+インスタンスIDを設定します。
+
+1 ~ 32767の数字を設定できます。
+設定しない場合、データサーバから自動生成されたIDを付与されます。
+
+---
+
+  * デフォルト値 : -1
+  * タイプ : 数字(Number)
+  * 再起動 : 不要
+  * 連関オプション
+    * [inst_id_array](./agentHelp?key=inst_id_array&type=1)
+    * [inst_name](./agentHelp?key=inst_name&type=1)
+  * サポートバージョン : 5.0.0

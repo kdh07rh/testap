@@ -1,0 +1,18 @@
+このオプションのデフォルト値はfalseです。[enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1), [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)なで、Wrapper方式でJDBC情報（SQL）を追跡時には、以下のようなコードではDB_STATEMENT_UNCLOSED エラーが発生します。
+
+    Statement stmt = ...
+    ResultSet rs = stmt.executeQuery(...);
+    ...
+    Statment stmt2 = rs.getStatement();
+    rs.close();
+    stmt2.close();
+
+---
+
+* デフォルト値： false
+* フォーマット：:Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+* サポートバージョン：5.0.6

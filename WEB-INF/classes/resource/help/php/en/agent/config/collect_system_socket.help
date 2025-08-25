@@ -1,0 +1,8 @@
+If this option is set to true, Agent collects all sockets in system. If this option is set to false, Agent collects sockets related with PHP process.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.5.2.2

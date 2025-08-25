@@ -1,0 +1,10 @@
+이 옵션은 remote address를 구할 때 javax.servlet.ServletRequest.getRemoteAddr() 메소드를 사용하는데 웹서버의 설정에 의해 웹서버의 주소가 리턴될 수 있다.
+이때 사용하는 주소가 별도의 HTTP Header로 전달되는데 이값을 사용자 주소로 사용하고자 할 때 설정하는 옵션이다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : X-REMOTE_ADDRESS
+* 재시작 : 안함
+* 지원 버전 : 5.0.0

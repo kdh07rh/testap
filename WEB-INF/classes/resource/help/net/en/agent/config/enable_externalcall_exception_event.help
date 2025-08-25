@@ -1,0 +1,1 @@
+(Basically, GC heap memory is not collected in all environments of .NET Core.)

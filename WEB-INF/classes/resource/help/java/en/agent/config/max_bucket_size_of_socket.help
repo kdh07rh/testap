@@ -1,0 +1,9 @@
+The **max_bucket_size_of_socket** option is an option to designate the total number of stored in memory when tracking socket information..
+
+---
+
+* Default : 5000
+* Type: Number
+* Sample Value : 10000
+* Restart : Required
+* Version supported : 5.5.3

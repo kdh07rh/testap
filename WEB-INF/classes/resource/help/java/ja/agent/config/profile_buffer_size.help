@@ -1,0 +1,14 @@
+プロファイルデータを収集するためのバッファーのサイズをしています。
+
+プロファイル数が指定したバッファーサイズに至るとそこまでのプロファイルをデータサーバへ転送します。
+
+[collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1) オプションと共に使用する場合は、十分なサイズを設定しなければなりません。
+
+---
+
+* デフォルト値 : 512
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1)
+* サポートバージョン : 5.5.2.12, 5.6.1

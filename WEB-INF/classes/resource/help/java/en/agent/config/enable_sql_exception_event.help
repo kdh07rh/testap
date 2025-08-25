@@ -1,0 +1,29 @@
+This option can be used to generate "SQL_EXCEPTION" event when an SQL exception is occurred when an SQL is running.
+
+Default value of this option is false, the profile information of the transaction is added to the "toString()" message of the exception
+
+The following is sample profile 
+
+    ...
+    [0021][13:25:18 086][    3][  320] SQL-EXECUTE-QUERY [10 ms]
+                                       select * from crud2
+
+    [0022][13:25:18 097][   11][     ] javax.servlet.ServletException: java.sql.SQLException: ORA-00942: table or view does not exist
+    ...
+
+Please refer to [adapter_method](./agentHelp?key=adapter_method&type=1) option if you are looking for adding simple message to the stack output of the exception
+
+
+When this option is set to true , "SQL_EXCEPTION" Event is generated 
+
+    In order to receive alert notification, Event Rule settings (Management Area -> Event Rules) is required 
+
+---
+
+* Default Value : true
+* Type : Boolean 
+* Restart : Not Required
+* Related Options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [adapter_method](./agentHelp?key=adapter_method&type=1)
+* Supported Version : 5.0.12

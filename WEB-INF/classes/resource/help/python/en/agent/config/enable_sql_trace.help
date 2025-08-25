@@ -1,0 +1,9 @@
+Determines whether to perform monitoring on DB Connection and SQL.
+When this option is set to false, all DB and SQL settings are disabled.
+
+---
+
+* Default value: true
+* Type: Boolean
+* Restart: Not required
+* Supported version: 5.6.0.18

@@ -1,0 +1,26 @@
+In order not to collect specific SQL, set the [ignore_profile_sql](./agentHelp?key=ignore_profile_sql&type=1) option.
+
+[ignore_profile_sql](./agentHelp?key=ignore_profile_sql&type=1) is used by registering SQL, but this option  register SQL Hash value.
+SQL Hash value be searched in "Analysis -> DB Search -> Application/SQL/External Call tab".
+
+    1430843866
+    -1922051697
+
+In orde to exclude SQL,  Hash be registered as abov.
+
+---
+
+* Default : No
+* Type: Number(Multiple settings are possible using line breaks)
+* Sample Value
+
+        1430843866
+        -1922051697 
+
+* Restart : Not required
+* Option related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [ignore_profile_sql](./agentHelp?key=ignore_profile_sql&type=1)
+* Version supported : 5.4.3.9, 5.5.2

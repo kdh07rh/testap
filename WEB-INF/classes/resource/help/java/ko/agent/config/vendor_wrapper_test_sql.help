@@ -1,0 +1,16 @@
+이 옵션은 [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) 옵션을 활성화하여 사용하려고 하는 경우에 Vendor Wrapper 디버깅을 위한 쿼리문을 입력한다.
+
+쿼리를 실행하는 데이터 베이스가 오라클인 경우에는 자동으로 **select * from tab** 구문을 수행하여 테스트를 수행한다.
+
+이 옵션은 [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper) 옵션과 같이 사용해야 한다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : select * from tab
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)
+* 지원 버전 : 5.0.6

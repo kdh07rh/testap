@@ -1,0 +1,13 @@
+基本的に、マルチ構造(Multi-tier)内で実行されるトランザクションを追跡するためにHTTPヘッダ内のGUID値を設定するのに使用します。
+ただし、HTTPヘッダで設定できるGUIDの値がないために設定ができない場合、このオプションではトランザクションID(txid)をGUIDに設定します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=1)
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [guid_max_length](./agentHelp?key=guid_max_length&type=1)
+* サポートバージョン：5.0.0

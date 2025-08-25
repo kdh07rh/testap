@@ -1,0 +1,12 @@
+DBモニタリングソリューションであるセルパと連動する際に連動するGUID情報をプロファイルとして収集するオプションです。
+
+--- ---。
+
+* デフォルト値 : false
+* 形式 : Boolean
+* 再起動：しない
+* 関連オプション
+    * [enable_sherpa_oracle](./agentHelp?key=enable_sherpa_oracle&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+    * [enable_sherpa_mssql](./agentHelp?key=enable_sherpa_mssql&type=1)
+* サポートバージョン : 5.6.3.3

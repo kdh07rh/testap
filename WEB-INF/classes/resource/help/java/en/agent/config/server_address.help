@@ -1,0 +1,12 @@
+This is an option to designate the IP sconnect to the data server.
+
+    ex)server_address=127.0.0.1
+
+---
+
+  * Default : 127.0.0.1
+  * Type : string
+  * Restart : not required
+  * Option related
+    * [server_port](./agentHelp?key=server_port&type=1)
+  * Version supported: 5.0.0

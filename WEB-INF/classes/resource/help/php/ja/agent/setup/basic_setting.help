@@ -1,0 +1,8 @@
+PHPエージェントは、Apache PHPモジュールの外部拡張(extension)機能として実行されます。
+PHP拡張機能をロードするためにはphp.iniにjenniferAgent.agent_file_rootとextensionを設定する必要があります。 
+ 
+
+#### 例
+
+extension=/usr/local/jennifer-php/bin/jennifer5-php-5.4.x-ZTS.so
+jenniferAgent.agent_file_root=/usr/local/jennifer-php

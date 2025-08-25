@@ -1,0 +1,11 @@
+This options determine if get/set methods of class property are supported when method profiling
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : required
+* Related Options
+    * [profile_method_class](./agentHelp?key=profile_method_class&type=2)
+
+* Supported Version : 5.6.0.22

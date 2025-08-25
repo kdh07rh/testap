@@ -1,0 +1,23 @@
+This is an option to specify the access limiter of the target method when setting the method profile.
+
+The following 4 values be set.
+
+    public
+    protected
+    private
+    none
+
+
+For example, if public is set to the setting value, only *sample1* methods with public accessors in the following classes be profiled.
+
+    public class SampleClass {
+        public void sample1() {}
+        private void sample2() {}
+    }
+
+---
+
+  * Default : None
+  * Type : String (Multiple settings are possible using line breaks)
+  * Restart : not required
+  * Version suppored : 5.0.0

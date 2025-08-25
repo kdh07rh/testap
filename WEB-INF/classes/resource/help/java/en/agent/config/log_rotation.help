@@ -1,0 +1,25 @@
+This option saves log files by date.
+
+The default setting is true. When the date changes, a new file is created.
+
+    ex) agent_1000_10000_20210531.log
+
+
+Set the option to false when you want to keep saving to one file
+
+    ex) agent_1000_10000.log
+
+
+  ---
+
+  * Default : true
+  * Type : Boolean
+  * Restart: Not required
+  * Options related
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * Version supported : 5.0.0

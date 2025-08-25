@@ -1,0 +1,11 @@
+다층 구조(Multi-tier)에서 수행되는 트랜잭션에 대해 GUID 연결 추적을 활성화하는 옵션이다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* 지원 버전 : 5.0.0

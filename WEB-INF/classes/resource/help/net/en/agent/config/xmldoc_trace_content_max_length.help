@@ -1,0 +1,9 @@
+Sets the maximum number of strings to output XML content when using the LoadXml profile. If the number of characters is less than or equal to this condition, the content is output only.
+
+---]
+
+* Default: 512
+* Format: numeric
+* Sample value: 1024
+* Restart: None
+* Supported version: 5.4.0.6

@@ -1,0 +1,11 @@
+This option also collects the CPU information when collecting the External Call profile information of a transaction.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [profile_method_cpu](./agentHelp?key=profile_method_cpu&type=1)
+    * [profile_db_cpu](./agentHelp?key=profile_db_cpu&type=1)
+* Supported version: 5.0.6

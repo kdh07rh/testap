@@ -1,0 +1,13 @@
+This option sets the items to be excluded from tracking targets when tracking the transactions of an application to "postfix".
+Usually used when excluding static contents.
+
+* Default value: .gif .GIF .jpg .JPG .zip .html .HTML .txt .css .js .swf .htc .HTC .png .PNG .ico
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+    .gif
+* Restart: Not required
+* Related options
+    * [ignore_url](./agentHelp?key=ignore_url&type=3)
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=3)
+* Supported version: 5.0.0

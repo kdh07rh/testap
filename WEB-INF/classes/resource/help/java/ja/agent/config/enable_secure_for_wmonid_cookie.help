@@ -1,0 +1,20 @@
+このオプションをtrueに設定すると、エージェントで使用するWMONIDクッキーを発行する際にSecure 属性を追加します。 
+オプションを設定後、アプリケーションのリクエストに応答する時、ヘッダに次のようなヘッダが追加されます。 
+
+Set-Cookie:WMONID=g9Q0Tv8Tth9; Expires=Fri, 26 Jun 2015 14:29:23 GMT; Path=/; Secure; HttpOnly 
+
+注意事項 
+
+
+クッキーのSecure属性はSSL(Secure Sockets Layer)を使用してクッキーの伝送可否を設定する属性であるため、一般HTTPを使う際にはクッキーを発行しません。
+Secure属性を使用する場合は必ずHTTPSプロトコールを使ってください。 
+
+--- 
+
+* デフォルト値 : false 
+* タイプ : Boolean 
+* 再起動 : 不要 
+* 関連オプション 
+* [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=1) 
+* [expire_date_for_wmonid_cookie](./agentHelp?key=expire_date_for_wmonid_cookie&type=1) 
+* サポートバージョン: 5.0.9	

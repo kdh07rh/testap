@@ -1,0 +1,10 @@
+This option sets the maximum number of parameters to collect when collecting SQL parameters.
+
+---
+
+* Default : 1000
+* Type : Number
+* Restart : Not Required
+* Supported Version : 5.3.2.4
+
+

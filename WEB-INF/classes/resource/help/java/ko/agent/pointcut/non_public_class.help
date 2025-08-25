@@ -1,0 +1,17 @@
+이 옵션은 BCI(ByteCode Instrumentation) 대상 클래스 중에 public 이 아닌 클래스 접근 제한자를 public 으로 변환하는 옵션이다.
+
+클래스의 접근 제한자를 public 으로 공개하지 않은 이유는 일반적으로 보안상 목적이거나 내부 사용 클래스 또는 사용자가 몰라도 되는 클래스들이 대부분이기 때문에 꼭 필요한 경우가 아니면 디버깅 용도에만 사용하길 권장한다. 
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        example.ExamplePrivateClass
+        example.ExampleProtectedClass
+
+* 재시작 : 필요
+* 연관 옵션
+    * [non_public_member](./agentHelp?key=non_public_member&type=1)
+* 지원 버전 : 5.0.0

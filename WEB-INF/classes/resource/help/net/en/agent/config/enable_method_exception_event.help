@@ -1,0 +1,22 @@
+For a method (dynamic method profiling) that is subject to BCI(ByteCode Instrumentation),
+this option determines whether to generate a "METHOD_EXCEPTION" event when an exception occurs.
+
+The default value is set to false, and when an exception occurs, a "ToString()" message for the applicable exception is added to the profile information of the transaction.
+
+The following shows an example of profile added.
+
+    ...
+    [0124][17:03:42 958][    0][     ] System.Void WebCore.IoContainer.GetInfo(System.String) [1,616 ms]
+    [0128][17:03:42 958][    0][     ] System.ApplicationException:  ...
+    ...
+
+When the option is set to true, a "METHOD_EXCEPTION" event is generated when an exception occurs.
+
+    To be notified of the event, activate the notification option in the "Management > Evnet Rules" page.
+
+---
+
+* Default value: false
+* Type: Boolean 
+* Restart: Not required 
+* Supported version: 5.2.2.1

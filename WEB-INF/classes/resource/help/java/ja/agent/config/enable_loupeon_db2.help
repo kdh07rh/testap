@@ -1,0 +1,11 @@
+DBモニタリングソリューションLOUPEONと連動するために設定するオプションです。
+
+---
+
+* デフォルト値：false
+* タイプ：Boolean
+* 再起動：不要
+* 連関オプション：
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [get_instance_name_through_query](./agentHelp?key=get_instance_name_through_query&type=1)    
+* サポートバージョン : 5.5.0

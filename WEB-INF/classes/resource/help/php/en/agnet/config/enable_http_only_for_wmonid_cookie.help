@@ -1,0 +1,10 @@
+When this option is set to True, HTTP Only property is added at the time of issuing a WMONID cookie used by the agent.
+ 
+---
+
+ * Default value: false 
+ * Format: Boolean 
+ * Restart: Not required
+ * Related options
+  * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=3)
+ * Supported version: 5.0.10

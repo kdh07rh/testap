@@ -1,0 +1,16 @@
+このオプションで追跡したいすべてのHTTPヘッダーをトランザクションのプロファイル情報で確認できます。
+
+ヘッダー情報が多すぎる場合は[profile_http_header](./agentHelp?key=profile_http_header&type=3)オプションで特定のヘッダー値のみを確認できます。
+
+---
+
+
+*デフォルト値:false
+*タイプ：Boolean
+*再起動:不要
+*関連オプション
+*[profile_http_header](./agentHelp?key=profile_http_header&type=3)
+*[profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+*[profile_http_parameter_all](./agentHelp?key=profile_http_parameter_all&type=3)
+*[profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+*サポートバージョン:5.0.10

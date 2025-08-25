@@ -1,0 +1,17 @@
+This option is used to keep track of the method parsing XML within a transaction.
+Only DOM and SAX parsers can be tracked
+If this option is enabled, the log file may contain similar log output to the following
+
+    ...
+    2015-09-24/14:32:12 Agent Control Module initialized(-8803105291542107178)
+    2015-09-24/14:32:12 Agent Control Module loading complete...
+    ...
+    2015-09-24/14:32:12 [I002] RT Class redefine javax.xml.parsers.SAXParser
+    2015-09-24/14:32:13 [I002] RT Class redefine javax.xml.parsers.DocumentBuilder
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Supported version : 5.0.11

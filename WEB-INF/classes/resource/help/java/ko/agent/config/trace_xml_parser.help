@@ -1,0 +1,18 @@
+트랜잭션 내에서 XML을 파싱하는 메서드를 추적하기 위해 사용되는 옵션이다.
+DOM, SAX 두가지 파서를 추적하며 파싱중인 XML 파일명을 프로파일에 출력한다.
+
+이 옵션이 활성화 되어 있으면 로그 파일에서 다음과 같은 로그를 확인 할 수 있다.
+
+    ...
+    2015-09-24/14:32:12 Agent Control Module initialized(-8803105291542107178)
+    2015-09-24/14:32:12 Agent Control Module loading complete...
+    ...
+    2015-09-24/14:32:12 [I002] RT Class redefine javax.xml.parsers.SAXParser
+    2015-09-24/14:32:13 [I002] RT Class redefine javax.xml.parsers.DocumentBuilder
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.11

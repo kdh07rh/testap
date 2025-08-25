@@ -1,0 +1,10 @@
+이 옵션은 External Call 프로파일 정보의 중첩을 허용한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [complus_inplace_call_trace](./agentHelp?key=complus_inplace_call_trace&type=2)
+* 지원 버전 : 5.3.3.3

@@ -1,0 +1,9 @@
+If the enable_zend_compile_trace option is set to True, PHP script time and compile start time is transmitted to the server as a profile message when the PHP engine compiles the PHP script.   
+
+---
+
+* Default value: false
+* Format: Boolean
+* Sample value: 300
+* Restart: Not required
+* Supported version: 5.0.0

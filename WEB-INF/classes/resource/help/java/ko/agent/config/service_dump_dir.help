@@ -1,0 +1,28 @@
+이 옵션은 액티브 서비스의 덤프를 저장할 디렉토리를 설정한다.
+
+옵션 설정여부는 에이전트 로그 파일에 service dump dir 부분을 확인 하면 된다. 
+
+    2015-04-27/11:20:22 Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 service dump dir : /home/agent.java/service_dump
+    ...
+
+---
+
+* 기본값 : ../service_dump
+* 형식 : 문자열
+* 샘플값 : /var/log/service_dump
+* 재시작 : 안함
+* 연관 옵션
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* 지원 버전 : 5.0.0

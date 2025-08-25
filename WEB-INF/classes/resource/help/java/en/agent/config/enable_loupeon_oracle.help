@@ -1,0 +1,10 @@
+This options is for LOUPEON DB2 monitoring connection.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Option related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+* Version supported : 5.4.3

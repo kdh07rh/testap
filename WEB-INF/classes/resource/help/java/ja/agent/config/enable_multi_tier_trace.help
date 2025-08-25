@@ -1,0 +1,11 @@
+マルチ構造(Multi-tier)で実行されるトランザクションのGUID接続追跡を活性化するオプションです。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* サポートバージョン：5.0.0

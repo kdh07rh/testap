@@ -1,0 +1,12 @@
+This option is used to specify provider version when using ODP.NET Managed database provider.
+
+The version of the provider being used by the application can be checked through the "DataProvider: Oracle.ManagedDataAccess" item in the ".NET" category on the "Analysis" / "System Environment Variables" screen.
+
+
+---
+
+* Default : 4.121.2.0
+* Format : String (version)
+* Sample Value: 4.2.0.0
+* Restart : Required
+* Supported Version : 5.0.15

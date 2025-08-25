@@ -1,0 +1,20 @@
+When setting [ignore_url] (./agentHelp?key=ignore_url&type=3), this option checked the URL at the start of the transaction and ignored the transaction.
+This was not available when using the Rename Application feature.
+This option allows you to check the application name at the end of the transaction, rather than at the beginning, so that you can ignore the transaction when using the Rename Application feature.
+
+
+---
+
+* Default : None
+* Format : string (multiple settings are possible using line breaks)
+* Sample value
+
+        /login
+        /user/register
+
+* Restart: never
+* Related options
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=3)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=3)
+    * [ignore_url_lazy_check](./agentHelp?key=ignore_url_lazy_check&type=3)
+* Supported versions: 5.6.1.6

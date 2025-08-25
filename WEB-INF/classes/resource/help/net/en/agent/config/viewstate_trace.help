@@ -1,0 +1,9 @@
+This option is used to measure the execution time for the System.Web.UI.Page type of the LoadAllState, SaveAllState method
+
+---
+    
+* Default : true
+* Type : Boolean
+* Sample value : false
+* Restart : Not Required
+* Supported version : 5.0.7

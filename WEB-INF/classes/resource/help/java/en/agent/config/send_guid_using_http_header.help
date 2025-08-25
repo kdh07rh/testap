@@ -1,0 +1,15 @@
+When connecting the topology using HTTP, separate data is transmitted using HTTP Header.
+
+When GUID value  is used other than topology connection,  [guid_http_header_key] (./agentHelp?key=guid_http_header_key&type=1)
+is  option to additionally set GUID to HTTP Header using the key value
+This is not working when no GUID value
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* Options related
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* Version supported : 5.3.2.12, 5.4.2.2, 5.4.3

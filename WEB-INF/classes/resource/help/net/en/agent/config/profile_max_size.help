@@ -1,0 +1,11 @@
+The value set in this option refers to the maximum number of method profiles collected for each transaction.
+
+Method profile information after the set value is exceeded is not collected.
+
+---
+
+* Default value: 1000
+* Type: Number
+* Sample value: 3000
+* Restart: Not required
+* Supported version: 5.0.7

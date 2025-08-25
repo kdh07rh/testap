@@ -1,0 +1,15 @@
+Specifies the total number of threads to leave as automatic stack traces. If this value is 10, then only 10 of the threads that are subject to automatic stack trace will leave the call stack.
+
+* Default : 1000
+* Type : Number
+* Sample Value : 10
+* Restart : Not Required
+* Related Options
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* Support Version : 5.3.0.1

@@ -1,0 +1,15 @@
+USER-AGENT 헤더로 들어온 문자열에 이 옵션으로 지정한 값이 포함돼 있으면 트랜잭션 추적에서 제외한다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함), 대소문자 구분 없음
+* 샘플값
+
+        bingbot
+        googlebot
+
+* 재시작 : 안함
+* 연관옵션
+    * [enable_trace_http_user_agent](./agentHelp?key=enable_trace_http_user_agent&type=2)
+* 지원 버전 : 5.6.3.1

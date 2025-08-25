@@ -1,0 +1,16 @@
+アプリケーションのトランザクションを追跡するとき、追跡対象から除外する項目を「URL」で設定します。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        /login
+        /user/register
+
+* 再起動：不要
+* 関連オプション
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=3)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=3)
+* サポートバージョン：5.0.0

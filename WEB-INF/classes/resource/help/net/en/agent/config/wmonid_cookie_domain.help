@@ -1,0 +1,18 @@
+When the user initially uses a web application provided in the http://www.jennifersoft.com domain name, a wmonid cookie value is assigned.
+ However, as it is not possible to read the wmonid cookie value assigned in the foregoing application if this user accesses a web service provided in the http://sales.jennifersoft.com domain name, a new wmonid cookie value is assigned. 
+ Therefore, this user is counted twice even though the access is performed by the same user.
+ 
+ Even when it is physically the same user, as described above, it would be appropriate to perform a calculation for each domain name depending on the situation. However, to count this user as the same user, the wmonid_cookie_domain option should be enabled.
+ 
+  .jennifersoft.com
+ 
+ wmonid_cookie_domain option value must start with [.].
+ If this option is activated, a user accessing via an IP address rather than a domain name does not affect the number of concurrent users and visitors.
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string
+ * Sample value: .domain.com
+ * Restart: Not required
+ * Supported version: 5.0.7

@@ -1,0 +1,19 @@
+This option specifies the path of agent's log file.
+
+If a path is not specified, log files are saved under the logs path of the agent home directory.
+
+    ex) log_dir=/var/log/agent
+
+---
+
+  * Default : ../logs
+  * Type : String
+  * Restart : not required
+  * Option related
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * Version supported : 5.0.0

@@ -1,0 +1,24 @@
+Sets the number of times to leave the call stack for Active Service when automatic stack trace is active. 
+If this value is set to 10, the call stack of the Active Service running over the time set in [auto_stack_trace_threshold] (./agentHelp? Key = auto_stack_trace_interval & type = 2) 
+is set to [auto_stack_trace_interval] It leaves a call stack over a total of 10 times.
+
+--- 
+
+* Default : 25
+* Type : Number
+* Sample Value : 5
+* Restart : Not Required
+* Related Options
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* Supported Version : 5.1.3.2
+
+
+Sets the number of times to leave the call stack for Active Service when automatic stack trace is active. 
+If this value is set to 10, the call stack of the Active Service running over the time set in [auto_stack_trace_threshold] (./agentHelp? Key = auto_stack_trace_interval & type = 2) 
+is set to [auto_stack_trace_interval] It leaves a call stack over a total of 10 times.

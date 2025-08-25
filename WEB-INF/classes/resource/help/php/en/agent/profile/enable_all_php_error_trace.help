@@ -1,0 +1,8 @@
+If this value is set to True, All PHP ERROR are collected.(ERROR, WARNING, NOTICE, STRICT, DEPRECATED)  
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.4.2.2

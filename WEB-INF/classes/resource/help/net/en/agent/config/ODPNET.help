@@ -1,0 +1,9 @@
+If ODP.NET database provider is used, the version has to be specified.
+ 
+ ---
+  
+ * Default value: 2.111.6.20
+ * Type: string (version)
+ * Sample value: 4.2.0.0
+ * Restart: Required
+ * Supported version: 5.0.7

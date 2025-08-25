@@ -1,0 +1,11 @@
+이 옵션은 생성된 콜렉션의 요소 개수가 크거나 같을 경우 콜렉션 객체가 리스트업 되고 자동으로 추적 대상에 등록된다.
+
+---
+
+* 기본값 : 10000
+* 형식 : 숫자(Number)
+* 샘플값 : 3000
+* 재시작 : 안함
+* 연관 옵션
+    * [collection_auto_stack_trace_count](./agentHelp?key=collection_auto_stack_trace_count&type=1)
+* 지원 버전 : 5.0.0

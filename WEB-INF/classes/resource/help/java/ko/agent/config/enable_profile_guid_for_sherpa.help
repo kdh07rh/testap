@@ -1,0 +1,12 @@
+DB 모니터링 솔루션인 셀파와 연동을 할 때 연동되는 GUID 정보를 프로파일로 수집하는 옵션이다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sherpa_oracle](./agentHelp?key=enable_sherpa_oracle&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+    * [enable_sherpa_mssql](./agentHelp?key=enable_sherpa_mssql&type=1)
+* 지원 버전 : 5.6.3.3

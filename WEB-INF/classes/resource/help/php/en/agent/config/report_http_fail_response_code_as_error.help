@@ -1,0 +1,9 @@
+When this option is set to true, it reports fail HTTP response code as error
+For example if the HTTP response code of /test.php is 500 then ServiceException ERROR is reported, the error details can be found in X-View pop-up
+
+---
+
+* Default: false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.0.15

@@ -1,0 +1,14 @@
+옵션 값이 true일때 PHP가 ZTS(Thread Safe)모드로 구동중일때도 PHP 내부 함수 런타임 후킹을 허용한다. PHP가 NTS(None Thread Safe)로 구동중일때는 아무 영향도 미치지 않는다. 
+
+PHP 내부 함수 런타임 후킹은 PHP 프로세스내 Thread가 하나일 경우만 안전하다. 따라서 PHP가 ZTS로 구동중일때 PHP 내부 함수 런타임 후킹은 안전하지 않으므로 허용되지 않는다. 단 이 옵션값이 true일 경우 PHP 에이전트는 ZTS로 구동중일때도 PHP 내부 함수 런타임 후킹을 허용한다. 
+
+PHP 프로세스가 단일 Thread로 실행됨을 보장할 수 있을 경우만 이 옵션을 true로 설정해야 한다. 
+예시) Apache Prefork + PHP ZTS로 서버 환경이 구축된 경우 이 옵션을 true로 설정할 수 있다. 
+
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.5.1.1

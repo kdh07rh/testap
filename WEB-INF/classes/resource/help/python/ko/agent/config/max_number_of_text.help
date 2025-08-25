@@ -1,0 +1,23 @@
+이 옵션은 에이전트에서 수집된 텍스트를 데이터 서버로 전송하고 해당 텍스트의 해시 정보가 캐시되는 숫자이다. 별도로 텍스트의 해시를 캐시하는 이유는 데이터 서버로 동일한 텍스트에 대해 재전송을 막기 위해서이다.
+
+캐시 데이터가 설정값을 넘으면 FIFO(First In First Out) 방식으로 먼저 들어간 텍스트의 해시가 삭제된다.
+
+max_number_of_text 옵션으로 인해 캐시되는 텍스트의 종류는 다음과 같다.
+
+* 애플리케이션 이름
+* 외부호출(ExternalCall) 이름
+* 에러정보
+* 브라우저 정보
+* 쓰레드 이름
+
+---
+
+* 기본값 : 20000
+* 형식 : 숫자(Number)
+* 샘플값 : 30000
+* 재시작 : 필요
+* 연관옵션
+    * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+* 지원 버전 : 5.6.0.22

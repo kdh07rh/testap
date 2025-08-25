@@ -1,0 +1,16 @@
+スレッドに対する呼出しスタックを残す役割をするスレッドがこの値に指定された時間の間に応答がない場合はスレッドを終了します。
+
+
+* デフォルト値 : 4000 (単位: ミリセカンド)
+* タイプ : 数字
+* サンプル値 : 2000
+* 再起動 : 不要
+* 関連オプション
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+* サポートバージョン : 5.3.0.1

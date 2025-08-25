@@ -1,0 +1,9 @@
+When the value is true, this option add the HTTP Method to the application name.
+For example if the HTTP Method is GET and the application name is /test.php, the application name will be shown as [GET]/test.php
+
+---
+
+* Default: false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.0.15

@@ -1,0 +1,15 @@
+エージェントで収集されたSQLをデータサーバに転送して該当SQLのハッシュ情報がキャッシュされる数字です。 別途にSQLのハッシュをキャッシュする理由は、データサーバに同じSQLについて再送信を 防ぐためです。
+
+キャッシュデータが設定値を超えていればFIFO(First In First Out)方式で先に入ったSQLハッシュが削除されます。
+
+---
+
+* デフォルト値 : 10000
+* タイプ : 数字(Number)
+* サンプル値 : 30000
+* 再起動 : 必要
+* 関連オプション
+    * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+* サポートバージョン: 5.0.7

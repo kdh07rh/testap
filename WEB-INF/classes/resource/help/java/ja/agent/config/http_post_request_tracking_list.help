@@ -1,0 +1,21 @@
+リアルタイムアクティブサービスリストの取得時に、POSTで送信されるパラメータをモニタリングするために使用します。
+
+HTTPパラメータのキー値を追加して、アクティブサービスで確認します。
+
+    txid
+    email
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        txid
+        email
+
+* 再起動：不要
+* 関連オプション
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* サポートバージョン：5.0.0

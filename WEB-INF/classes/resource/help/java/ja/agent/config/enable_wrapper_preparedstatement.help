@@ -1,0 +1,11 @@
+[enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) オプションを活性化した場合、java.sql.PreparedStatementオブジェクトのラッパー(Wrapper)の生成可否を設定するオプションです。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+* サポートバージョン：5.0.6

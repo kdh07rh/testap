@@ -1,0 +1,13 @@
+This option creates a stack when the remote port configured is opened when a socket is created.
+
+You can check the stack created in Analysis Screen > Socket section.
+
+---
+
+* Default value: 0
+* Type: Number
+* Sample value: 32000
+* Restart: Not required
+* Related options
+    * [socket_stack_local_port](./agentHelp?key=socket_stack_local_port&type=3)
+* Supported version: 5.0.0

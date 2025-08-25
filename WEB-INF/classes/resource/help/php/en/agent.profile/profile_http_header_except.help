@@ -1,0 +1,18 @@
+Collects the HTTP Header values ​​except the specified key.
+For example, if 'HOST' is specified, HTTP Header values except 'HOST' are collected in profile
+
+---
+
+* Default : false
+* Type : string (able to configure multiple settings using the line change).
+* Sample value
+
+        host
+        accept
+
+* Restat : Not required
+* Related option
+    * [profile_http_header_all](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_header](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+* Supported version : 5.3.2.1

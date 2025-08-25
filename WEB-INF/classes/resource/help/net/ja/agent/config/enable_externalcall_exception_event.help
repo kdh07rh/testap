@@ -1,0 +1,22 @@
+外部呼出し(external call)に対して例外発生するとき、"EXTERNALCALL_EXCEPTION"イベントの発生可否を設定するオプションです。
+
+デフォルト値はfalseですが、例外が発生するとき、トランザクションのプロファイル情報に当該例外の"ToString()"メッセージを追加します。
+
+次は、追加されたプロファイルの例です。
+
+    ...
+    [0124][17:03:42 958][    0][     ] System.Void WebCore.ServiceCaller.GetInfo(System.String) [1,616 ms]
+    [0128][17:03:42 958][    0][     ] System.HttpWebException:  ...
+    ...
+
+
+オプションをtrueに活性化すると、例外発生するとき、"EXTERNALCALL_EXCEPTION"をイベントで発生させます。
+
+このイベントをお知らせるで受けるためには"管理->イベントルール"でお知らせの設定をしてください。
+
+---
+
+*デフォルト値: true 
+ *タイプ：Boolean  
+*再起動:不要 
+* サポートバージョン: 5.2.2.1

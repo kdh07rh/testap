@@ -1,0 +1,15 @@
+외부 트랜잭션에 대해 기본으로 다음과 같은 클래스들이 등록되어 있다.
+
+    com.ibm.ctg.client.JavaGateway
+    weblogic.wtc.gwt.TuxedoConnection
+    bea.jolt.pool.SessionPool
+    tmax.webt.WebtRemoteService
+
+기본으로 등록되어 있는 클래스를 사용하지 않고자 할 경우 옵션을 설정한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.11

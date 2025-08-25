@@ -1,0 +1,10 @@
+*kubernetes_namespace** option is used to register the k8s namespace.
+
+---
+
+* Default : none
+* Type : String
+* Restart : required
+* Options related
+    * [kubernetes_cluster](./agentHelp?key=kubernetes_cluster&type=3)
+* Version supported : 5.6.0.6

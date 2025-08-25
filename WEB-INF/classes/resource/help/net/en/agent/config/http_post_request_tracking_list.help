@@ -1,0 +1,15 @@
+This option is used to monitor the parameter transferred to the POST when retrieving the list of real-time active services.
+ 
+ You can check in the active service by adding the key value of the HTTP parameter.
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string (able to configure multiple settings using the line change).
+ * Sample value
+ 
+  txid
+  email
+ 
+ * Restart: Not required
+ * Supported version: 5.0.7

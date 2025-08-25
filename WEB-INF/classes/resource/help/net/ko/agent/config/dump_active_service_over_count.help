@@ -1,0 +1,15 @@
+액티브 서비스 개수는 초 단위로 데이터를 수집 하는데 액티스 서비스 개수가 [dump_active_service](./agentHelp?key=dump_active_service&type=2)에 설정된 값을 넘긴 횟수가 이 옵션에 설정된 값보다 크거나 같을 때 서비스 덤프가 남는다.
+
+즉, 이 옵션 값이 3 이라고 했을 경우 3초(액티브 서비스 수집 주기(초) * dump_active_service_over_count) 동안 [dump_active_service](./agentHelp?key=dump_active_service&type=2) 에 설정된 값만큼 액티브 서비스 수집 개수가 크거나 같을 경우 서비스 덤프를 남긴다.
+
+참고로 기본값만 사용시에는 3초 동안 액티브 서비스 개수가 100개를 넘는 상태일 경우 서비스 덤프를 남긴다.
+액티브 서비스 개수가 3초 이내에 100 보다 작게 떨어질 경우에는 다시 처음 부터 시간 체크를 한다.
+
+---
+
+* 기본값 : 3
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=2)
+* 지원 버전 : 5.0.7

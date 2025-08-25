@@ -1,0 +1,11 @@
+This option is set to link with Sherpa tibero, a DB monitoring solution.
+
+---
+
+* Default : false
+* Format : Boolean
+* Restarted : not required
+* Option related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [sql_elapsed_time_for_sherpa](./agentHelp?key=sql_elapsed_time_for_sherpa&type=1)
+* Version supported : 5.6.1.13

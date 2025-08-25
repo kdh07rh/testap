@@ -1,0 +1,15 @@
+에이전트에서 통계를 구하도록 설정하면 1분당 데이터를 전송하는데 이때 가지고 있을 최대 애플리케이션 수를 나타낸다.
+
+만약 1분 동안 수행되는 애플리케이션이 기본값(10,000)을 넘는다면 설정을 통해 숫자를 늘려야 통계가 누락되지 않고 구해진다. 
+
+---
+
+* 기본값 : 10000
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [sql_statistic_max_count](./agentHelp?key=sql_statistic_max_count&type=1)
+    * [external_call_statistic_max_count](./agentHelp?key=external_call_statistic_max_count&type=1)
+    * [error_statistic_max_count](./agentHelp?key=error_statistic_max_count&type=1)
+    * [collect_statistic_on_agent](./agentHelp?key=collect_statistic_on_agent&type=1)
+* 지원 버전 : 5.6.1

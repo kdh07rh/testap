@@ -1,0 +1,22 @@
+ソケットが生成されるタイミングで設定したリモートルポートが開いたときにスタックを生成するオプションです。
+
+生成されたスタックは、分析->ソケット画面にて確認できます。
+
+このオプションを使用するには、java.net.Socketに関するBCI（ByteCode Instrumentation）が前提です。ログファイルにて以下のログが確認できないと正常動作しません。
+
+    ...
+    2015-04-28/12:04:27 Agent Control Module initialized(-8803105291542107178)
+    2015-04-28/12:04:27 Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.net.Socket
+    ...
+
+---
+
+* デフォルト値：0
+* タイプ：数字(Number)
+* サンプル値：32000
+* 再起動：不要
+* 関連オプション
+    * [socket_stack_local_port](./agentHelp?key=socket_stack_local_port&type=1)
+* サポートバージョン：5.0.0

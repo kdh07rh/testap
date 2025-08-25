@@ -1,0 +1,66 @@
+This option performs the BCI(ByteCode Instrumentation) operation automatically for already analyzed class(es) among JDBC drivers when the [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1) option is activated.
+
+The list of classes which are already analyzed and registered are as follows.
+
+    -- Derby
+    org.apache.derby.impl.jdbc.EmbedStatement
+    org.apache.derby.impl.jdbc.EmbedPreparedStatement
+    org.apache.derby.impl.jdbc.EmbedResultSet
+    org.apache.derby.client.am.Statement
+    org.apache.derby.client.am.PreparedStatement
+    org.apache.derby.client.am.ResultSet
+
+    -- PostgreSQL
+    org.postgresql.jdbc2.AbstractJdbc2Statement
+    org.postgresql.jdbc2.AbstractJdbc2ResultSet
+    
+    -- MySQL
+    com.mysql.jdbc.Statement
+    com.mysql.jdbc.ResultSet
+    com.mysql.jdbc.StatementImpl
+    com.mysql.jdbc.PreparedStatement
+    com.mysql.jdbc.ResultSetImpl
+
+    -- MSSQL
+    net.sourceforge.jtds.jdbc.JtdsStatement
+    net.sourceforge.jtds.jdbc.JtdsPreparedStatement
+    net.sourceforge.jtds.jdbc.JtdsResultSet
+    com.microsoft.sqlserver.jdbc.SQLServerStatement
+    com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement
+    com.microsoft.sqlserver.jdbc.SQLServerResultSet
+    
+    -- SYBASE
+    com.sybase.jdbc2.jdbc.SybStatement
+    com.sybase.jdbc2.jdbc.SybPreparedStatement
+    com.sybase.jdbc2.jdbc.SybCallableStatement
+    com.sybase.jdbc2.jdbc.SybResultSet
+    com.sybase.jdbc3.jdbc.SybStatement
+    com.sybase.jdbc3.jdbc.SybPreparedStatement
+    com.sybase.jdbc3.jdbc.SybCallableStatement
+    com.sybase.jdbc3.jdbc.SybResultSet
+    
+    -- Oracle
+    oracle.jdbc.driver.OracleStatement
+    oracle.jdbc.driver.OraclePreparedStatement
+    oracle.jdbc.driver.OracleCallableStatement
+    oracle.jdbc.driver.OracleResultSetImpl
+
+    -- CUBRID
+    cubrid.jdbc.driver.CUBRIDStatement
+    cubrid.jdbc.driver.CUBRIDPreparedStatement
+    cubrid.jdbc.driver.CUBRIDResultSet
+
+If this value is false, a required class should be registered additionally.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+* Supported version: 5.0.0

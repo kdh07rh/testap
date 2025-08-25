@@ -1,0 +1,8 @@
+Displays the SQL DB connection information to the topology screen when the SQL topology mode is enabled. 
+ 
+---
+
+ * Default value: true
+ * Type: Boolean
+ * Restart: Not required
+ * Supported version: 5.0.10

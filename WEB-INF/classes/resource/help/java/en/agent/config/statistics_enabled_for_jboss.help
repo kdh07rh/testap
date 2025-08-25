@@ -1,0 +1,16 @@
+This obtion can not be used with JBOSS version lower than EAP 6.3
+ 
+If JBOSS DB Connection monitoring through JMX, a datasource "statistics-enabled" property is required. If this property is not set, incorrect information may be gathered. This option check if this attribute is present and it is able to gather statisics information
+
+    $JBOSS_HOME/standalone/configuration/standalone.xml
+    <datasource jndi-name="java:jboss/datasources/sample" pool-name="sample" statistics-enabled="true" ...>
+
+
+** This options works only with JBOSS **
+
+---
+
+* Default : true
+* Type: Boolean
+* Restart : Required
+* Supported Version : 5.0.11.4

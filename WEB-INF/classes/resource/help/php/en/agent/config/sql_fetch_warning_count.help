@@ -1,0 +1,11 @@
+This option generates an ERROR when a large amount of data fetch occurs after operating SQL.
+
+When data fetch exceeding the default value of 10000 occurs, SQL_TOOMANY_FETCH ERROR event is activated.
+
+---
+
+* Default value: 10000
+* Type: Number
+* Sample value: 1000 
+* Restart: Not required
+* Supported version: 5.4.0.3

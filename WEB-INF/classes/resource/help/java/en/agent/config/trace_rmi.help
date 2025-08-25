@@ -1,0 +1,48 @@
+This option is used for tracking RMI calls within a transaction.
+This option is available only when using purley SpringRemote framework and Java API
+
+Data collection are as follow
+
+    1. RMI profile for remote call
+    2. RMI call topology connection 
+
+When this option is enabled and the RMI related classes are loaded, the following information are shown in the agent log
+
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.transport.DGCImpl
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.dgc.DGC
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.transport.DGCImpl_Stub
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) org.springframework.remoting.rmi.RmiInvocationWrapper
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add abstract setGuid method)org.springframework.remoting.rmi.RmiInvocationHandler
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) java.rmi.server.UnicastRemoteObject
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) java.rmi.server.RemoteObjectInvocationHandler
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) com.sun.proxy.$Proxy2
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(invoke sendGuid method) com.sun.proxy.$Proxy2.invoke
+    2016-01-06/15:29:06 [TRACE] [I001] save dot config file
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.server.Activation$ActivationSystemImpl_Stub
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationSystem
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationInstantiator
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationMonitor
+
+Depending on the envrionment, log information may vary a little bit.
+
+Example of the caller profile to be recorded as follows
+
+[Using SpringRemote]
+
+    [0001][14:14:51 264][    0][    0] EXTERNAL-CALL [RMI] com.sun.proxy.$Proxy1.invoke(Lorg/springframework/remoting/support/RemoteInvocation;)Ljava/lang/Object; [3,966 ms]
+    
+[Using Java API only]
+
+    [0001][14:17:43 194][    0][    0] EXTERNAL-CALL [RMI] com.sun.proxy.$Proxy0.getMyString()Ljava/lang/String; [4,083 ms]
+
+[Reference]
+For RMI call toplogy connection, agent must be installed on both sides and this option must be set to true.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Related Options
+    * [enable_guid_from_rmi](./agentHelp?key=enable_guid_from_rmi&type=1)
+* Supported Version : 5.0.12

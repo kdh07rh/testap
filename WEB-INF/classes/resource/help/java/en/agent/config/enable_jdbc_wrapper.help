@@ -1,0 +1,21 @@
+Basically, when collecting JDBC information (SQL) through [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1) option, a method that performs BCI(ByteCode Instrumentation) on an already analyzed class is used.
+
+You can activate this option when intending to track JDBC information using a separate connection other than already registered class(es) or using a connection pool method.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+    * [enable_statement_trace](./agentHelp?key=enable_statement_trace&type=1)  
+    * [enable_preparedstatement_trace](./agentHelp?key=enable_preparedstatement_trace&type=1)
+    * [enable_callablestatement_trace](./agentHelp?key=enable_callablestatement_trace&type=1)  
+    * [enable_resultset_trace](./agentHelp?key=enable_resultset_trace&type=1)
+    * [auto_connection_close](./agentHelp?key=auto_connection_close&type=1)
+    * [auto_statement_close](./agentHelp?key=auto_statement_close&type=1)
+    * [auto_preparedstatement_close](./agentHelp?key=auto_preparedstatement_close&type=1)
+    * [auto_callablestatement_close](./agentHelp?key=auto_callablestatement_close&type=1)
+    * [auto_resultset_close](./agentHelp?key=auto_resultset_close&type=1)
+* Supported version: 5.0.6

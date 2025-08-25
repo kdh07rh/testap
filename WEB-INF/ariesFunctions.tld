@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        version="2.0">
+
+    <description>Functions JSP Tag Library</description>
+    <display-name>Functions Tag</display-name>
+    <tlib-version>1.2</tlib-version>
+    <short-name>aries</short-name>
+    <uri>http://www.aries.com/taglib/ariesFunctions</uri>
+
+    <function>
+        <description>IpUtil</description>
+        <name>toString</name>
+        <function-class>aries.util.IpUtil</function-class>
+        <function-signature>java.lang.String toString(byte[])</function-signature>
+    </function>
+    <function>
+        <description>aries.util.Long32</description>
+        <name>encode32</name>
+        <function-class>aries.util.Long32</function-class>
+        <function-signature>java.lang.String encode(long)</function-signature>
+    </function>    
+    <function>
+        <description>aries.util.Long32</description>
+        <name>decode32</name>
+        <function-class>aries.util.Long32</function-class>
+        <function-signature>long decode(java.lang.String)</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>xviewTime</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String xviewTime(long)</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>createString</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String createString(byte[])</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>findMxName</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String findMxName(int)</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>fmtType</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String formatType(aries.lang.TYPE)</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>formatNumber</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String formatNumber(long)</function-signature>
+    </function>    
+    <function>
+        <description>com.aries.view.util.ScreenFormatUtils</description>
+        <name>fmtNumber</name>
+        <function-class>com.aries.view.util.ScreenFormatUtils</function-class>
+        <function-signature>java.lang.String formatNumber(float, int)</function-signature>
+    </function>    
+</taglib>

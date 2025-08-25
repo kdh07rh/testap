@@ -1,0 +1,12 @@
+이 옵션을 통해 모든 HTTP Request Parameter 이름을 트랜잭션의 프로파일 정보를 통해 확인할 수 있다.
+
+설정된 내용을 통해 트랜잭션의 프로파일에서 아래와 같은 정보들을 확인할 수 있다.
+
+     HTTP-PARAMETER-NAMES : Field1,Field2,Field3
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.6.2.26

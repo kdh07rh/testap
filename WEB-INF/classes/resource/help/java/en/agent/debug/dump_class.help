@@ -1,0 +1,19 @@
+This option is to save the byte code of classes configured among the targets of BCI (ByteCode Instrumentation) when the [dump_mode](./agentHelp?key=dump_mode&type=1) option is activated. 
+
+When this option is activated, the byte code information of the classes configured is saved as a file in the directory configured in the [dump_dir](./agentHelp?key=dump_dir&type=1) option.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+    
+        org.sample.TestClass
+        org.sample.ExampleClass
+
+* Restart: Required
+* Related options
+    * [dump_mode](./agentHelp?key=dump_mode&type=1)
+    * [dump_dir](./agentHelp?key=dump_dir&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+* Supported version: 5.0.0

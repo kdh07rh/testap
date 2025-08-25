@@ -1,0 +1,50 @@
+トランザクション内のRMI呼び出しに対する追跡のオプションです。
+JavaAPIのみ使う場合とSpringRemoteフレームワークを利用する場合、すべてモニタリングできます。
+
+次のようなデータを収集します。
+
+　1.RMIリモート呼び出しに対するプロファイリング
+　2.RMI呼び出し区間をトポロジーに連結
+
+オプションが設定されていて、RMI関連クラスがロードされると次のような内容がエージェントログに記録されます。
+
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.transport.DGCImpl
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.dgc.DGC
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.transport.DGCImpl_Stub
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) org.springframework.remoting.rmi.RmiInvocationWrapper
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add abstract setGuid method)org.springframework.remoting.rmi.RmiInvocationHandler
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) java.rmi.server.UnicastRemoteObject
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) java.rmi.server.RemoteObjectInvocationHandler
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(add setGuid method) com.sun.proxy.$Proxy2
+    2016-01-06/15:29:04 [TRACE] [I001] BCI RMI(invoke sendGuid method) com.sun.proxy.$Proxy2.invoke
+    2016-01-06/15:29:06 [TRACE] [I001] save dot config file
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add setGuid method) sun.rmi.server.Activation$ActivationSystemImpl_Stub
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationSystem
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationInstantiator
+    2016-01-06/15:29:13 [TRACE] [I001] BCI RMI(add abstract setGuid method) java.rmi.activation.ActivationMonitor
+
+環境によって少しログの内容は違う可能性がありますが、setGuid、abstract setGuid、invoke setGuidと関する内容がすべて出力されれば正常に監視することができます。
+
+呼び出し側に記録されるプロファイルの例は次のとおりです。
+
+[SpringRemoteを利用した場合
+]
+
+    [0001][14:14:51 264][    0][    0] EXTERNAL-CALL [RMI] com.sun.proxy.$Proxy1.invoke(Lorg/springframework/remoting/support/RemoteInvocation;)Ljava/lang/Object; [3,966 ms]
+    
+[Java APIのみ利用した場合
+]
+
+    [0001][14:17:43 194][    0][    0] EXTERNAL-CALL [RMI] com.sun.proxy.$Proxy0.getMyString()Ljava/lang/String; [4,083 ms]
+
+[参考]
+RMI呼び出し区間トをポロジーへの連結は呼び出す側、呼び出しを受けているともに エージェントが設置されていなければならず、このオプションがtrueに設定しなければなりません。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [enable_guid_from_rmi](./agentHelp?key=enable_guid_from_rmi&type=1)
+* サポートバージョン: 5.0.12

@@ -1,0 +1,18 @@
+This option is used to prevent the log file from growing indefinitely due to repeatedly recorded logs.
+
+Usually, the same log for errors and warnings is recorded, so this is an option to log only once at a specific time.
+
+
+---
+
+  * Default : 60
+  * Type : Number(sec)
+  * Restart : not required
+  * Options related
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+  * Version supported : 5.0.0

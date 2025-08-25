@@ -1,0 +1,15 @@
+자동 스택 트레이스를 제외한 서비스 덤프와 액티브 서비스에 대한 호출 스택을 남기는 경우 대상이 되는 스레드의 총 갯수를 지정한다. 만약 이 값이 10이면 서비스 덤프로 10개의 호출 스택이 요청되어 한 개도 처리하지 않은 상태에 있다면 새롭게 액티브 서비스의 호출 스택에 대한 요청을 거절한다.
+
+* 기본값 : 2000
+* 형식 : 숫자
+* 샘플값 : 10
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* 지원 버전 : 5.3.0.1

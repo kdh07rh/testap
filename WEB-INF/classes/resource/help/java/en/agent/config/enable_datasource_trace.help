@@ -1,0 +1,25 @@
+This option determines whether to track JDBC and SQL when bringing javax.sql.DataSource object from a JAVA application by means of JNDI(Java Naming and Drirectory Interface) and then bringing java.sql.Connection object from this object.
+
+The example typically used is given below.
+
+    javax.naming.Context context = new javax.naming.InitialContext();
+    javax.sql.DataSource dataSource = (javax.sql.DataSource) context.lookup(“java:comp/env/jdbc/SampleDS”);
+    java.sql.Connection connection = dataSource.getConnection();
+
+
+A log example recorded in the log file is as follows.
+
+    2015-02-24/13:25:42 [INFO] JDBC Context: org.apache.naming.NamingContext
+    ...
+    2015-02-24/13:26:07 [INFO] INF oracle.jdbc.driver.PhysicalConnection is a JDBC Connection
+    2015-02-24/13:26:07 [INFO] INF oracle.jdbc.OracleConnectionWrapper is a JDBC Connection
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_wrapper_context_jdbc_trace](./agentHelp?key=enable_wrapper_context_jdbc_trace&type=1)
+    * [enable_jdbc_bootstrap_wrapper_factory](./agentHelp?key=enable_jdbc_bootstrap_wrapper_factory&type=1)
+* Supported version: 5.0.0

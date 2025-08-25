@@ -1,0 +1,11 @@
+This option can be used to disable collecting CPU information when collection transaction data.
+
+CPU information is collected through JMX, it does not affect typical environment. However, it might have some impact under heavy load condition.
+
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not Required
+* Supported Version : 5.3.3.1

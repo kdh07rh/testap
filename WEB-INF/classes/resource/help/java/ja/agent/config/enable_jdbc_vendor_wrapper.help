@@ -1,0 +1,15 @@
+基本的に、[enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)オプションでJDBC情報（SQL）を収集するときには、把握済みのクラスをBCI（ByteCode Instrumentation）する方法ですが、この方法ではなく、Vendor JDBC Driverに依存的な方法を使用する場合は、このオプションを使用します。
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+    * [vendor_wrapper_test_sql](./agentHelp?key=vendor_wrapper_test_sql&type=1)  
+    * [jdbc_vendor_wrapper_supers](./agentHelp?key=jdbc_vendor_wrapper_supers&type=1)
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)  
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_wrapper_resultset](./agentHelp?key=enable_wrapper_resultset&type=1)
+* サポートバージョン：5.0.6

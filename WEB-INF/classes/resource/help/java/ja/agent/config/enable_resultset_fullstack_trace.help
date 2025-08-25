@@ -1,0 +1,11 @@
+[enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)オプションが活性化される際、java.sql.ResultSetオブジェクトを使用する時間のフルスタックを抽出するために使用します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+    * [check_resultset_unclosed](./agentHelp?key=check_resultset_unclosed&type=1)
+* サポートバージョン：5.0.0

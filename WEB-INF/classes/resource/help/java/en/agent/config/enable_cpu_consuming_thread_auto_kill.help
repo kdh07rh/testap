@@ -1,0 +1,21 @@
+
+This option is used to automatically terminates the transaction thread when the CPU is used for a certain period of time.
+
+If this option is set to true, the value of the [cpu_consuming_thread_auto_kill_threshold] (./agentHelp? Key = cpu_consuming_thread_auto_kill_threshold & type = 1) option must be set to a value greater than zero.
+
+Caution when applying this option because it will forcefully terminate the transaction thread running longer than the specified time.
+
+If you attempt to terminate the thread, the following is displayed in the agent log:
+
+     [TRACE] [I033] tried to kill cpu consuming thread /cpu_and_sleep.jsp (77 ms) 2018-04-30 / 16: 16:
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Related Options
+    * [cpu_consuming_thread_auto_kill_threshold](./agentHelp?key=cpu_consuming_thread_auto_kill_threshold&type=1)
+* Supported Version : 5.3.2.3
+
+

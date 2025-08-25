@@ -1,0 +1,22 @@
+The application name uses the value '+' as the concatenation character when adding to the application name, and this option allows you to change this.
+
+    ex) /index.jsp -> /inex.jsp+login
+
+In the above case, if you set the option value to '_', it will change to the following.
+
+    ex) /index.jsp -> /inex.jsp_login
+
+---]
+
+* Default value: +.
+* Format: character
+* Sample values
+  
+        -.
+        =Β
+
+* Restart: never
+* Associated options.
+    * [append_service_naming_by_http_header](./agentHelp?key=append_service_naming_by_http_header&type=2)
+    * [service_append_naming_use_first_execute](./agentHelp?key=service_append_naming_use_first_execute&type=2)
+* Supported version: 5.6.3.3

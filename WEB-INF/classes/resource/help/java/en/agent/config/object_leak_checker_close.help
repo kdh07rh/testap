@@ -1,0 +1,18 @@
+This option can be used to determine whether a method of a specific object has been executed with the [object_leak_checker_open](./agentHelp?Key=object_leak_checker_open&type=1) options.
+
+You can use this option if you want to track resource leak with two options. The scope of the check is limited to the scope of the transaction and can be set up to 10.
+
+
+---
+
+* Default : None
+* Type : String (Use new line to enter multiple values)
+* Sample value
+
+  A:package.SampleA method()Ljava/lang/String;
+  B:package.SampleB method()Ljava/lang/String;
+
+  * Related Options
+      * [object_leak_checker_open](./agentHelp?key=object_leak_checker_open&type=1)
+* Restart : Required
+* Supported Version : 5.3.3.4

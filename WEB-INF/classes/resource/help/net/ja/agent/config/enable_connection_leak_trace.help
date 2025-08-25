@@ -1,0 +1,8 @@
+ADO.NET Connectionオブジェクトのリークを追跡して"DB_CONNECTION_UNCLOSED"イベントの発生可否を設定します。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン: 5.0.7

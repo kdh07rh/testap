@@ -1,0 +1,13 @@
+When [trace_http_user_agent](./agentHelp?key=enable_trace_http_user_agent&type=3) is activated, read user agent from http headers.
+And if String with "USER-AGENT" header is set to this options, JENNFIER does not trace this transaction.
+
+* Default : None
+* Format : String (It's possible to set mutiple setting using line breaks), no case-sensitive
+* Sample Value
+        bingbot
+        googlebot
+
+* Restart : Not required
+* Related Options 
+        * [enable_trace_http_user_agent] (./agentHelp?key=enable_trace_http_user_agent&type=3)
+* Supported version : 5.6.0.3

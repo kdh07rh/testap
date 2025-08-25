@@ -1,0 +1,12 @@
+This is an option to set to represent a group of instances.
+
+The range of values is 1 to 32767.
+
+This value is a required value that is absolutely necessary for initial setting.
+
+---
+
+  * Default: -1
+  * Type : Number
+  * Restart : Not required
+  * Version supported : 5.0.0 

@@ -1,0 +1,9 @@
+This option is used to set trace threshold for the execution time of System.Web.UI.Page type of the LoadAllState, SaveAllState method 
+
+---
+    
+* Default : 1000
+* Type: Number
+* Sample value : 5000
+* Restart : Not Required
+* Supported version : 5.0.7

@@ -1,0 +1,16 @@
+When using the thread stop function in the detailed view of active service pop-up, if the transaction socket is in Read state it will not be possible to terminate the thread.
+
+This option terminate the thrad after closing the socket Read.
+
+The default value is flase.
+
+When the socket is closed the following information is displayed in Agent log
+
+     2016-02-03 / 18: 12: 49 [INFO] try close active socket of transaction: txid
+
+---
+
+* Default: false
+* Type: Boolean
+* Restart: required
+* Supported Version: 5.0.13

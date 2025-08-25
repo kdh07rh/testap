@@ -1,0 +1,34 @@
+몽고디비 프로파일링을 하고자 할 경우 설정하는 옵션이다.
+
+기본값은 true로 몽고디비 자바 드라이버를 인식하면 모니터링을 시작한다. 프로파일의 유형은 RDB의 JDBC 드라이버와 거의 동일하다.
+
+Sync 방식의 자바 드라이버(2.1 ~ 3.2.0)을 모두 지원하며 Async 방식의 자바 드라이버는 모니터링 하지 않는다.
+
+관련 클래스들이 로드되면 에이전트 로그에 다음과 유사한 내용이 기록된다.
+
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.InternalStreamConnection
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.MongoCollectionImpl
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.DefaultConnectionPool$PooledConnection
+
+
+다음은 수집된 프로파일의 예제이다.
+
+    [0014][13:34:28 170][   15][  240] SQL-EXECUTE [24 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0015][13:34:28 195][   25][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database1" , "count" : 1}
+    [0016][13:34:28 195][    0][  263] SQL-EXECUTE [1 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0017][13:34:28 196][    1][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database2" , "count" : 2}
+
+---
+
+* 기본값 : true
+* 형식 : Boolean 
+* 재시작 : 필요 
+* 연관 옵션
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* 지원 버전 : 5.0.12

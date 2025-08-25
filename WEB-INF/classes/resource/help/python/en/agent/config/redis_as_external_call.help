@@ -1,0 +1,9 @@
+Change from leaving only a message profile for REDIS calls to profiling them in the external call format. This makes it possible to see call relationships in the Topology View.
+
+---
+
+ * Default value: false
+ * Type: Boolean
+ * Sample value: 30000
+ * Restart : No
+ * Supported version: 5.6.1.18

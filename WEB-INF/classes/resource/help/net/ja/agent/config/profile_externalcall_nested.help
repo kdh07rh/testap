@@ -1,0 +1,10 @@
+このオプションはExternal Callプロファイル情報の重複を許容します。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [complus_inplace_call_trace](./agentHelp?key=complus_inplace_call_trace&type=2)
+* サポートバージョン : 5.3.3.3

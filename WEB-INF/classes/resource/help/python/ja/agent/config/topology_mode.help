@@ -1,0 +1,15 @@
+トポロジモードを有効にすると、DB、HTTP呼び出しに対するトランザクションを基本的に追跡し、トポロジダッシュボードとXViewにトポロジ情報を表示します。
+
+HTTP呼び出しは次のモジュールでテストしました。
+
+    * requests
+    * urllib, urllib2(python2), urllib3(python3)
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=1)
+サポートバージョン : 5.6.1.18

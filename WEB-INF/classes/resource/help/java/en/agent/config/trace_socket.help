@@ -1,0 +1,12 @@
+This option is used for Socket-related tracing.
+
+It traces the stream created through getInputStream() and getOutputStream() of Socket.
+
+---
+
+  * Default : true
+  * Type : Boolean
+  * Restart : not required
+  * Options related
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+  * Version supported : 5.0.0

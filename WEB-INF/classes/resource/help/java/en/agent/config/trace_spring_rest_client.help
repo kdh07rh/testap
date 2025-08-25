@@ -1,0 +1,10 @@
+This is an option to support RestClient, which was added in Spring Boot 3.2.x.
+
+Enabling the option allows the part that uses RestClient to monitor ExternalCall profiles and topology.
+
+---]
+
+* Default value: false
+* Format: Boolean
+* Restart: required
+* Supported versions: 5.6.4

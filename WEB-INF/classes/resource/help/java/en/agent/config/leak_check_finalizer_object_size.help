@@ -1,0 +1,15 @@
+[dump_active_service](./agentHelp?key=dump_active_service&type=1) JDBC Statement, ResultSet objects may be checked using the finalize method at the time of Leak check to help finding the cause performance problems.
+In order to avoid this problem, when a Leak of the specified size occurs, we process it by batch inspection.
+
+This option allows you to set the required size
+
+---
+
+* Default : 1024
+* Type : Number
+* Restart : Not Required
+* Related Options
+  * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+  * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+  * [each_send_for_leak_object](./agentHelp?key=each_send_for_leak_object&type=1)
+* Supported Version : 5.3.1

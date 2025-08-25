@@ -1,0 +1,13 @@
+This option allows to set the length of the return value when tracking specific method's return value through the dynamic profiling.
+
+The default value is 80 characters. If the returned value's length is grater than the default settings, the return value will be truncated followed by ellipsis ("...")
+
+
+---
+
+* Default : 80
+* Format :Number, Length
+* Restart : Not Required
+* Related Options
+    * [profile_method_parameter_value_length](./agentHelp?key=profile_method_parameter_value_length&type=1)
+* Supported Version : 5.2.2.1

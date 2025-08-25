@@ -1,0 +1,9 @@
+If the duration of performing System.Web.HttpRequest.GetEntireRawContent is greater than the loadrequest_trace_threshold value, the data is left in the X-View profile data.
+ 
+ ---
+  
+ * Default value: 1000
+ * Type: Numeric
+ * Sample value: 5000
+ * Restart: Not required
+ * Supported version: 5.0.7

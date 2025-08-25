@@ -1,0 +1,11 @@
+Redisモニタリング可否を設定します。
+PhpRedisとPredisライブラリのモニタリングをサポートします。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* 連関オプション
+    * [redis_args_length](./agentHelp?key=redis_args_length&type=3)
+* サポートバージョン : 5.6.0.3

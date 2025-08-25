@@ -1,0 +1,12 @@
+이 옵션은 java.sql.Statement 객체의 릭을 추적하여 "DB_STATEMENT_UNCLOSED" 이벤트를 발생할지 여부를 설정한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관옵션
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* 지원 버전 : 5.0.0

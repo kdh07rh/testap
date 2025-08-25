@@ -1,0 +1,14 @@
+Below query is to get DB2 instance name.
+
+set to below query 
+
+    SELECT INST_NAME FROM SYSIBMADM.ENV_INST_INFO
+
+---
+
+* Default : No
+* Type : String
+* Restart : Not required
+* Options related
+    * [enable_loupeon_db2](./agentHelp?key=enable_loupeon_db2&type=1)
+* Version supported : 5.4.4

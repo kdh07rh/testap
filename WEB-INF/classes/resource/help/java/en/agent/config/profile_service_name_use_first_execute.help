@@ -1,0 +1,10 @@
+When using the "Rename" function in Application Name settings, the default method is called repeatedly, and the name is changed using the last value called.
+
+When the option is enabled, the name is changed using the value that was first called when the method is called repeatedly.
+
+---
+
+* Default : false
+* Format : Boolean
+* Restart : Not Required
+* Supported Version : 5.2.2

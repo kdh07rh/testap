@@ -1,0 +1,13 @@
+This option specifies the path where the agent DOT configuration file is saved.
+
+If the path is not specified, the DOT file is saved under the conf directory of the agent home.
+
+    ex) config_dir=/home/jennifer/config
+
+
+---
+
+  * Default :  ../conf
+  * Type : String
+  * Restart : Not required
+  * Version supported: 5.0.0

@@ -1,0 +1,12 @@
+ソケット管理追跡のためのオプションです。
+
+ソケットのgetInputStream()とgetOutputStream()で生成されるStreamを追跡します。
+
+---
+
+  * デフォルト値 : true
+  * タイプ : Boolean
+  * 再起動 : 必要
+  * 連関オプション
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+  * サポートバージョン : 5.0.0

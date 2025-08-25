@@ -1,0 +1,25 @@
+JAVAアプリケーションからJNDI(Java Naming and Directory Interface)を利用してjavax.sql.DataSourceオブジェクトを取得し、このオブジェクトからjava.sql.Connectionオブジェクトを取得する環境で、JDBCおよびSQLの追跡可否を設定するオプションです。
+
+以下は一般的な使用例です。
+
+    javax.naming.Context context = new javax.naming.InitialContext();
+    javax.sql.DataSource dataSource = (javax.sql.DataSource) context.lookup(“java:comp/env/jdbc/SampleDS”);
+    java.sql.Connection connection = dataSource.getConnection();
+
+
+以下はログファイルに記録されるログの例です。
+
+    2015-02-24/13:25:42 [INFO] JDBC Context: org.apache.naming.NamingContext
+    ...
+    2015-02-24/13:26:07 [INFO] INF oracle.jdbc.driver.PhysicalConnection is a JDBC Connection
+    2015-02-24/13:26:07 [INFO] INF oracle.jdbc.OracleConnectionWrapper is a JDBC Connection
+
+---
+
+* デフォルト値： true (JDK9以上ではfalse)
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_wrapper_context_jdbc_trace](./agentHelp?key=enable_wrapper_context_jdbc_trace&type=1)
+    * [enable_jdbc_bootstrap_wrapper_factory](./agentHelp?key=enable_jdbc_bootstrap_wrapper_factory&type=1)
+* サポートバージョン：5.0.0

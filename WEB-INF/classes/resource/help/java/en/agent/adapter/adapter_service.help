@@ -1,0 +1,204 @@
+Used when customizing the method to track the performance of the standalone service.
+        
+        ** Interface Description **
+
+    package aries.runtime;
+
+    public interface IAdapterService {
+            /**
+            *
+            * Rejects a standalone service. Although a PLC is generally processed through the reject settings, this method is used to process the PLC function based on the 
+            * user IP or other input value. If the return value is true, the user request is rejected.
+            *
+                * @param classMethod Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return reject boolean value indicates if the request was rejected
+        */
+        public boolean reject(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Automatically called when required to return a boolean value.
+        * 
+        * @param stat StandaloneServiceContext object
+        */
+        public boolean rboolean(Object stat);
+        
+        /**
+        *
+        * Automatically called when required to return a numeric type value.
+        *
+        * @param stat StandaloneServiceContext object
+        */
+        public int rint(Object stat);
+        
+        /**
+        *
+        * Automatically called when required to return an object type value containing a string.
+        *
+        * @param stat StandaloneServiceContext object
+        */
+        public Object rObject(Object stat);
+        
+        /**
+        *
+        * Used to initialize an additional tracking information when a standalone service starts.
+        *
+        * @param classMethod Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @param activeObjectWrapper ActiveObjectWrapper object
+        */
+        public void start(String classMethod, ParameterWrapper parameterWrapper, Object activeObjectWrapper);
+        
+        /**
+        *
+        * Used to verify or modify the information tracked with AGENT at the time when a standalone service ends.
+        *
+        * @param returnValue service return value
+        * @param activeObjectWrapper ActiveObjectWrapper object
+        * @param throwable The exception if an exception occurs.
+        */
+        public void end(Object rtn, Object activeObject, Throwable throwable);
+        
+        /**
+        *
+        * Used right before transmitting the service performance information (XViewPoint) to the server.
+        *
+        * @param xviewPointRecordWrapper XViewPointRecordWrapper object
+        */
+        public void interceptServicePerformance(Object xviewPointRecordWrapper);
+    }
+
+- - -
+
+**Method description of the main objects**
+
+###### ParameterWrapper Object
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+###### ActiveObjectWrapper Description
+    public Thread getThread() : Return the Thread of the currently Active Object
+    public long getTxid() : Return Transaction ID
+    public String getGuid() : Returns GUID
+    public void setGuid(String guid) : Set the GUID
+    public String getUserId() : Returns the User ID
+    public void setUserId(String userId) : Set the User ID
+    public long getWmonId() : Returns WMONID
+    public long getStartTime() : Returns the Transaction Start Time
+    public long getStartCpu() : Returns Thread CPU Time after the transaction starts
+    public int getServiceHash() : Returns transaction name hash value
+    public String getServiceName() : Returns the transaction name
+    public void setServiceName(String serviceName) :Set transaction name
+    public String getHttpQuery() : Return the query string used during the HTTP call
+    public int getStatus() : Return current ActiveObject status
+    public short getErrorTypeOrZero() : If there was an error during the transaction execution, this method returns error type. It returns 0 if there was no error.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : Set error type if there was an error during the transactions execution.
+    public byte[] getIpAddr() : Returns IP address
+    public int getSqlCount() : Returns the number of SQL executed in the transaction 
+    public int getSqlTime() : Returns the sum of SQL time executed in the transaction 
+    public int getSqlStartTime() : Return the start time of SQL
+    public int getFetchCount() : Returns the fetch count.
+    public int getFetchTime() : Returns the fetch time.
+    public String getExternalCallName() : Returns the name of external call being executed
+    public void setExternalCallName(String externalCallName) : Set external call name.
+    public int getExternalCallCount() : Returns the number of external call executed in the transaction
+    public int getExternalCallTime() : Returns the sum of external calls executed in the transaction 
+    public String getHttpMethod() : Returns HTTP method (GET/POST)
+    public String getBrowserInfo() : Returns browsers information when connected through a web browser
+    public int getRecursiveCallCount() : Returns the number of recursive calls in the transaction
+    public void addProfile(PiData profile) : Add profile data to the transaction
+    public void pushProfile(PiData profile) : Add profile data to the transaction (Profile is not transmitted to the server yet)
+    public void popProfile(PiData profile) : Push profile to the transaction (Profile is transmitted to the server when using pop method)
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, boolean raiseEvent) : Raise and exception in case of an event or profile added. The default error type is "METHOD_EXCEPTION".
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, short errorType, boolean raiseEvent) : Raise and exception in case of an event or profile added
+
+##### XViewPointRecordWrapper Object
+
+    public long getEndTime() : Returns the transaction end time.
+    public int getSysOid() : Retusn agent ID
+    public int getElapsedTime() : Returns the transaction elapsed time.
+    public int getCpuTime() : Returns the Thread CPU time 
+    public int getSqlCount() : Returns the number of SQL executed in the transaction
+    public int getSqlTime() : Returns the sum of all SQL executed in the transaction
+    public int getFetchCount() : Returns the entire SQL fetch number that are executed in the transaction
+    public int getFetchTime() : Returns the sum of SQL fetch time in the transaction
+    public int getExternalCallCount() : Returns the number of External calls executed in the transaction.
+    public int getExternalCallTime() : Returns the sum of External calls executed in the transaction.
+    public int getServiceHash() : Returns transaction name hash value
+    public long getTxid() : Return transaction ID
+    public short getErrorTypeOrZero() : If there was an error during the transaction execution, this method returns error type. It returns 0 if there was no error.
+    public void setErrorTypeOrZero(short errorTypeOrZero) : Set error type if there was an error during the transactions execution.
+    public byte[] getGuid() : Returns GUID
+    public long getWmonId() : Returns WMONID
+    public byte[] getIpAddr() : Returns IP address
+    public int getBrowserHash() :  Returns browsers information hash when connected through a web browser
+    public int getUserHash() : Returns user ID hash.
+
+##### StandaloneServiceContext Object
+    public String getDescriptor() : This methods returns an object description 
+    public ParameterWrapper getParameter() : Returns ParameterWrapper object
+
+- - -
+
+
+** How to configure **
+
+When the class implementing the adapter in the format of jennifer.impl.XXX.jar is placed at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar facilitates version control.
+
+    ex) aries.runtime.custom.SampleService
+
+- - -
+
+** Sample Implementation **
+
+public class SampleService implements IAdapterService
+    {
+        public boolean reject(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return false;
+        }
+
+        public boolean rboolean(Object stat)
+        {
+            return false;
+        }
+
+        public int rint(Object stat)
+        {
+            return 0;
+        }
+
+        public Object rObject(Object stat)
+        {
+            return null;
+        }
+
+        public void start(String classMethod, ParameterWrapper parameterWrapper, Object activeObjectWrapper) {}
+
+        public void end(Object returnValue, Object activeObjectWrapper, Throwable throwable) {}
+
+        public void interceptServicePerformance(Object xviewPointWrapper)
+        {
+            if(xviewPointWrapper instanceof XViewPointRecordWrapper)
+            {
+                XViewPointRecordWrapper xviewPoint = (XViewPointRecordWrapper) xviewPointWrapper;
+                xviewPoint.getTxid();
+                // ...
+                // TODO 
+            }
+        }
+    }
+
+
+---
+
+* Default value: None
+* Type: string
+* Sample Value : aries.runtime.custom.SampleService
+* Restart: Not Required
+* Supported version: 5.0.0

@@ -1,0 +1,15 @@
+If the agent is set to make statistics, it sends data per minute. This option indicates the number of external call the agent keep in 1 minute.
+
+If the number of external call performed in one minute exceeds the default value (10,000), the number must be increased through settings to make accurate statistics.
+
+---
+
+* Default : 10000
+* Type : Number
+* Restart : not required
+* Options related
+    * [application_statistic_max_count](./agentHelp?key=application_statistic_max_count&type=1)
+    * [sql_statistic_max_count](./agentHelp?key=sql_statistic_max_count&type=1)
+    * [error_statistic_max_count](./agentHelp?key=error_statistic_max_count&type=1)
+    * [collect_statistic_on_agent](./agentHelp?key=collect_statistic_on_agent&type=1)
+* Version supported : 5.6.1

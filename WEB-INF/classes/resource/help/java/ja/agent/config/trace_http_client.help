@@ -1,0 +1,12 @@
+JDK11で追加されたHttpClientをサポートするためのオプションです。
+
+このオプションを使用するには、JAVA_OPTSに"--add-opens=java.net.http/jdk.internal.net.http=ALL-UNNAMED" オプションを追加する必要があります。
+
+HttpClientは同期方式のsendと非同期方式のsendAsync方式をサポートしています。同期(send)方式を使用する場合はトポロジーの接続をサポートしますが、非同期(sendAsync)方式を使用する場合は応答時間のみ収集します。
+
+---.
+
+* デフォルト値: false
+* 形式 : Boolean
+* 再起動：必要
+* サポートバージョン：5.6.3.5

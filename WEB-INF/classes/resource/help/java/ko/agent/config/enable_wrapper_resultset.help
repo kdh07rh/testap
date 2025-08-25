@@ -1,0 +1,11 @@
+이 옵션은 [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) 옵션을 활성화 했을 경우 java.sql.ResultSet 객체의 Wrapper를 생성할지 여부를 설정한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+* 지원 버전 : 5.0.6

@@ -1,0 +1,13 @@
+이 옵션을 통해 추적하고 싶은 모든 HTTP Header를 트랜잭션의 프로파일 정보를 통해 그 값을 확인 확인할 수 있다.
+
+Header 정보가 너무 많은 경우에는 [profile_http_header](./agentHelp?key=profile_http_header&type=1) 옵션을 통해서 특정 Header의 값만 확인할 수 있다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=1)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=1)
+* 지원 버전 : 5.6.1.19

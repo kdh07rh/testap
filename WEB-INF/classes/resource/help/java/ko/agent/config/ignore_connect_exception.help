@@ -1,0 +1,10 @@
+트랜잭션에서 발생하는 java.net.ConnectExcetion을 무시하는 옵션이다.
+
+옵션을 설정하면 트랜잭션 중에 발생하는 java.net.ConnectExcetion 예외를 무시하여 SOCKET_EVENT 이벤트가 발생되지 않는다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.5.3

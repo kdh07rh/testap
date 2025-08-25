@@ -1,0 +1,8 @@
+This option is for using the client IP address instead of the cookie used for tracking the visitor.
+ 
+ ---
+ 
+ * Default value: false
+ * Type: Boolean
+ * Restart: Not required
+ * Supported version: 5.0.7

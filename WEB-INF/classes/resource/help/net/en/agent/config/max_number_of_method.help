@@ -1,0 +1,15 @@
+The name of a method subject to profiling is sent to the server, and its hash value is stored in the cache inside the agent. Through this process, it is possible to prevent the same method name from being sent to the server redundantly. This option determines the size of cache.
+ 
+ If the cache data exceeds the set value, based on the FIFO (First In First Out) principle, the hash of the method entering earlier is deleted and the hash value for the name of a new method is added.
+ 
+ ---
+ 
+ * Default value: 30000
+ * Type: Number
+ * Sample value: 50000
+ * Restart: Required
+ * Related options
+  * [max_number_of_text](./agentHelp?key=max_number_of_text&type=2)
+  * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+  * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+ * Supported version: 5.0.7

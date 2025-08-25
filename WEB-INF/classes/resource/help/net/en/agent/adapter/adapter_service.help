@@ -1,0 +1,50 @@
+"Used when customizing a method to track the performance of a standalone service.
+
+    public interface IAdapterService
+    {
+        bool reject(String classMethod, Parameter arg);
+        bool rboolean(Object stat);
+        int rint(Object stat);
+        Object rObject(Object stat);
+        void start(String classMethod, Parameter args, Object activeObject);
+        void end(Object rtn, Object activeObject, Exception tw);
+        void interceptServicePerformance(Object xvpoint);
+    }
+
+Description of method
+---------------
+reject(String classMethod, Parameter param)
+: Rejects a standalone service. Although PLC processing with reject settings is generally used, this method is used when intending to process the PLC function based on the user IP or other input value. If the return value is ""true"", the user request is rejected.
+
+rboolean(Object stat)
+: Currently not supported by JENNIFER .NET
+
+rint(Object stat)
+: Currently not supported by JENNIFER .NET
+
+rObject(Object stat)
+: Currently not supported by JENNIFER .NET
+
+start(String classMethod, Parameter param, Object activeObject)
+: Used to initialize additional tracking information when a standalone service starts.
+
+end(Object rtn, Object activeObject, Exception tw)
+: Used to verify or modify the information tracked with JENNIFER at the time when a standalone service ends.
+
+interceptServicePerformance(Object xvpoint)
+: Used immediately before transmitting the service performance information (XViewPoint) to the server.
+
+** How to configure **
+
+Save the class source file implementing an adapter in the [JENNIFER installation folder]/extension folder, then perform validation using the verify_script.bat file located in the extension folder. If validation is successfully completed, set the file name of a source code validated in the adapter_http_service item on the advanced options page through the JENNIFER console.
+
+---
+
+* Default value: None
+* Type: string
+* Sample value: ServiceAdapter.cs 
+* Restart: required but applied at the time of running if the adapter_revision option value is reset.
+* Related options
+  * [adapter_revision](./agentHelp?key=adapter_revision&type=2)
+* Supported version: 5.0.8.1
+"

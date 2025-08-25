@@ -1,0 +1,21 @@
+이 옵션은 JDBC 드라이버에서 제공하는 java.sql.PreparedStatement, java.sql.CallableStatement를 구현하고 있는 클래스 중에 setString 메소드를 이용하여 바인드된 파라미터의 길이를 제한하기 위한 옵션이다.
+
+기본값은 50으로 파라미터의 길이가 50 보다 크면 "..." 말줄임표를 이용하여 해당 파라미터의 길이를 줄여서 정보를 수집한다.
+
+---
+
+* 기본값 : 50
+* 형식 : 숫자(Number)
+* 샘플값 : 100
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_preparedstatement_trace](./agentHelp?key=enable_preparedstatement_trace&type=1)
+    * [enable_callablestatement_trace](./agentHelp?key=enable_callablestatement_trace&type=1)  
+* 지원 버전 : 5.0.6

@@ -1,0 +1,13 @@
+This option is used to extract the full stack of the time when the java.sql.Statement object is used, when the [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1) option is activated.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [check_statement_unclosed](./agentHelp?key=check_statement_unclosed&type=1)
+    * [check_preparedstatement_unclosed](./agentHelp?key=check_preparedstatement_unclosed&type=1)
+    * [check_callablestatement_unclosed](./agentHelp?key=check_callablestatement_unclosed&type=1)
+* Supported version: 5.0.0

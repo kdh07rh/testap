@@ -1,0 +1,33 @@
+{
+  "domainBar": {
+    "type": "agent",
+    "multidomain" : true,
+    "multiinstance": true,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+  "charts": [
+    {"charttype": "speedhorizon", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 0, "endx": 75, "starty": 0, "endy": 8.33}, "extend": {"startx": 0, "endx": 100, "starty": 0, "endy": 8.33}},
+    {"i18nTitle":"ui.label.activeServiceStatus", "charttype": "speedvertical", "datatype": "agent", "domainBarSync": true, "origin": {"startx": 75, "endx": 100, "starty": 0, "endy": 45}},
+
+    {"i18nTitle":"ui.label.activeService", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 8.33, "endy": 26.66}},
+    {"i18nTitle":"ui.label.activeService", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_service", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "active_service", "origin": {"startx": 25, "endx": 75, "starty": 8.33, "endy": 26.66}, "extend": {"startx": 0, "endx": 100, "starty": 8.33, "endy": 26.66}},
+
+    {"i18nTitle":"ui.label.responseTimeChart", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_time", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 26.66, "endy": 45}},
+    {"i18nTitle":"ui.label.sys.cpu", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.sys_cpu", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LAST_SINGLE", "fixedmax": 100, "origin": {"startx": 25, "endx": 75, "starty": 26.66, "endy": 45}, "extend": {"startx": 0, "endx": 100, "starty": 26.66, "endy": 45}},
+
+    {"i18nTitle":"ui.label.serviceRate", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 45, "endy": 63.33}, "extend": {"startx": 0, "endx": 25, "starty": 45, "endy": 63.33}},
+    {"i18nTitle":"ui.label.serviceRate.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 25, "endx": 50, "starty": 45, "endy": 63.33}, "extend": {"startx": 25, "endx": 50, "starty": 45, "endy": 63.33}},
+    {"i18nTitle":"ui.label.proc.cpu", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.proc_cpu", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "fixedmax": 100, "origin": {"startx": 50, "endx": 75, "starty": 45, "endy": 63.33}, "extend": {"startx": 50, "endx": 75, "starty": 45, "endy": 63.33}},
+    {"i18nTitle":"ui.label.xview", "charttype": "xview.dashboard", "datatype": "agent", "domainBarSync": true, "optimized": true, "origin": {"startx": 75, "endx": 100, "starty": 45, "endy": 81.66}, "extend": {"startx": 75, "endx": 100, "starty": 45, "endy": 81.66}},
+
+    {"i18nTitle":"ui.label.concurrentUser", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.concurrent_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 25, "starty": 63.33, "endy": 81.66}, "extend": {"startx": 0, "endx": 25, "starty": 63.33, "endy": 81.66}},
+    {"i18nTitle":"ui.label.concurrentUser.today", "charttype": "area", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.concurrent_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 25, "endx": 50, "starty": 63.33, "endy": 81.66}, "extend": {"startx": 25, "endx": 50, "starty": 63.33, "endy": 81.66}},
+    {"i18nTitle":"ui.label.heapMemory", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.heap_used", "metricsmax": "MxDef.heap_committed", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "defaultmax": 64, "origin": {"startx": 50, "endx": 75, "starty": 63.33, "endy": 81.66}, "extend": {"startx": 50, "endx": 75, "starty": 63.33, "endy": 81.66}},
+
+    {"i18nTitle":"ui.label.hitHour", "charttype": "column.daily", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.service_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2", "origin": {"startx": 0, "endx": 25, "starty": 81.66, "endy": 100}, "extend": {"startx": 0, "endx": 25, "starty": 81.66, "endy": 100}},
+    {"i18nTitle":"ui.label.visitHour", "charttype": "column.daily", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.visit_hour", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2", "origin": {"startx": 25, "endx": 50, "starty": 81.66, "endy": 100}, "extend": {"startx": 25, "endx": 50, "starty": 81.66, "endy": 100}},
+    {"i18nTitle":"ui.label.activeDbConnection", "charttype": "line.runtime", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.average_db_pool_active_count", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 50, "endx": 75, "starty": 81.66, "endy": 100}, "extend": {"startx": 50, "endx": 75, "starty": 81.66, "endy": 100}},
+    {"i18nTitle":"ui.label.event", "charttype": "event", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.rt_event", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "rt_event", "origin": {"startx": 75, "endx": 100, "starty": 81.66, "endy": 100}, "extend": {"startx": 75, "endx": 100, "starty": 81.66, "endy": 100}}
+    ]
+}

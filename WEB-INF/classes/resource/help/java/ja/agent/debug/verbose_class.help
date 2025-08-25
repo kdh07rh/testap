@@ -1,0 +1,23 @@
+このオプションを活性化すると、エージェント初期化後にローディングされたクラスに対してBCI（ByteCode Instrumentation）操作の実行可否とエージェントロジックの遂行経過時間をログファイルに記録します。
+
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.NotUpdatable 1129 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.JDBC4ResultSet 10600 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.JDBC4UpdatableResultSet 11758 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[BootstrapClassLoader] [sun.misc.FDBigInt 6034 bytes 0 hk 1 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.LicenseConfiguration 502 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.EscapeProcessor 12261 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.profiler.ProfilerEventHandlerFactory 1942 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.C2BConverter 4797 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.WriteConvertor 965 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.IntermediateOutputStream 1516 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.http.FastHttpDateFormat 4427 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.http.HttpMessages 2328 bytes 0 hk 0 ms
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable](./agentHelp?key=enable&type=1)
+* サポートバージョン：5.0.0

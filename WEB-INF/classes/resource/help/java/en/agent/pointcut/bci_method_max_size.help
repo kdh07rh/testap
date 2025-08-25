@@ -1,0 +1,25 @@
+This option designates the maximum size of a class method to perform the BCI (ByteCode Instrumentation) operation. If the set value is larger than the maximum class method size, BCI operation is not performed.  
+
+Classes subject to the set value are recorded in the log file. 
+
+    ...
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.MethodWriter.visitMaxs is too big 1380bytes
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.MethodWriter.getSize is too big 1031bytes
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.MethodWriter.put is too big 1934bytes
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.MethodWriter.resizeInstructions is too big 2166bytes
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.ClassWriter.toByteArray is too big 1519bytes
+    2015-05-04/14:40:06 [DEBUG] org.springframework.asm.AnnotationWriter.visit is too big 1029bytes
+    ...
+
+Note that as the maximum size of a method is no more than 64Kb (64 * 1024 = 65536), consideration should be given to the size of byte code to be added at the time of BCI operation for the classes subject to monitoring (when the default value is used, the byte code does not exceed 100 bypes).
+
+---
+
+* Default value: 48000
+* Type: Number, Byte
+* Sample value: 1000
+* Restart: Required
+* Related options
+    * [bci_class_max_size](./agentHelp?key=bci_class_max_size&type=1)
+    * [bci_method_min_size](./agentHelp?key=bci_method_min_size&type=1)
+* Supported version: 5.0.0

@@ -1,0 +1,10 @@
+The following class are registered for external transaction Apache HttpComponents by default.
+
+    org.apache.http.impl.client.CloseableHttpClient
+    When using a different class, set the option.
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Required
+* Supported Version : 5.4.3

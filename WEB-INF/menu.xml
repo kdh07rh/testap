@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<http>
+    <form-login login-page="/login" />
+    
+    <url pattern="/" />
+    <url pattern="/index" />
+    <url pattern="/favicon.ico" filters="none" />
+    <url pattern="/login" filters="none" />
+    <url pattern="/logout" filters="none" />
+    <url pattern="/css/**" filters="none" />
+    <url pattern="/css2/**" filters="none" />
+    <url pattern="/script/**" filters="none" />
+    <url pattern="/image/**" filters="none" />
+    <url pattern="/secure/**" />
+    <url pattern="/help" filters="none" />
+    <url pattern="/help/**" filters="none" />
+    <url pattern="/report/view/**" filters="none" />
+    <url pattern="/**" />
+</http>

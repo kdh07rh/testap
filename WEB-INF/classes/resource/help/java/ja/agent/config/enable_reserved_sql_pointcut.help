@@ -1,0 +1,66 @@
+[enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)オプションが活性化される際、JDBCドライバ内の把握済みのクラスに対しては自動的にBCI（ByteCode Instrumentation）操作を実行します。
+
+登録完了の把握済みクラスの一覧は以下になります。
+
+    -- Derby
+    org.apache.derby.impl.jdbc.EmbedStatement
+    org.apache.derby.impl.jdbc.EmbedPreparedStatement
+    org.apache.derby.impl.jdbc.EmbedResultSet
+    org.apache.derby.client.am.Statement
+    org.apache.derby.client.am.PreparedStatement
+    org.apache.derby.client.am.ResultSet
+
+    -- PostgreSQL
+    org.postgresql.jdbc2.AbstractJdbc2Statement
+    org.postgresql.jdbc2.AbstractJdbc2ResultSet
+    
+    -- MySQL
+    com.mysql.jdbc.Statement
+    com.mysql.jdbc.ResultSet
+    com.mysql.jdbc.StatementImpl
+    com.mysql.jdbc.PreparedStatement
+    com.mysql.jdbc.ResultSetImpl
+
+    -- MSSQL
+    net.sourceforge.jtds.jdbc.JtdsStatement
+    net.sourceforge.jtds.jdbc.JtdsPreparedStatement
+    net.sourceforge.jtds.jdbc.JtdsResultSet
+    com.microsoft.sqlserver.jdbc.SQLServerStatement
+    com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement
+    com.microsoft.sqlserver.jdbc.SQLServerResultSet
+    
+    -- SYBASE
+    com.sybase.jdbc2.jdbc.SybStatement
+    com.sybase.jdbc2.jdbc.SybPreparedStatement
+    com.sybase.jdbc2.jdbc.SybCallableStatement
+    com.sybase.jdbc2.jdbc.SybResultSet
+    com.sybase.jdbc3.jdbc.SybStatement
+    com.sybase.jdbc3.jdbc.SybPreparedStatement
+    com.sybase.jdbc3.jdbc.SybCallableStatement
+    com.sybase.jdbc3.jdbc.SybResultSet
+    
+    -- Oracle
+    oracle.jdbc.driver.OracleStatement
+    oracle.jdbc.driver.OraclePreparedStatement
+    oracle.jdbc.driver.OracleCallableStatement
+    oracle.jdbc.driver.OracleResultSetImpl
+
+    -- CUBRID
+    cubrid.jdbc.driver.CUBRIDStatement
+    cubrid.jdbc.driver.CUBRIDPreparedStatement
+    cubrid.jdbc.driver.CUBRIDResultSet
+
+この値がfalseの場合、必要なクラスを追加で登録する必要があります。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+* サポートバージョン：5.0.0

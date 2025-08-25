@@ -1,0 +1,10 @@
+This option uses uses javax.servlet.ServletRequest.getRemoteAddr() method when calculating the remote address, and at this time, the address of the web server may be returned according to the web server settings.
+At this time, the address used is delivered to HTTP header and this option is for using this value as the user address.
+
+---
+
+* Default value: None
+* Type: string
+* Sample value: X-REMOTE_ADDRESS
+* Restart: Not required
+* Supported version: 5.0.0

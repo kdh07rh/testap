@@ -1,0 +1,18 @@
+[enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1) オプションがtrueに設定され、java.sql.CallableStatementオブジェクトのリーク追跡する場合、該当オブジェクトがクローズされていないとDB_STATEMENT_UNCLOSEDエラーを発生します。
+
+[enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)オプションがtrueに設定されると、スタック情報がエラー情報に追加されます。
+
+** リークを追跡するタイミングはfinalize()を再定義して呼ばれるため、JVMのガベージコレクションのアルゴリズムに依存されます。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+* サポートバージョン：5.0.0

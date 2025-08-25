@@ -1,0 +1,8 @@
+Sets pattern rule for service name to output XML content in LoadXml profile. The contents shall be printed only if this condition is met.
+---
+
+* Default: (null)
+* Type : String
+* Sample Value : /home/*managed.aspx
+* Restart : Not Required
+* Supported Version: 5.4.0.6

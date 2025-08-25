@@ -1,0 +1,11 @@
+DB 모니터링 솔루션인 루페온과 연동을 위해 설정하는 옵션이다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [get_instance_name_through_query](./agentHelp?key=get_instance_name_through_query&type=1)    
+* 지원 버전 : 5.4.4

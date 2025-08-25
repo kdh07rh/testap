@@ -1,0 +1,17 @@
+자동 스택 트레이스가 동작하는 경우 이 값으로 지정된 밀리초 이상 수행 중인 Active Service에 대한 호출 스택을 남긴다
+
+--- 
+
+* 기본값 : 8000 (단위: 밀리초, 최솟값 3000)
+* 형식 : 숫자
+* 샘플값 : 9000
+* 재시작 : 안함 
+* 연관 옵션
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* 지원 버전 : 5.1.3.2

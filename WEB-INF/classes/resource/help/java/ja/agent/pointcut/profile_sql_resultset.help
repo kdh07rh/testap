@@ -1,0 +1,20 @@
+[enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)オプションを使用するとき、デフォルトでサポートしないResultSetクラスを登録するために使用します。
+追加登録するクラスは、java.sql.ResultSetインターフェースを実装したクラスである必要があります。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        com.mysql.jdbc.ResultSetImpl
+        oracle.jdbc.driver.OracleResultSetImpl
+
+* 再起動：必要
+* 関連オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+* サポートバージョン：5.0.0

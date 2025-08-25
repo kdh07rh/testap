@@ -1,0 +1,12 @@
+데이터 서버에 접속하기 위해 설정하는 Port를 지정하는 옵션이다.
+
+    ex)server_port=5000
+
+---
+
+  * 기본값 : 5000
+  * 형식 : 숫자(Number)
+  * 재시작 : 안함
+  * 연관 옵션
+    * [server_address](./agentHelp?key=server_address&type=1)
+  * 지원 버전 : 5.0.0

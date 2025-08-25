@@ -1,0 +1,9 @@
+This option is used when you change the name of an application and you want to know the original name before it was changed.
+When setting the option, the original name remains in the profile of the transaction.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.3.3.4

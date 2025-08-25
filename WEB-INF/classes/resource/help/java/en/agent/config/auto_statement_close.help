@@ -1,0 +1,18 @@
+This option determines whether the agent automatically closes the applicable object at the time of garbage collection when the close method of java.sql.Statement object is not explicitly called.
+
+** As close method is called by re-defining finalize() of java.lang.Object class, it depends completely on the garbage collection algorithm of JVM. 
+
+** Must be checked before use as it would be dangerous to automatically return the java.sql.Statement object.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_statement_trace](./agentHelp?key=enable_statement_trace&type=1)
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+* Supported version: 5.0.0

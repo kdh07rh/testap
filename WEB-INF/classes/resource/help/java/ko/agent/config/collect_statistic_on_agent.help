@@ -1,0 +1,13 @@
+애플리케이션, SQL, Error, ExternalCall 등의 통계를 에이전트에서 구하는 옵션이다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [application_statistic_max_count](./agentHelp?key=application_statistic_max_count&type=1)
+    * [sql_statistic_max_count](./agentHelp?key=sql_statistic_max_count&type=1)
+    * [external_call_statistic_max_count](./agentHelp?key=external_call_statistic_max_count&type=1)
+    * [error_statistic_max_count](./agentHelp?key=error_statistic_max_count&type=1)
+* 지원 버전 : 5.6.1

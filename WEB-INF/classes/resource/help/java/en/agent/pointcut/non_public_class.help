@@ -1,0 +1,17 @@
+This option converts a class access constraint which is not public among the classes subject to BCI (ByteCode Instrumentation) into public.
+
+The reason why the access constraint of a class is not disclosed to the public is for security purposes or because such class is generally for internal use or is such that the user doesn't need to know. Therefore, it is recommended to use for debugging purposes if it is not necessary. 
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        example.ExamplePrivateClass
+        example.ExampleProtectedClass
+
+* Restart: Required
+* Related options
+    * [non_public_member](./agentHelp?key=non_public_member&type=1)
+* Supported version: 5.0.0

@@ -1,0 +1,9 @@
+このオプションをtrueに設定すると、エージェントで使用するWMONIDクッキーを発行するときにHttpOnly属性を追加します。
+---
+
+* デフォルト値 : false 
+*タイプ：Boolean
+*再起動:不要
+* 関連オプション
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=3)
+*サポートバージョン:5.0.10

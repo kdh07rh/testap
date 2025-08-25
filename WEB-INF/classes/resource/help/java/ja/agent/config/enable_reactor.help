@@ -1,0 +1,15 @@
+Reactor関連モニタリング可否を指定します。
+
+trueにすると既定のReactor関連クラスに対してBCI(ByteCode Instrumentation)を行います。
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* 連関オプション
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [profile_reactive_cpu](./agentHelp?key=profile_reactive_cpu&type=1)
+    * [collect_reactive_elapsed_time](./agentHelp?key=collect_reactive_elapsed_time&type=1)
+    * [enable_async_executor](./agentHelp?key=enable_async_executor&type=1)
+* サポートバージョン : 5.5.3

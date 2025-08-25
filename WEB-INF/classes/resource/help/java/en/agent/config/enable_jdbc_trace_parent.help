@@ -1,0 +1,18 @@
+The default value of this option is false, and a DB_STATEMENT_UNCLOSED error occurs when programmed as follows at the time of tracking the JDBC information (SQL) in the wrapper method as [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1), [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1).
+
+    Statement stmt = ...
+    ResultSet rs = stmt.executeQuery(...);
+    ...
+    Statment stmt2 = rs.getStatement();
+    rs.close();
+    stmt2.close();
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+* Supported version: 5.0.6

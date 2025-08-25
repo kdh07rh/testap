@@ -1,0 +1,21 @@
+デフォルト値は JDBC Statement, ResultSetオブジェクトに対してLeakチェック時、発生したLeakの情報を一括に送信するとき、検知された回数をメッセージに送るタイプです。
+次は発生するメッセージの例です。
+
+    JDBC NOT CLOSE : com.mysql.jdbc.JDBC4PreparedStatement count = 1
+    JDBC NOT CLOSE : com.mysql.jdbc.JDBC4ResultSet count = 5
+
+
+上の様に一括に送るとき、実際のエラー数が一致しない可能性があるが発生するエラー数が重要な場合、合わせるために個別に送るように設定するオプションです。
+
+注意点：個別にエラーを送るとエラー数が多すぎる可能性があるため、この部分を考慮する必要があります。
+
+---
+
+
+* デフォルト値 :false
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* サポートバージョン : 5.3.1

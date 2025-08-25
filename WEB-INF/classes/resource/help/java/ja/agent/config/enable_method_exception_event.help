@@ -1,0 +1,28 @@
+BCI(ByteCode Instrumentation)の対象メソッド(ダイナミックメソッドプロファイリング、カスタムメソッドプロファイリング)に対して、例外が発生するときに"METHOD_EXCEPTION"イベントの発生可否を設定するオプションです。
+
+デフォルト値はfalseで、例外が発生するとトランザクションのプロファイル情報に当該例外の"toString()"メッセージを追加します。
+
+次は、追加されたプロファイルの例です。
+
+    ...
+    [0124][17:03:42 958][    0][     ] void org.springframework.security.core.AuthenticationException.setAuthentication(org.springframework.security.core.Authentication)
+    [0125][17:03:42 958][    0][     ] org.springframework.security.core.userdetails.UsernameNotFoundException: .
+    [0126][17:03:42 958][    0][     ] void org.springframework.security.authentication.ProviderManager.prepareException(org.springframework.security.core.AuthenticationException,org.springframework.security.core.Authentication)
+    [0127][17:03:42 958][    0][     ] void org.springframework.security.core.AuthenticationException.setAuthentication(org.springframework.security.core.Authentication)
+    [0128][17:03:42 958][    0][     ] org.springframework.security.core.userdetails.UsernameNotFoundException: .
+    ...
+
+
+例外の"toString()"メッセージを追加するため、単純なメッセージが出力されます。当該例外のスタック情報を確認する場合は [adapter_method](./agentHelp?key=adapter_method&type=1)オプションを参考にしてください。
+
+オプションをtrueで設定すると、例外が発生するとき、"METHOD_EXCEPTION"イベントが発生します。
+"管理->イベントルール"画面でアラートを設定するとこのイベントをアラートとして確認できます。
+
+---
+
+*デフォルト値 : false 
+*タイプ：Boolean
+*再起動 : 不要
+*関連オプション
+    * [adapter_method](./agentHelp?key=adapter_method&type=1)
+* サポートバージョン : 5.0.9.2

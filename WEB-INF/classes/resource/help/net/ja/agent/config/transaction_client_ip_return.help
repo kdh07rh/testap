@@ -1,0 +1,22 @@
+トランザクションのクライアントIPを特定メソッドのリターン値に設定するオプションです。
+
+設定はリターン値がある、全体メソッドのスクリプトを入力して設定する。
+(サポートするリターン値は文字列とバイト配列をサポート)
+
+次は設定例です。
+
+    WebApplication.DefaultPage GetClientIP()System.String
+
+
+---
+
+* デフォルト値 : なし
+* タイプ :  文字列
+* サンプル値
+
+        example.clientIp getClientIp()System.String
+
+* 再起動 : 必要
+* 関連オプション
+    * [transaction_client_ip_parameter](./agentHelp?key=transaction_client_ip_parameter&type=1)
+* サポートバージョン: 5.6.0.23

@@ -1,0 +1,8 @@
+Determines whether the PHP agent profiles an external transaction call function which is designated in advance. 
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.0

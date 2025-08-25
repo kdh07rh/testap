@@ -1,0 +1,37 @@
+일반적인 웹 애플리케이션일 경우 다음과 같은 기본 시작점이 등록되어 있다.
+
+    javax.servlet.http.HttpServlet
+    allaire.jrun.jsp.HttpJSPServlet
+    jrun.jsp.runtime.HttpJSPServlet
+    com.caucho.jsp.JavaPage
+    weblogic.servlet.jsp.JspBase
+    com.evermind.server.http.JSPServlet
+    org.apache.jasper.servlet.JspServlet
+
+해당 클래스가 로딩 되어 초기화 되면 Runtime Module 이 초기화 된다.
+
+다음과 같은 로그 내용을 확인 할 수 있다.
+
+    ...
+    2015-09-11/14:09:06 [I001] Load runtime module : /home/agent.java/agent.impl-5.0.11.jar;/home/agent.java/agent.impl.jdk16-1.0.1.jar
+    2015-09-11/14:09:06 [I001] Load ClassLoader : agent.base.AgentClassLoader@5b3fb1ab, org.apache.catalina.loader.StandardClassLoader@117bcd8f
+    2015-09-11/14:09:06 [I002] RT Class redefine java.io.FileOutputStream
+    2015-09-11/14:09:06 [I002] RT Class redefine java.net.Socket
+    2015-09-11/14:09:06 [I002] RT Class redefine java.lang.Thread
+    2015-09-11/14:09:06 [I001] Agent Runtime Module initialized
+    2015-09-11/14:09:06 [I005] CPU : loaded the procstat(14454) 
+    2015-09-11/14:09:07 [I006] Memory : loaded the procstat(14454) 
+    ...
+    2015-09-11/14:09:07 [I001] Agent Runtime Module loading complete... 
+    ...
+
+Runtime Module 이 초기화 되지 않으면 트랜잭션 데이터를 수집 하지 않기 때문에 별도로 관리 화면을 통해서 등록해야 한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+  * [enable_reserved_externalcall_for_http](./agentHelp?key=enable_reserved_externalcall_for_http&type=1)
+* 지원 버전 : 5.0.11

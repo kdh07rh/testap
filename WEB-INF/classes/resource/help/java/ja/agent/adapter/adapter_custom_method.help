@@ -1,0 +1,132 @@
+トランザクションで実行されるメソッドの性能追跡や特定メソッドに対する追跡作業をユーザ定義で実装するために使用します。
+
+** インターフェースの説明**
+
+    package aries.base.profile;
+
+    public interface IAdapterCustomMethod {
+        /**
+         * メソッドの開始点に挿入されて呼び出されるメソッドです。
+       *トランザクションの実行中にメソッドの性能追跡や特定メソッドに対する追跡をカスタマイジングするために使用されるため、実装時にActiveObjectをチェックしなければなりません。
+         * 
+         * @param originHash BCIの対象である原本メソッドのハッシュ
+         * @param originFullDescriptor BCIの対象である原本メソッドの全体ディスクリプタ
+         * @param hash BCIの対象であるメソッドのハッシュ
+         * @param fullDescriptor BCIの対象であるメソッドの全体ディスクリプタ
+         * @param parameterWrapper メソッドのパラメータの情報を持っているクラス
+         * @return プロファイルメソッドの情報を含めているオブジェクトを返還します。
+         */
+        Object start(int originHash, String originFullDescriptor, int hash, String fullDescriptor, ParameterWrapper parameterWrapper);
+        
+        /**
+         * メソッドの終了点に挿入されて呼び出されるメソッドです。
+         *stat情報はstartでリターンとなるPiMethod情報なのに、例外としてnullがリターンとなることもあるので、実装時に注意してください。
+         * 
+         * @param returnValue メソッドのリターン値
+         * @param stat プロファイルメソッドの情報
+         * @param throwable メソッドを実行したときに例外が発生した場合、例外
+         */
+        void end(Object returnValue, Object stat, Throwable throwable);
+    }
+
+- - -
+
+** 主要オブジェクトのメソッド説明**
+
+###### ParameterWrapper オブジェクト
+    public int size() : パラメータ数をリターンします。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトを返還します。
+    public Object[] getValues() : メソッドのパラメータ配列を返還します。
+    public Object get(int idx) : 該当位置のパラメータを返還します。
+    public Parameter getParameter() : 原本Parameterオブジェクトを返還します。
+
+- - -
+
+**設定方法**
+
+アダプタを実装したクラスを jennifer.impl.XXX.jarの形でjennifer.jarと同じ位置におけば、別途の設定をせずに当該ライブラリを自動的に認識します。
+バージョン管理のためにjennifer.impl.custom-1.0.1.jarと同じ形式を使用すると便利です。
+
+ライブラリを追加後、オプションに実装したアダプタクラス名を登録してください。
+
+    ex) aries.runtime.custom.SampleCustomMethod
+
+- - -
+
+** 例**
+
+    public class SampleCustomMethod implements IAdapterCustomMethod
+    {
+        private final ActiveObjectMeter activeObjectMeter = ActiveObjectMeter.getInstance();
+        
+        public Object start(int originHash, String originFullDescriptor, int hash, String fullDescriptor, ParameterWrapper parameterWrapper)
+        {
+            try
+            {
+                ActiveObject activeObject = activeObjectMeter.getOrNull();
+                if (activeObject != null)
+                {
+                    PiMethod profileMethod = new PiMethod();
+                    profileMethod.key = originHash;
+                    profileMethod.stime = ProfileUtil.calculateStartTime(activeObject.startTime);
+                    profileMethod.scpu = ProfileUtil.calculateProfileMethodCpuTime(activeObject.startCpu);
+                
+                    AgentText.addMethod(originHash, originFullDescriptor);
+
+                    activeObject.pushProfile(profileMethod);
+
+                    return profileMethod;
+                }
+            }
+            catch(Exception exception)
+            {
+                ActiveObjectErrorRaiser.whenOccurThrowable(exception);
+            }
+
+            return null;
+        }
+
+        public void end(Object returnValue, Object stat, Throwable throwable)
+        {
+            if (stat != null)
+            {
+                try
+                {
+                    ActiveObject activeObject = activeObjectMeter.get();
+                    if (activeObject != null)
+                    {
+                        PiMethod profileMethod = (PiMethod) stat;
+                        profileMethod.time = ProfileUtil.calculateStartTime(activeObject.startTime) - profileMethod.stime;
+                        profileMethod.cpu = ProfileUtil.calculateProfileMethodCpuTime(activeObject.startCpu) - profileMethod.scpu;
+
+                        String catchExceptionMessage = null;
+
+                        try
+                        {
+                            catchExceptionMessage = ProfileAdapter.getMethod().catchException(throwable);
+                        }
+                        catch (Throwable adapterThrowable)
+                        {
+                            Logger.info(LogCodeDef.B009, adapterThrowable, 10);
+                        }
+
+                        ActiveObjectErrorRaiser.raiseEventOrProfileWhenOccurThrowable(activeObject, throwable, catchExceptionMessage, true);
+
+                        activeObject.popProfile(profileMethod);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    ProfileUtil.whenOccurThrowable(exception);
+                }
+            }
+        }
+    }
+
+---
+
+*デフォルト値:なし
+*タイプ：文字列
+*サンプル値:aries.runtime.custom.SampleCustomMethod
+*再起動:不要
+*サポートバージョン:5.0.8

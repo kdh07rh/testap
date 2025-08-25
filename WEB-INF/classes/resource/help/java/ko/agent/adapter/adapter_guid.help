@@ -1,0 +1,75 @@
+애플리케이션에서 GUID를 설정할 때 비정형 포멧을 처리하기 위해 사용된다.
+
+** 인터페이스 설명 **
+
+    package aries.runtime;
+
+    public interface IAdapterGuid {
+        /**
+         * 파라미터에서 GUID를 추출할 때 사용, 리턴값이 null 이면 무시 된다.
+         *
+         * @param classMethod  Class + Method 이름
+         * @param parameterWrapper 메소드의 파라미터를 정보를 가지고 있는 클래스
+         * @return GUID 를 반환한다.
+         */
+        String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * 리턴값에서 GUID를 추출할 때 사용, 리턴값이 null 이면 무시 된다.
+         *
+         * @param classMethod  Class + Method 이름
+         * @param returnValue 메소드의 리턴 값
+         * @return GUID 를 반환한다.
+         */   
+        String setGuidByReturn(String classMethod, Object returnValue);
+    }
+
+- - -
+
+**주요 객체의 메소드 설명**
+
+###### ParameterWrapper 객체
+    public int size() : 파라미터 개수를 리턴한다.
+    public Object getThis() : 파라미터를 수집한 메소드의 객체를 반환한다.
+    public Object[] getValues() : 메소드의 파라미터 배열을 반환한다.
+    public Object get(int idx) : 해당 위치의 파라미터를 반환한다.
+    public Parameter getParameter() : 원본 Parameter 객체를 반환한다.
+
+**설정방법**
+
+어댑터를 구현한 클래스를 jennifer.impl.XXX.jar 형태로 jennifer.jar 와 동일한 위치에 놓으면 별도의 설정 없이 해당 라이브러리를 자동으로 인식한다.
+버전관리를 위해서 jennifer.impl.custom-1.0.1.jar 와 같은 형식을 사용하면 편리하다.
+
+라이브러리 추가후 옵션에 구현한 어댑터 클래스 명을 등록하면 된다.
+
+    ex) aries.runtime.custom.SampleGuid
+
+- - -
+
+**예제**
+
+    public class SampleGuid extends AbstractDefaultAdapter implements IAdapterGuid
+    {
+        public String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String setGuidByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+    }
+    
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : aries.runtime.custom.SampleGuid
+* 재시작 : 안함
+* 지원 버전 : 5.0.0

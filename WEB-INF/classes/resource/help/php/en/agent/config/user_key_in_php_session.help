@@ -1,0 +1,10 @@
+Collect 'User ID' value from $_SESSION. 
+When 'user_key_in_php_session' is setted to 'user_id', User ID is collected from $_SESSION['user_id'].
+
+---
+
+* Default value : None
+* Type : string
+* sample value : user_id
+* Restart : Not required
+* Supported version : 5.3.1

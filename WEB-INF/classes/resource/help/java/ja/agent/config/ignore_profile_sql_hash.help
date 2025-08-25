@@ -1,0 +1,20 @@
+収集したくないSQLクエリのハッシュコードを登録するオプションです。
+
+SQLのハッシュコードは[分析 > DB照会 > アプリケーション/SQL/外部呼び出し]で確認できます。
+
+---
+
+* デフォルト値 : なし
+* タイプ : 数字(改行しながら複数設定可能)
+* サンプル値
+
+        1430843866
+        -1922051697 
+
+* 再起動 : 不要
+* 連関オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [ignore_profile_sql](./agentHelp?key=ignore_profile_sql&type=1)
+* サポートバージョン : 5.4.3.9, 5.5.2

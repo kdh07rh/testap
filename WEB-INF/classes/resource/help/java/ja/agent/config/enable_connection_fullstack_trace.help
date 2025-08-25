@@ -1,0 +1,11 @@
+[enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)オプションを活性化した場合に、java.sql.Connectionオブジェクトの使用時点でのフルスタックを生成するために使用します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)
+    * [check_connection_unclosed](./agentHelp?key=check_connection_unclosed&type=1)
+* サポートバージョン：5.0.0

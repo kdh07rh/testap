@@ -1,0 +1,25 @@
+In a JAVA web application, if the servlet/JSP continuously calls other servlet/JSP exceeding the set value, a RECURRSIVE_CALL exception occurs.
+
+Calling other Servlet/JSP means calling a forward or include method of javax.servlet.RequestDispatcher object on the JAVA code.
+
+    RequestDispatcher dispatcherForward = request.getRequestDispatcher("recurrsive_forward.jsp");
+    dispatcherForward.forward(reqeust, response);
+
+    RequestDispatcher dispatcherInclude = request.getRequestDispatcher("recurrsive_include.jsp");
+    dispatcherInclude.include(reqeust, response);
+
+    <jsp:forward page="recurrsive_forward.jsp" />
+    <jsp:include page="recurrsive_include.jsp" />
+
+**Precautions**
+When RECURRSIVE_CALL exception occurs, the applicable transaction is terminated. Therefore, setting a value for the option that is too small may interfere with the normal operation of services.
+
+---
+
+* Default value: 50000
+* Type: Number
+* Restart: Not required
+* Related options
+    * [enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1)
+    * [recursive_call_stacktrace_size](./agentHelp?key=recursive_call_stacktrace_size&type=1)
+* Supported version: 5.0.7

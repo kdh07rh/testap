@@ -1,0 +1,12 @@
+This option collects GUID information as a profile when connecting with Selfie, a DB monitoring solution.
+
+---]
+
+* Default : false
+* Format: Boolean
+* Restart: never
+* Associated options
+    * [enable_sherpa_oracle](./agentHelp?key=enable_sherpa_oracle&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+    * [enable_sherpa_mssql](./agentHelp?key=enable_sherpa_mssql&type=1)
+* Supported versions: 5.6.3.3

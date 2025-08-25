@@ -1,0 +1,8 @@
+This option allows user to set the HOST name through an OS environment variable.
+The HOST name is set by finding the same environment variable as the set value, and the name is delivered only when the agent session is newly created.
+---
+
+* Default : none
+* Type : String
+* Restart : required
+* Version supported : 5.6.1.11

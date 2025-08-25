@@ -1,0 +1,18 @@
+The result of toString method for each MongoDB java driver method (find, insert, remove etc ..) is collected.
+
+This toString result is a string of json type and length can be very long.
+
+By default only limited length string is allowed, that default length is 50. This option can be used to adjust this value.
+
+If this option's value is set to 0, then the original string will be collected without limit
+
+---
+
+* Default : 50
+* Type : Number (Length)
+* Restart : Required
+* Related Options
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_elpased_time](./agentHelp?key=mongodb_collect_object_base_elpased_time&type=1)
+* Supported Version : 5.0.12

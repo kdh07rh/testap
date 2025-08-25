@@ -1,0 +1,9 @@
+System.Web.UI.Page 타입의 LoadAllState, SaveAllState 메서드에 대한 실행 시간을 측정한다.
+
+---
+    
+* 기본값 : true
+* 형식 : Boolean
+* 샘플값 : false
+* 재시작 : 안함
+* 지원 버전 : 5.0.7

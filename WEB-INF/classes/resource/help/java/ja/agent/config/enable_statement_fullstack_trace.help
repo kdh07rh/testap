@@ -1,0 +1,13 @@
+[enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)オプションの活性化のときに、java.sql.Statementオブジェクトが使用される時点でのフルスタック抽出可否を設定するオプションです。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [check_statement_unclosed](./agentHelp?key=check_statement_unclosed&type=1)
+    * [check_preparedstatement_unclosed](./agentHelp?key=check_preparedstatement_unclosed&type=1)
+    * [check_callablestatement_unclosed](./agentHelp?key=check_callablestatement_unclosed&type=1)
+* サポートバージョン：5.0.0

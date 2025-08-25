@@ -1,0 +1,9 @@
+Designates the key name of the GUID value delivered in the event of a remote call (requests module).
+ 
+ ---
+  
+ * Default value: _J_GUID_
+ * Type: string
+ * Sample value: _J_GUID_TX_
+ * Restart: Not required
+ * Supported version: 5.6.1.17

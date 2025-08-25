@@ -1,0 +1,20 @@
+Using this option, you can check the key value of an HTTP Header to track through the profile information of a transaction.
+
+Using the contents configured in the set value, you can check the following information in the transaction profile.
+
+     HTTP-PARAMETER : id=test; email=test@example.com
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        id
+        email
+
+* Restart: Not required
+* Related options
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=1)
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* Supported version: 5.0.0

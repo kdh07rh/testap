@@ -1,0 +1,32 @@
+MongoDBプロファイリングする場合に設定するオプションです。
+
+デフォルト値はtrueであり、MongoDBドライバーが認識できるとモニタリングを開始します。プロファイルのタイプはRDBのJDBCドライバーとほぼ同じです。
+
+Sync方式のドライバー(2.1~3.2.0)を全てサポートして、Async方式のドライバーはサポートしません。
+
+関連クラスがロードされると、Agentエージェントログに次のような内容が出力されます。
+
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.InternalStreamConnection
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.MongoCollectionImpl
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.DefaultConnectionPool$PooledConnection
+次は収集されたプロファイルの例です。
+
+    [0014][13:34:28 170][   15][  240] SQL-EXECUTE [24 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0015][13:34:28 195][   25][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database1" , "count" : 1}
+    [0016][13:34:28 195][    0][  263] SQL-EXECUTE [1 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0017][13:34:28 196][    1][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database2" , "count" : 2}
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean 
+* 再起動 : 必要 
+* 関連オプション
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* サポートバージョン: 5.0.12

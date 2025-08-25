@@ -1,0 +1,20 @@
+This option is used to include query string in log when a transaction is rejected via the PLC settings 
+
+The recorded log will look as follow.
+
+[PLC] REJECTED: limit = 90, # of active = 100, /example/sample(-2030781745), queryString=parameter
+
+If the option is set to false, the log will look as follows.
+
+[PLC] REJECTED: limit = 90, # of active = 100, /example/sample(-2030781745)
+
+
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not Required
+* Related Options
+    * [enable_reject_log](./agentHelp?key=enable_reject_log&type=1)
+* Supported Versions : 5.5.1.2

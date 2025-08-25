@@ -1,0 +1,24 @@
+トランザクション内でHttpURLConnectionを使ったリモート呼び出しをモニタリングするためのオプションです。
+
+このオプションを"true"に設定すると、以下の情報を収集します。
+
+    1.リクエスト情報:呼出先にパラメータ情報を送る部分に対するプロファイリング 
+    2.応答情報:呼出先から戻ってきた応答についてプロファイリング。 呼び出したサービスの応答時間であり、このプロファイルに呼び出したURLと応答コードを含む。
+    3.トポロジー:HttpURLConnectionを使って呼び出すときに各区間に対する接続。
+このオプションが有効になっている場合はエージェントを始めるときにログファイルで次のような内容を確認できます。
+
+
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;Lsun/net/www/http/PosterOutputStream;)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.writeRequests(Lsun/net/www/MessageHeader;Lsun/net/www/http/PosterOutputStream;Z)V
+    2016-01-06/00:00:53 [TRACE] [I001] BCI ExternalCall sun.net.www.http.HttpClient.parseHTTP(Lsun/net/www/MessageHeader;Lsun/net/ProgressSource;Lsun/net/www/protocol/http/HttpURLConnection;)Z
+
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [enable_reserved_externalcall_for_http](./agentHelp?key=enable_reserved_externalcall_for_http&type=1)
+* サポートバージョン: 5.0.12

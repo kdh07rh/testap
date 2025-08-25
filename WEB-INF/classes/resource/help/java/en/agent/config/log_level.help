@@ -1,0 +1,23 @@
+This option to set the agent log level.
+
+After checking the necessary logs, it is recommended to set the log level to 1 and use it.
+
+The default value is 1 (info) and it has a total of 3 levels.
+
+    1(info)
+    2(debug)
+    3(trace)
+
+---
+
+  * Default : 1
+  * Type : Number
+  * Restart : not required
+  * Options related
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * Version supported : 5.0.0

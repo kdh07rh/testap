@@ -1,0 +1,11 @@
+WCF 호출에 대한 프로파일 여부를 지정한다.
+
+---
+    
+* 기본값 : true
+* 형식 : Boolean
+* 샘플값 : false
+* 재시작 : 안함
+* 연관 옵션
+    * [wcf_params](./agentHelp?key=wcf_params&type=2)
+* 지원 버전 : 5.0.7

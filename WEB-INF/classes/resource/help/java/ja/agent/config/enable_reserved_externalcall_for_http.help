@@ -1,0 +1,12 @@
+外部トランザクションのApache HttpComponentsについて次のクラスが登録されています。
+
+　org.apache.http.impl.client.CloseableHttpClient
+
+デフォルトで登録されているクラスを使用しない場合、このオプションを設定します。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* サポートバージョン: 5.4.3

@@ -1,0 +1,17 @@
+BCI(ByteCode Instrumentation)対象クラス中、public以外のクラスのアクセス制限をpublicに変更するオプションです。
+
+基本的に、セキュリティ上の理由または内部利用の目的でクラスのアクセス制限をpublicに設定しないので、デバッグの目的での利用をお薦めします。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        example.ExamplePrivateClass
+        example.ExampleProtectedClass
+
+* 再起動：必要
+* 関連オプション
+    * [non_public_member](./agentHelp?key=non_public_member&type=1)
+* サポートバージョン：5.0.0

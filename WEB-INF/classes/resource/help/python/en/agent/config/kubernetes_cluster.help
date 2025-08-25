@@ -1,0 +1,10 @@
+**kubernetes_cluster** option is used to register the cluster name of k8s.
+
+---
+
+* Default : none
+* Type : String
+* Restart : required
+* Options related
+    * [kubernetes_namespace](./agentHelp?key=kubernetes_namespace&type=1)
+* Version supported : 5.6.1.21

@@ -1,0 +1,15 @@
+This option sends the SQL collected by an agent to the data server and caches the hash information of the applicable SQL. Through this process, it is possible to prevent the same SQL from being sent to the data server again.
+ 
+ If the cache data exceeds the set value, the hash of the SQL entering earlier is deleted according to the FIFO (First In First Out) principle.
+ 
+ ---
+ 
+ * Default value: 10000
+ * Type: Number
+ * Sample value: 30000
+ * Restart: Required
+ * Related options
+  * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+  * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+  * [max_number_of_stack](./agentHelp?key=max_number_of_stack&type=2)
+ * Supported version: 5.0.7

@@ -1,0 +1,11 @@
+DB 모니터링 솔루션인 셀파오라클과 연동을 위해 설정하는 옵션이다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_profile_guid_for_sherpa](./agentHelp?key=enable_profile_guid_for_sherpa&type=1)
+* 지원 버전 : 5.0.10

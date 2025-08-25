@@ -1,0 +1,135 @@
+"This option is used to customize the tracking of method performance carried out in a transaction or a specific method.
+
+** Inteface Description **
+
+    package aries.base.profile;
+
+    public interface IAdapterCustomMethod{
+        /**
+        *
+        * Method that is inserted in and called at the start point of a method.
+        * Generally, as this method is used to customize the tracking of method performance while performing a transaction or tracking of a specific method,
+        * it is necessary to perform a check on the ActiveObject when implementing the method.
+        *
+        * @param originHash  Original BCI hash of the target method.
+        * @param originFullDescriptor Original BCI description of the target method.
+        * @param hash  BCI hash of the target method
+        * @param fullDescriptor BCI description of the target method.
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return Returns an object containing the profile.
+        */
+        Object start(int originHash, String originFullDescriptor, int hash, String fullDescriptor, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Method that is inserted in and called at the end point of a method.
+        * As the stat information, which is usually the PiMethod information that is returned from the start, may return a null value, 
+        * it is necessary to check whether Null is returned or not.
+        *
+        * @param returnValue Method return value
+        * @param stat Profile method information
+        * @param throwable Returns exception, if an exception occurs during method execution
+        */
+        void end(Object returnValue, Object stat, Throwable throwable);
+    }
+
+- - -
+
+**Method Description of the main object**
+
+ ###### ParameterWrapper Description
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+** How to configure **
+
+When the class implementing the adapter in the format of jennifer.impl.XXX.jar is placed at the same position as jennifer.jar, the applicable library is automatically recognized, without any additional settings.
+It is convenient to use a format such as jennifer.impl.custom-1.0.1.for version control.
+
+    ex) aries.runtime.custom.SampleCustomMethod
+
+- - -
+
+**Sample implementation**
+
+
+    public class SampleCustomMethod implements IAdapterCustomMethod
+    {
+        private final ActiveObjectMeter activeObjectMeter = ActiveObjectMeter.getInstance();
+        
+        public Object start(int originHash, String originFullDescriptor, int hash, String fullDescriptor, ParameterWrapper parameterWrapper)
+        {
+            try
+            {
+                ActiveObject activeObject = activeObjectMeter.getOrNull();
+                if (activeObject != null)
+                {
+                    PiMethod profileMethod = new PiMethod();
+                    profileMethod.key = originHash;
+                    profileMethod.stime = ProfileUtil.calculateStartTime(activeObject.startTime);
+                    profileMethod.scpu = ProfileUtil.calculateProfileMethodCpuTime(activeObject.startCpu);
+                
+                    AgentText.addMethod(originHash, originFullDescriptor);
+
+                    activeObject.pushProfile(profileMethod);
+
+                    return profileMethod;
+                }
+            }
+            catch(Exception exception)
+            {
+                ActiveObjectErrorRaiser.whenOccurThrowable(exception);
+            }
+
+            return null;
+        }
+
+        public void end(Object returnValue, Object stat, Throwable throwable)
+        {
+            if (stat != null)
+            {
+                try
+                {
+                    ActiveObject activeObject = activeObjectMeter.get();
+                    if (activeObject != null)
+                    {
+                        PiMethod profileMethod = (PiMethod) stat;
+                        profileMethod.time = ProfileUtil.calculateStartTime(activeObject.startTime) - profileMethod.stime;
+                        profileMethod.cpu = ProfileUtil.calculateProfileMethodCpuTime(activeObject.startCpu) - profileMethod.scpu;
+
+                        String catchExceptionMessage = null;
+
+                        try
+                        {
+                            catchExceptionMessage = ProfileAdapter.getMethod().catchException(throwable);
+                        }
+                        catch (Throwable adapterThrowable)
+                        {
+                            Logger.info(LogCodeDef.B009, adapterThrowable, 10);
+                        }
+
+                        ActiveObjectErrorRaiser.raiseEventOrProfileWhenOccurThrowable(activeObject, throwable, catchExceptionMessage, true);
+
+                        activeObject.popProfile(profileMethod);
+                    }
+                }
+                catch (Exception exception)
+                {
+                    ProfileUtil.whenOccurThrowable(exception);
+                }
+            }
+        }
+    }
+
+
+---
+
+* Default value: None
+* Type: string
+* Sample value : aries.runtime.custom.SampleCustomMethod
+* Restart: Not required
+* Supported version: 5.0.8
+"

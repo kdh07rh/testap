@@ -1,0 +1,18 @@
+If an EXTERNALCALL_EXCEPTION exception occurs in a transaction and the string set is included in the exception message, this option handles it as a normal ExternalCall.
+
+The following is an Exception example.
+
+    java.lang.Exception: ExternalCall Error ...
+    ...
+
+
+When a SERVICE_EXCEPTION exception occurs in a transaction, if the string set is included in the exception message, this option processes it as a normal transaction.
+
+If the option is set, EXTERNALCALL_EXCEPTION errors and events in transaction data are ignored.
+
+---
+
+* Default : none
+* Type : String
+* Restart : not required
+* Version supported : 5.6.1.16

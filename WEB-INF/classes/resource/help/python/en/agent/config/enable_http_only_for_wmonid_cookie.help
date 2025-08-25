@@ -1,0 +1,15 @@
+When this option is set to True, HTTP Only property is added at the time of issuing a WMONID cookie used by the agent.
+
+After configuring the applicable options, a header similar to the following is added to the header when the application request is responded to. 
+
+    Set-Cookie:WMONID=V3kNnPUa_1w; Expires=Fri, 26 Jun 2015 12:39:35 GMT; Path=/; HttpOnly
+
+---
+
+* Default value: false 
+* Format: Boolean 
+* Restart: Not required
+* Related options
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=1)
+    * [expire_date_for_wmonid_cookie](./agentHelp?key=expire_date_for_wmonid_cookie&type=1)
+* Supported version: 5.6.0.23

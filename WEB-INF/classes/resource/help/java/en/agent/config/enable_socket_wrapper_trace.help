@@ -1,0 +1,14 @@
+This option allows you to monitor the currently connected Socket information.
+
+To monitor Socket information, the [enable_socket_wrapper] (./agentHelp? Key = enable_socket_wrapper & type = 1) option must be enabled.
+It should be used after testing in a specific application environment where the default settings does not work.
+
+
+---
+
+* Default : false
+* Format : Boolean
+* Restart : Not Required
+* Related Options
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+* Supported Version : 5.2.2.1

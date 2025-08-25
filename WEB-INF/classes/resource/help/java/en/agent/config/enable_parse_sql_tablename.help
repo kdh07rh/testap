@@ -1,0 +1,21 @@
+This option is used to prevent the phenomenon in which too many different SQL numbers are generated from an application using a temporary table.
+A temporary table refers to a table name containing a number, and collecting names and numbers separately enables tracking SQL with minimized redundancy.
+
+The following is an example of a frequently used temporary table. 
+
+    SELECT * FROM EXAMPLE_20150101
+    SELECT * FROM EXAMPLE_20150102
+    SELECT * FROM EXAMPLE_001
+    SELECT * FROM EXAMPLE_002
+
+** It is recommended to check before changing to the value to True as the use of a temporary table does not frequently occur.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_parse_sql](./agentHelp?key=enable_parse_sql&type=1)
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)    
+* Supported version: 5.0.0

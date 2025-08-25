@@ -1,0 +1,28 @@
+OSGI基盤のアプリケーションでJDBC関連情報追跡時、Boot Delegation設定を除外するためのオプションです。
+
+例：JBoss7ASバージョンの場合、エージェントインストール時、次のような設定を追加する。
+
+    JBOSS_MODULES_SYSTEM_PKGS=aries,org.jboss.byteman
+
+別途OSGI設定をしていないデフォルト設定状態でJDBC関連情報の追跡をする場合、次のような追加設定が必要です。
+(設定しない場合はローダーが異なるため、参照に問題が発生する可能性がある。)
+
+    JBOSS_MODULES_SYSTEM_PKGS=aries,org.jboss.byteman,javax.sql,javax.naming
+
+javaxパッケージに対するデフォルト設定が該当モジュール別に各ローダーにより、ローディングされるように設定されているためです。
+(お互い異なるモジュールを使用するためにはモジュール別設定が必要です)
+
+参照問題はJDBC関連情報の追跡のために発生する問題で、モジュール別に設定することは非常に手間かかかるため、一般的には参照問題が発生する場合Boot Delegationオプションを利用して該当問題を解決する。
+
+このオプションを適用するためには[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) オプション設定をfalseにして、
+[db_connection_get](./agentHelp?key=db_connection_get&type=1) オプションを設定する必要がある。
+
+--- 
+
+* デフォルト値 :false
+* タイプ :Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1)
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+* サポートバージョン:  5.1.3

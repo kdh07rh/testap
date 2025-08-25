@@ -1,0 +1,13 @@
+When the [url_additional_request_keys](./agentHelp?type=3&key=url_additional_request_keys) option is enabled, the [url_additional_request_keys](./agentHelp?type=3&key=url_additional_request_keys) settings are ignored for the URL starting with a name designated in the ignore_url_post_request_parsing_prefixes option.
+ 
+  /kesa.web
+  /insa/tempfiles
+ 
+ ---
+ 
+ * Default value: None
+ * Type: string (able to configure multiple settings using the line change).
+ * Restart: Not required
+ * Related options
+  * [url_additional_request_keys](./agentHelp?key=url_additional_request_keys&type=2) 
+ * Supported version: 5.0.0

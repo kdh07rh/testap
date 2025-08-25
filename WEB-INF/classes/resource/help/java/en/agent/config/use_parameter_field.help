@@ -1,0 +1,10 @@
+The options  [enable_tibero_sql_pointcut](./agentHelp?key=enable_tibero_sql_pointcut&type=1) is for different implements by JDBC driver version.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Options related
+    * [enable_tibero_sql_pointcut](./agentHelp?key=enable_tibero_sql_pointcut&type=1)
+* Version supported : 5.4.2.3

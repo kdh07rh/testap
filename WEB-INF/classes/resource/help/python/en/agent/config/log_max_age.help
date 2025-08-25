@@ -1,0 +1,17 @@
+This is an option to set the log file retention period.
+
+Valid values can be set from 0 to 365, and the unit of the set value is one day.
+
+The default value of 0 does not delete log files.
+
+If the option is set as follows, log files older than 7 days from today are deleted.
+
+    ex) log_max_age = 7
+
+
+---
+
+  * Default : 0
+  * Type : Number
+  * Restart : not required
+  * Version supported : 5.6.1.22

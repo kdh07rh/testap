@@ -1,0 +1,10 @@
+WCF 호출 시 GUID 연동을 별도의 WCF Header를 만들어 값을 전송한다. 이로 인해 응용 프로그램 입장에서는 예상치 못했던 WCF Header가 하나 추가되는 것인데, 임의의 WCF Header를 고려하지 않고 개발된 응용 프로그램에서는 문제가 발생할 수 있다. 이런 경우 GUID 연동을 포기해야 하며 이를 위해 enable_guid_in_wcf 옵션을 false로 설정하면 된다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [wcf_trace](./agentHelp?key=wcf_trace&type=2)
+* 지원 버전 : 5.2.2.2

@@ -1,0 +1,22 @@
+The default is to send the information about the leaks that occurred when the Leak check was performed on the objects, and send the detected number of times to the message.
+
+The following is an example of a message that occurs.
+
+    JDBC NOT CLOSE : com.mysql.jdbc.JDBC4PreparedStatement count = 1
+    JDBC NOT CLOSE : com.mysql.jdbc.JDBC4ResultSet count = 5
+
+    
+When sending it all at once as above, there is a possibility that the actual number of errors may not match but if the number of errors to occur is important, there is an option to send it separately for matching.
+
+
+Avoid setting small value because it may cause the service dump to persist
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Related Options
+  * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+  * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* Supported Version : 5.3.1

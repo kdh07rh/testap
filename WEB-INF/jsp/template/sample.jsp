@@ -1,0 +1,1 @@
+<%@ page language="java" pageEncoding="UTF-8" extends="com.aries.view.jsp.JspPage" %>${key}

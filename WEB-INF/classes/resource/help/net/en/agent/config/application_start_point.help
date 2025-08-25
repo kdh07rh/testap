@@ -1,0 +1,20 @@
+This option specifies the target class (or method) when setting the application launch point.
+
+### Setting example ###
+
+Example of specify a class and a method at the same time, and ignore the signature.
+
+    a.b.MyClass start 
+
+Example of specify all the methods of a class.
+
+    a.b.MyClass 
+
+    
+---
+
+* Default : None
+* Format : string
+* Sample Value: BatchJob.Program Main
+* Restart : Not Required
+* Supported Version : 5.2.1.4

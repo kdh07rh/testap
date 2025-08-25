@@ -1,0 +1,75 @@
+사용자 로그인 아이디를 지정한 클래스에서 추출해서 사용할 경우 사용된다.
+
+** 인터페이스 설명 **
+
+    package aries.runtime;
+
+    public interface IAdapterUser {
+        /**
+         * 파라미터에서 사용자 정보를 추출한다. 리턴이 null 이면 무시된다.
+         *
+         * @param classMethod  Class + Method 이름
+         * @param parameterWrapper 메소드의 파라미터를 정보를 가지고 있는 클래스
+         * @return 사용자 아이디를 반환한다.
+         */    
+        String setUserByParameter(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * 리턴 값에서 사용자 정보를 추출한다. 리턴이 null 이면 무시된다.
+         *
+         * @param classMethod  Class + Method 이름
+         * @param returnValue 메소드의 리턴 값
+         * @return 사용자 아이디를 반환한다.
+         */   
+        String setUserByReturn(String classMethod, Object returnValue);
+    }
+
+- - -
+
+**주요 객체의 메소드 설명**
+
+###### ParameterWrapper 객체
+    public int size() : 파라미터 개수를 리턴한다.
+    public Object getThis() : 파라미터를 수집한 메소드의 객체를 반환한다.
+    public Object[] getValues() : 메소드의 파라미터 배열을 반환한다.
+    public Object get(int idx) : 해당 위치의 파라미터를 반환한다.
+    public Parameter getParameter() : 원본 Parameter 객체를 반환한다.
+
+- - -
+
+**설정방법**
+
+어댑터를 구현한 클래스를 jennifer.impl.XXX.jar 형태로 jennifer.jar 와 동일한 위치에 놓으면 별도의 설정 없이 해당 라이브러리를 자동으로 인식한다.
+버전관리를 위해서 jennifer.impl.custom-1.0.1.jar 와 같은 형식을 사용하면 편리하다.
+
+라이브러리 추가후 옵션에 구현한 어댑터 클래스 명을 등록하면 된다.
+
+    ex) aries.runtime.custom.SampleUser
+
+**예제**
+
+    public class SampleUser extends AbstractDefaultAdapter implements IAdapterUser
+    {
+        public String setUserByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String setUserByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+    }
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : aries.runtime.custom.SampleUser
+* 재시작 : 안함
+* 지원 버전 : 5.0.0

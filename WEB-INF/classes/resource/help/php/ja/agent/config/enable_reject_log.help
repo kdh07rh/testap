@@ -1,0 +1,11 @@
+PLCで拒否されるトランザクションをロギング可否を設定するオプションです。
+
+負荷が多く拒否されるトランザクションが多い場合にログのサイズが非常に大きくなります。その時にはこのオプションをfalseにしてロギングを中止します。
+
+---
+* デフォルト値：true
+* タイプ：Boolean
+* 再起動：不要
+* 連関オプション：
+    * [include_query_string_in_reject_log](./agentHelp?key=include_query_string_in_reject_log&type=3)
+* サポートバージョン：5.5.0.2

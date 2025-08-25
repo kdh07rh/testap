@@ -1,0 +1,12 @@
+Redis 모니터링을 지원한다.
+
+현재 지원하고 있는 라이브러리는 Jedis와 Lettuce 두개의 라이브러리를 지원하고 있다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [lettuce_args_length](./agentHelp?key=lettuce_args_length&type=1)
+* 지원 버전 : 5.5.3.1

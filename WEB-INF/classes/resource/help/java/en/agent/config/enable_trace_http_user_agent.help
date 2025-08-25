@@ -1,0 +1,10 @@
+Collects the user browser information using the **user-agent** header in the HTTP Request Header.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Related options
+    * [ignore_user_agent_header](./agentHelp?key=ignore_user_agent_header&type=2)
+* Restart: Not required
+* Supported version: 5.0.0

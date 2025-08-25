@@ -1,0 +1,9 @@
+Configures the size of the transmission buffer of the native TCP socket. 
+
+---
+
+* Default value: 16384
+* Type: Number
+* Sample value: 20000
+* Restart: Required
+* Supported version: 5.0.0

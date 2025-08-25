@@ -1,0 +1,12 @@
+This option is used when terminating a transaction that is being processed for a long time.
+
+This option value is in milliseconds and it must be greater than 0, the enable_long_running_thread_auto_kill must be set to true for this option to work
+
+---
+
+* Default Value : 0
+* Type : Number, Milliseconds
+* Restart : Not Required
+* Related Options
+    * [enable_long_running_thread_auto_kill](./agentHelp?key=enable_long_running_thread_auto_kill&type=1)
+* Supported Version : 5.0.12

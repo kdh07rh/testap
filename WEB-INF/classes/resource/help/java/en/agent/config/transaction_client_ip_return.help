@@ -1,0 +1,26 @@
+This option sets the client IP of the transaction to the return value of a particular method.
+
+The setting is set by entering the entire method descriptor with the return value.
+(Supported return values are strings and byte arrays.)
+
+Sample configuration:
+
+    org.apache.jsp.example.clientIp_jsp clientIp([B)[B
+
+
+When the option is set and the setting is applied, the following log is recorded in the Instrument log.
+
+     [I001] [BCI TransactionClientIpReturnPointCut] org.apache.jsp.example.clientIp_jsp.clientIp([B)[B
+
+---
+
+* Default : None
+* Format : String
+* Sample Value
+
+    example.clientIp getClientIp([B)[B
+    
+* Restart : Required
+* Related Options
+    * [transaction_client_ip_parameter](./agentHelp?key=transaction_client_ip_parameter&type=1)
+* Supported Version : 5.2.2.1

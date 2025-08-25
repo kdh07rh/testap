@@ -1,0 +1,19 @@
+The number of active services is collected every second, and a service dump is left when the number of times that the number of active services exceeds the value set in [dump_active_service](./agentHelp?key=dump_active_service&type=1) is equal to or larger than the value set in this option.
+
+In other words, if the value of this option is 3, a service dump is left when the number of active services collected for 3 seconds (actives service collection interval (1 seconds) * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)) is equal to or larger than the value set in the [dump_active_service](./agentHelp?key=dump_active_service&type=1).
+
+    For reference, if only the default value is used, a service dump is left when the number of active services for 3 seconds is equal to or larger than 100.
+    When the number of active services for 3 seconds goes below 100, the time is counted again from the beginning.
+
+---
+
+* Default value: 3
+* Type: Number
+* Restart: Not required
+* Related options
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=1)
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* Supported version: 5.0.0

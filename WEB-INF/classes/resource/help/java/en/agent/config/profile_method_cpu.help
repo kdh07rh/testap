@@ -1,0 +1,11 @@
+When this option is set to True, the CPU information for method, file, exception and user-defined profile is collected.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [profile_db_cpu](./agentHelp?key=profile_db_cpu&type=1)
+    * [profile_externalcall_cpu](./agentHelp?key=profile_externalcall_cpu&type=1)
+* Supported version: 5.0.6

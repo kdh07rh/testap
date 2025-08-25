@@ -1,0 +1,9 @@
+k8sのネームスペースを登録します。
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* 再起動 : 必要
+* 連関オプション
+    * [kubernetes_cluster](./agentHelp?key=kubernetes_cluster&type=1)
+* サポートバージョン : 5.6.0.10

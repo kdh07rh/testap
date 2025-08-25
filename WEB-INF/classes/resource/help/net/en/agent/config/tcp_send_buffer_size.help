@@ -1,0 +1,9 @@
+Determines the transmission buffer size of a socket handling communication with the data server.
+ 
+ ---
+  
+ * Default value: 16384
+ * Type: Numeric
+ * Sample value: 8192
+ * Restart: Not required
+ * Supported version: 5.0.7

@@ -1,0 +1,19 @@
+[dump_mode](./agentHelp?key=dump_mode&type=1)オプションを活性化するとき、、BCI（ByteCode Instrumentation）操作のターゲットのうち、設定されたクラスのバイトコードを保存するためのものです。 
+
+このオプションを活性化すると、設定されたクラスのバイトコード情報が、[dump_dir](./agentHelp?key=dump_dir&type=1)オプションで設定したディレクトリ内にファイルとして保存されます。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+    
+        org.sample.TestClass
+        org.sample.ExampleClass
+
+* 再起動：必要
+* 関連オプション
+    * [dump_mode](./agentHelp?key=dump_mode&type=1)
+    * [dump_dir](./agentHelp?key=dump_dir&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+* サポートバージョン：5.0.0

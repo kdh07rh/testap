@@ -1,0 +1,22 @@
+The option to set up to monitor the connection status of MongoDB
+This option is enabled by default, it count the number of classes in a connection that corresponds to each driver.
+
+This method is the same as the method for counting the number of objects in the JDBC connection.
+The number of connections the WAS calling to MongoDB for each IP is collected on per-port basis
+
+Idle and Active connection are only collected.
+
+One thing to note is if you set up the Connection Pool JMX: you can see the number of connections on a port-by-port basis.
+When JMX is not set, the number of all connections by summing the MongoDB Instanc will be shown
+
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Required 
+* Related Options
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* Supported Value : 5.0.12

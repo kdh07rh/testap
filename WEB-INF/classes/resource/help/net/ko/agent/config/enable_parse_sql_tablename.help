@@ -1,0 +1,19 @@
+이 옵션은 임시 테이블을 사용하는 애플리케이션에서 서로 다른 SQL 숫자가 너무 많아지는 걸 막기 위해 사용하는 옵션이다. 임시 테이블은 테이블 이름에 숫자가 포함되어 있는 경우를 의미하는데 명칭과 숫자를 분리하여 수집함으로써 중복을 최소화 하여 SQL 추적이 가능하도록 할 수 있다.
+
+다음은 많이 사용되는 임시 테이블 예제이다. 
+
+    SELECT * FROM EXAMPLE_20150101
+    SELECT * FROM EXAMPLE_20150102
+    SELECT * FROM EXAMPLE_001
+    SELECT * FROM EXAMPLE_002
+
+**임시테이블 사용은 빈번하지 않음으로 확인후에 true로 변경할 것을 권고한다.**
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_parse_sql](./agentHelp?key=enable_parse_sql&type=2)
+* 지원 버전 : 5.0.7

@@ -1,0 +1,10 @@
+Designates the directory to save the agent log. Can designate a relative path of the PHP agent installation directory or an absolute path. 
+This configuration cannot be changed via the screen. Changes should be configured with jennifer.conf.
+
+---
+
+* Default value: ./logs
+* Type: string
+* Sample value: /home/sample/log
+* Restart: Required
+* Supported version: 5.0.6

@@ -1,0 +1,9 @@
+The call stack for the exception generated from the service transaction is added to the XView profile data.
+ 
+ ---
+  
+ * Default value: true
+ * Type: Boolean
+ * Sample value: false
+ * Restart: Not required
+ * Supported version: 5.0.7

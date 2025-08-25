@@ -1,0 +1,18 @@
+This option specifies the encoding used when writing logs to the log file.
+
+The default value is **UTF-8**.
+
+
+---
+
+  * Default : UTF-8
+  * Type : String
+  * Restart : Not required
+  * Options related
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * Version supported : 5.0.0

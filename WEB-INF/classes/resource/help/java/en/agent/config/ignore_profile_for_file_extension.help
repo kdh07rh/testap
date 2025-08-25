@@ -1,0 +1,13 @@
+This option is used for excluding profiles for specific extension during file-related profile tracking
+
+---
+
+* Default : .class
+* Type : String (Multiple lines can be separated by line break)
+* Sample Value
+
+    .class
+    .jsp
+        
+* Restart : Not Required
+* Supported Version : 5.3.1.5

@@ -1,0 +1,10 @@
+This is for EXAM connection.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Options related
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+* Version supported : 5.4.3.5

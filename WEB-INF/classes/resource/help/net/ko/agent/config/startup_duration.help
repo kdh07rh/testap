@@ -1,0 +1,11 @@
+[startup_url](./agentHelp?type=2&key=startup_url) 옵션에 설정한 URL을 호출하는 주기를 설정한다.
+
+---
+
+* 기본값 : 60
+* 형식 : 숫자(Number)  (단위: 초)
+* 샘플값 : 120
+* 재시작 : 안함
+* 연관 옵션
+  * [startup_url](./agentHelp?key=startup_url&type=2)
+* 지원 버전 : 5.6.1.4

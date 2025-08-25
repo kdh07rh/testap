@@ -1,0 +1,18 @@
+Spring Batchに関する情報をプロファイルとして収集するか別途のトランザクションとして収集するかを指定します。
+
+trueの場合、プロファイルとして収集します。falseにすると別途のトランザクションとして収集します。
+falseにしたとき、トランザクション数が急増する可能性があります。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* 連関オプション
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* サポートバージョン : 5.5.3

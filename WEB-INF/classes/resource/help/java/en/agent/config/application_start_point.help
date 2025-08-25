@@ -1,0 +1,31 @@
+This option is used to specifies the target class when you set the application start poin
+
+### Setting Example ### 
+
+You can set multiple value using line break
+
+Example specifying classes and methods at the same time
+
+    a.b.MyClass start()V 
+    a.b.YourClass start()V 
+
+Example specifying classes and method ignoring the signature 
+
+    a.b.MyClass start 
+
+Example specifying all the methods of a class
+
+    a.b.MyClass 
+
+
+--- 
+
+* Default : None
+* Format : String (Use line break for multiple settings) 
+* Sample Value 
+
+        example.ExampleClass start()V 
+        example.ExampleTestClass start()V 
+
+* RestartL Not Required
+* Supported Version : 5.1.0.1

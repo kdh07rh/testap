@@ -1,0 +1,15 @@
+エージェントで収集されたコールスタックをデータサーバに転送して該当コールスタック(call stack)のハッシュ情報がキャッシュされる数字です。 別途にコールスタックのハッシュをキャッシュする理由は、データサーバに同じコールスタックについて再送信を防ぐためです。
+
+キャッシュデータが設定値を超えるとFIFO(First In First Out)方式で先に入ったコールスタックのハッシュが削除されます。
+
+---
+
+* デフォルト値 : 30000
+* タイプ : 数字(Number)
+* サンプル値 : 50000
+* 再起動 : 必要
+* 関連オプション
+    * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+    * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+    * [max_number_of_text](./agentHelp?key=max_number_of_text&type=2)
+* サポートバージョン: 5.0.7

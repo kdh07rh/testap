@@ -1,0 +1,9 @@
+This option ignores java.net.SocketExcetion occurring in a transaction.
+
+If the option is set, java.net.SocketExcetion that occurs during a transaction is ignored, and the SOCKET_EVENT event does not occur.
+---
+
+* Default : false
+* Type: Boolean
+* Restart : not required
+* Version supported: 5.5.3

@@ -1,0 +1,19 @@
+java.sql.Statementオブジェクトのcloseメソッドが明示的に呼び出されないとき、ガベージコレクションでエージェントが対象オブジェクトを自動的にクローズする可否をこのオプションで指定します。
+
+** closeメソッドはjava.lang.Objectクラスのfinalize()を再定義して呼ばれるため、JVMのガベージコレクションのアルゴリズムに依存されます。
+
+** java.sql.Statementオブジェクトの自動返却は安全でない場合があるため、使用後には必ずチェックする必要があります。
+
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_statement_trace](./agentHelp?key=enable_statement_trace&type=1)
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+* サポートバージョン：5.0.0

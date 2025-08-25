@@ -1,0 +1,12 @@
+When looking for SQL patches, we only get the patch time if the number of patches is greater than or equal to zero.
+In this case, it sometimes takes time to check if there are any patches, which can make it hard to tell if the patching is slow or the SQL is slow.
+By enabling the option, the patch time will be calculated regardless of the number of patches, allowing you to split the time between SQL and patch time for a more accurate picture.
+
+---
+
+* Default: false
+* Format: Boolean
+* Restart: never
+* Associated options
+    * [collect_sql_fetch_time](./agentHelp?key=&type=1)
+* Supported version: 5.6.2.1

@@ -1,0 +1,26 @@
+When the application directly controls DB transactions, this option creates a java.sql.Statement object, runs execute, executeBatch and executeUpdate methods and makes the agent automatically call the rollback method when commit or rollback is not explicitly called. 
+
+Following is the example of an ordinary pattern.
+        
+    Connection connection = datasource.getConnection();
+    connection.setAutoCommit(false);
+    
+    Statement stmt = connection.createStatement();
+    stmt.executeUpdate("UPDATE sample SET col='col'");
+    connection.close();
+
+When this option is activated the following code is activated when the java.sql.Connection object is closed.
+ 
+    connection.rollback();
+    connection.setAutoCommit(true);
+
+** As this function is very dependent on the application code, you must verify before use. In an unproven system, it is not recommended to set this option to True. When there is a JAVA thread at the time when the close method of java.sql.Connection object is called, if rollback method is called by another JAVA thread, failure may occur.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+   * [ignore_rollback_uncommited_error](./agentHelp?key=ignore_rollback_uncommited_error&type=1)
+* Supported version: 5.0.0

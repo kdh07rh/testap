@@ -1,0 +1,18 @@
+오랜 시간동안 처리가 지연되고 있는 트랜잭션을 자동으로 종료시키고자 할 때 사용하는 옵션이다.
+
+이 옵션을 true로 설정하고 long_running_thread_auto_kill_timeout 옵션의 값을 0보다 큰 값으로 설정해야 동작한다.
+
+지정한 시간보다 더 오래 수행되고 있는 트랜잭션의 쓰레드를 강제로 종료시키는 것이기 때문에 적용시 주의가 필요하다.
+
+쓰레드가 종료되면 에이전트 로그에 다음과 같은 내용이 출력된다.
+
+2015-11-19/17:32:02 [TRACE] [I001] tried to kill long running thread(538 ms):/oracle.jsp
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [long_running_thread_auto_kill_timeout](./agentHelp?key=long_running_thread_auto_kill_timeout&type=1)
+* 지원 버전 : 5.0.12

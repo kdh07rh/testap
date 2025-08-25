@@ -1,0 +1,19 @@
+このオプションで追跡したいHTTPリクエストパラメータキーを設定すると、トランザクションのプロファイル情報で該当のパラメータ内容を確認できます。
+
+サンプル値の設定内容で、トランザクションのプロファイルから以下のような情報が確認できます。
+
+     HTTP-PARAM: id=test, email=test@example.com
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        id
+        email
+
+* 再起動：不要
+* 関連オプション
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+* サポートバージョン：5.0.0

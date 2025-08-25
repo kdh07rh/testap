@@ -1,0 +1,8 @@
+이 값이 true일때 HTTP Header의 HOST를 애플리케이션 이름에 추가한다. 예를 들어 www.example.com/index.aspx가 호출 되었다고 가정 했을때 이 설정 값이 false이면 애플리케이션 이름은 index.aspx가 된다. true이면 example.com/index.aspx가 된다.  
+
+---
+
+* 기본값: false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.6.1.4

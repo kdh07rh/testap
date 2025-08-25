@@ -1,0 +1,17 @@
+자동 스택 트레이스가 동작하는 경우 Active Service에 대한 호출 스택을 남기는 주기를 설정한다. 이 값을 5000으로 지정하면 [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)에 설정된 시간을 초과해서 수행 중인 Active Service의 호출 스택을 5초마다 다시 남기게 된다.
+
+--- 
+
+* 기본값 : 1000 (단위: 밀리초, 최솟값 1000)
+* 형식 : 숫자
+* 샘플값 : 5000
+* 재시작 : 안함 
+* 연관 옵션
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_instant_queue](./agentHelp?key=callstack_max_instant_queue&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* 지원 버전 : 5.1.3.2

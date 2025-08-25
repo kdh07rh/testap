@@ -1,0 +1,18 @@
+토폴로지 모드를 활성화하면 DB, HTTP(아파치 http component), EJB에 대한 트랜잭션을 기본으로 추적하여 토폴로지 대시보드와 XView에 토폴로지 정보를 보여준다.
+
+EJB는 다음 환경에서 테스트되었다.
+
+    WebSphere 7, 8.0, 8.5
+    WebLogic 10.3.6, 12.1.1, 12.1.2
+    JEUS 6.0.X, 7.0.X
+    JBoss 6.1.0, 6.2.0, 6.3.0
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=1)
+* 지원 버전 : 5.0.6

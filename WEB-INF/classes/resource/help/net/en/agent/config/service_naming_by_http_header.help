@@ -1,0 +1,12 @@
+This option can be used to set application name using value in the HTTP Header information
+
+Note: If you use this option application name in the Management screen and this option together at the same time, the priority will be to the value set in this option
+
+
+---
+
+* Default: None
+* Type: String
+* Sample : service_name
+* Restart : Not Required
+* Supported version : 5.5

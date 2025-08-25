@@ -1,0 +1,14 @@
+アクティブサービスのダンプを保存するディレクトリを指定するオプションです。
+絶対パスまたはエージェントがインストールされたパスの相対パスを指定します。
+
+---
+
+* デフォルト値： service_dump
+* タイプ：文字列
+サンプル値：/var/log/service_dump
+* 再起動：不要
+* 関連オプション
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=3)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=3)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=3)
+* サポートバージョン：5.0.0

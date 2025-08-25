@@ -1,0 +1,31 @@
+이 옵션은 [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1) 옵션이 활성화 되어 있을 Tibero JDBC 드라이버 중에서 이미 분석된 클래스 들에 대해서 자동으로 BCI(ByteCode Instrumentation) 작업을 수행 한다.
+
+이미 분석되어 등록되어 있는 클래스 목록은 다음과 같다.
+
+    com.tmax.tibero.jdbc.TbStatement
+    com.tmax.tibero.jdbc.TbPreparedStatement
+    com.tmax.tibero.jdbc.TbCallableStatement
+    com.tmax.tibero.jdbc.TbResultSetBase
+
+    com.tmax.tibero.jdbc.driver.TbStatement
+    com.tmax.tibero.jdbc.driver.TbPreparedStatement
+    com.tmax.tibero.jdbc.driver.TbCallableStatement
+    com.tmax.tibero.jdbc.driver.TbResultSetBase
+    com.tmax.tibero.jdbc.driver.TbPreparedStatementImpl
+    com.tmax.tibero.jdbc.driver.TbCallableStatementImpl
+
+만약 이값이 false 라면 필요한 클래스를 추가로 등록해야 한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+    * [use_parameter_field](./agentHelp?key=use_parameter_field&type=1)
+* 지원 버전 : 5.4.2.3

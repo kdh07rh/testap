@@ -1,0 +1,9 @@
+The **max_bucket_size_of_collection** option is an option to specify the total number of objects to be stored in memory when tracking collection objects..
+
+---
+
+* Default : 5000
+* Type : Number
+* Sample Value : 10000
+* Restart: Required
+* Version supported : 5.5.3

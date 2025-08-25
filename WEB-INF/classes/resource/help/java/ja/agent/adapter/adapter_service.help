@@ -1,0 +1,196 @@
+スタンドアロン(Standalone)サービスに対して基本性能追跡方法を変更するとき、使用します。
+
+** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterService {
+        /**
+         * スタンドアロン(Stand alone)サービスを拒否します。
+         * PLCは通常、拒否設定を通じて処理しますが、このメソッドはユーザIPまたはその他の入力値に基づいてPLC機能を処理するために使用します。
+         * 戻り値がtrueの場合、ユーザリクエストは拒否されます。
+         *
+         * @param classMethod クラス + メソッド名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return リジェクト対象可否をリターンします。
+         */
+        boolean reject(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+         * PLCによってリジェクトされた場合、原本戻り値を返却するために使用します。
+         * booleanを返却するときに自動的に呼び出されます。
+         *
+         * @param stat StandaloneServiceContextオブジェクト
+         */
+        boolean rboolean(Object stat);
+
+        /**
+         * PLCによってリジェクトされた場合、原本戻り値を返却するために使用します。
+         * 数値型の値を返す必要があるときに自動的に呼び出されます。
+         *
+         * @param stat StandaloneServiceContextオブジェクト
+         */
+        int rint(Object stat);
+        
+        /**
+         * PLCによってリジェクトされた場合、原本戻り値を返却するために使用します。
+         * 文字列を含むオブジェクト型の値を返す必要があるときに自動的に呼び出されます。
+         *
+         * @param stat StandaloneServiceContextオブジェクト
+         */        
+        Object rObject(Object stat);
+        
+        /**
+         * スタンドアロン(Stand alone)サービスが開始したときに追加の追跡情報を初期化するのに使用します。
+         *
+         * @param classMethod クラス + メソッド名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @param activeObjectWrapper ActiveObjectWrapperオブジェクト
+         */
+        void start(String classMethod, ParameterWrapper parameterWrapper, Object activeObjectWrapper);
+        
+        /**
+         * スタンドアロン(Stand alone)サービスが終了した時点でAGENTで追跡した情報の検証または修正に使用します。
+         *
+         * @param returnValue サービスのリターン値
+         * @param activeObjectWrapper ActiveObjectWrapperオブジェクト
+         * @param throwable throwable例外が発生したときの該当例外
+         */
+        void end(Object returnValue, Object activeObjectWrapper, Throwable throwable);
+        
+        /**
+         * サービス性能情報（XViewPoint）をサーバへ送信する直前に使用します。
+         *
+         * @param xviewPointRecordWrapper XViewPointRecordWrapperオブジェクト
+         */
+        void interceptServicePerformance(Object xviewPointRecordWrapper);
+    }
+
+
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapperオブジェクト
+    public int size() : パラメータ数を返却します。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトを返却します。
+    public Object[] getValues() : メソッドのパラメータ配列を返却します。
+    public Object get(int idx) : 該当位置のパラメータを返却します。
+    public Parameter getParameter() : 元のParameterオブジェクトを返却します。
+
+###### ActiveObjectWrapper オブジェクト
+    public Thread getThread() : 現ActiveObjectのスレッドをリターンします。
+    public long getTxid() : トランザクションIDをリターンします。
+    public String getGuid() : GUIDをリターンします。
+    public void setGuid(String guid) : GUIDをリターンします。
+    public String getUserId() : ユーザIDをリターンします。
+    public void setUserId(String userId) : ユーザIDを設定します。
+    public long getWmonId() : WMONIDをリターンします。
+    public long getStartTime() : トランザクションの開始時間をリターンします。
+    public long getStartCpu() : トランザクションの開始スレッドのトータルCPU時間をリターンします。
+    public int getServiceHash() : トランザクションのハッシュ値をリターンします。
+    public String getServiceName() : トランザクション名をリターンします。
+    public void setServiceName(String serviceName) : トランザクション名を設定します。
+    public String getHttpQuery() : HTTPリクエストの使用Query文字列をリターンします。
+    public int getStatus() : ActiveObjectの現在の状態をリターンします。
+    public short getErrorTypeOrZero() : トランザクションの処理中にエラーが発生した場合、該当エラータイプをリターンします。エラーが発生しなかった場合はリターン値が０です。
+    public void setErrorTypeOrZero(short errorTypeOrZero) : トランザクションの処理中にエラーが発生した場合のエラーコードを設定します。
+    public byte[] getIpAddr() : IPアドレスをリターンします。
+    public int getSqlCount() : トランザクションの処理中に実行したSQL数をリターンします。
+    public int getSqlTime() : トランザクションの処理中に実行したSQLの遂行時間の合計をリターンします。
+    public int getSqlStartTime() : 実行中のSQL開始時間をリターンします。
+    public int getFetchCount() : 実行中のFetch件数をリターンします。
+    public int getFetchTime() : 実行中のFetch時間をリターンします。
+    public String getExternalCallName() : 実行中の外部トランザクションの名前をリターンします。
+    public void setExternalCallName(String externalCallName) : 実行中の外部トランザクションの名前を設定します。
+    public int getExternalCallCount() : トランザクションの実行された外部トランザクション数をリターンします。
+    public int getExternalCallTime() : トランザクションの実行された外部トランザクションの遂行時間をリターンします。
+    public String getHttpMethod() : HTTPメソッド(GET/POST)をリターンします。
+    public String getBrowserInfo() : ブラウザ情報をリターンします。
+    public int getRecursiveCallCount() : トランザクションの再帰呼び出し数をリターンします。
+    public void addProfile(PiData profile) : トランザクションにプロファイルを追加します。
+    public void pushProfile(PiData profile) : トランザクションにプロファイル(サーバ側へ転送しない状態)を追加します。
+    public void popProfile(PiData profile) : トランザクションに追加したプロファイルを取得します。(popメソッドを実行するとサーバ側へプロファイルを転送します。)
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, boolean raiseEvent) : 例外が発生した時に、イベントを発令します。また該当エラーをプロファイルに追加します。デフォルトのエラータイプは"METHOD_EXCEPTION"です。
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, short errorType, boolean raiseEvent) : 例外が発生した時に、イベントを発令します。また該当エラーをプロファイルに追加します。
+
+##### XViewPointRecordWrapper
+    public long getEndTime() : トランザクションの終了時間をリターンします。
+    public int getSysOid() : エージェントIDをリターンします。
+    public int getElapsedTime() : トランザクションの遂行時間をリターンします。
+    public int getCpuTime() : スレッドのCPU使用時間をリターンします。
+    public int getSqlCount() : トランザクションの処理中に実行したSQL数をリターンします。
+    public int getSqlTime() : トランザクションの処理中に実行したSQLの遂行時間の合計をリターンします。
+    public int getFetchCount() : トランザクションの処理中に実行したSQLのFetch件数をリターンします。
+    public int getFetchTime() : トランザクションの処理中に実行したSQLのFetch時間をリターンします。
+    public int getExternalCallCount() : トランザクションの処理中に実行した外部トランザクション数をリターンします。
+    public int getExternalCallTime() : トランザクションの処理中に実行した外部トランザクションの遂行時間をリターンします。
+    public int getServiceHash() : トランザクションのハッシュ値をリターンします。
+    public long getTxid() : トランザクションIDをリターンします。
+    public short getErrorTypeOrZero() : トランザクションの処理中にエラーが発生した場合、該当エラータイプをリターンします。エラーが発生しなかった場合はリターン値が０です。
+    public void setErrorTypeOrZero(short errorTypeOrZero) : トランザクションの処理中にエラーが発生した場合のエラーコードを設定します。
+    public byte[] getGuid() : GUIDをリターンします。
+    public long getWmonId() : WMONIDをリターンします。
+    public byte[] getIpAddr() : IPアドレスをリターンします。
+    public int getBrowserHash() : ブラウザのハッシュ情報をリターンします。
+    public int getUserHash() : ユーザIDのハッシュ情報をリターンします。
+
+##### StandaloneServiceContext
+    public String getDescriptor() : 対象メソッドのDescriptorをリターンします。
+    public ParameterWrapper getParameter() : ParameterWrapperオブジェクトをリターンします。
+- - -
+
+** 設定方法 **
+
+jennifer.impl.XXX.jarの形式でアダプタを実装するクラスをjennifer.jarと同じ位置に置くとき、必要なライブラリが追加設定なしで自動的に認識されます。
+jennifer.impl.custom-1.0.1.jarのような形式を使用すると、バージョンコントロールが楽になります。
+
+    aries.runtime.custom.SampleService
+    
+- - -
+
+**例**
+
+    public class SampleService implements IAdapterService
+    {
+        public boolean reject(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return false;
+        }
+
+        public boolean rboolean(Object stat)
+        {
+            return false;
+        }
+
+        public int rint(Object stat)
+        {
+            return 0;
+        }
+
+        public Object rObject(Object stat)
+        {
+            return null;
+        }
+
+        public void start(String classMethod, ParameterWrapper parameterWrapper, Object activeObjectWrapper) {}
+
+        public void end(Object returnValue, Object activeObjectWrapper, Throwable throwable) {}
+
+        public void interceptServicePerformance(Object xviewPointWrapper)
+        {
+            if(xviewPointWrapper instanceof XViewPointRecordWrapper)
+            {
+                XViewPointRecordWrapper xviewPoint = (XViewPointRecordWrapper) xviewPointWrapper;
+                xviewPoint.getTxid();
+                // ...
+                // FileあるいはDBなど XView点データを別途に保存する場合
+            }
+        }
+    }
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル例：aries.runtime.custom.SampleService
+* 再起動：不要
+* サポートバージョン：5.0.0

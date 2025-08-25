@@ -1,0 +1,18 @@
+로그 파일에 로그를 기록할 때 사용하는 인코딩을 지정하는 옵션이다.
+
+기본값은 **UTF-8**을 사용하고 있다. 
+
+
+---
+
+  * 기본값 : UTF-8
+  * 형식 : 문자열
+  * 재시작 : 안함
+  * 연관 옵션
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * 지원 버전 : 5.0.0

@@ -1,0 +1,11 @@
+This option activates the GUID connection tracking for a transaction performed in a multi-tier structure.
+ 
+ ---
+ 
+ * Default value: true
+ * Type: Boolean
+ * Restart: Not required
+ * Related options
+  * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=2)
+  * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=2)
+ * Supported version: 5.0.7

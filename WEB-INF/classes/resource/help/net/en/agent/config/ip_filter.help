@@ -1,0 +1,16 @@
+This option allows to block requests from a specific IP address or range. Note if this option was used, no relative information about the request will be shown in JENNIFER statistics data including X-View
+
+---
+
+* Default : None
+* Type : String(Multiple values can be separated by line break)
+* Sample Value
+
+example) Ignore all incoming requests from 192.168.0.100
+ip_filter = 192.168.0.100
+
+example) Ignore all incoming requests from 192.168.100.xxx
+ip_filter = 192.168.100.0/24
+
+* Restart : Not Required
+* Supported Version : 5.3.1.4

@@ -1,0 +1,16 @@
+Option to set the expiration date of a WMONID cookie issued by a Agent.
+A WMONID cookie is valid for 365 days from the date of issue by default, and you can change the period of validity with this option.
+If you want to validate the WMONID cookie only for the browser session according to security requirements, set the option value to -1.
+
+If a WMONID cookie has been issued, the applicable cookie issued should be deleted first.
+
+---
+
+* Default value: 365
+* Type: Number, Day
+* Restart: Not required
+* Related options
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=1)
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=1)
+    * [append_attribute_for_wmonid_cookie](./agentHelp?key=append_attribute_for_wmonid_cookie&type=1)
+* Supported version: 5.0.11

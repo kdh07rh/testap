@@ -1,0 +1,18 @@
+When [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1) option is set to true and java.sql.PreparedStatement object is revealed to not be close through leak tracking, DB_STATEMENT_UNCLOSED error is generated.
+
+When [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1) option is set to true, stack information is added to the error information.
+
+** As the time to track a leak is called by re-defining finalize(), it depends completely on the garbage collection algorithm of JVM. 
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+* Supported version: 5.0.0

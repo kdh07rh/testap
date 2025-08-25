@@ -1,0 +1,13 @@
+リモートアドレスを取得するときにjavax.servlet.ServletRequest.getRemoteAddr()メソッドを使用しますが、Webサーバの設定によってWebサーバのアドレスがリターンされる場合があります。
+この時に、使用アドレスが別途のHTTPヘッダへ送られますが、この値をユーザアドレスとして使用する場合このオプションを使用できます。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル値：X-REMOTE_ADDRESS
+* 再起動：不要
+* 関連オプション
+    * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=1)
+    * [remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key_delimiter&type=1)
+* サポートバージョン：5.0.0

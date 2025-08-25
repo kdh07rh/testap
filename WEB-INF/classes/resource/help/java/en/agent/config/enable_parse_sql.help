@@ -1,0 +1,16 @@
+This option determines whether to minimize the redundant SQL by processing all numbers and single quoted values into variables when collecting SQLs.
+
+A number is converted into '#', and a single quoted value is converted into a '$' variable.
+
+An example conversion is shown below.
+
+    SELECT * FROM EXAMPLE_123 WHERE COL = 'A'
+    
+    SELECT * FROM EXAMPLE_# WHERE COL = '$'
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.0

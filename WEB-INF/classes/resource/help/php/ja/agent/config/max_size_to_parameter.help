@@ -1,0 +1,12 @@
+SQL媒介変数を収集するとき、収集する媒介変数の最大数を設定するオプションです。
+設定値-1が適用されます。
+
+---
+
+
+* デフォルト値 : 1000
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 関連オプション
+    * [enable_collect_sql_param](./agentHelp?key=enable_collect_sql_param&type=3)
+* サポートバージョン : 5.6.2.8

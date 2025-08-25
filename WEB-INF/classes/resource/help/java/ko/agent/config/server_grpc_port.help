@@ -1,0 +1,11 @@
+[enable_opentelemetry](./agentHelp?key=enable_opentelemetry&type=1) 옵션을 활성화 해서 OpenTelemetry 데이터를 수집하기 위해 설정하는 포트이다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 재시작 : 필요
+* 연관 옵션
+    * [server_address](./agentHelp?key=server_address&type=1)
+    * [enable_opentelemetry](./agentHelp?key=enable_opentelemetry&type=1)
+* 지원 버전 : 5.6.1.16, 5.6.2

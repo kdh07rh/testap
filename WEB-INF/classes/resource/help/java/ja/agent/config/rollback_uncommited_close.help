@@ -1,0 +1,26 @@
+アプリケーションがDBトランザクションを直接制御する場合は、java.sql.Connectionオブジェクトからjava.sql.Statementオブジェクトを生成して、execute、executeBatchおよびexecuteUpdateメソッドを実行しますが、その時に、明示的にcommitまたはrollbackが呼び出されない場合は、このオプションを設定することで、エージェントがrollbackメソッドを自動的に呼び出しします。
+
+以下は一般的なパターンの例です。
+        
+    Connection connection = datasource.getConnection();
+    connection.setAutoCommit(false);
+    
+    Statement stmt = connection.createStatement();
+    stmt.executeUpdate("UPDATE sample SET col='col'");
+    connection.close();
+
+このオプションを活性化すると、java.sql.Connectionオブジェクトがクローズされる際に以下のコードを実行します。
+ 
+    connection.rollback();
+    connection.setAutoCommit(true);
+
+** この機能は、アプリケーションコードに大きく依存するため、使用前に検証が必要です。未検証のシステムでは、このオプションをtrueにすることをおすすめしません。java.sql.Connectionオブジェクトのcloseメソッドを呼び出した時点で、別のJAVAメソッドがrollbackメソッドを呼び出した場合、エラーが発生する可能性があります。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+   * [ignore_rollback_uncommited_error](./agentHelp?key=ignore_rollback_uncommited_error&type=1)
+* サポートバージョン：5.0.0

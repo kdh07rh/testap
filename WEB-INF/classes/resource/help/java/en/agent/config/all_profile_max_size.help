@@ -1,0 +1,16 @@
+Set the maximum number of profile collection and storage of transactions.
+
+If this value is 1000, the number of profile collections per transaction cannot exceed 1000.
+
+The difference from the **[profile_max_size](./agentHelp?key=profile_max_size&type=1)** option is that SQL and ExternalCall profiles are included in the this option.
+
+File-related profile data is always collected.
+
+---
+
+* Default : 0
+* Type: Number
+* Restart: not required
+* Option related
+    * [profile_max_size](./agentHelp?key=profile_max_size&type=1)
+* Version supported: 5.5.2.6

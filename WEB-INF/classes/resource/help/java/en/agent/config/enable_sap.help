@@ -1,0 +1,13 @@
+This is option enable the use of JCO module for external transaction when using SAP.
+
+The registered classes are as follows.
+
+    com.sap.conn.jco.rt.AbapFunction
+
+
+---
+
+* Default : false
+* Type : Boolean 
+* Restart : Required
+* Supported Version : 5.4.0.2

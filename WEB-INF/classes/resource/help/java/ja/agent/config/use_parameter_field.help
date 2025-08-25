@@ -1,0 +1,9 @@
+このオプションは [enable_tibero_sql_pointcut](./agentHelp?key=enable_tibero_sql_pointcut&type=1) を使用する際にJDBCドライババーションによって実装が異なる場合に設定するオプションです。
+---
+
+* デフォルト値：false
+* タイプ：Boolean
+* 再起動：必要
+* 連関オプション：
+    * [enable_tibero_sql_pointcut](./agentHelp?key=enable_tibero_sql_pointcut&type=1)
+* サポートバージョン : 5.4.2.3

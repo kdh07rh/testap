@@ -1,0 +1,12 @@
+This is an option to designate the IP to connect to the data server.
+
+    ex)server_address=127.0.0.1
+
+---
+
+  * Default : 127.0.0.1
+  * Type: String
+  * Restart : Not required
+  * Option related
+    * [server_port](./agentHelp?key=server_port&type=3)
+  * Version supported : 5.0.0

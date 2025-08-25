@@ -1,0 +1,25 @@
+{
+  "domainBar": {
+    "type": "domain",
+    "multidomain": false,
+    "multiinstance" : false,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+
+  "charts": [
+    {"charttype": "scoreboard", "rowcount": 1, "columncount": 2, "cellConfigureArray": [{"label": "", "dateCondition": "today", "mxid": 109}, {"label": "", "dateCondition": "yesterday", "mxid": 109}], "datatype": "agent", "domainBarSync": true, "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.MISC", "pkey": "score_board_v2", "origin": {"startx": 0, "endx": 33.33, "starty": 0, "endy": 25}, "extend": {"startx": 0, "endx": 33.33, "starty": 0, "endy": 25}},
+    {"i18nTitle":"ui.label.activeUser", "charttype": "equalizer", "datatype": "agent", "domainBarSync": true, "metrics": "MxDef.active_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LAST_SINGLE", "origin": {"startx": 33.33, "endx": 100, "starty": 0, "endy": 25}, "extend": {"startx": 33.33, "endx": 100, "starty": 0, "endy": 25}},
+
+    {"i18nTitle":"ui.label.concurrentUser", "charttype": "line.runtime", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.concurrent_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 25, "endy": 50}, "extend": {"startx": 0, "endx": 33.33, "starty": 25, "endy": 50}},
+    {"i18nTitle":"ui.label.concurrentUser.today", "charttype": "area", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.concurrent_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 25, "endy": 50}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 25, "endy": 50}},
+    {"i18nTitle":"ui.label.activeUser", "charttype": "line.runtime", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.active_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 66.66, "endx": 100, "starty": 25, "endy": 50}, "extend": {"startx": 66.66, "endx": 100, "starty": 25, "endy": 50}},
+
+    {"i18nTitle":"ui.label.serviceRate", "charttype": "line.runtime", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 50, "endy": 75}, "extend": {"startx": 0, "endx": 33.33, "starty": 50, "endy": 75}},
+    {"i18nTitle":"ui.label.serviceRate.today", "charttype": "area", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.service_rate", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 50, "endy": 75}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 50, "endy": 75}},
+    {"i18nTitle":"ui.label.activeUser.today", "charttype": "area", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.active_user", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 66.66, "endx": 100, "starty": 50, "endy": 75}, "extend": {"startx": 66.66, "endx": 100, "starty": 50, "endy": 75}},
+    
+    {"i18nTitle":"ui.label.userReqInterval", "charttype": "line.runtime", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.user_req_interval", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.REALTIME_LINE_SINGLE", "origin": {"startx": 0, "endx": 33.33, "starty": 75, "endy": 100}, "extend": {"startx": 0, "endx": 33.33, "starty": 75, "endy": 100}},
+    {"i18nTitle":"ui.label.userReqInterval.today", "charttype": "area", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.user_req_interval", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_5MIN_SINGLE", "origin": {"startx": 33.33, "endx": 66.66, "starty": 75, "endy": 100}, "extend": {"startx": 33.33, "endx": 66.66, "starty": 75, "endy": 100}},
+    {"i18nTitle":"ui.label.visitHour", "charttype": "column.daily", "datatype": "domain", "domainBarSync": true, "metrics": "MxDef.visit_hour", "otype": "OTypeDef.SYSTEM", "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2", "origin": {"startx": 66.66, "endx": 100, "starty": 75, "endy": 100}, "extend": {"startx": 66.66, "endx": 100, "starty": 75, "endy": 100}}
+  ]
+}

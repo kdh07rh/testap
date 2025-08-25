@@ -1,0 +1,11 @@
+이 옵션은 트랜잭션의 DB 프로파일 정보 수집시 CPU 정보를 포함하여 수집한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_method_cpu](./agentHelp?key=profile_method_cpu&type=2)
+    * [profile_externalcall_cpu](./agentHelp?key=profile_externalcall_cpu&type=2)
+* 지원 버전 : 5.0.9

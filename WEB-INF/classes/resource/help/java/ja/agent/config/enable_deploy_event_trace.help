@@ -1,0 +1,10 @@
+このオプションがtrueの場合は、APサーバに配布されるアプリケーション情報をイベント単位で収集します。
+収集情報はX-Viewチャートの縦ラインに表示されます。該当ラインを選択すると配布されるイベント単位の情報が確認できます。
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [enable_deploy_resource_trace](./agentHelp?key=enable_deploy_resource_trace&type=1)
+* サポートバージョン : 5.0.15

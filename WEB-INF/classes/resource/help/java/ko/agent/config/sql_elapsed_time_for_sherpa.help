@@ -1,0 +1,13 @@
+일정 수행시간을 갖는 SQL을 DB 모니터링 솔루션인 셀파티베로와 연동하기 위해 설정하는 옵션이다.
+
+설정 기준을 넘는 SQL만 연동 대상이 된다.
+
+---
+
+* 기본값 : 1000
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_sherpa_tibero](./agentHelp?key=enable_sherpa_tibero&type=1)
+* 지원 버전 : 5.6.1.13

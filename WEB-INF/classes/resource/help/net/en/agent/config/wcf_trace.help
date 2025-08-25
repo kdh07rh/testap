@@ -1,0 +1,11 @@
+Determines whether to perform profiling on a WCF call.
+ 
+ ---
+  
+ * Default value: true
+ * Type: Boolean
+ * Sample value: false
+ * Restart: Not required
+ * Related options
+  * [wcf_params](./agentHelp?key=wcf_params&type=2)
+ * Supported version: 5.0.7

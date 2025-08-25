@@ -1,0 +1,10 @@
+When the topology mode is enabled, transactions for WCF, SOAP and HTTP calls are tracked by default to show the topology information on the topology dashboard and the XView.
+ 
+ ---
+ 
+ * Default value: true
+ * Type: Boolean
+ * Restart: Required
+ * Related options
+  * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=2)
+ * Supported version: 5.0.8

@@ -1,0 +1,10 @@
+Oracle.ManagedDataAccessを使用する場合、性能カウンター設定を活性化します。
+
+Oracle.ManagedDataAccessは.NET Frameworkと.NET Core環境でサポートされます。.NET Fraemworkの場合はこのオプションをtrueに設定するだけで良いです。
+しかし、.NET Coreの場合はアプリケーションがSystem.Diagnostics.PerformanceCounterパッケージを参照しなければなりません。
+
+---
+
+* デフォルト値: false
+* タイプ: Boolean
+* サポートバージョン: 5.6.0.19

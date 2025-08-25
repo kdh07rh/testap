@@ -1,0 +1,51 @@
+HTTPサービスに対するトランザクションを追跡時、基本追跡方法をユーザ定義します。
+
+    public interface IAdapterHttpService 
+    {
+        bool reject(Object request, Object response, Object activeObject);
+        bool rejectMessage(Object request, Object response, Object activeObject);
+        void start(Object request, Object response, Object activeObject);
+        void end(Object request, Object response, Object activeObject, Exception t);
+        void interceptServicePerformance(Object xvpoint);
+    }
+
+メソッドの説明
+---------------
+reject(Object request, Object response, Object activeObject);
+: HTTPサービスをreject処理します。 PLC処理が一般的ですが、ユーザIP又は他の入力値を基準にPLC機能を処理したいとき、ユーザ定義します。 リターン値がtrueの場合、HTTPサービスのリクエストがrejectされます。
+
+rejectMessage(Object request, Object response, Object activeObject);
+: HTTPサービスのリクエストがrejectされるとき、ユーザ定義メッセージを送る場合、再定義します。 リターン 値がtrueの場合、既にユーザへ適切なメッセージを送ったという意味です。
+
+    bool b = rejectMessage(request, response, o);
+    if (b == false)
+    {
+        // アダプタで再定義し無かった場合
+        // JENNIFER .NETが定義した基本メッセージ処理を行う
+
+    }
+
+start(Object request, Object response, Object activeObject);
+: HTTPサービスがスタートするとき、別途の追跡情報を初期化するときに使用します。
+
+end(Object request, Object response, Object activeObject, Exception t);
+:HTTPサービスが終了したとき、JENNIFERで追跡した情報の検証又は変形時、使用します
+
+interceptServicePerformance(Object xvpoint);
+: サービスのパフォーマンス情報(X-ViewPoint)をサーバに転送する直前に使用されます。
+
+
+** 設定方法
+ **
+
+アダプタを実装したクラスソースコードファイルを[JENNIFERインストールフォルダ]/extensionフォルダに保存後、extensionフォルダに既に存在しているverify_script.batファイルを使用して有効性を検証します。 有効性検証に成功すると、JENNIFERコンソールを通じて詳細オプションでadapter_http_service項目に検証されたソースコードのファイル名を設定します。
+
+---
+    
+* デフォルト値 : なし
+* タイプ : 文字列
+* サンプル値 : ServiceHttpAdapter.cs 
+* 再起動 : 必要ですが, adapter_revisionオプション値を再設定すると、実行時に適用されます。
+* 関連オプション
+    * [adapter_revision](./agentHelp?key=adapter_revision&type=2)
+* サポートバージョン: 5.0.8.1

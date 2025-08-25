@@ -1,0 +1,18 @@
+이 옵션은 [object_leak_checker_open](./agentHelp?key=object_leak_checker_open&type=1) 옵션과 짝으로 특정 객체의 메소드가 실행되었는지 여부를 파악하는 옵션이다.
+
+두 옵션을 이용하여 리소스의 릭을 추적하는 경우에 사용할 수 있는데 체크하는 범위는 트랜잭션 범위안에서만 지원하며 최대 10개까지 설정할 수 있다.
+
+
+---
+
+* 기본값 : 없음.
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+    A:package.SampleA method()Ljava/lang/String;
+    B:package.SampleB method()Ljava/lang/String;
+
+* 연관 옵션
+    * [object_leak_checker_open](./agentHelp?key=object_leak_checker_open&type=1)
+* 재시작 : 필요
+* 지원 버전 : 5.3.3.4

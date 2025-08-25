@@ -1,0 +1,15 @@
+This option sends the call stack collected by an agent to the data server and caches the hash information of the applicable call stack. Through this process, it is possible to prevent the same call stack from sending to the data server again.
+ 
+ If the cache data exceeds the set value, the hash of the call stack entering earlier is deleted according to the FIFO (First In First Out) principle.
+ 
+ ---
+ 
+ * Default value: 30000
+ * Type: Number
+ * Sample value: 50000
+ * Restart: Required
+ * Related options
+  * [max_number_of_method](./agentHelp?key=max_number_of_method&type=2)
+  * [max_number_of_sql](./agentHelp?key=max_number_of_sql&type=2)
+  * [max_number_of_text](./agentHelp?key=max_number_of_text&type=2)
+ * Supported version: 5.6.0.22

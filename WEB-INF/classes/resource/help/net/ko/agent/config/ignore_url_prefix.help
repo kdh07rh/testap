@@ -1,0 +1,16 @@
+이 옵션은 애플리케이션의 트랜잭션을 추적할 때 추적에서 제외할 대상을 "prefix" 로 설정한다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        /user
+        /event
+
+* 재시작 : 안함
+* 연관옵션
+    * [ignore_url](./agentHelp?key=ignore_url&type=2)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=2)
+* 지원 버전 : 5.0.7

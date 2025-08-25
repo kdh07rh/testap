@@ -1,0 +1,17 @@
+By default AGENT create socket wrapper to track information and collect basic profile information.
+You can disable this option If the application strucutr does not allow references or due to security issues. 
+
+** Note that if you disable this option the toplogy view will not work **
+
+---
+
+* Default: true
+* Type: Boolean
+* Restart: Required
+* Associated option
+    * [topology_mode] (./ agentHelp? Key = topology_mode & type = 1)
+    * [socket_dump] (./ agentHelp? Key = socket_dump & type = 1)
+    * [socket_read_dump] (./ agentHelp? Key = socket_read_dump & type = 1)
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+    * [enable_socket_wrapper_trace](./agentHelp?key=enable_socket_wrapper_trace&type=1)
+* Support Version: 5.1.3

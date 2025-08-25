@@ -1,0 +1,25 @@
+This option can be used to generate "SQL_EXCEPTION" event when an SQL exception is occurred when an SQL is running.
+
+Default value of this option is false, the profile information of the transaction is added to the "ToString()" message of the exception
+
+The following is sample profile 
+
+    ...
+    [0021][13:25:18 086][    3][  320] SQL-EXECUTE-QUERY [10 ms]
+                                       select * from crud2
+
+    [0022][13:25:18 097][   11][     ] System.Data.OracleClient.OracleException (0x80131938): ORA-00001: unique constraint (HR.REG_ID_PK) violated
+    ...
+
+When this option is set to true , "SQL_EXCEPTION" Event is generated 
+
+    In order to receive alert notification, Event Rule settings (Management Area -> Event Rules) is required 
+
+---
+
+* Default Value : false
+* Type : Boolean 
+* Restart : Not Required
+* Related Options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=2)
+* Supported Version : 5.0.15.1

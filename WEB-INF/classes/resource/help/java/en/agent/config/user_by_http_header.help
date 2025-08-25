@@ -1,0 +1,15 @@
+User ID value can be set using a particular method parameters or return value using the Management Screen.
+
+If you are unable to access User ID using method parameters or return value, you can use this option to set User ID from the HTTP Header information.
+
+Note: If you use the Management Screen and this option together to set the User ID, the priority will be to the settings set in this option
+
+---
+
+* Default : None
+* Type: String
+* Sample Value : signin
+* Restart : Not Required
+* Related options
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* Supported version : 5.0.11

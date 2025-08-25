@@ -1,0 +1,10 @@
+This is an option to specify the name of the instance at the time of agent initialization.
+
+Note that if the name be set  through options,  the name is not edited on the management screen.
+
+---
+
+  * Default : none 
+  * Type : String
+  * Restart: not required
+  * Version supported : 5.0.0

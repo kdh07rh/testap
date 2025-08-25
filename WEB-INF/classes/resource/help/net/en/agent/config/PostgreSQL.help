@@ -1,0 +1,9 @@
+If Npgsql ADO.NET database provider is used, the version has to be specified.
+ 
+ ---
+  
+ * Default value: 2.0.11.0
+ * Type: string (version)
+ * Sample value: 2.2.0.0
+ * Restart: Required
+ * Supported version: 5.0.7

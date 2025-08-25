@@ -1,0 +1,18 @@
+지정된 Key를 제외한 HTTP Parameter 값들을 프로파일로 수집한다. 
+예를 들어 'Password'가 이 옵션에 지정되었다면 Password를 제외한 나머지 HTTP Parameter 값들이 프로파일로 수집된다. 
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        password
+        name
+
+* 재시작 : 안함
+* 연관 옵션
+    * [profile_http_parameter_all](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+* 지원 버전 : 5.3.2.1

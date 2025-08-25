@@ -1,0 +1,36 @@
+This option operates only when the [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1) option or [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) option is activated.
+
+Agent tracks Uncommit/Rollback for execute, executeBatch and executeUpdate of java.sql.Statement object, and when a specific application is selected via java.sql.Statement execute, an error is registered that the transaction has closed the connection without commit/rollback. When this option is activated, the foregoing error is not detected.
+
+When a transaction occurs without activating the option, the following profile information is added and a DB_UN_COMMIT_ROLLBACK error occurs.
+
+    ...
+    [0016][12:30:34 366][    0][  364] SQL-EXECUTE-QUERY [2 ms]
+                                       select * from sample
+    ...
+    [0017][12:30:34 369][    3][     ] TRY TO CLOSE CONNECTION WITHOUT TRANSACTION COMMIT/ROLLBACK
+    [0018][12:30:34 370][    1][  367] DB_CLOSE_CONNECTION (jdbc/sample) [0 ms]
+    ...
+
+An example of this error message is shown below.
+
+    DB_UN_COMMIT_ROLLBACK   
+    LAST EXECUTED SQL: sql:[select * from sample]
+
+    CONNECTION closed:
+    JDBC Transaction NOT Commit/Rollback
+
+The example information shown above can be viewed when selecting the transaction on the X-view pop-up window.
+ 
+ ** For a long-term basis, it is recommended to modify the applicable source code to make the SELECT string be processed by executeQuery method.
+ 
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+   * [rollback_uncommited_close](./agentHelp?key=rollback_uncommited_close&type=1)
+   * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+   * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) 
+* Supported version: 5.0.0

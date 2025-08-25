@@ -1,0 +1,21 @@
+JDBCドライバが提供するjava.sql.PreparedStatementまたはjava.sql.CallableStatementを実装するクラス中、setStringメソッドを利用しバインディングされたパラメータの長さを制限するために使用します。
+
+デフォルト値は50で、パラメータの長さがデフォルト長の50を超えた場合、そのパラメータは省略文字（...:）で表示されます。
+
+---
+
+* デフォルト値：50
+* タイプ：数字(Number)
+* サンプル値：100
+* 再起動：不要
+* 関連オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_preparedstatement_trace](./agentHelp?key=enable_preparedstatement_trace&type=1)
+    * [enable_callablestatement_trace](./agentHelp?key=enable_callablestatement_trace&type=1)  
+* サポートバージョン：5.0.6

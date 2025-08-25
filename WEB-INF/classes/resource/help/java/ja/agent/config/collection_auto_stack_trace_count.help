@@ -1,0 +1,13 @@
+ [collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1)オプションとしてリストアップされ、モニタリング中のコレクションオブジェクトのサイズが登録値と同じまたはそれ以上になると、自動的にadd/putメソッドのコールスタック(call stack)を生成します。
+
+[注意点] オプションの設定値は[collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1)に設定した値よりも大きく設定しないとスタック情報を確認する事ができません。
+
+---
+
+* デフォルト値：50000
+* タイプ：数字(Number)
+* サンプル値：10000
+* 再起動：不要
+* 関連オプション
+    * [collection_minimum_trace_count](./agentHelp?key=collection_minimum_trace_count&type=1)
+* サポートバージョン：5.0.0

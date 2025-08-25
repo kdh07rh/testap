@@ -1,0 +1,11 @@
+Set the interval for calling the URL set in the option ([startup_url](./agentHelp?type=2&key=startup_url))
+
+---
+
+* Default : 60
+* Type : Number  (Unit : Sec)
+* Sample Value : 120
+* Restart : Not required
+* Related option
+  * [startup_url](./agentHelp?key=startup_url&type=2)
+* Supported version : 5.6.1.4

@@ -1,0 +1,17 @@
+If the active service exceeds the set value, a service dump is automatically left in the [JENNIFER installation folder]\service_dump folder.
+ 
+ You can see the following log in the log file when a service dump is left. 
+ 
+  ...
+  12116,2015-07-14/02:24:02 [INFO] [JENNIFER5-EventHandler] Service dump generated. [D:\V5profiler\.\service_dump\service_dump_225_20150714_142400.txt]
+  ...
+ 
+ ---
+ 
+ * Default value: 100
+ * Type: Number
+ * Sample value: 1000
+ * Restart: Not required
+ * Related options
+  * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=2)
+ * Supported version: 5.0.7

@@ -1,0 +1,12 @@
+In order to activate the JMX (Connection Pool) monitoring, the Agent first waits for service initialization time. This option is used to set JMX service initialization wait time.
+
+Despite waited more than the value specified in this option, if the JMX service did not intialize the JMX (Connnection Pool), the following log is written to the agent log.
+
+     [I012] JMX Connection pool list not found.
+
+---
+
+* Default: 60000
+* Format: numeric (Number), in milliseconds
+* Restart: None
+* Support Version: 5.1.2

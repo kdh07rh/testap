@@ -1,0 +1,13 @@
+This option is used to enable automatic profile for a transaction that longer time than specified threhold
+The screen also provided by Agent laboratory used to control whether or not to preview operation before one can be enabled disabled access to the data server.
+
+There is configuration screen located at AGENT Lab that can be used to control whether or not to enable auto profile as well as threhold settings
+
+** It is also possible to directly use Adanced Option for the settings
+
+---
+
+* Default: false
+* Type: Boolean
+* Restart: None
+* Support Version: 5.1.3

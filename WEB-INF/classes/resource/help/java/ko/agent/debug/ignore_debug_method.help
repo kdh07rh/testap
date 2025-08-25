@@ -1,0 +1,21 @@
+이 옵션은 [debug_mode](./agentHelp?key=debug_mode&type=1) 옵션을 활성화 했을 때 수행되는 [대상 클래스](./agentHelp?key=debug_class&type=1)의 목록에서 제외 하고 싶은 메소드를 설정한다.
+
+**해당 옵션은 성능 문제를 발생 시킬 수 있기 때문에 디버그 용도로만 사용해야 한다.**
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+    
+        start
+        perform
+
+* 재시작 : 필요
+* 연관 옵션
+    * [debug_mode](./agentHelp?key=debug_mode&type=1)
+    * [debug_param](./agentHelp?key=debug_param&type=1)
+    * [debug_class](./agentHelp?key=debug_class&type=1)
+    * [debug_method](./agentHelp?key=debug_method&type=1)
+    * [ignore_debug_class](./agentHelp?key=ignore_debug_class&type=1)
+* 지원 버전 : 5.0.0

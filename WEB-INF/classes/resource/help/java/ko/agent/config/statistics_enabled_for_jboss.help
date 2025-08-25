@@ -1,0 +1,18 @@
+JMX 를 이용한 DB Connection 정보를 모니터링하는 경우 JBoss EAP 6.3 미만 버전 사용시 추가된 속성 체크를 해지 하는 옵션이다.
+
+JMX 를 통해 JBoss 의 DB Connection 정보를 모니터링 할 경우 datasource 설정 부분에 "statistics-enabled" 속성이 필요하다.
+속성이 없는 경우 통계 정보를 수집하지 않아 잘못된 정보가 보일수 있다.
+
+    $JBOSS_HOME/standalone/configuration/standalone.xml
+    <datasource jndi-name="java:jboss/datasources/sample" pool-name="sample" statistics-enabled="true" ...>
+
+잘못된 정보 수집을 막기 위해 기본으로 속성이 설정된 상태인지 체크하는데 이 속성 값을 체크하지 않기 위해 사용하는 옵션이다.
+
+**이 옵션은 JBOSS 에서만 동작한다.**
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.0.11.4

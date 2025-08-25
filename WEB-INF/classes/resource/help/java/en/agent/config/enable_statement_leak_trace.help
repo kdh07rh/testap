@@ -1,0 +1,12 @@
+This option determines whether to generate the "DB_STATEMENT_UNCLOSED" event by tracking the leak of a java.sql.Statement object.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* Supported version: 5.0.0

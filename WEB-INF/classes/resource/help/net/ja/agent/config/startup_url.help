@@ -1,0 +1,13 @@
+設定したURLで[startup＿duration](./agentHelp?type=2&key=startup_duration)オプションに設定した周期ごとにリクエストを発生します。
+
+IISでサービスするWebアプリケーションの場合、20分(デフォルト値)間リクエストがないとw3wp.exeプロセスが自動停止され、JENNIFER画面で該当エージェントが”停止中”と表示されます。Webアプリケーションのプロセスが停止されないようにしたい場合、このオプションを設定するとAriesService NTサービスがstartup_urlに設定したURLでリクエストします。
+
+---
+
+* デフォルト値 : null
+* タイプ : 文字列
+* サンプル値 : http://localhost:9000/defatul.aspx
+* 再起動 : 不要
+* 連関オプション
+  * [startup_duration](./agentHelp?type=2&key=startup_duration)
+* サポートバージョン : 5.6.1.4

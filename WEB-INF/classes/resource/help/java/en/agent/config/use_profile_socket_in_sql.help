@@ -1,0 +1,14 @@
+This is an option to leave socket data as a profile when using the topology function.
+
+The following is an example of a collected profile.
+
+    ex) SOCKET_STREAM [127.0.0.1:8080]
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : not required
+* Option related
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+* Version supported : 5.6.0.15

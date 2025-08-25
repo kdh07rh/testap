@@ -1,0 +1,24 @@
+SQL実行時、例外が発生すると "SQL_EXCEPTION" イベントの発生可否を設定するオプションです。
+
+デフォルト値 falseで、例外が発生するとき、トランザクションプロファイル情報に該当例外の "ToString()" メッセージを追加します。
+
+次は追加されたプロファイル例です。
+
+    ...
+    [0021][13:25:18 086][    3][  320] SQL-EXECUTE-QUERY [10 ms]
+                                       select * from crud2
+
+    [0022][13:25:18 097][   11][     ] System.Data.OracleClient.OracleException (0x80131938): ORA-00001: unique constraint (HR.REG_ID_PK) violated
+    ...
+
+オプションを trueに活性化すると、例外が発生するとき "SQL_EXCEPTION" をイベントで発生させます。
+　このイベントをお知らせる情報で受けるためには "管理 -> イベントルール" でお知らせの設定をしてください。
+
+---
+
+*デフォルト値:false 
+ *タイプ：Boolean  
+*再起動:不要 
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=2)
+* サポートバージョン: 5.0.15.1

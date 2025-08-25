@@ -1,0 +1,21 @@
+This option is used to monitor the parameter transferring to the POST when retrieving the real-time active service list.
+
+Able to check in the active service by adding the key value of HTTP parameter.
+
+    txid
+    email
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        txid
+        email
+
+* Restart: Not required
+* Related options
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* Supported version: 5.0.0

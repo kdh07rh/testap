@@ -1,0 +1,29 @@
+For a method (dynamic method profiling, custom method profiling) that is subject to BCI(ByteCode Instrumentation),
+this option determines whether to generate a "METHOD_EXCEPTION" event when an exception occurs.
+
+The default value is set to false, and when an exception occurs, a "toString()" message for the applicable exception is added to the profile information of the transaction.
+
+The following shows an example of profile added.
+
+    ...
+    [0124][17:03:42 958][    0][     ] void org.springframework.security.core.AuthenticationException.setAuthentication(org.springframework.security.core.Authentication)
+    [0125][17:03:42 958][    0][     ] org.springframework.security.core.userdetails.UsernameNotFoundException: .
+    [0126][17:03:42 958][    0][     ] void org.springframework.security.authentication.ProviderManager.prepareException(org.springframework.security.core.AuthenticationException,org.springframework.security.core.Authentication)
+    [0127][17:03:42 958][    0][     ] void org.springframework.security.core.AuthenticationException.setAuthentication(org.springframework.security.core.Authentication)
+    [0128][17:03:42 958][    0][     ] org.springframework.security.core.userdetails.UsernameNotFoundException: .
+    ...
+
+As a "toString()' message of an exception is added, a simple message is output. To view the stack information of the applicable exception, refer to the [adapter_method](./agentHelp?key=adapter_method&type=1) option.
+
+When the option is set to true, a "METHOD_EXCEPTION" event is generated when an exception occurs.
+
+    To be notified of the event, activate the notification option in the "Management > Evnet Rules" page.
+
+---
+
+* Default value: false
+* Format: Boolean 
+* Restart: Not required 
+* Related options
+    * [adapter_method](./agentHelp?key=adapter_method&type=1)
+* Supported version: 5.0.9.2

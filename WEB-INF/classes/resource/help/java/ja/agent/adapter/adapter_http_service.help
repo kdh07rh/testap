@@ -1,0 +1,217 @@
+HTTPサービスのトランザクションを追跡するときに、追跡方法をユーザ定義する場合に使用します。
+
+** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterHttpService {
+        /**
+         * HTTPサービスをリジェクトします。
+         * 一般的なPLC機能はリジェクト設定によって処理されますが、リジェクト設定以外にクライアントIPや他の設定値でPLC機能を使用する場合はこのメソッドを使用します。
+         * リターン値がtrueの場合は、ユーザリクエストがリジェクトされます。
+         *
+         * @param request HttpServletRequest オブジェクト
+         * @param response HttpServletResponse オブジェクト
+         * @param activeObjectWrapper ActiveObjectWrapper オブジェクト
+         * @return リジェクト対象の可否を表示します。
+         */
+        boolean reject(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTPサービスがリジェクトされる際にユーザ定義メッセージを処理します。
+         * rejectMessage ユーザリクエストがリジェクトされる際にユーザ側へメッセージを送信します。閾値を超える値を設定するときにはこのメソッドを使用します。
+         * リターン値がtrueの場合は、ユーザ側へのメッセージ送信が成功したことを意味します。
+         *
+         * boolean result = rejectMessage(request, response, activeObjectWrapper);
+         * 
+         * if(result == false) {
+         *     基本メッセージの処理
+         * }
+         *
+         * @param request HttpServletRequest オブジェクト
+         * @param response HttpServletResponse オブジェクト
+         * @param activeObjectWrapper  ActiveObjectWrapper オブジェクト
+         * @return リジェクトメッセージの送信可否を表示します。
+         */
+        boolean rejectMessage(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTPサービス開始のときに、追加の追跡情報を初期化するために使用します。
+         *
+         * @param request HttpServletRequest オブジェクト
+         * @param response HttpServletResponse オブジェクト
+         * @param activeObjectWrapper ActiveObjectWrapper オブジェクト
+         */
+        void start(Object request, Object response, Object activeObjectWrapper);
+        
+        /**
+         * HTTPサービス終了のときに、AGENTでの追跡情報を検証または修正するために使用します。
+         *
+         * @param request HttpServletRequest オブジェクト
+         * @param response HttpServletResponse オブジェクト
+         * @param throwable throwable 例外が発生した場合の該当例外
+         */
+        void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable);
+
+        /**
+         * サービス性能情報（XViewPoint）をサーバへ送信する直前に使用します。
+         *
+         * @param xviewPointRecordWrapper XViewPointRecordWrapper 객체
+         */
+        void interceptServicePerformance(Object xviewPointRecordWrapper);
+
+        /**
+         * サービスの例外を追加で追跡するときに使用します。
+         *
+         * @param throwable 例外が発生した場合の該当例外
+         */
+        String catchException(Throwable throwable);
+    }
+    public interface IAdapterHttpService {
+        boolean reject(Object request, Object response, Object activeObject);
+        boolean rejectMessage(Object request, Object response, Object activeObject);
+        void start(Object request, Object response, Object activeObject);
+        void end(Object request, Object response, Object activeObject, Throwable throwable);
+        void interceptServicePerformance(Object xviewPoint);
+        String catchException(Throwable throwable);
+    }
+
+
+**主要オブジェクトのメソッド説明**
+
+###### ActiveObjectWrapper オブジェクト
+    public Thread getThread() : 現ActiveObjectのスレッドをリターンします。
+    public long getTxid() : トランザクションIDをリターンします。
+    public String getGuid() : GUIDをリターンします。
+    public void setGuid(String guid) : GUIDをリターンします。
+    public String getUserId() : ユーザIDをリターンします。
+    public void setUserId(String userId) : ユーザIDを設定します。
+    public long getWmonId() : WMONIDをリターンします。
+    public long getStartTime() : トランザクションの開始時間をリターンします。
+    public long getStartCpu() : トランザクションの開始スレッドのトータルCPU時間をリターンします。
+    public int getServiceHash() : トランザクションのハッシュ値をリターンします。
+    public String getServiceName() : トランザクション名をリターンします。
+    public void setServiceName(String serviceName) : トランザクション名を設定します。
+    public String getHttpQuery() : HTTPリクエストの使用Query文字列をリターンします。 
+    public int getStatus() : ActiveObjectの現在の状態をリターンします。
+    public short getErrorTypeOrZero() : トランザクションの処理中にエラーが発生した場合、該当エラータイプをリターンします。エラーが発生しなかった場合はリターン値が０です。
+    public void setErrorTypeOrZero(short errorTypeOrZero) : トランザクションの処理中にエラーが発生した場合のエラーコードを設定します。
+    public byte[] getIpAddr() : IPアドレスをリターンします。
+    public int getSqlCount() : トランザクションの処理中に実行したSQL数をリターンします。
+    public int getSqlTime() : トランザクションの処理中に実行したSQLの遂行時間の合計をリターンします。
+    public int getSqlStartTime() : 実行中のSQL開始時間をリターンします。
+    public int getFetchCount() : 実行中のFetch件数をリターンします。
+    public int getFetchTime() : 実行中のFetch時間をリターンします。
+    public String getExternalCallName() : 実行中の外部トランザクションの名前をリターンします。
+    public void setExternalCallName(String externalCallName) : 実行中の外部トランザクションの名前を設定します。
+    public int getExternalCallCount() : トランザクションの実行された外部トランザクション数をリターンします。
+    public int getExternalCallTime() : トランザクションの実行された外部トランザクションの遂行時間をリターンします。
+    public String getHttpMethod() : HTTPメソッド(GET/POST)をリターンします。
+    public String getBrowserInfo() : ブラウザ情報をリターンします。
+    public int getRecursiveCallCount() : トランザクションの再帰呼び出し数をリターンします。
+    public void addProfile(PiData profile) : トランザクションにプロファイルを追加します。
+    public void pushProfile(PiData profile) : トランザクションにプロファイル(サーバ側へ転送しない状態)を追加します。
+    public void popProfile(PiData profile) : トランザクションに追加したプロファイルを取得します。(popメソッドを実行するとサーバ側へプロファイルを転送します。)
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, boolean raiseEvent) : 例外が発生した時に、イベントを発令します。また該当エラーをプロファイルに追加します。デフォルトのエラータイプは"METHOD_EXCEPTION"です。
+    public void raiseEventOrProfileWhenOccurThrowable(Throwable throwable, String message, short errorType, boolean raiseEvent) :  例外が発生した時に、イベントを発令します。また該当エラーをプロファイルに追加します。
+
+##### XViewPointRecordWrapper
+
+    public long getEndTime() : トランザクションの終了時間をリターンします。
+    public int getSysOid() : エージェントIDをリターンします。
+    public int getElapsedTime() : トランザクションの遂行時間をリターンします。
+    public int getCpuTime() : スレッドのCPU使用時間をリターンします。
+    public int getSqlCount() : トランザクションの処理中に実行したSQL数をリターンします。
+    public int getSqlTime() : トランザクションの処理中に実行したSQLの遂行時間の合計をリターンします。
+    public int getFetchCount() :  トランザクションの処理中に実行したSQLのFetch件数をリターンします。
+    public int getFetchTime() : トランザクションの処理中に実行したSQLのFetch時間をリターンします。
+    public int getExternalCallCount() : トランザクションの処理中に実行した外部トランザクション数をリターンします。
+    public int getExternalCallTime() : トランザクションの処理中に実行した外部トランザクションの遂行時間をリターンします。
+    public int getServiceHash() : トランザクションのハッシュ値をリターンします。
+    public long getTxid() : トランザクションIDをリターンします。
+    public short getErrorTypeOrZero() : トランザクションの処理中にエラーが発生した場合、該当エラータイプをリターンします。エラーが発生しなかった場合はリターン値が０です。
+    public void setErrorTypeOrZero(short errorTypeOrZero) : トランザクションの処理中にエラーが発生した場合のエラーコードを設定します。
+    public byte[] getGuid() : GUIDをリターンします。
+    public long getWmonId() : WMONIDをリターンします。
+    public byte[] getIpAddr() : IPアドレスをリターンします。
+    public int getBrowserHash() : ブラウザのハッシュ情報をリターンします。
+    public int getUserHash() :  ユーザIDのハッシュ情報をリターンします。
+
+
+**設定方法**
+
+実装したアダプタクラスをjennifer.jarと同一パスに「jennifer.impl.XXX.jar」の形で保存します。別途の設定なしで該当ライブラリーが自動的に認識されます。
+バージョン管理のため、jennifer.impl.custom-1.0.1.jarのような形式を使用することをお薦めします。
+
+ライブラリーの追加後、オプションに該当アダプタクラスを登録する必要があります。
+
+ex) aries.runtime.custom.SampleHttpServiceAdapterImpl
+
+---
+** デフォルトの実装 **
+アダプタには二つのデフォルトの実装クラスが含まれています。
+一つは、例外に対するStackTraceをリターン返します。以下のクラスはcatchException(Throwable throwable)オプションを実装したアダプタです。
+
+    aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl
+
+もう一つは、セッションからユーザIDを取得してトランザクションに該当ユーザ情報を設定するアダプタクラスです。
+
+    aries.runtime.tracer.adapter.HttpServiceAdapterUserIdInSessionImpl
+
+---
+** ユーティリティークラス **
+
+    aries.runtime.tracer.adapter.AbstractDefaultAdapter : アダプタを実装するときにヘルプメソッドが含まれています。
+        protected String order(String classMethod, Parameter parameter)
+            : パラメータクラスに複数のパラメータがある場合は、順番に"+"文字列を使用して連結します。
+        protected String getStackTrace(Throwable throwable)
+            : 例外が発生した場合はステックを生成しリターンします。
+
+---
+**使用例**
+
+    public class SampleHttpServiceAdapterImpl extends AbstractDefaultAdapter implements IAdapterHttpService
+    {
+        public boolean reject(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public boolean rejectMessage(Object request, Object response, Object activeObjectWrapper)
+        {
+            return false;
+        }
+
+        public void start(Object request, Object response, Object activeObjectWrapper)
+        {}
+
+        public void end(Object request, Object response, Object activeObjectWrapper, Throwable throwable)
+        {}
+
+        public void interceptServicePerformance(Object xviewPointWrapper)
+        {
+            if(xviewPointWrapper instanceof XViewPointRecordWrapper)
+            {
+                XViewPointRecordWrapper xviewPoint = (XViewPointRecordWrapper) xviewPointWrapper;
+                xviewPoint.getTxid();
+                // ...
+                // File及びDBなどのXView点データを別途保存するときに使用            }
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            // トランザクションの処理中にエラーが発生した時に、該当ステック情報を保存するために使用。保存しない場合はnullをリターン
+            return super.getStackTrace(throwable);
+        }
+    }
+
+---
+    
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル値：  aries.runtime.tracer.adapter.HttpServiceAdapterCatchErrorImpl 
+* 再起動：不要
+* 関連オプション
+    * [userid_by_http_session](./agentHelp?key=userid_by_http_session&type=1)
+* サポートバージョン：5.0.0

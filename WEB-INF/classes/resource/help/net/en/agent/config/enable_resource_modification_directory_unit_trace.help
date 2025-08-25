@@ -1,0 +1,8 @@
+An option to set  the application history collection unit as directory.
+
+---
+
+* Default: true
+* Type: Boolean
+* Restart: Not required
+* Support Version: 5.2.1

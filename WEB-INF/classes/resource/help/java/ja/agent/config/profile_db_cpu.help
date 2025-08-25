@@ -1,0 +1,11 @@
+トランザクションのDBプロファイル情報を収集するときに、CPU情報も収集するオプションです。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [profile_method_cpu](./agentHelp?key=profile_method_cpu&type=1)
+    * [profile_externalcall_cpu](./agentHelp?key=profile_externalcall_cpu&type=1)
+* サポートバージョン：5.0.6

@@ -1,0 +1,9 @@
+This is the encoding option that is used to store all the agent values that are set through the administration screen.
+The set encoding value is encoded when it is stored in the configuration file by the agent.
+
+---
+
+* Default : UTF-8
+* Type : String
+* Restart : Not Required
+* Supported Version : 5.3.1.2

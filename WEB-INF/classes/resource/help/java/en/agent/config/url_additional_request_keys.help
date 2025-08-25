@@ -1,0 +1,43 @@
+Basically, in the web application, the request URL becomes the name of the application service. However, due to the development of the application framework, there are more cases in which the application service is not classified only by URL.
+
+In such a case, you can configure the application service name using the request parameter.
+
+    key1
+    key2
+
+In the foregoing case, the name of the application service is determined using the parameter value returnred by the following code.
+
+    request.getParameter(”key1”);
+    request.getParameter(”key2”);
+
+For example, the name of the application service of a specific request is determined as follows.
+
+    http://127.0.0.1:8080/app.jsp?key1=a&key2=b  => /app.jsp+(key1=a&key2=b)
+    http://127.0.0.1:8080/app.jsp?key1=a         => /app.jsp+(key1=a)
+    http://127.0.0.1:8080/app.jsp?key1=a&key2=   => /app.jsp+(key1=a)
+    http://127.0.0.1:8080/app.jsp                => /app.jsp
+
+When the parameter name is long, a part of the start section can be used by using **:**.
+
+    key1:5
+
+This is not applied if the set value is longer than the parameter value, and is applied up to 80 characters when the parameter exceeds 80 characters.
+
+When configured as described above, the value returned by the following code is added to the application service name.
+
+    request.getParameter("key1").substring(0, 5)
+
+---
+
+* Default value: None
+* Type: string
+* Sample value
+
+        parameter1
+        parameter2
+
+* Restart: Not required
+* Related options
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* Supported version: 5.0.0

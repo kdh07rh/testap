@@ -1,0 +1,17 @@
+기본적으로 [adapter_http_service](./agentHelp?key=adapter_http_service&type=1) 옵션에 기본 구현체인 *aries.runtime.tracer.adapter.HttpServiceAdapterUserIdInSessionImpl* 를 설정했을 경우에 세션에서 사용자 정보를 가져오기 위해 사용하는 키값을 설정하는 옵션이다.
+
+별도로 값을 설정하지 않았을 경우 *userid* 를 기본값으로 사용한다.
+
+기본 구현체 이외에 직접 어댑터를 만들 경우 어댑터 안에서 다음 처럼 설정된 옵션 값을 사용할 수 있다.
+
+    String userKey = ConfigCacheUtil.getValue(userid_by_http_session);
+
+---
+    
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : userid
+* 재시작 : 안함
+* 연관 옵션
+    * [adapter_http_service](./agentHelp?key=adapter_http_service&type=1)
+* 지원 버전 : 5.0.12

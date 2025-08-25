@@ -1,0 +1,12 @@
+This is an option to designate the port  to connect to the data server.
+
+    ex)server_port=5000
+
+---
+
+  * Default : 5000
+  * Type : numberic
+  * Restart : not required
+  * Options related
+    * [server_address](./agentHelp?key=server_address&type=1)
+  * Version supported : 5.0.0

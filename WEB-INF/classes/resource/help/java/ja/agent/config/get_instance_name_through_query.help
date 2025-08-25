@@ -1,0 +1,14 @@
+DBモニタリングソリューションLOUPEONと連動する際、DBインスタンス名を求めるために設定するオプションです。
+
+設定方法はDBインスタンス名が照会できるクエリを登録します。
+
+    SELECT INST_NAME FROM SYSIBMADM.ENV_INST_INFO
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列 
+* 再起動：不要
+* 連関オプション
+    * [enable_loupeon_db2](./agentHelp?key=enable_loupeon_db2&type=1)
+* サポートバージョン : 5.5.0

@@ -1,0 +1,21 @@
+This option is used to determining whether to use guid passed from the calling side to the current transaction when receiving request using RMI remote method invocation
+
+AGENT can recognize RMI invocation without AGENT's GUID, but if user want to set GUID value from remote call, then this option can be used.
+
+The default value is false, if this option was set to true the current transaction GUID will be set from the GUID value received
+
+Note that the GUID value must be present in the caller transaction.
+
+
+
+    [0001][14:33:50 398][    0][     ] SET GUID(from RMI)=2506379062092865680
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Required
+* Related Options
+    * [trace_rmi](./agentHelp?key=trace_rmi&type=1)
+    * [guid_max_length](./agentHelp?key=guid_max_length&type=1)
+* Supported Version : 5.0.12

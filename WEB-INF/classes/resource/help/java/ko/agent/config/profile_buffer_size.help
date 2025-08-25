@@ -1,0 +1,14 @@
+**profile_buffer_size** 옵션은 트랜잭션의 프로파일 데이터 수집을 효율적으로 하기 위해 지정된 버퍼 크기이다.
+
+기본값을 기준으로 수집되는 프로파일 수가 많을 경우 중간에 프로파일 데이터 전송이 이루어진다.
+
+[collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1) 옵션과 같이 사용할 때는 충분한 값을 설정해서 사용해야 한다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관 옵션
+    * [collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1)
+* 지원 버전 : 5.5.2.12

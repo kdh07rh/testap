@@ -1,0 +1,19 @@
+This option configures the maximum length of a value when tracking the HTTP Header or HTTP Request Parameter.
+When the set value is exceeded, ellipsis "..." is used.
+
+The following example shows what you can see in the profile information when the set value is exceeded.
+
+     HTTP-HEAD: user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWeb...; Cookie=WMONID=GaGYw_l9V81; org.springframework....
+
+---
+
+* Default value: 40
+* Type: Number
+* Sample value: 1000
+* Restart: Not required
+* Related options
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=3)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_header_all](./agentHelp?key=profile_http_header_all&type=3)
+    * [profile_http_parameter_all](./agentHelp?key=profile_http_parameter_all&type=3)
+* Supported version: 5.0.0

@@ -1,0 +1,9 @@
+라이브러리 활성화 유형의 COM+에 대해 externalcall 프로파일링을 중지할 수 있도록 한다.
+
+---
+    
+* 기본값 : true
+* 형식 : Boolean
+* 연관 옵션
+    * [profile_externalcall_nested](./agentHelp?key=profile_externalcall_nested&type=2)
+* 지원 버전 : 5.3.3.3

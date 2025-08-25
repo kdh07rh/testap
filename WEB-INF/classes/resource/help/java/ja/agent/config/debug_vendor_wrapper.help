@@ -1,0 +1,39 @@
+Vendor Wrapper方式の設定のため、該当設定値を確認するため使用するオプションです。
+[enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)オプションを活性化し、実際のテストクエリ実行すると、使用されるクラスをログファイルで確認できるオプションです。
+
+基本的に、[vendor_wrapper_test_sql](./agentHelp?type=1&key=vendor_wrapper_test_sql)オプションと同時に使用する必要があります。
+
+以下は設定例とログ内容です。
+
+    select * from tab
+
+    ...
+    2015-05-02/14:46:07 Connection get: org/apache/tomcat/dbcp/dbcp/BasicDataSource.getConnection()Ljava/sql/Connection;
+    2015-05-02/14:46:07 Connection get: org/apache/tomcat/dbcp/dbcp/BasicDataSource.getConnection(Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
+    2015-05-02/14:46:34 [DEBUG] Vendor Wrap
+    2015-05-02/14:46:34  
+    ================ super of wrapper classes ==============
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+    ...
+    ===================================================
+
+Vendor Wrapper方式をテストするため、 [db_connection_get](./agentHelp?key=db_connection_get&type=1)オプションに「org.apache.tomcat.dbcp.dbcp.BasicDataSource getConnection」を設定
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+    * [vendor_wrapper_test_sql](./agentHelp?key=vendor_wrapper_test_sql&type=1)  
+    * [jdbc_vendor_wrapper_supers](./agentHelp?key=jdbc_vendor_wrapper_supers&type=1) 
+* サポートバージョン：5.0.6

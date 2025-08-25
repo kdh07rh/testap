@@ -1,0 +1,19 @@
+Webサービスを呼び出すロジックからGUIDを転送するために使用します。
+
+java.net.URLConnectionを実装したクラスを設定します。設定したクラスが外部URLを呼び出すと、ヘッダーにGUIDを追加します。
+
+---
+
+* デフォルト値 : なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        sun.net.www.protocol.http.HttpURLConnection connect()V
+        sample.URLConnection
+
+* 再起動：必要
+* 関連オプション
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=1)
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* サポートバージョン：5.0.0

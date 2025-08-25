@@ -1,0 +1,16 @@
+몽고디비의 각 메서드가 호출될 때 전송되는 객체에 대한 정보 수집을 제한할 수 있다.
+
+옵션 값으로 기준 응답시간을 설정하는데 이 기준 응답시간보다 더 오래 소요된 메서드 호출에 대해서만 객체 정보를 수집한다.
+
+0으로 설정하면 모든 메서드 호출에 대한 객체 정보를 수집한다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number), 밀리세컨드
+* 재시작 : 안함 
+* 연관 옵션
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* 지원 버전 : 5.0.12

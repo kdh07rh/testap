@@ -1,0 +1,18 @@
+ソケット情報追跡時、追加情報のためにラッパを作らないと基本プロファイル情報のみ収集する設定のオプションです。
+一般的に特定環境で参照を許可しない構造的な問題、セキュリティ問題によりオプションを非活性化する場合がある。
+
+**注意点：オプションを非活性化した場合、トポロジー関連内容が動作しない**
+
+--- 
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [topology_mode](./agentHelp?key=topology_mode&type=1)
+    * [socket_dump](./agentHelp?key=socket_dump&type=1)
+    * [socket_read_dump](./agentHelp?key=socket_read_dump&type=1)
+    * [socket_write_dump](./agentHelp?key=socket_write_dump&type=1)
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+    * [enable_socket_wrapper_trace](./agentHelp?key=enable_socket_wrapper_trace&type=1)
+* サポートバージョン: 5.1.3

@@ -1,0 +1,16 @@
+This option inputs a query string for Vendor Wrapper debugging when activating the [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) option.
+
+If the database operating the query is Oracle, **select * from tab** string is automatically operated to perform test.
+
+This option is basically required to be used with [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper) option.
+
+---
+
+* Default value: None
+* Type: string
+* Sample value: select * from tab
+* Restart: Not required
+* Related options
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)
+* Supported version: 5.0.6

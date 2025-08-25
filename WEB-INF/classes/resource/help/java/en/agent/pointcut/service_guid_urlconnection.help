@@ -1,0 +1,19 @@
+This option is generally used to transmit a GUID from a logic calling a web service.
+
+It is required to configure a class implementing java.net.URLConnection, and a GUID is added to the header when the class configured calls an external URL.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        sun.net.www.protocol.http.HttpURLConnection connect()V
+        sample.URLConnection
+
+* Restart: Required
+* Related options
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=1)
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* Supported version: 5.0.0

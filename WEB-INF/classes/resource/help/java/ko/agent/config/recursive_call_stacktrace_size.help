@@ -1,0 +1,25 @@
+[enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1) 옵션을 true 로 설정했을 경우 스택에 대한 라인 수를 제한하는 옵션이다.
+
+예를 들어 옵션 값을 10으로 했을 경우 다음과 같이 스택의 라인이 10라인만 출력 된다. 
+
+    [B010] Recurrsive Call Stack Trace (ERRRCS)
+    at aries.runtime.tracer.c.a.startService(Unknown Source)
+    at aries.base.profile.ProfileService.startService(ProfileService.java:41)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+
+---
+
+* 기본값 : 100
+* 형식 : 숫자
+* 재시작 : 안함
+* 연관 옵션
+    * [recursive_call_max_count](./agentHelp?key=recursive_call_max_count&type=1)
+    * [enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1)
+* 지원 버전 : 5.0.7

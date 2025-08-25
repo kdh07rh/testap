@@ -1,0 +1,27 @@
+JDBC CallableStatement使用の際にパラメータ設定をインデックスの代わりに文字列を使う場合にサポートするオプションです。 
+基本的にはインデックスを使う場合のみパラメータの追跡を行いますが、このオプションを設定すると文字列を使う場合もパラメータを追跡します。
+
+次が追加で追跡するメソッドのシグネチャリストです。
+
+    setNull(Ljava/lang/String;I)V
+    setByte(Ljava/lang/String;B)V
+    setBoolean(Ljava/lang/String;Z)V
+    setShort(Ljava/lang/String;S)V
+    setInt(Ljava/lang/String;I)V
+    setFloat(Ljava/lang/String;F)V
+    setLong(Ljava/lang/String;J)V
+    setDouble(Ljava/lang/String;D)V
+    setBigDecimal(Ljava/lang/String;Ljava/math/BigDecimal;)V
+    setObject(Ljava/lang/String;Ljava/lang/Object;)V
+    setString(Ljava/lang/String;Ljava/lang/String;)V
+    setDate(Ljava/lang/String;Ljava/sql/Date;)V
+    setTime(Ljava/lang/String;Ljava/sql/Time;)V
+    setTimestamp(Ljava/lang/String;Ljava/sql/Timestamp;)V
+    setURL(Ljava/lang/String;Ljava/net/URL;)V
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* サポートバージョン : 5.2.3

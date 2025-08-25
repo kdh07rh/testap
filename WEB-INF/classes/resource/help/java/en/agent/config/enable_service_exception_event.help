@@ -1,0 +1,15 @@
+This option is used to set whether to raise the "SERVICE_EXCEPTION" event when an exception occurs in transaction execution.
+
+The default value of this option is "true", when an exception occurs in a transaction, then the "SERVICE_EXCEPTION" event will be raised.
+
+    To receive the event as a notification, you need to set the notification in "Administration -> Event Rules"
+
+If this option is set ton "false", then the "toString()" message of the exception will be added to the transaction profile.
+
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not Required
+* Supported : 5.4.0.2

@@ -1,0 +1,8 @@
+This is an option to make the profile start time in nano time.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : not required
+* Version supported : 5.6.1

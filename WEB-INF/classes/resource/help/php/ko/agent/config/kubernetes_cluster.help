@@ -1,0 +1,12 @@
+**kubernetes_cluster** 옵션을 통해 k8s의 클러스터 이름을 등록해서 사용한다.
+
+설정파일에서만 설정이 가능하다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 재시작 : 필요
+* 연관 옵션
+    * [kubernetes_namespace](./agentHelp?key=kubernetes_namespace&type=3)
+* 지원 버전 : 5.6.0.6

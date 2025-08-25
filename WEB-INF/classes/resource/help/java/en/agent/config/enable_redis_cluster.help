@@ -1,0 +1,12 @@
+Redis Cluster monitoring supported
+
+Currently, Lettuce library is only supported
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : required
+* Opetions related
+    * [lettuce_args_length](./agentHelp?key=lettuce_args_length&type=1)
+* Version supported : 5.5.3.12

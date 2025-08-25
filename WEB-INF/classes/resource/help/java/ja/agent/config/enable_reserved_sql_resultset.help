@@ -1,0 +1,13 @@
+Wrapper方式でJDBC情報(SQL)を収集する際、resultsetはDirect SQL Trace方式でモニタリングしたい場合に使用するオプションです。
+
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* 連関オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+    * [enable_reserved_sql_pointcut](./agentHelp?key=enable_reserved_sql_pointcut&type=1)
+* サポートバージョン : 5.6.1.4

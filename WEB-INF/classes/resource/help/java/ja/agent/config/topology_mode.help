@@ -1,0 +1,17 @@
+トポロジーモードを活性化すると、デフォルトでDB、HTTP（Apache httpコンポーネント）、EJBに対するトランザクションを追跡してX-Viewにトポロジー情報を表示します。
+
+EJBは以下の環境でテストされています。
+
+    WebSphere 7, 8.0, 8.5
+    WebLogic 10.3.6, 12.1.1, 12.1.2
+    JBoss 6.1.0, 6.2.0, 6.3.0
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_socket_wrapper](./agentHelp?key=enable_socket_wrapper&type=1)
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=1)
+* サポートバージョン：5.0.6

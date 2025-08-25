@@ -1,0 +1,18 @@
+JBossEAP 6.3未満のバージョンで、JMXを使ってDBコネクション情報をモニターリングする場合、"statistics-enabled"属性のチェック可否を指定するオプションです。
+
+JMXを通じてJBossのDB Connection情報をモニターリングする場合、datasource設定に"statistics-enabled"属性が必要です。
+属性がない場合、統計情報を収集せず、誤った情報をモニタリングする場合があります。
+
+    $JBOSS_HOME/standalone/configuration/standalone.xml
+    <datasource jndi-name="java:jboss/datasources/sample" pool-name="sample" statistics-enabled="true" ...>
+
+"statistics-enabled"属性の設定可否をチェックしない場合、falseに設定します。
+
+** JBoss環境のみ動作します。**
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン: 5.0.11.4

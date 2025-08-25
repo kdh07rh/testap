@@ -1,0 +1,11 @@
+SQL parameter 수집 여부를 설정한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [min_sql_time_to_collect_parameter](./agentHelp?key=min_sql_time_to_collect_parameter&type=3)
+    * [max_size_to_parameter](./agentHelp?key=max_size_to_parameter&type=3)
+* 지원 버전 : 5.3.0.10

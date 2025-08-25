@@ -1,0 +1,19 @@
+This option tracks the OOM(OutOfMemory) error and generates an event.
+
+Note that as the method of tracking an OOM when an instance of *java.lang.OutOfMemoryError* class is created is used, the time when the error is generated may not be accurate. 
+
+When this option is activated, you can see the following log in the log file.
+
+    ...
+    2015-04-28/12:04:27 Agent Control Module initialized(-8803105291542107178)
+    2015-04-28/12:04:27 Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.lang.OutOfMemoryError
+    ...
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Supported version: 5.0.0

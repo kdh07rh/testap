@@ -1,0 +1,139 @@
+トランザクションのアプリケーション名を基本名ではなくユーザ定義で設定するとき使用します。
+
+** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterServiceName {
+        /**
+         * Webからサービス名を抽出します。URLやポータルがRESTfulに設定された特別なサーバの中には、非定型のURLを使用するものもあります。戻り値がnullのときは無視されます。
+         * @param request HttpServletRequestオブジェクト
+         * @return サービス名を返却
+         */ 
+        public String getHttpServiceName(Object request);
+
+        /**
+         * スタンドアロン(Stand alone)のサービス名を抽出します。メソッドパラメータに基づくサービス名の決定に使用します。
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return サービス名を返却
+         */ 
+        public String getServiceName(String classMethod, Parameter param);
+
+        /**
+         * クラス名またはパラメータを使用したサービス名の決定に使用します。
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return サービス名を返却
+         */ 
+        public String changeServiceName(String classMethod, Parameter param);
+
+        /**
+         * クラス名または戻り値を使用したサービス名の決定に使用します。
+         * @param classMethod  Class + Method名
+         * @param returnValue メソッドの戻り値
+         * @return サービス名を返却
+         */ 
+        public String changeServiceName(String classMethod, Object rtn);
+
+        /**
+         * デフォルトの実装は、追加情報全体に完全な記述子を通すことで実行されます。これにより、設定済みのサービス名の背後に「+」の記号を使用して、指定した値が追加されます。この内容の変更に使用します。
+         * @param name 既設定のサービス名
+         * @param append  既設定のサービス名に追加する値
+         * @return サービス名を返却
+         */ 
+        public String appendServiceName(String name, String append);
+
+        /**
+         * 基本的に、appendServiceName（String name、String append）と同じで、パラメータ情報が追加で渡されます。
+         * @param name  既設定のサービス名
+         * @param append  既設定のサービス名に追加する値
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return サービス名を返却
+         */ 
+        public String appendServiceName(String name, String append, Parameter param);
+
+        /**
+         * 基本的に、appendServiceName（String name、String append）と同じで、戻り値が追加で渡されます。
+         * @param name  既設定のサービス名
+         * @param append  既設定のサービス名に追加する値
+         * @param returnValue メソッドの戻り値
+         * @return サービス名を返却
+         */ 
+        public String appendServiceName(String name, String append, Object returnValue);
+    }
+
+
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapperオブジェクト
+    public int size() : パラメータ数を返却します。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトを返却します。
+    public Object[] getValues() : メソッドのパラメータ配列を返却します。
+    public Object get(int idx) : 該当位置のパラメータを返却します。
+    public Parameter getParameter() : 元のParameterオブジェクトを返却します。
+    
+    
+** 設定方法 **
+jennifer.impl.XXX.jarの形式でアダプタを実装するクラスをjennifer.jarと同じ位置に置くとき、必要なライブラリが追加設定なしで自動的に認識されます。
+jennifer.impl.custom-1.0.1.jarのような形式を使用すると、バージョンコントロールが楽になります。
+
+ライブラリ追加後、実装したアダプタクラスを登録します。
+    ex) aries.runtime.custom.SampleServiceName
+
+**サンプル**
+
+    public class SampleServiceName extends AbstractDefaultAdapter implements IAdapterServiceName
+    {
+        public String getHttpServiceName(Object request)
+        {
+            if (request != null && request instanceof HttpServletRequest)
+            {
+                return ((HttpServletRequest) request).getRequestURI();
+            }
+
+            return null;
+        }
+
+        public String getServiceName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeServiceName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeServiceName(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+
+        public String appendServiceName(String name, String append)
+        {
+            return name + '+' + append;
+        }
+
+        public String appendServiceName(String name, String append, ParameterWrapper parameterWrapper)
+        {
+            return name + '+' + order(append, parameterWrapper);
+        }
+
+        public String appendServiceName(String name, String append, Object returnValue)
+        {
+            return name + '+' + returnValue;
+        }
+    }
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* 再起動：不要
+* サポートバージョン：5.0.0

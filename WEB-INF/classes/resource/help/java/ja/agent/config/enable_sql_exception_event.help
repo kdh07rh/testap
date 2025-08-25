@@ -1,0 +1,28 @@
+SQLを実行中例外が発生した場合、"SQL_EXCEPTION"イベントの生成可否を設定するオプションです。
+
+デフォルト値はtrueであり、例外発生時に"SQL_EXCEPTION"イベントが発生します。
+このイベントをお知らせに追加するには[管理 > イベントルール]でお知らせの設定を行います。
+
+このオプションをfalseにすると、例外発生時、トランザクションのプロファイル情報に例外の"toString()"メッセージを追加します。
+
+次は、追加されたプロファイルの例です。
+
+    ...
+    [0021][13:25:18 086][    3][  320] SQL-EXECUTE-QUERY [10 ms]
+                                       select * from crud2
+
+    [0022][13:25:18 097][   11][     ] javax.servlet.ServletException: java.sql.SQLException: ORA-00942: table or view does not exist
+    ...
+
+例外の"toString()"メッセージを追加するため、メッセージが出力されますが、例外のスタック情報を確認するには[adapter_method](./agentHelp?key=adapter_method&type=1)オプションを参考にしてください。
+
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean 
+* 再起動 : 不要 
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [adapter_method](./agentHelp?key=adapter_method&type=1)
+* サポートバージョン: 5.0.12

@@ -1,0 +1,31 @@
+Used to perform tracking separately on a class implementing the javax.sql.DataSource interface regardless of the [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) option configuration.
+
+When successfully configured, the following log is recorded in the agent log file. 
+   
+    2015-02-27/14:15:18 [DEBUG] JDBC DataSource(Type3): org/apache/tomcat/dbcp/dbcp/BasicDataSource
+
+Only classes implementing the javax.sql.DataSource interface are configured here.
+
+** As tracking is performed on the getConnection method of javax.sql.DataSource, a class not implementing the interface is not tracked.
+
+Settings can be configured as follows through the advanced options.
+
+    org.apache.tomcat.dbcp.dbcp.BasicDataSource
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource
+    ...
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        org.apache.tomcat.dbcp.dbcp.BasicDataSource
+        org.apache.tomcat.dbcp.dbcp.PoolingDataSource
+        weblogic.jdbc.common.internal.RmiDataSource
+        com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource
+
+* Restart: Required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* Supported version: 5.0.0

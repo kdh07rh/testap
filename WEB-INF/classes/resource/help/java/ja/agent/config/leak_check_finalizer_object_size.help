@@ -1,0 +1,16 @@
+JDBC Statement, ResultSetオブジェクトに対するLeakチェック時に finalizeメソッドを利用してチェックして性能問題が発生する可能性があります。
+
+この問題を回避するため、指定されたサイズほどのLeakが発生したとき、一括検査により処理します。
+
+必要により指定サイズを設定することができるオプションです。
+
+---
+
+* デフォルト値 :1024
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 関連オプション
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+    * [each_send_for_leak_object](./agentHelp?key=each_send_for_leak_object&type=1)
+* サポートバージョン : 5.3.1

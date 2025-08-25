@@ -1,0 +1,13 @@
+ユーザIPアドレスを求めるとき $_SERVER['REMOTE_ADDR'] 値を使用しますが、ネットワーク環境によりProxyサーバのアドレスがリターンされる場合があります。
+Proxyサーバから別途のHTTP Headerからユーザアドレスを伝えることができるがHeader名をremote_address_header_keyオプションで指定することができます。
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* サンプル値 : X-REMOTE_ADDRESS
+* 再起動 : 不要
+* 関連オプション
+    * [remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key&type=3)
+    * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=3)
+* サポートバージョン : 5.3.1.1

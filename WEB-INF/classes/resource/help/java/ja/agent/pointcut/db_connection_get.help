@@ -1,0 +1,22 @@
+フレームワークまたは独自開発したコネクションプールを使用する場合には、該当DBコネクションプールからDBコネクションを取得するときに使用するメソッドを指定します。
+
+db_connection_getオプション設定するメソッドは、必ずjava.sql.Connectionをリターンするメソッドを指定して下さい。
+メソッドを指定しない場合は、指定したクラスのjava.sql.Connectionをリターンするすべてのメソッドが対象になります。
+
+    db.DBConnectionManager getConnection
+    db.DBConnectionManager
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+        db.DBManager
+        db.DBManager getConnection
+        db.DBConnectionManager getConnection
+
+* 再起動：必要
+* 関連オプション
+    * [db_connection_close](./agentHelp?key=db_connection_close&type=1)
+    * [enable_jdbc_bootstrap_wrapper_factory](./agentHelp?key=enable_jdbc_bootstrap_wrapper_factory&type=1)
+* サポートバージョン：5.0.0

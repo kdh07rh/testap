@@ -1,0 +1,11 @@
+Determines whether to collect SQL parameter.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [min_sql_time_to_collect_parameter](./agentHelp?key=min_sql_time_to_collect_parameter&type=3)
+    * [max_size_to_parameter](./agentHelp?key=max_size_to_parameter&type=3)
+* Supported version: 5.3.0.10

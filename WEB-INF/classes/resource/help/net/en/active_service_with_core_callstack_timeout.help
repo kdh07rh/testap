@@ -1,0 +1,11 @@
+Set timeout for active_service_with_core_callstack function
+
+(This option is not supported for .NET Core 1.0 through 3.0 environments)
+
+---
+
+* Default : 3000  (in milliseconds)
+* Format : Number
+* Sample Value : 6000
+* Restart : not required
+* Supported Version : 5.6.2.24

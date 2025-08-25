@@ -1,0 +1,33 @@
+This is an option to specify the access limiter of the target method when configuring the user-defined method profile.
+
+The following 4 values be set.
+
+    public
+    protected
+    private
+    none
+
+
+For example, if public is set to the setting value, only *sample1* methods with public accessors in the following classes be profiled.
+
+    public class SampleClass {
+        public void sample1() {}
+        private void sample2() {}
+    }
+
+---
+
+  * Default : none
+  * Type : String (Multiple settings are possible using line breaks)
+  * Restart : no required
+*  Options related
+    * [profile_custom_classs](./agentHelp?key=profile_custom_classs&type=1)
+    * [profile_custom_super](./agentHelp?key=profile_custom_super&type=1)
+    * [profile_custom_interface](./agentHelp?key=profile_custom_interface&type=1)
+    * [profile_custom_pattern](./agentHelp?key=profile_custom_pattern&type=1)
+    * [profile_custom_ignore_class](./agentHelp?key=profile_custom_ignore_class&type=1)
+    * [profile_custom_ignore_super](./agentHelp?key=profile_custom_ignore_super&type=1)
+    * [profile_custom_ignore_interface](./agentHelp?key=profile_custom_ignore_interface&type=1)
+    * [profile_custom_ignore_pattern](./agentHelp?key=profile_custom_ignore_pattern&type=1)
+    * [adapter_custom_method](./agentHelp?key=adapter_custom_method&type=1)
+  * Version supported : 5.0.0

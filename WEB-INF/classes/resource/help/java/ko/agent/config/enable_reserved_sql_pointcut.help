@@ -1,0 +1,66 @@
+이 옵션은 [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1) 옵션이 활성화 되어 있을 경우 JDBC 드라이버 중에서 이미 분석된 클래스 들에 대해서 자동으로 BCI(ByteCode Instrumentation) 작업을 수행 한다.
+
+이미 분석되어 등록되어 있는 클래스 목록은 다음과 같다.
+
+    -- Derby
+    org.apache.derby.impl.jdbc.EmbedStatement
+    org.apache.derby.impl.jdbc.EmbedPreparedStatement
+    org.apache.derby.impl.jdbc.EmbedResultSet
+    org.apache.derby.client.am.Statement
+    org.apache.derby.client.am.PreparedStatement
+    org.apache.derby.client.am.ResultSet
+
+    -- PostgreSQL
+    org.postgresql.jdbc2.AbstractJdbc2Statement
+    org.postgresql.jdbc2.AbstractJdbc2ResultSet
+    
+    -- MySQL
+    com.mysql.jdbc.Statement
+    com.mysql.jdbc.ResultSet
+    com.mysql.jdbc.StatementImpl
+    com.mysql.jdbc.PreparedStatement
+    com.mysql.jdbc.ResultSetImpl
+
+    -- MSSQL
+    net.sourceforge.jtds.jdbc.JtdsStatement
+    net.sourceforge.jtds.jdbc.JtdsPreparedStatement
+    net.sourceforge.jtds.jdbc.JtdsResultSet
+    com.microsoft.sqlserver.jdbc.SQLServerStatement
+    com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement
+    com.microsoft.sqlserver.jdbc.SQLServerResultSet
+    
+    -- SYBASE
+    com.sybase.jdbc2.jdbc.SybStatement
+    com.sybase.jdbc2.jdbc.SybPreparedStatement
+    com.sybase.jdbc2.jdbc.SybCallableStatement
+    com.sybase.jdbc2.jdbc.SybResultSet
+    com.sybase.jdbc3.jdbc.SybStatement
+    com.sybase.jdbc3.jdbc.SybPreparedStatement
+    com.sybase.jdbc3.jdbc.SybCallableStatement
+    com.sybase.jdbc3.jdbc.SybResultSet
+    
+    -- Oracle
+    oracle.jdbc.driver.OracleStatement
+    oracle.jdbc.driver.OraclePreparedStatement
+    oracle.jdbc.driver.OracleCallableStatement
+    oracle.jdbc.driver.OracleResultSetImpl
+
+    -- CUBRID
+    cubrid.jdbc.driver.CUBRIDStatement
+    cubrid.jdbc.driver.CUBRIDPreparedStatement
+    cubrid.jdbc.driver.CUBRIDResultSet
+
+만약 이값이 false 라면 필요한 클래스를 추가로 등록해야 한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [profile_sql_statement](./agentHelp?key=profile_sql_statement&type=1)
+    * [profile_sql_preparedstatement](./agentHelp?key=profile_sql_preparedstatement&type=1)
+    * [profile_sql_callablestatement](./agentHelp?key=profile_sql_callablestatement&type=1)
+    * [profile_sql_resultset](./agentHelp?key=profile_sql_resultset&type=1)
+* 지원 버전 : 5.0.0

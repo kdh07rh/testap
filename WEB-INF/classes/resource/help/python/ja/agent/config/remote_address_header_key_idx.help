@@ -1,0 +1,12 @@
+[remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key_delimiter&type=1)設定時、結果値の中に何番目の値を使用するかを指定するオプションです。
+
+---
+
+
+* デフォルト値 :0
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 関連オプション
+    * [remote_address_header_key](./agentHelp?key=remote_address_header_key&type=1)
+    * [remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key_delimiter&type=1)
+* サポートバージョン : 5.6.1.20

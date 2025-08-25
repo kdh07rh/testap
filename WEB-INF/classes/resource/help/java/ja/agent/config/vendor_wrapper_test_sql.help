@@ -1,0 +1,16 @@
+[enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)オプションを活性化して使用する場合、、ベンダーラッパーデバッグのためのクエリ文を入力します。
+
+クエリを処理するデータベースがOracleの場合、テストのために**select * from tab** の文字列が自動的に使用されます。
+
+基本的に、[debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)オプションと共に使用する必要があります。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル値： select * from tab
+* 再起動：不要
+* 関連オプション
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)
+* サポートバージョン：5.0.6

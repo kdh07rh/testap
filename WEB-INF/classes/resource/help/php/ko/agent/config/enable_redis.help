@@ -1,0 +1,12 @@
+Redis 모니터링을 지원한다.
+
+현재 지원하고 있는 라이브러리는 PhpRedis 와 Predis 두개의 라이브러리를 지원하고 있다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [redis_args_length](./agentHelp?key=redis_args_length&type=3)
+* 지원 버전 : 5.6.0.3

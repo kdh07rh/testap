@@ -1,0 +1,12 @@
+By default, BCI (ByteCode Instrumentation) operation is carried out for a javax.naming.InitialContex which has implemented a javax.naming.Context interface.
+If you want to use by registering a specific context rather than performing this default operation, set the option value to false.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+    * [naming_context_class](./agentHelp?key=naming_context_class&type=1)
+* Supported version: 5.0.10

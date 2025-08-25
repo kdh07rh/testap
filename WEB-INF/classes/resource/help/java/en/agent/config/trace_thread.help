@@ -1,0 +1,19 @@
+This option tracks the part where an instance of java.lang.Thread class is generated and records it as transaction profile information.
+
+Note that this option tracks the time when an instance is created, not when the instance is run. 
+
+When this option is activated, you can see the following log in the log file.
+
+    ...
+    4/28/2015/12:04:27 PM Agent Control Module initialized(-8803105291542107178)
+    4/28/2015/12:04:27 PM Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.lang.Thread
+    ...
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Supported version: 5.0.0

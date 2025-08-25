@@ -1,0 +1,26 @@
+When activating the [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) option, SQL is tracked as javax.sql.DataSource is looked up from javax.naming.InitialContext. However, when javax.sql.DataSource is looked up using an object which implements other javax.naming.Context as stated in the example below, SQL is not tracked in the default option state.
+
+In this case, the applicable option should be set to True.
+
+    javax.naming.Context jndiContext = new javax.naming.InitialContext();
+    javax.naming.Context jdbcContext = (javax.naming.Context) jndiContext.lookup(“java:comp/env/jdbc”);
+    javax.sql.DataSource dataSource = (javax.sql.DataSource) jdbcContext.lookup(“SampleDS”);
+    java.sql.Connection connection = dataSource.getConnection();
+
+
+With this option set to True, a java.lang.ClassCastException may occur when using EJB. In such case, it is necessary to disable [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) and track JDBC and SQL using a different way.
+
+Although connections of already known drivers operate without separate configuration as they are registered, for a user-defined connection or unregistered connection class, the applicable connection class should be registered using the [db_connection_get](./agentHelp?key=db_connection_get&type=1) option for proper operation. 
+
+Please note that when tracking JDBC connection, if the JAVA thread processing the transaction performs JDBC processing by creating a different JAVA thread, the content of JDBC performed by the applicable thread is not monitored. In this case, the [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1) option should be set to True.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1)
+    * [enable_non_servlet_thread_jdbc_trace](./agentHelp?key=enable_non_servlet_thread_jdbc_trace&type=1)
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1) 
+* Supported version: 5.0.0

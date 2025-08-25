@@ -1,0 +1,13 @@
+With this option, all HTTP request parameter names can be checked through the profile information of the transaction.
+
+The following information can be checked in the profile of the transaction
+
+    HTTP-PARAMETER-NAMES: Field1, Field2, Field3
+
+
+---
+
+* Default : false
+* Format : Boolean
+* Restart : Not Required
+* Supported Version : 5.6.2.26

@@ -1,0 +1,22 @@
+This option creates a stack when the remote port configured is opened when a socket is created.
+
+You can check the stack created in Analysis screen > Socket section.
+
+To use this option, BCI(ByteCode Instrumentation) operation for the java.net.Socket should be performed first. To operate correctly, you need to check the following log in the log file first.
+
+    ...
+    2015-04-28/12:04:27 Agent Control Module initialized(-8803105291542107178)
+    2015-04-28/12:04:27 Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.net.Socket
+    ...
+
+---
+
+* Default value: 0
+* Type: Number
+* Sample value: 32000
+* Restart: Not required
+* Related options
+    * [socket_stack_local_port](./agentHelp?key=socket_stack_local_port&type=1)
+* Supported version: 5.0.0

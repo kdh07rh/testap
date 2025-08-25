@@ -1,0 +1,11 @@
+This option is used to track the java.sql.PreparedStatement object when activating [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1).
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+* Supported version: 5.0.6

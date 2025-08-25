@@ -1,0 +1,11 @@
+사용자 IP는 wsgi 환경 변수의 REMOTE_ADDR 헤더 값을 참조해 구한다. 만약 별도의 HTTP Header가 있다면 그 키 이름을 remote_address_header_key에 지정할 수 있다. 주의할 점은, wsgi의 경우 환경 변수에 있는 모든 HTTP Header는 모든 dash('-') 문자를 밑줄 문자로 바꾸기 때문에 그것을 고려해 지정해야 한다.
+
+예를 들어, 원하는 HTTP Header 키 이름이 "X-FORWARDED-FOR"라면, remote_address_header_key 값은 "X_FORWARDED_FOR"라고 지정한다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : X_FORWARDED_FOR
+* 재시작 : 안함
+* 지원 버전 : 5.6.1.20

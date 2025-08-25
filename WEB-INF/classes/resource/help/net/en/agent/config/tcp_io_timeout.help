@@ -1,0 +1,9 @@
+Limits the data transmission and receipt time with the data server (unit: milliseconds). If this value is set to 1,000 and the data fails to be sent or received to or from the data server, the applicable data will not be sent or received.
+ 
+ ---
+  
+ * Default value: 8000
+ * Type: Numeric
+ * Sample value: 5000
+ * Restart: Not required
+ * Supported version: 5.0.7

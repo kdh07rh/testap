@@ -1,0 +1,10 @@
+Tracks an external transaction performed by file, file_get_contents and displays the related information on the dashboard and X-view when the http topology mode is activated.
+ 
+---
+
+ * Default value: false
+ * Format: Boolean
+ * Restart: Not Required
+ * Related options
+  * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=3)
+ * Supported version: 5.0.6

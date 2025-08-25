@@ -1,0 +1,11 @@
+When collecting GUIDs, this option allows you to specify the maximum length of the GUIDs to be collected.
+
+---
+
+* Default : -1
+* Type : Number
+* Restart : Not required
+* Options related
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+    * [enable_guid_from_rmi](./agentHelp?key=enable_guid_from_rmi&type=1)
+* Version Supported : 5.4.3.6, 5.5.0.2

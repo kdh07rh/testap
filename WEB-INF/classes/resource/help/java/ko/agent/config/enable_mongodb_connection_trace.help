@@ -1,0 +1,21 @@
+몽고디비의 커넥션 현황을 모니터링 하기 위해 설정하는 옵션이다.
+기본 설정은 true이며 각 드라이버 버전에 해당하는 커넥션을 지칭하는 클래스의 개수를 카운트 한다.
+
+이 방식은 JDBC 커넥션 개수의 객체를 카운팅 하는 방식과 동일하다.
+커넥션 개수는 WAS가 호출하는 몽고디비의 각 아이피:포트별로 수집된다.
+각 커넥션 그룹의 수치는 idle과 active만 수집한다.
+
+한가지 유의할 사항은 Connection Pool JMX를 설정한 경우해야만 아이피:포트 별로 커넥션 개수를 볼 수 있다.
+
+JMX가 설정되지 않았을 때에는 몽고디비 인스턴스의 모든 커넥션 개수를 합산해서 보여준다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean 
+* 재시작 : 필요 
+* 연관 옵션
+    * [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* 지원 버전 : 5.0.12

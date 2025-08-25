@@ -1,0 +1,11 @@
+User IDの値を $_SESSION変数から収集する。 
+もし、user_key_in_php_sessionオプションがuser_idに設定されている場合は $_SESSION['user_id']の値が User IDに収集される。
+
+
+---
+
+* デフォルト値： なし
+* タイプ：文字列
+* サンプル値 : user_id
+* 再起動：不要
+* サポートバージョン：5.3.1

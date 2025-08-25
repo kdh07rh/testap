@@ -1,0 +1,8 @@
+This option is not to collect the DB OPEN/CLOSE profile.
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Not required
+* Version supported : 5.5.2

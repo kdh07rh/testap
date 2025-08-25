@@ -1,0 +1,22 @@
+메모리(컬렉션) 관련 추적을 위해 사용하는 옵션이다.
+
+추적되는 클래스는 다음과 같다.
+
+    java.util.ArrayList
+    java.util.Vector
+    java.util.LinkedList
+    java.util.Hashtable
+    java.util.HashMap
+    java.util.TreeMap
+
+
+주의 할 점은 해당 기능은 rt.jar 파일에 있는 클래스들을 패치하기 때문에 문제가 발생할 수 있다.
+
+반드시 확인을 거쳐서 사용해야 한다.
+
+---
+
+* 기본값 : false 
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.0

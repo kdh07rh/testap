@@ -1,0 +1,18 @@
+이 옵션의 기본값은 false 인데 [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1), [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1) 와 같이 Wrapper 방식으로 JDBC 정보(SQL)를 추적할 때 아래와 같이 프로그램 되어있는 경우 DB_STATEMENT_UNCLOSED 에러가 발생한다.
+
+    Statement stmt = ...
+    ResultSet rs = stmt.executeQuery(...);
+    ...
+    Statment stmt2 = rs.getStatement();
+    rs.close();
+    stmt2.close();
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+* 지원 버전 : 5.0.6

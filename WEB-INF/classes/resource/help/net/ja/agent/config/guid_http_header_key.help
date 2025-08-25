@@ -1,0 +1,17 @@
+[enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=2) オプションが活性化され、マルチ構造(Multi-tier)で実行されるトランザクションを追跡するため、HTTP HeaderにGUID値を伝達したり受け取ったりするときに使用されるキー名を設定するオプションです。
+デフォルト値は"_J_GUID_"を使用しますが、キーが重複された場合、別の名前に変更して使えます。
+
+設定された値は次のとおりにheaderで値を抽出する時、使用されます。
+
+    request.getHeader("_J_GUID_");
+
+---
+
+* デフォルト値 : _J_GUID_
+* タイプ : 文字列
+* サンプル値 : _X_GUID_
+* 再起動 : 不要
+* 関連オプション
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=2)
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=2)
+* サポートバージョン: 5.0.7

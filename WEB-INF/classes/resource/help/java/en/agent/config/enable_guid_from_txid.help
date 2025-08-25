@@ -1,0 +1,13 @@
+This is basically used by configuring the GUID value in the HTTP header to track the transaction performed in a multi-tier structure.
+However, if it is not possible to configure as there is no GUID value to configure in the HTTP header, this option configures the transaction ID as GUID.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=1)
+    * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=1)
+    * [guid_max_length](./agentHelp?key=guid_max_length&type=1)
+* Supported version: 5.0.0

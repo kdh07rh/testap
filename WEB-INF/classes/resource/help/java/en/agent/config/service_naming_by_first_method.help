@@ -1,0 +1,9 @@
+When the set method is repeatedly called to set the application name, the last called name is set.
+However, if this option is set, when the method is repeatedly called, the value of the first called method is set to the application name.
+
+---
+
+* Default : none
+* Type : String
+* Restart : required
+* Version supported : 5.6.0.7, 5.6.1

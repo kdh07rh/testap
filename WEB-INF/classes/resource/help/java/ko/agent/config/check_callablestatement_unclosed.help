@@ -1,0 +1,18 @@
+[enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1) 옵션이 true로 설정되어 있을 경우 java.sql.CallableStatement 객체의 Leak 을 추적하여 close 되지 않았을 경우 DB_STATEMENT_UNCLOSED 에러를 발생한다.
+
+[enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1) 옵션이 true로 설정되어 있으면 스택 정보가 에러 정보에 추가 된다.
+
+**Leak 을 추적하는 시점은 finalize() 을 재정의해서 호출하기 때문에 전적으로 JVM의 가비지 컬렉션 알고리즘에 의지 한다.** 
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+* 지원 버전 : 5.0.0

@@ -1,0 +1,10 @@
+WCF呼び出しのときGUID連動を別途の WCF Headerを作成して値を転送する。そのため、応用プログラムは予想外のWCF Headerが一つ追加される。任意の WCF Headerを考慮せず、開発された応用プログラムは問題が発生する可能性がある。その場合はGUID連動を行わない方が望ましい。そのため、enable_guid_in_wcf オプションを falseに設定する必要がある。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* 関連オプション
+    * [wcf_trace](./agentHelp?key=wcf_trace&type=2)
+* サポートバージョン: 5.2.2.2

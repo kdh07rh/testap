@@ -1,0 +1,9 @@
+Added to the profile data to view the HTTP requesting URL on the detailed XView.
+ 
+ ---
+  
+ * Default value: true
+ * Type: Boolean
+ * Sample value: false
+ * Restart: Not required
+ * Supported version: 5.6.0.23

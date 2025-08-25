@@ -1,0 +1,20 @@
+When creating the WMONID cookie by the agent, additional properties are set.
+
+The following is the default cookie content.
+    Set-Cookie:WMONID=g9Q0Tv8Tth9; Expires=Fri, 26 Jun 2022 14:29:23 GMT; Path=/; HttpOnly
+    
+If  "; SameSite=Lax" value is set through the option additially, the cookie content is saved as follows.
+
+    Set-Cookie:WMONID=g9Q0Tv8Tth9; Expires=Fri, 26 Jun 2022 14:29:23 GMT; Path=/; HttpOnly; SameSite=Lax
+
+
+---
+
+* Default : no
+* Type : string
+* Restart : not required
+* Sample value: ; SameSite=Lax
+* Option related
+    * [enable_secure_for_wmonid_cookie](./agentHelp?key=enable_secure_for_wmonid_cookie&type=1)
+    * [enable_http_only_for_wmonid_cookie](./agentHelp?key=enable_http_only_for_wmonid_cookie&type=1)
+* Version supported : 5.5.2.5, 5.5.3.2

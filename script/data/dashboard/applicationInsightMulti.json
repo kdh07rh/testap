@@ -1,0 +1,150 @@
+{
+  "domainBar": {
+    "type": "domain",
+    "multidomain": true,
+    "multiinstance": false,
+    "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+  },
+  "charts": [
+    {
+      "charttype": "speedhorizon",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "",
+      "origin": {
+        "startx": 0,
+        "starty": 0,
+        "endx": 100,
+        "endy": 10
+      }
+    },
+    {
+      "charttype": "vue.active.bubble",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "word.activeServiceDist",
+      "origin": {
+        "startx": 0,
+        "starty": 10,
+        "endx": 50,
+        "endy": 50
+      }
+    },
+    {
+      "averageMetrics": "elapsedTimeAverage",
+      "charttype": "vue.treemap.app",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "word.applicationWeight",
+      "origin": {
+        "startx": 33.333333333333336,
+        "starty": 50,
+        "endx": 66.66666666666667,
+        "endy": 100
+      }
+    },
+    {
+      "charttype": "vue.heatmap.problem",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "domainBarMulti": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "word.realtimeProblemList",
+      "origin": {
+        "startx": 0,
+        "starty": 50,
+        "endx": 33.333333333333336,
+        "endy": 75
+      }
+    },
+    {
+      "charttype": "xview.dashboard",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "ui.label.charttype.xview",
+      "viewpoint": "elapsedTime",
+      "origin": {
+        "startx": 66.66666666666667,
+        "starty": 50,
+        "endx": 100,
+        "endy": 100
+      }
+    },
+    {
+      "charttype": "vue.line.minute",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "duration": 1,
+      "curve": "basis",
+      "metrics": "MxDef.service_rate",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.STANDARD_MIN_TODAY",
+      "i18nTitle": "ui.mx.service_rate",
+      "origin": {
+        "startx": 50,
+        "starty": 10,
+        "endx": 100,
+        "endy": 23.333333333333332
+      }
+    },
+    {
+      "charttype": "vue.line.minute",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "duration": 1,
+      "curve": "basis",
+      "metrics": "MxDef.service_count",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.STANDARD_MIN_TODAY",
+      "i18nTitle": "ui.mx.service_count",
+      "origin": {
+        "startx": 50,
+        "starty": 23.333333333333332,
+        "endx": 100,
+        "endy": 36.666666666666664
+      }
+    },
+    {
+      "charttype": "vue.stacked.area.minute",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "duration": 1,
+      "curve": "basis",
+      "metrics": "MxDef.service_time",
+      "otype": "OTypeDef.SYSTEM",
+      "ptype": "PTypeDef.STANDARD_MIN_TODAY",
+      "i18nTitle": "ui.mx.service_time",
+      "origin": {
+        "startx": 50,
+        "starty": 36.666666666666664,
+        "endx": 100,
+        "endy": 50
+      }
+    },
+    {
+      "charttype": "event",
+      "datatype": "domain",
+      "domainBarSync": true,
+      "otype": "OTypeDef.SYSTEM",
+      "pkey": "rt_event",
+      "ptype": "PTypeDef.MISC",
+      "i18nTitle": "ui.title.event",
+      "origin": {
+        "startx": 0,
+        "starty": 75,
+        "endx": 33.333333333333336,
+        "endy": 100
+      },
+      "isListRenderMode": true
+    }
+  ]
+}

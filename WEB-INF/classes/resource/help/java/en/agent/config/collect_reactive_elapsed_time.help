@@ -1,0 +1,18 @@
+**collect_reactive_elapsed_time** option is only work when the **[enable_reactor](./agentHelp?key=enable_reactor&type=1)** or **[enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)** option is enabled.
+
+When the option is enabled, the response time for the asynchronous profile is collected.
+
+Note that the response time of the asynchronous transaction collected from the  response time of the asynchronous profile collected is different because there is a difference between the moment when the asynchronous operation is requested and the actual operation time.
+
+When multiple asynchronous tasks are requested at the same time, the order in which they are executed is not constant, so the collection order in the profile and the start time might not match.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* Option related
+    * [enable_reactor](./agentHelp?key=enable_reactor&type=1)
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [profile_reactive_cpu](./agentHelp?key=profile_reactive_cpu&type=1)
+* Version supported : 5.5.3

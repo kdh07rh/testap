@@ -1,0 +1,15 @@
+When topology mode is enabled, transactions for DB and HTTP calls are tracked by default to show topology information in the topology dashboard and XView.
+
+HTTP calls were tested in the following modules
+
+    * requests
+    * urllib, urllib2(python2), urllib3(python3)
+
+---
+
+* Default value: true
+* Type: Boolean
+* Restart: Not required
+* Related options
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=1)
+* Supported version: 5.6.1.18

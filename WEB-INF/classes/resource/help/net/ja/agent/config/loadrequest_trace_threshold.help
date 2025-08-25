@@ -1,0 +1,9 @@
+System.Web.HttpRequest.GetEntireRawContentの実行時間がloadrequest_trace_threshold値より大きい場合X-Viewプロファイルデータに残します。
+
+---
+    
+* デフォルト値 : 1000
+* タイプ : 数字
+* サンプル値 : 5000
+* 再起動 : 不要
+* サポートバージョン: 5.0.7

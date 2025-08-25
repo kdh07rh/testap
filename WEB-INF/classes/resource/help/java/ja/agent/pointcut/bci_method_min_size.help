@@ -1,0 +1,21 @@
+BCI(ByteCode Instrumentation）対象クラスのメソッドの最小サイズを指定します。設定値がメソッドのサイズよりも小さい場合はBCI操作を実行しません。
+
+次のとおりに、設定値の対象クラスはログファイルに記録され確認できます。 
+
+    ...
+    2015-05-04/14:36:07 [DEBUG] org.springframework.web.context.ContextCleanupListener.<init> is too small 5bytes
+    2015-05-04/14:36:07 [DEBUG] org.springframework.web.context.ContextCleanupListener.contextInitialized is too small 1bytes
+    2015-05-04/14:36:07 [DEBUG] org.springframework.web.context.ContextCleanupListener.contextDestroyed is too small 8bytes
+    2015-05-04/14:36:07 [DEBUG] org.springframework.web.context.ContextCleanupListener.cleanupAttributes is too small 124bytes
+    ...
+
+---
+
+* デフォルト値：0
+* タイプ：数字(Number)、バイト
+* サンプル値：1024
+* 再起動：必要
+* 関連オプション
+    * [bci_class_max_size](./agentHelp?key=bci_class_max_size&type=1)
+    * [bci_method_max_size](./agentHelp?key=bci_method_max_size&type=1)
+* サポートバージョン：5.0.0

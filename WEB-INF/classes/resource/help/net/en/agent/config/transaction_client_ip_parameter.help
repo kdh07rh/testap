@@ -1,0 +1,23 @@
+This option sets the client IP of the transaction as parameter value of a specified method.
+
+First, input the entire method descriptor, and then use "{}" at the back to indicate the number of parameter values to be used.
+(Strings and byte arrays are supported.)
+
+The following is an example of setting the first parameter of the SetClientIP method defined in WebApplication.DefaultPage type to IP.
+
+    WebApplication.DefaultPage SetClientIP {1}
+
+
+---
+
+* Default : None
+* Format : String
+* Sample Value
+
+    example.clientIp getClientIp {1}
+    example.clientIp getClientIp {2}
+    
+* Restart : Required
+* Related Options
+    * [transaction_client_ip_return](./agentHelp?key=transaction_client_ip_return&type=1)
+* Supported Version : 5.6.0.23

@@ -1,0 +1,14 @@
+Profiles longer than the set time are collected.
+
+This option is used to control the amount of data when the TPS is high or there are many profiles being collected.
+
+
+
+---
+
+* Default : 0
+* Type : Number
+* Restart : not required
+* Options related
+    * [profile_buffer_size](./agentHelp?key=profile_buffer_size&type=1)
+* Version supported : 5.5.2.12, 5.6.1

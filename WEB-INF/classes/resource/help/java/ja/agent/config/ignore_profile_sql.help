@@ -1,0 +1,24 @@
+フレームワークでテスト目的のダミーSQLを実行しコネクションが正常に取得できるか確認するケースがあります。その場合、AGENTプロファイルデータに多数のSQL表示され、SQL情報の確認がしにくい場合、このオプションを使用します。
+除外対象SQLを登録すると該当SQLはモニタリングしません。
+
+    select 1
+    select 1 from dual
+
+上記の目的以外に特定のSQLをモニタリングしない目的でも使用可能です。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        SELECT 1 FROM DUAL
+        SELECT COUNT(*) FROM DUAL
+
+* 再起動：不要
+* 関連オプション
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [ignore_profile_sql_hash](./agentHelp?key=ignore_profile_sql_hash&type=1)
+* サポートバージョン：5.0.6

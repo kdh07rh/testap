@@ -1,0 +1,20 @@
+MongoDBのコネクションの現況をモニタリングするために設定するオプションです。
+デフォルト値はtrueであり、各ドライバーのバージョンに該当するコネクションを指すクラスの数をカウントします。
+
+この方式はJDBCコネクション数のオブジェクトをカウントする方式と同じです。
+コネクション数はAPサーバが呼び出すMongoDBの各IP:PORT別に収集されます。
+各コネクショングループの数値はidleとactiveのみ収集します。
+
+JMX(コネクションプール)を設定した場合した場合のみ、IP:PORT別のコネクション数をモニタリング可能です。
+JMX(コネクションプール)が設定されなかった場合は、MongoDBインスタンスのすべてのコネクション数を合算してモニタリングします。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean 
+* 再起動 : 必要 
+* 関連オプション
+* [enable_mongodb_trace](./agentHelp?key=enable_mongodb_trace&type=1)
+* [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+* [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* サポートバージョン: 5.0.12

@@ -1,0 +1,10 @@
+GUID를 수집할 때 수집되는 GUID의 최대 길이를 지정할 수 있는 옵션이다.
+
+---
+
+* 기본값 : -1
+* 형식 : 숫자(Number)
+* 재시작 : 안함
+* 연관옵션
+    * [enable_guid_from_txid](./agentHelp?key=enable_guid_from_txid&type=1)
+* 지원 버전 : 5.6.1.17

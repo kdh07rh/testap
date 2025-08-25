@@ -1,0 +1,11 @@
+SQLクエリを収集する際、バウンドパラメータを収集するオプションです。
+デフォルト値はtrueで、falseに設定するとバウンドパラメータを収集しません。
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 不要
+* 連関オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* サポートバージョン : 5.4.3.5

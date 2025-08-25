@@ -1,0 +1,9 @@
+Determines whether to activate the dynamic profile function. 
+When this value is set to False, dynamic profiling cannot be activated, and the agent stops collecting the Loaded Class information.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.7

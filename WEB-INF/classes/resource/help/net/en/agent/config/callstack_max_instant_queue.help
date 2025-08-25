@@ -1,0 +1,16 @@
+Specifies the total number of threads to be served when leaving a call stack for service dumps and active services, excluding automatic stack traces. 
+If this value is 10, 10 call stacks are requested with a service dump, and if one of them is not processed, the request for a new active service call stack is rejected.
+
+* Default : 2000
+* Type : Number
+* Sample Value : 10
+* Restart : Not Required
+* Related Options
+    * [enable_auto_stack_trace](./agentHelp?key=enable_auto_stack_trace&type=2)
+    * [auto_stack_trace_threshold](./agentHelp?key=auto_stack_trace_threshold&type=2)
+    * [auto_stack_trace_interval](./agentHelp?key=auto_stack_trace_interval&type=2)
+    * [auto_stack_trace_collect_count](./agentHelp?key=auto_stack_trace_collect_count&type=2)
+    * [callstack_max_auto_queue](./agentHelp?key=callstack_max_auto_queue&type=2)
+    * [callstack_timeout](./agentHelp?key=callstack_timeout&type=2)
+    * [callstack_recycle_timeout](./agentHelp?key=callstack_recycle_timeout&type=2)
+* Supported Version: 5.3.0.11

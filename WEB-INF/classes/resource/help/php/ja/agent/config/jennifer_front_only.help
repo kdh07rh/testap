@@ -1,0 +1,8 @@
+このオプション値をtrueに設定するとJENNIFER Frontで測定したFrontデータをfront.jennifersoft.comのみに転送します。（レスポンスするURLにFrontモニタリングデータを転送しません。）
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン: 5.5.0

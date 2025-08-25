@@ -1,0 +1,12 @@
+java.sql.Statementオブジェクトのリークを追跡して、"DB_STATEMENT_UNCLOSED"イベントを発生するかを設定するオプションです。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_statement_fullstack_trace](./agentHelp?key=enable_statement_fullstack_trace&type=1)
+    * [enable_connection_leak_trace](./agentHelp?key=enable_connection_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* サポートバージョン：5.0.0

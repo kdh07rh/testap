@@ -1,0 +1,9 @@
+The **max_bucket_size_of_file** option is an option to specify the total number of files stored in memory when an application tracks file information in use..
+
+---
+
+* Default : 5000
+* Type : Number
+* Sample Value : 10000
+* Restart : Required
+* Version supported : 5.5.3

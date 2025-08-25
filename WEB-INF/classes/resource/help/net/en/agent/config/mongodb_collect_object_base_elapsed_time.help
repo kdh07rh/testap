@@ -1,0 +1,15 @@
+When a MongoDB method is called, it is possible to limit the collection of information about an object to be transferred.
+
+When settings response time value for this option value, information about object in the method call that takes longer than the configured value will be collected.
+
+When set to 0, the object information is collected for all method invocations.
+
+---
+
+* Default: 50
+* Format: numeric (Number), in milliseconds
+* Restart: Not Required
+* Option association
+     * [Enable_mongodb_trace] (./ agentHelp? Key = enable_mongodb_trace & type = 1)
+     * [Mongodb_collect_object_base_length] (./ agentHelp? Key = mongodb_collect_object_base_length & type = 1)
+* Support Version: 5.6.2.11

@@ -1,0 +1,75 @@
+
+If [enable_jdbc_vendor_wrapper](./agentHelp?type=1&key=enable_jdbc_vendor_wrapper) option is enabled, and there is no default constructor implemented in the class, and error may occur. In this case, you will need to enable this option as well tp sepecify Super class(s) to generate default constructor
+
+If you do not know the Super class name, you can use this option [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper) to get list of loaded classes in the log file.
+
+This is an example of the log output of [debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)
+
+    ...
+    2015-05-02/14:46:34 [DEBUG] Vendor Wrap
+    2015-05-02/14:46:34  
+    ================ super of wrapper classes ==============
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+    ...
+    ===================================================
+    ...
+
+출력된 클래스 목록을 등록하면 된다.(동일한 클래스가 있을 수 있으나 추가 해도 무시 된다.)
+
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+
+---
+
+* Default
+    
+        oracle.jdbc.driver.OracleConnection
+        oracle.jdbc.driver.LogicalConnection
+        oracle.jdbc.driver.PhysicalConnection
+        oracle.jdbc.driver.OracleStatement
+        oracle.jdbc.driver.OracleCallableStatement
+        oracle.jdbc.driver.OraclePreparedStatement
+        oracle.jdbc.driver.OracleResultSetImpl
+        oracle.jdbc.driver.T4CConnection
+        oracle.jdbc.driver.T4CPreparedStatement
+        oracle.jdbc.driver.T4CCallableStatement
+        oracle.jdbc.driver.T4CStatement
+        oracle.jdbc.driver.T2CConnection
+        oracle.jdbc.driver.T2CPreparedStatement
+        oracle.jdbc.driver.T2CCallableStatement
+        oracle.jdbc.driver.T2CStatement
+        org.apache.derby.client.net.NetResultSet
+        org.apache.derby.client.am.ResultSet
+
+* Type : String (Use new line to enter multiple values)
+* Sample Value
+
+        org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+        org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+        org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+
+* Restart : Required
+* Related options
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+    * [vendor_wrapper_test_sql](./agentHelp?key=vendor_wrapper_test_sql&type=1)  
+    * [jdbc_vendor_wrapper_supers](./agentHelp?key=jdbc_vendor_wrapper_supers&type=1)
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)  
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_wrapper_resultset](./agentHelp?key=enable_wrapper_resultset&type=1)
+* Supported version : 5.0.6

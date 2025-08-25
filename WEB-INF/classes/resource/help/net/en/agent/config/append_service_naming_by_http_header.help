@@ -1,0 +1,27 @@
+This option is used when adding to the default application name using value included in the HTTP header.
+The general application naming can be configured from the administrator screen. However, this option is used in specific situations when setting application name using HTTP header value is required.
+
+For example, when the HTTP header contents are as follows
+
+  HTTP Header = {user = Tester, guid = 1234567890}
+
+  You can enter the HTTP header keys for this option (multiple values can be separated by line break )
+    user
+    guid
+    
+  Then the application name is then will be shown as 
+    /index.aspx+Tester+1234567890
+    
+---
+
+* Default : None
+* Type : String
+* Sample value
+
+  header_1
+  header_2
+  
+* Restart : Not Required
+* Related Options
+  * [service_naming_by_http_header](./agentHelp?key=service_naming_by_http_header&type=1)
+* Supported Version : 5.5

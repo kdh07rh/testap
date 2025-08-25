@@ -1,0 +1,10 @@
+When calling WCF, a separate WCF Header is created to transmit the value. This causes an unexpected WCF header to be appended to the application, which can cause problems in applications developed without considering any WCF headers. In this case, you need to abandon the GUID linkage and set the enable_guid_in_wcf option to false.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not Required
+* Related Options
+    * [wcf_trace](./agentHelp?key=wcf_trace&type=2)
+* Supported Version : 5.2.2.2

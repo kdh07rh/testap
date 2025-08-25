@@ -1,0 +1,14 @@
+This is an option to set to indicate a specific instance identified as a process.
+
+The range of values is 1 to 32767.
+
+It could be automatically assigned without manually setting it through the server option.
+
+---
+
+  * Default : -1
+  * Type : Number
+  * Restart: not required
+  * Options related
+    * [inst_name](./agentHelp?key=inst_name&type=3)
+  * Version supported : 5.0.0

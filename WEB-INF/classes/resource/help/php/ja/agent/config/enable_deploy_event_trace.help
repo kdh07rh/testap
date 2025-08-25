@@ -1,0 +1,10 @@
+PHPアプリケーションのディレクトリ変更イベントの収集可否を指定します。
+
+--
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 連関オプション
+    * [enable_deploy_resource_trace](./agentHelp?key=enable_deploy_resource_trace&type=3)
+* サポートバージョン：5.5.0

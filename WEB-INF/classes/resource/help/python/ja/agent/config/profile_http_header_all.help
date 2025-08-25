@@ -1,0 +1,13 @@
+このオプションを使用した場合、HTTPヘッダすべての値を確認し、トランザクションのプロファイル情報を通じて追跡できます。
+
+ヘッダ情報の量が多すぎる場合、[profile_http_header](./agentHelp?key=profile_http_header&type=1)オプションを使用して特定のヘッダの値を確認できます。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=1)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=1)
+* サポートバージョン：5.6.1.19

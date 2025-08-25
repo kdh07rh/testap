@@ -1,0 +1,8 @@
+Add the client-side JavaScript for the frontend monitoring at the end of the HTML document.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.4.1.3

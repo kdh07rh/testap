@@ -1,0 +1,70 @@
+このオプションでコネクション数をカウントする方法は、指定したJDBCコネクションクラスが何個インスタンス化しているかを検査する方法を使用します。
+
+[enable_reserved_connection_pointcut](./agentHelp?key=enable_reserved_connection_pointcut&type=1)オプションが活性化されると、解析済みのクラスを追跡します。
+解析済みで登録されているクラスのリストは以下になります。
+
+    oracle.jdbc.driver.OracleConnection
+    oracle.jdbc.driver.PhysicalConnection
+    org.gjt.mm.mysql.Connection
+    com.mysql.jdbc.Connection
+    com.mysql.jdbc.ConnectionImpl
+    COM.ibm.db2.jdbc.app.DB2Connection
+    COM.ibm.db2.jdbc.net.DB2Connection
+    COM.ibm.db2os390.sqlj.jdbc.DB2SQLJConnection
+    com.microsoft.jdbc.base.BaseConnection
+    com.sybase.jdbc.SybConnection
+    com.sybase.jdbc2.jdbc.SybConnection
+    com.sybase.jdbc3.jdbc.SybConnection
+    com.ibm.as400.access.AS400JDBCConnection
+    COM.ibm.db2os390.sqlj.jdbc.DB2SQLJConnection
+    com.ibm.websphere.jdbc.base.BaseConnection
+    com.merant.sequelink.jdbc.SequeLinkConnection
+    com.ddtek.jdbc.slbase.BaseConnection
+    net.sourceforge.jtds.jdbc.ConnectionJDBC2
+    sun.jdbc.odbc.JdbcOdbcConnection
+    com.ddtek.jdbc.base.BaseConnection
+    com.ascential.rti.jdbc.base.BaseConnection
+    org.postgresql.jdbc2.AbstractJdbc2Connection
+    org.postgresql.jdbc2.Connection
+    postgresql.jdbc2.Connection
+    macromedia.jdbc.base.BaseConnection
+    unisql.jdbc.driver.UniSQLConnection
+    org.apache.tomcat.dbcp.dbcp.PoolableConnection
+    com.ibm.ws.rsadapter.jdbc.WSJdbcConnection
+    com.ibm.db2.jcc.a.l
+    com.ibm.db2.jcc.b.v
+    com.ibm.db2.jcc.b.o
+    com.ibm.db2.jcc.a.v
+    com.ibm.db2.jcc.b.bb
+    com.ibm.db2.jcc.c.bb
+    com.ibm.db2.jcc.b.eb
+    com.ibm.db2.jcc.am.jb
+    com.ibm.db2.jcc.am.Connection
+    com.ibm.db2.jcc.am.jb
+    com.microsoft.sqlserver.jdbc.SQLServerConnection
+    org.apache.derby.client.am.Connection
+    org.apache.derby.impl.jdbc.Connection
+    org.apache.derby.impl.jdbc.EmbedConnection
+    org.apache.derby.jdbc.AutoloadedDriver
+
+解析・登録済みのクラスに追加登録できるクラスは、java.sql.Connectionインターフェースを実装するクラスのみになります。
+
+クラスが正常にBCI（ByteCode Instrumentation）されると、以下のようにログファイルで確認できます。
+
+    ...
+    2015-04-30/15:20:40 INF com.mysql.jdbc.ConnectionImpl is a JDBC Connection
+    ...
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        com.mysql.jdbc.ConnectionImpl
+        oracle.jdbc.driver.OracleConnection
+
+* 再起動：必要
+* 関連オプション
+    * [enable_reserved_connection_pointcut](./agentHelp?key=enable_reserved_connection_pointcut&type=1)
+* サポートバージョン：5.0.0

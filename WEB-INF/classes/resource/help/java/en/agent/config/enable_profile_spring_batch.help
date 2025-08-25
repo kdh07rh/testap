@@ -1,0 +1,18 @@
+The **enable_profile_spring_batch** option is a job to collect and show information about Spring Batch as profile information.
+
+The basic operation is collected and displayed as a profile, but this option is used when separate transaction is processed and show
+
+Note when this option is disabled , this option affects statistics because transactions could increase dramtically.
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* Options related
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* Version supported : 5.5.3

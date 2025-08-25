@@ -1,0 +1,12 @@
+This option determines whether to generate the "DB_CONNECTION_UNCLOSED" event by tracking the leak of java.sql.Connection object.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_connection_fullstack_trace](./agentHelp?key=enable_connection_fullstack_trace&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* Supported version: 5.0.0

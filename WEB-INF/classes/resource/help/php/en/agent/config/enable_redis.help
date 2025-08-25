@@ -1,0 +1,12 @@
+Redis monitoring is supported.
+
+Currently, PhpRedis and Predis libraries are supported.
+
+---
+
+* Default: false
+* Type : Boolean
+* Restart : not required
+* Option related
+    * [redis_args_length](./agentHelp?key=redis_args_length&type=3)
+* Version supported : 5.6.0.3

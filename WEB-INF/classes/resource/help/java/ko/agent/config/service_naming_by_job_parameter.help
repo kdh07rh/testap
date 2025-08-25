@@ -1,0 +1,28 @@
+Spring Batch를 수행할 때 Job에 전달되는 매개 변수를 이용해 이름을 정할 때 사용하는 옵션이다.
+
+기본적인 이름은 Job에 지정된 이름으로 결정되는데 옵션을 사용하면 Job이 실행될 때 전달되는 매개 변수를 이용하여 이름을 지정할 수 있게 된다.
+
+어떤 매개 변수가 전달되는지는 프로파일을 보면 알 수 있다.
+
+    ...
+    [0002][14:24:38 363][    2][     ] [Job Parameters] {JobID=1612329878363, month=10, TestJobName=EXAMPLE1}
+    ...
+
+전달된 매개 변수 중에 하나를 등록하면 Spring Batch 트랜잭션의 애플리케이션 이름이 다음처럼 변경된다.
+
+    simpleJob 이름이 EXAMPLE1:simpleJob 처럼 변경된다.
+
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_profile_spring_batch](./agentHelp?key=enable_profile_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+* 지원 버전 : 5.5.3

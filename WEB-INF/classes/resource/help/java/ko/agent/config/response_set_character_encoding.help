@@ -1,0 +1,25 @@
+PLC 메시지 설정 시 해당 메시지에 대한 인코딩 설정이다.
+설정된 인코딩 값은 HttpServletResponse.setCharacterEncoding("인코딩") API를 통해 응답에 대해서 인코딩 설정을 한다.
+
+그런데도 사용하는 브라우저와 환경에 의해서 인코딩이 깨질 경우에는 메시지 설정 시 HTML 태그를 이용하여 설정하면 된다.
+
+다음은 HTML 태그를 이용한 예제이다.
+
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      </head>
+      <body>메시지/</body>
+    </html>
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값
+
+    UTF-8
+    
+* 재시작 : 안함
+* 지원 버전 : 5.3.1.2

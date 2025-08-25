@@ -1,0 +1,22 @@
+**[inst_id](./agentHelp?key=inst_id&type=1)** option is an option to set an instance in a single process unit, but it is an option used in a server where multiple processes are executed through the master process.
+
+When executing multiple processes through the master process, only one configuration file can be specified. If all instances need to be monitored, the instance ID set through this option.
+
+    ex) inst_id_array=10001
+        inst_id_array=10002
+
+        or
+
+        inst_id_array=10001,10002 ...
+
+
+**[inst_id](./agentHelp?key=inst_id&type=1)** the range of values is 1 to 32767.
+
+---
+
+  * Default : -1
+  * Type : Number
+  * Restart : not required
+  * Options related
+    * [inst_id](./agentHelp?key=inst_id&type=1)
+  * Version supported : 5.0.0

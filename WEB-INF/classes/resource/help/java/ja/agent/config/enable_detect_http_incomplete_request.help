@@ -1,0 +1,14 @@
+存在しないアプリケーション又はリソースが呼び出されるとき、検知できるようにします。
+
+デフォルト値はfalseです。
+
+エージェントのログには次のようなメッセーじが出力されます。
+
+    2016-02-15/11:49:58 [DEBUG] [I001] BCI implementation class of HttpServletResponse: org.apache.catalina.connector.ResponseFacade
+    
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 再起動 : 必要
+* サポートバージョン : 5.0.13

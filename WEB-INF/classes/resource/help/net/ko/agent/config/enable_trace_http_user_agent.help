@@ -1,0 +1,10 @@
+HTTP Request의 **user-agent** 헤더를 이용하여 사용자 브라우저 정보를 수집한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [ignore_user_agent_header](./agentHelp?key=ignore_user_agent_header&type=2)
+* 지원 버전 : 5.0.7

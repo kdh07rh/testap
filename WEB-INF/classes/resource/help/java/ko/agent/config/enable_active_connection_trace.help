@@ -1,0 +1,8 @@
+**enable_active_connection_trace** 옵션을 활성화 하면 Active Connection에 대한 수집을 Connection이 실제 반환되는 시점이 아닌 SQL이 실행(execute)되는 시점을 기준으로 구하게 된다. 
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원 버전 : 5.6.0.9

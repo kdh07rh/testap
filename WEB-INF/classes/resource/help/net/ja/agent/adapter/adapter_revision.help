@@ -1,0 +1,12 @@
+ユーザ定義アダプタ(adapter_http_service、adapter_serviceなど)をJENNIFER .NETエージェントが実行中に再ロードできるようにします。 
+
+例えば、現在のadapter_revision値が0の状態から1へ変更すると、JENNIFER .NETエージェントは、登録されたユーザ定義のアダプタを再ロードします。 値の増減にかかわらず、以前の値と異なれば問題ありません。
+
+---
+* デフォルト値 : 0
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 関連オプション
+    * [adapter_http_service](./agentHelp?key=adapter_http_service&type=2)
+    * [adapter_service](./agentHelp?key=adapter_service&type=2)
+* サポートバージョン: 5.0.8.2

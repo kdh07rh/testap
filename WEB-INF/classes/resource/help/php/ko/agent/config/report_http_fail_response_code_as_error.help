@@ -1,0 +1,9 @@
+이 값이 true일때 HTTP response가 200, 201이 아닐 경우 HTTP response를 ServiceException ERROR로 송신한다. 
+예를 들어 /test.php의 HTTP response가 500일 경우 트랜잭션의 ERROR에 ServiceException이 설정되며, ERROR 내용을 XView 팝업에서 확인 할 수 있다.
+
+---
+
+* 기본값: false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.0.15

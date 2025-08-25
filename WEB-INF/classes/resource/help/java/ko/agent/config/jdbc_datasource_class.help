@@ -1,0 +1,31 @@
+[enable_datasource_trace](./agentHelp?key=enable_datasource_trace&type=1) 옵션 설정과 상관 없이 별도로 javax.sql.DataSource 인터 페이스를 구현한 클래스에 대한 추적을 하려고 할 때 사용한다.
+
+설정에 성공하면 에이전트 로그 파일에 다음과 로그가 기록된다. 
+   
+    2015-02-27/14:15:18 [DEBUG] JDBC DataSource(Type3): org/apache/tomcat/dbcp/dbcp/BasicDataSource
+
+여기에 설정하는 클래스는 javax.sql.DataSource 인터페이스를 구현한 클래스만을 지정한다.
+
+**javax.sql.DataSource의 getConnection 메소드를 추적하기 때문에 해당 인터페이스를 구현하지 않는 클래스는 추적이 되지 않는다.**
+
+설정은 고급 옵션을 통해 다음과 같이 설정 할 수 있다.
+
+    org.apache.tomcat.dbcp.dbcp.BasicDataSource
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource
+    ...
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        org.apache.tomcat.dbcp.dbcp.BasicDataSource
+        org.apache.tomcat.dbcp.dbcp.PoolingDataSource
+        weblogic.jdbc.common.internal.RmiDataSource
+        com.ibm.ws.rsadapter.jdbc.WSJdbcDataSource
+
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* 지원 버전 : 5.0.0

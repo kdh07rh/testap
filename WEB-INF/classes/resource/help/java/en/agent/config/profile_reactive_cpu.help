@@ -1,0 +1,15 @@
+**profile_reactive_cpu** option is only works when the **[enable_reactor](./agentHelp?key=enable_reactor&type=1)** or **[enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)** option is enabled
+
+When the option is enabled, CPU usage of the asynchronous profile is collected.
+Wehn there is a performance issue, this option could set to false.
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* Option related
+    * [enable_reactor](./agentHelp?key=enable_reactor&type=1)
+    * [enable_spring_webflux](./agentHelp?key=enable_spring_webflux&type=1)
+    * [collect_reactive_elapsed_time](./agentHelp?key=collect_reactive_elapsed_time&type=1)
+    * [enable_async_executor](./agentHelp?key=enable_async_executor&type=1)
+* Version supported : 5.5.3

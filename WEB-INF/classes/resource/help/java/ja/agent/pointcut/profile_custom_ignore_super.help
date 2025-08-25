@@ -1,0 +1,40 @@
+ユーザがprofile_custom_xxxx関連オプションを使って対象クラスを指定するとき、リストから特定スーパークラスを継承したクラスを除外するために使用します。
+
+## 設定例 ##
+
+基本的に設定は改行を利用して複数設定が可能です。
+
+除外するクラスとメソッドを同時に指定する場合
+
+    a.b.MyClass f()V
+    a.b.YourClass f()V
+
+除外するクラスとメソッドを同時に指定し、シグネチャを無視する場合
+
+    a.b.MyClass f
+
+除外するクラスのすべてのメソッドを指定する場合
+
+    a.b.MyClass
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        example.ExampleIgnoreClass
+        example.ExampleIgnoreTestClass
+
+* 再起動：不要
+* 関連オプション
+    * [profile_custom_class](./agentHelp?key=profile_custom_class&type=1)
+    * [profile_custom_super](./agentHelp?key=profile_custom_super&type=1)
+    * [profile_custom_interface](./agentHelp?key=profile_custom_interface&type=1)
+    * [profile_custom_pattern](./agentHelp?key=profile_custom_pattern&type=1)
+    * [profile_custom_access](./agentHelp?key=profile_custom_access&type=1)
+    * [profile_custom_ignore_class](./agentHelp?key=profile_custom_ignore_class&type=1)
+    * [profile_custom_ignore_interface](./agentHelp?key=profile_custom_ignore_interface&type=1)
+    * [profile_custom_ignore_pattern](./agentHelp?key=profile_custom_ignore_pattern&type=1)
+    * [adapter_custom_method](./agentHelp?key=adapter_custom_method&type=1)
+* サポートバージョン：5.0.0

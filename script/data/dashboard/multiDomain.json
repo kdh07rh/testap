@@ -1,0 +1,119 @@
+{
+    "domainBar": {
+        "type": "domain",
+        "multidomain": true,
+        "multiinstance": false,
+        "batchjobMode": "DomainBarBatchjobModeDef.BATCHJOB_EXCLUDE"
+    },
+    "charts": [
+        {
+            "charttype": "speedhorizon",
+            "datatype": "agent",
+            "domainBarSync": true,
+            "origin": { "startx": 0, "endx": 100, "starty": 0, "endy": 8.33 },
+            "extend": { "startx": 0, "endx": 100, "starty": 0, "endy": 8.33 }
+        },
+        {
+            "i18nTitle": "ui.label.activeService",
+            "charttype": "equalizer",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.active_service",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.MISC",
+            "pkey": "active_service",
+            "defaultmax": 10,
+            "origin": { "startx": 0, "endx": 100, "starty": 8.33, "endy": 26.6 },
+            "extend": { "startx": 0, "endx": 100, "starty": 8.33, "endy": 26.6 }
+        },
+        {
+            "i18nTitle": "ui.label.serviceRate",
+            "charttype": "line.runtime",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.service_rate",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.REALTIME_LINE_SINGLE",
+            "origin": { "startx": 0, "endx": 33.33, "starty": 26.6, "endy": 51.1 },
+            "extend": { "startx": 0, "endx": 33.33, "starty": 26.6, "endy": 51.1 }
+        },
+        {
+            "i18nTitle": "ui.label.concurrentUser",
+            "charttype": "line.runtime",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.concurrent_user",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.REALTIME_LINE_SINGLE",
+            "origin": { "startx": 33.33, "endx": 66.66, "starty": 26.6, "endy": 51.1 },
+            "extend": { "startx": 33.33, "endx": 66.66, "starty": 26.6, "endy": 51.1 }
+        },
+        {
+            "i18nTitle": "ui.label.concurrentUser.today",
+            "charttype": "line",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.concurrent_user",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.STANDARD_5MIN_YESTERDAY_TODAY_V2",
+            "timeunit": "5",
+            "origin": { "startx": 33.33, "endx": 66.66, "starty": 51.1, "endy": 75.6 },
+            "extend": { "startx": 33.33, "endx": 66.66, "starty": 51.1, "endy": 75.6 }
+        },
+        {
+            "i18nTitle": "ui.label.serviceRate.today",
+            "charttype": "line",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.service_rate",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.STANDARD_5MIN_YESTERDAY_TODAY_V2",
+            "timeunit": "5",
+            "origin": { "startx": 0, "endx": 33.33, "starty": 51.1, "endy": 75.6 },
+            "extend": { "startx": 0, "endx": 33.33, "starty": 51.1, "endy": 75.6 }
+        },
+        {
+            "i18nTitle": "ui.label.hitHour",
+            "charttype": "line.rightangle",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.service_count",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2",
+            "origin": { "startx": 0, "endx": 33.33, "starty": 75.6, "endy": 100 },
+            "extend": { "startx": 0, "endx": 33.33, "starty": 75.6, "endy": 100 }
+        },
+        {
+            "i18nTitle": "ui.label.visitHour",
+            "charttype": "line.rightangle",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "metrics": "MxDef.visit_hour",
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.STANDARD_HOUR_YESTERDAY_TODAY_V2",
+            "origin": { "startx": 33.33, "endx": 66.66, "starty": 75.6, "endy": 100 },
+            "extend": { "startx": 33.33, "endx": 66.66, "starty": 75.6, "endy": 100 }
+        },
+        {
+            "i18nTitle": "ui.label.xview",
+            "charttype": "xview.dashboard",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "otype": "OTypeDef.SYSTEM",
+            "origin": { "startx": 66.66, "endx": 100, "starty": 26.6, "endy": 63.3 },
+            "extend": { "startx": 66.66, "endx": 100, "starty": 26.6, "endy": 63.3 }
+        },
+        {
+            "i18nTitle": "word.realtimeProblemList",
+            "charttype": "list.problem",
+            "datatype": "domain",
+            "domainBarSync": true,
+            "domainBarMulti": true,
+            "otype": "OTypeDef.SYSTEM",
+            "ptype": "PTypeDef.MISC",
+            "pkey": "realtime_problem_summary",
+            "origin": { "startx": 66.66, "endx": 100, "starty": 63.3, "endy": 100 },
+            "extend": { "startx": 66.66, "endx": 100, "starty": 63.3, "endy": 100 }
+        }
+    ]
+}

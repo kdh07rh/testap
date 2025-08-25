@@ -1,0 +1,19 @@
+エージェントが出力するログファイル名を指定します。
+
+設定しない場合、"yyyyMMdd_<domain_id>_<instance_id>"の形式でファイル名が生成されます。
+
+    ex) log_file=agent
+
+---
+
+  * デフォルト値 : なし
+  * タイプ : 文字列
+  * 再起動 : 不要
+  * 連関オプション
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * サポートバージョン : 5.0.0

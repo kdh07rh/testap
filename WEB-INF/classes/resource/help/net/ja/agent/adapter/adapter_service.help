@@ -1,0 +1,51 @@
+Standaloneサービスに対する性能追跡方法をユーザ定義するときに使用します。
+
+    public interface IAdapterService
+    {
+        bool reject(String classMethod, Parameter arg);
+        bool rboolean(Object stat);
+        int rint(Object stat);
+        Object rObject(Object stat);
+        void start(String classMethod, Parameter args, Object activeObject);
+        void end(Object rtn, Object activeObject, Exception tw);
+        void interceptServicePerformance(Object xvpoint);
+    }
+
+メソッドの説明
+---------------
+reject(String classMethod, Parameter param)
+: Standaloneサービスをreject処理します。 reject設定によるPLC処理が一般的ですが、ユーザIP又は他の入力値を基準にPLC機能を処理したい場合、このメソッドを使用します。リターン値がtrueの場合、ユーザのリクエストがrejectされます。
+
+rboolean(Object stat)
+: 現在、JENNIFER .NETではサポートされていません。 
+
+rint(Object stat)
+: 現在、JENNIFER .NETではサポートされていません。
+
+rObject(Object stat)
+: 現在、JENNIFER .NETではサポートされていません。
+
+start(String classMethod, Parameter param, Object activeObject)
+: Standalone サービスがスタートするとき、別途の追跡情報を初期化するときに使用します。
+
+end(Object rtn, Object activeObject, Exception tw)
+:Standaloneサービスが終了したとき、JENNIFERで追跡した情報の検証又は変形するとき、使用します。
+interceptServicePerformance(Object xvpoint)
+: サービスのパフォーマンス情報(X-ViewPoint)をサーバに転送する直前に使用されます。
+
+
+---
+** 設定方法
+ **
+
+アダプタを実装したクラスソースコードファイルを[JENNIFERインストールフォルダ]/extensionフォルダに保存後、extensionフォルダに既に存在しているverify_script.batファイルを使用して有効性を検証します。 有効性検証に成功すると、JENNIFERコンソールを通じて詳細オプションでadapter_http_service項目に検証されたソースコードのファイル名を設定します。
+
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* サンプル値: ServiceAdapter.cs 
+* 再起動 : 必要ですが, adapter_revisionオプション値を再設定した場合、実行時に適用されます。
+
+* 関連オプション
+  * [adapter_revision](./agentHelp?key=adapter_revision&type=2)
+* サポートバージョン: 5.0.8.1

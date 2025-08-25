@@ -1,0 +1,11 @@
+This option is used when you want to encrypt the collected data that is sent to the data server.
+The AES-128 algorithm is used and an encryption key is randomly generated every time the data server is connected.
+
+Modifying this setting will end the session that is connected to the existing data server and attempt a new connection.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.4.3.1

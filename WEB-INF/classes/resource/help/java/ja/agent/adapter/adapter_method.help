@@ -1,0 +1,98 @@
+メソッド性能またはエラーを追跡時、呼び出します。
+
+** インターフェースの説明**
+
+    package aries.runtime;
+
+    public interface IAdapterMethod {
+    /**
+         * メソッドのパラメータを追跡します。パラメータを結合し、単一の値をプロファイルに追加時、使用します。
+         *
+         * @param fullDescriptor メソッドの全てのDescriptor
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return メソッドのリターン値を返却します。
+         */
+        String captureParameter(String fullDescriptor, ParameterWrapper parameterWrapper);
+
+        /**
+         * メソッドの戻り値を追跡時、使用します。
+         *
+         * @param fullDescriptor メソッドの全てのDescriptor
+         * @param returnValue メソッドのリターン値
+         * @return メソッドのリターン値を返却します。
+         */
+        String captureReturn(String fullDescriptor, Object returnValue);
+
+        /**
+         * メソッドエラーを追跡時、使用します。
+         *
+         * @param throwable  例外が発生した時の該当例外
+         * @return プロファイルやイベントに出力するメッセージを返却します。
+         */
+        String catchException(Throwable throwable);
+
+    }
+
+
+- - -
+
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapper オブジェクト
+    public int size() : パラメータの数を返却します。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトを返却します。
+    public Object[] getValues() : メソッドのパラメータ配列を返却します。
+    public Object get(int idx) :該当位置のパラメータを返却します。
+    public Parameter getParameter() : 原本パラメータを返却します。
+
+- - -
+
+**設定方法**
+jennifer.impl.XXX.jarの形式でアダプタを実装するクラスをjennifer.jarと同じ位置に置くとき、必要なライブラリが追加設定なしで自動的に認識されます。
+jennifer.impl.custom-1.0.1.jarのような形式を使用すると、バージョンコントロールが可能になります。
+
+    aries.runtime.custom.SampleMethod
+    
+
+**デフォルトの実装内容**
+デフォルトの実装のエンティティを含んでおり、例外のときはStackTraceを返します。以下のクラスはcatchException(Throwable throwable)オプションを実装するアダプタです。
+
+    aries.runtime.tracer.adapter.MethodAdapterCatchErrorImpl
+
+- - -
+
+**例**
+
+    public class SampleMethod extends AbstractDefaultAdapter implements IAdapterMethod
+    {
+        public String captureParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+    
+        public String captureReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return (returnValue == null) ? null: returnValue.toString();
+        }
+
+        public String catchException(Throwable throwable)
+        {
+            return null;
+        }
+    }
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル例：aries.runtime.custom.SampleMethod
+* 再起動：不要
+* 関連オプション
+    * [enable_method_exception_event](./agentHelp?key=enable_method_exception_event&type=1)
+    * [enable_sql_exception_event](./agentHelp?key=enable_sql_exception_event&type=1)
+* サポートバージョン：5.0.0

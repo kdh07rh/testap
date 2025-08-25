@@ -1,0 +1,14 @@
+존재하지 않는 애플리케이션 혹은 리소스가 호출될 때 이를 감지할 수 있도록 한다.
+
+기본값은 false이다.
+
+에이전트 로그에는 다음과 같은 내용이 출력된다.
+
+    2016-02-15/11:49:58 [DEBUG] [I001] BCI implementation class of HttpServletResponse: org.apache.catalina.connector.ResponseFacade
+    
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.13

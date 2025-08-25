@@ -1,0 +1,12 @@
+This option is used to ignore HTTP_IO_EXCEPTION which occurs in transaction.
+
+If this option is enabled, the HTTP_IO_EXCEPTION errors and events in the transaction data are ignored.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.3.2.5
+
+

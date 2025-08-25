@@ -1,0 +1,11 @@
+메서드 프로파일 시 클래스의 속성(property)에 해당하는 get/set 메서드에 대한 프로파일 포함 여부를 결정한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [profile_method_class](./agentHelp?key=profile_method_class&type=2)
+
+* 지원 버전 : 5.6.0.22

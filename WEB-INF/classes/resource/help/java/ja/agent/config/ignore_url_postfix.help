@@ -1,0 +1,17 @@
+アプリケーションのトランザクションを追跡時、追跡対象から除外する対象を"postfix"で指定します。
+通常、静的コンテンツを除外するとき、使用します。
+
+---
+
+* デフォルト値：.gif .GIF .jpg .JPG .zip .html .HTML .txt .css .js .swf .htc .HTC .png .PNG .ico
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        .gif
+        .do
+
+* 再起動：不要
+* 関連オプション
+    * [ignore_url](./agentHelp?key=ignore_url&type=1)
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=1)
+* サポートバージョン：5.0.0

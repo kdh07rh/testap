@@ -1,0 +1,9 @@
+Specifies the encoding settings for the log file of an individual agent created in the [Agent Installation Folder]\Log Folder.
+ 
+ ---
+  
+ * Default value: UTF-8
+ * Type: Text
+ * Sample value: ks_c_5601-1987
+ * Restart: Required
+ * Supported version: 5.0.7

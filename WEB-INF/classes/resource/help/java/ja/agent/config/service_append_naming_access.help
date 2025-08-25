@@ -1,0 +1,23 @@
+アプリケーション名の追加設定時、対象メソッドのアクセス修飾子を指定します。
+
+次の４種類のアクセス修飾子の設定が可能です。
+
+    public
+    protected
+    private
+    none
+
+
+例えば、publicを設定すると次のクラスのメソッドの中、publicメソッドであるsample1のみ対象になります。
+
+    public class SampleClass {
+        public void sample1() {}
+        private void sample2() {}
+    }
+
+---
+
+  * デフォルト値 : なし
+  * タイプ : 文字列(改行しながら複数設定可)
+  * 再起動 : 必要
+  * サポートバージョン : 5.0.0

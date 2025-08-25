@@ -1,0 +1,20 @@
+特定のフレームワークでSQL実行キーを使ってバインディング変数を使う時に、該当キーをパーシングして確認できるオプションです。
+
+次は使用されるSQLの例です。
+
+    INSERT INTO table VALUES (:ID, :NAME...) 
+    SELECT * FROM table WHERE ID = :ID AND NAME = :NAME 
+
+キーをパーシングするには、実行時にjava.sql.PreparedStatementを利用してキー値を"?"に変換してSQLを実行します。変換された内容はプロファイルで確認できます。また、画面上でSQLビルダーで実行可能な形に表示されます。
+
+ただ、":KEY=>?"に変換する方法は基本JDBCスペックにはない方法なので、デフォルト値がfalseです。これをtrueに設定するとSQLパーシングをもう一度行うため、性能低下の可能性あります。そのため、オプション適用後には必ず確認する必要があります。
+
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean 
+* 再起動 : 不要 
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* サポートバージョン: 5.0.9.1

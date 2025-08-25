@@ -1,0 +1,11 @@
+The user IP is obtained by referring to the REMOTE_ADDR header value of the wsgi environment variable. If there is a separate HTTP Header, the key name can be assigned to remote_address_header_key. Note that in the case of wsgi, all dash ('-') characters in the HTTP Header in the environment variable are replaced with underscore characters, so it must be specified accordingly.
+
+For example, if the desired HTTP Header key name is "X-FORWARDED-FOR", the remote_address_header_key value is set to "X_FORWARDED_FOR".
+
+---
+
+* Default value : none
+* Type : String
+* Sample value : X_FORWARDED_FOR
+* Restart : not required
+* Version supported : 5.6.1.20

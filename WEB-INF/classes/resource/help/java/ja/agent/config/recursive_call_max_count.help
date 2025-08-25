@@ -1,0 +1,28 @@
+Java Webアプリケーションでサブレッド/JSPが設定値
+を超えて他のサブレット/JSPを引き続き呼び出すと、RECURRSIVE_CALL例外が発生します。
+該当呼び出しの最大数を設定するオプションです。
+
+サブレット/JSP他のサーブレット/JSPを呼び出すというのはJavaコード上でjavax.servlet.RequestDispatcherオブジェクトのforward、includeメソッドを呼び出すことを意味します。
+
+
+    RequestDispatcher dispatcherForward = request.getRequestDispatcher("recurrsive_forward.jsp");
+    dispatcherForward.forward(reqeust, response);
+
+    RequestDispatcher dispatcherInclude = request.getRequestDispatcher("recurrsive_include.jsp");
+    dispatcherInclude.include(reqeust, response);
+
+    <jsp:forward page="recurrsive_forward.jsp" />
+    <jsp:include page="recurrsive_include.jsp" />
+
+** 注意事項**
+RECURRSIVE_CALL例外が発生すると、そのトランザクションを終了させます。そのため、小さい値を設定すると、サービスが正常に行われない可能性があります。
+
+---
+
+* デフォルト値 : 50000
+* タイプ : 数字
+* 再起動 : 不要
+* 関連オプション
+    * [enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1)
+    * [recursive_call_stacktrace_size](./agentHelp?key=recursive_call_stacktrace_size&type=1)
+* サポートバージョン: 5.0.7

@@ -1,0 +1,20 @@
+Specifies the method used when an application returns a DB connection from the DB connection pool.
+
+In the JDK9 or higher system, it's required to trace Active Connection.
+
+Unlike the **[db_connection_close](./agentHelp?key=db_connection_close&type=1)** option, this option collects only Total/Active/Idle status
+
+---
+
+* Default: no
+* Type : string(Multiple settings are possible using line breaks)
+
+        db.DBManager closeConnection
+        db.DBConnectionManager releaseConnection
+        com.zaxxer.hikari.pool.HikariPool recycle 
+
+* Restart : required
+* Option related
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1)
+    * [db_connection_close](./agentHelp?key=db_connection_close&type=1)
+* Version supported : 5.5.3.4

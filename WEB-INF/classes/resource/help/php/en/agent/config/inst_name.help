@@ -1,0 +1,9 @@
+Option to specify instance name
+
+---
+    
+* Default : No
+* Type : String
+* Sample Value : instance_name
+* Restart : required
+* Version supported : 5.4.0

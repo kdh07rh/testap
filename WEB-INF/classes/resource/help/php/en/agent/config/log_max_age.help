@@ -1,0 +1,9 @@
+Specifies the agent log retention period. If it is 0, the log is not deleted. If N, the log is kept for N days..
+
+---
+    
+* Default : 0
+* Type : 숫자
+* Sample value : 1
+* Restart : Not required
+* Version supported : 5.2.2

@@ -1,0 +1,11 @@
+This option let you decide whether you want to collect application deployment event on the WAS or not
+The collected information can be seen in the X-View chart. The deployment indicator is shown as vertical line and deployment resources can be shown as pop-up by selecting a deployment indicator
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Required
+* Related Options
+    * [enable_deploy_resource_trace](./agentHelp?key=enable_deploy_resource_trace&type=1)
+* Supported Version : 5.0.15

@@ -1,0 +1,13 @@
+Using this option, you can check the values of all HTTP Headers to track through the profile information of a transaction.
+ 
+ When the amount of header information is large, you can check the value of a specific header using the [profile_http_header](./agentHelp?key=profile_http_header&type=2) option.
+ 
+ ---
+ 
+ * Default value: false
+ * Type: Boolean
+ * Restart: Not required
+ * Related options
+  * [profile_http_header](./agentHelp?key=profile_http_header&type=2)
+  * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=2)
+ * Supported version: 5.0.7

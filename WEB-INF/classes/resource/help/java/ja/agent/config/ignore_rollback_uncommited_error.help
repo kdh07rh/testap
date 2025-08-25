@@ -1,0 +1,36 @@
+[enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)オプションと [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)オプションが活性化されている状況で動作します。
+
+エージェントは java.sql.Statement objectのexecute、executeBatch、executeUpdateに関するアンコミット/ロールバックを追跡しますが、java.sql.StatementのexecuteでSELECTする場合はトランザクションがコミット/ロールバックなしでコネクションをクローズするので、エラー(DB_UN_COMMIT_ROLLBACK)として認識されます。そのエラーを検知しないようにするためにこのオプションを使用します。
+
+このオプションを活性化しない状態でトランザクションが発生すると、以下のプロファイル情報が追加され、DB_UN_COMMIT_ROLLBACKエラーが発生します。
+
+    ...
+    [0016][12:30:34 366][    0][  364] SQL-EXECUTE-QUERY [2 ms]
+                                       select * from sample
+    ...
+    [0017][12:30:34 369][    3][     ] TRY TO CLOSE CONNECTION WITHOUT TRANSACTION COMMIT/ROLLBACK
+    [0018][12:30:34 370][    1][  367] DB_CLOSE_CONNECTION (jdbc/sample) [0 ms]
+    ...
+
+以下はエラーメッセージの例です。
+
+    DB_UN_COMMIT_ROLLBACK   
+    LAST EXECUTED SQL: sql:[select * from sample]
+
+    CONNECTION closed:
+    JDBCトランザクションCommit/Rollbackなし
+
+上記の例は、X-Viewポップアップウィンドウで確認できます。
+ 
+ ** 将来的には、executeQueryメソッドでSELECTを処理するようにアプリケーション側のソースコードを修正することをおすすめします。
+ 
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+   * [rollback_uncommited_close](./agentHelp?key=rollback_uncommited_close&type=1)
+   * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+   * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1) 
+* サポートバージョン：5.0.0

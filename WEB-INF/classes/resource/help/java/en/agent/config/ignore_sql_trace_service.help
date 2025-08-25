@@ -1,0 +1,14 @@
+This option is used to register the service name of a transaction not requiring SQL tracking at the time of transaction monitoring to deactivate the SQL tracking.
+
+Although this option is created to avoid the problems that may occur when CLOB or BLOB is used when the wrapper method is used among the SQL tracking methods, this option is not necessary when tracking the SQL directly using the JDBC driver.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        /example.do
+
+* Restart: Not required
+* Supported version: 5.0.0

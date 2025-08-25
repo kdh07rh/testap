@@ -1,0 +1,24 @@
+몽고디비 프로파일링을 하고자 할 경우 설정하는 옵션이다.
+
+기본값은 true로 몽고디비 드라이버(MongoDB.Driver)를 인식하면 모니터링을 시작한다. 프로파일의 유형은 RDB 드라이버와 거의 동일하다.
+
+다음은 수집된 프로파일의 예제이다.
+
+    [0014][13:34:28 170][   15][  240] SQL-EXECUTE [24 ms]
+                                       MONGODB-INSERT(test.testCollection)
+
+    [0015][13:34:28 195][   25][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database1" , "count" : 1}
+    [0016][13:34:28 195][    0][  263] SQL-EXECUTE [1 ms]
+                                       MONGODB-INSERT(test.testCollection)
+
+    [0017][13:34:28 196][    1][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database2" , "count" : 2}
+
+---
+
+* 기본값 : true
+* 형식 : Boolean 
+* 재시작 : 안함 
+* 연관 옵션
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* 지원 버전 : 5.6.2.11

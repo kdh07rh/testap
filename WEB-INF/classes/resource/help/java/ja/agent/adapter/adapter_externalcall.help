@@ -1,0 +1,172 @@
+外部トランザクションが呼び出されるとき、ユーザ定義タイプと外部トランザクション名を変更するときに使用します。
+
+** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterExternalCall {
+        /**
+         * 外部トランザクションのデフォルトのネーミングルール設定を変更するときに使用します。
+         * 基本的に、クラス名およびパラメータがあるとき、最初のパラメータは「+」で接続されます。
+         * 
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return ExternalCall　名前をリターンします。
+         */
+        String getName(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * 既に登録済みのタイプとは別の外部トランザクションのタイプを指定します。デフォルト値はCUSTOMに設定されています。  
+         * 
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return ExternalCall タイプをリターンします。
+         */
+        byte getType(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * パラメータに基づき、デフォルトのネーミングルールを変更するときに使用します。
+         *
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return ExternalCall　名前をリターンします。
+         */
+        String changeNameByParameter(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * リターン値に基づき、デフォルトのネーミングルールを変更するときに使用します。
+         * 
+         * @param classMethod  Class + Method名
+         * @param returnValue メソッドのパラメータ値
+         * @return ExternalCall 名前をリターンします。
+         */
+        String changeNameByReturn(String classMethod, Object returnValue);
+        
+        /**
+         * 基本実装は、appendでfull descriptorの後尾に'+'記号に加え、設定したサービス名と指定した値を追加で設定します。
+         * 設定事項を変更するときに使用します。
+         * 
+         * @param name 既に設定したExternalCall名
+         * @param append  既に設定した名前に追加で設定する値
+         * @return ExternalCall 名前をリターンします。
+         */        
+        String appendName(String name, String append);
+        
+        /**
+         * 基本的に、appendName（String name、String append）と同じで、追加でパラメータ情報が渡されます。
+         * 
+         * @param name  既に設定したExternalCall名
+         * @param classMethod  Class + Method名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return ExternalCall 名前をリターンします。
+         */        
+        String appendNameByParameter(String name, String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * 基本的に、appendName（String name、String append）と同じで、リターン値が追加で渡されます。
+         * 
+         * @param name  既に設定したExternalCall名
+         * @param classMethod  Class + Method名
+         * @param returnValue メソッドのリターン値
+         * @return ExternalCall 名前をリターンします。
+         */        
+        String appendNameByReturn(String name, String classMethod, Object returnValue);
+        
+        /**
+         * 外部トランザクションを実行するときに発生する例外処理を追加するときに使用します。
+         * toString()を使用し、ユーザに該当例外を表示します。
+         * 
+         * @param returnValue メソッドのリターン値
+         * @param stat プロファイルメソッド情報
+         * @param throwable メソッド実行のときに発生した例外
+         */
+        String catchException(Object returnValue, Object stat, Throwable throwable);
+    }
+
+- - -
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapper オブジェクト
+    public int size() : パラメータ数をリターンします。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトをリターンします。
+    public Object[] getValues() : メソッドのパラメータ配列をリターンします。
+    public Object get(int idx) : インデックスのパラメータをリターンします。
+    public Parameter getParameter() : 原本パラメータをリターンします。
+
+- - -
+
+**設定方法**
+
+実装したアダプタクラスをjennifer.jarと同一パスに「jennifer.impl.XXX.jar」の形で保存します。別途の設定なしで該当ライブラリーが自動的に認識されます。
+バージョン管理のため、jennifer.impl.custom-1.0.1.jarのような形式を使用することをお薦めします。
+
+ライブラリーの追加後、オプションに該当アダプタクラスを登録する必要があります。
+
+    ex) aries.runtime.custom.SampleExternalCall
+
+- - -
+
+**使用例**
+
+
+    public class SampleExternalCall extends AbstractDefaultAdapter implements IAdapterExternalCall
+    {
+        public String getName(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            if (parameterWrapper != null && parameterWrapper.getParameter().getFirstString() != null)
+            {
+                return classMethod + '+' + parameterWrapper.getParameter().getFirstString();
+            }
+
+            return classMethod;
+        }
+
+        public String changeNameByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String changeNameByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return removeDummyText(classMethod, BCI_TYPE.EXTERNAL_CALL_NAMING_RETURN.getType());
+        }
+
+        public String appendName(String name, String append)
+        {
+            return name + '+' + append;
+        }
+
+        public String appendNameByParameter(String name, String append, ParameterWrapper parameterWrapper)
+        {
+            return name + '+' + order(append, parameterWrapper);
+        }
+
+        public String appendNameByReturn(String name, String append, Object returnValue)
+        {
+            return name + '+' + returnValue;
+        }
+
+        public String catchException(Object rtn, Object stat, Throwable throwable)
+        {
+            return null;
+        }
+
+        public byte getType(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return RemoteCallTypeDef.CUSTOM;
+        }
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル例 : aries.runtime.custom.SampleExternalCall
+* 再起動：不要
+* 関連オプション
+    * [enable_externalcall_exception_event](./agentHelp?key=enable_externalcall_exception_event&type=1)
+* サポートバージョン：5.0.0

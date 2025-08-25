@@ -1,0 +1,25 @@
+로그 파일을 일자별로 구분하여 저장되도록 설정하는 옵션이다.
+
+기본 설정값은 true로 날짜가 변경되면 파일을 새로 생성한다.
+
+    ex) agent_1000_10000_20210531.log
+
+
+로그 파일을 일자별로 따로 저장하지 않고 하나의 파일에 계속 저장하고 싶을 때 옵션을 false로 설정하면 하나의 파일에 모든 로그를 기록하게 된다.
+
+    ex) agent_1000_10000.log
+
+
+  ---
+
+  * 기본값 : true
+  * 형식 : Boolean
+  * 재시작 : 안함
+  * 연관 옵션
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * 지원 버전 : 5.0.0

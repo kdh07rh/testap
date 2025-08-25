@@ -1,0 +1,19 @@
+アクティブサービスが設定値を超えると、[service_dump_dir](./agentHelp?key=service_dump_dir&type=3)にて設定したディレクトリにサービスダンプが残されます。
+
+サービスダンプが残る時に、以下のログ内容が表示されます。
+
+    ...
+    2015-07-02/10:19:28 INFO--Agent 25099:[ServiceDumpWorker] Service dump generated.[ /usr/local/jennifer5-release//servicedump/service_dump_10000_2015-07-02_10:19:21.txt]
+    ...
+
+---
+
+* デフォルト値：100
+* タイプ：数字(Number)
+* サンプル値：1000
+* 再起動：不要
+* 関連オプション
+    * [service_dump_dir](./agentHelp?key=service_dump_dir&type=3)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=3)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=3)
+* サポートバージョン：5.0.0

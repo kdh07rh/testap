@@ -1,0 +1,10 @@
+This option enables and disables the running agent.
+
+If the option is disabled, BCI work may have progressed depending on the time of setting, but only patch work is performed and no processing is performed.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart: not required
+* Version supported : 5.0.0

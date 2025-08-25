@@ -1,0 +1,8 @@
+This is an option for linking with KLUGeye.
+
+---
+
+* Default : false
+* Tye : Boolean
+* Restart: required
+* Vsersion supported : 5.4.1

@@ -1,0 +1,18 @@
+繰り返して出力されるログによってログファイルのサイズが肥大化することを防ぐためのオプションです。
+
+同一ログについて指定した時間の間には1回のみ出力します。
+
+
+---
+
+  * デフォルト値 : 60
+  * タイプ : 秒
+  * 再起動 : 不要
+  * 連関オプション
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [log_max_age](./agentHelp?key=log_max_age&type=1)
+  * サポートバージョン : 5.0.0

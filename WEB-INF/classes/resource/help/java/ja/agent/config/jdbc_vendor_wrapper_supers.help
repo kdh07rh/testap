@@ -1,0 +1,75 @@
+[enable_jdbc_vendor_wrapper](./agentHelp?type=1&key=enable_jdbc_vendor_wrapper)オプションを活性化すると、BCI(ByteCode Instrumentation)の対象クラス中、基本コンストラクタがないとエラーが発生しますが、親クラスに基本コンストラクタがない場合にコンストラクタの登録が必要なクラスを指定するオプションです。
+
+親クラスが分からない場合は、[debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)オプションを使用し、を活性化すると、ログファイルに記録するローディングクラスを参考します。
+
+以下は[debug_vendor_wrapper](./agentHelp?type=1&key=debug_vendor_wrapper)オプションを使用したログファイル出力の例です。  
+
+     ...
+    2015-05-02/14:46:34 [DEBUG] Vendor Wrap
+    2015-05-02/14:46:34  
+    ================ super of wrapper classes ==============
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+    ...
+    ===================================================
+    ...
+
+出力されるクラスリストを登録します。(同一クラスは無視されます。)
+
+    org.apache.tomcat.dbcp.dbcp.PoolingDataSource$PoolGuardConnectionWrapper
+    org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+    org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+    org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+    org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+
+---
+
+* 基本値
+
+        oracle.jdbc.driver.OracleConnection
+        oracle.jdbc.driver.LogicalConnection
+        oracle.jdbc.driver.PhysicalConnection
+        oracle.jdbc.driver.OracleStatement
+        oracle.jdbc.driver.OracleCallableStatement
+        oracle.jdbc.driver.OraclePreparedStatement
+        oracle.jdbc.driver.OracleResultSetImpl
+        oracle.jdbc.driver.T4CConnection
+        oracle.jdbc.driver.T4CPreparedStatement
+        oracle.jdbc.driver.T4CCallableStatement
+        oracle.jdbc.driver.T4CStatement
+        oracle.jdbc.driver.T2CConnection
+        oracle.jdbc.driver.T2CPreparedStatement
+        oracle.jdbc.driver.T2CCallableStatement
+        oracle.jdbc.driver.T2CStatement
+        org.apache.derby.client.net.NetResultSet
+        org.apache.derby.client.am.ResultSet
+
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        org.apache.tomcat.dbcp.dbcp.AbandonedTrace
+        org.apache.tomcat.dbcp.dbcp.DelegatingConnection
+        org.apache.tomcat.dbcp.dbcp.DelegatingStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingCallableStatement
+        org.apache.tomcat.dbcp.dbcp.DelegatingResultSet
+
+
+* 再起動：必要
+* 関連オプション
+    * [debug_vendor_wrapper](./agentHelp?key=debug_vendor_wrapper&type=1)
+    * [vendor_wrapper_test_sql](./agentHelp?key=vendor_wrapper_test_sql&type=1)  
+    * [jdbc_vendor_wrapper_supers](./agentHelp?key=jdbc_vendor_wrapper_supers&type=1)
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)  
+    * [enable_wrapper_statement](./agentHelp?key=enable_wrapper_statement&type=1)
+    * [enable_wrapper_preparedstatement](./agentHelp?key=enable_wrapper_preparedstatement&type=1)
+    * [enable_wrapper_callablestatement](./agentHelp?key=enable_wrapper_callablestatement&type=1)
+    * [enable_wrapper_resultset](./agentHelp?key=enable_wrapper_resultset&type=1)
+* サポートバージョン：5.0.6

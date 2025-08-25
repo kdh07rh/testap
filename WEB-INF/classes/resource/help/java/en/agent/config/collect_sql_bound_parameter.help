@@ -1,0 +1,11 @@
+This option is to set to collect bound parameters when collecting SQL statements.
+
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Not required
+* options related
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* Version supported : 5.4.3.5

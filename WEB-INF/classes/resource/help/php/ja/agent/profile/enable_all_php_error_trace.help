@@ -1,0 +1,8 @@
+この値がtrueの場合は、全てのPHP ERROR情報を収集して転送します。（ERROR、WARNING、NOTICE、STRICT、DEPRECATED）
+
+---
+
+* デフォルト値：false
+* タイプ : Boolean
+* 再起動 : 不要
+* サポートバージョン: 5.4.2.2

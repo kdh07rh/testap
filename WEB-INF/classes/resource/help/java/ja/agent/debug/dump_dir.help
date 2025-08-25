@@ -1,0 +1,34 @@
+[dump_mode](./agentHelp?key=dump_mode&type=1)オプションを活性化したときに、クラスのバイトコードを保存するためのディレクトリを指定するオプションです。
+
+オプション設定可否はエージェントログファイルのdump dir部分で確認できます。 
+
+    2015-04-27/11:20:22 Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 debug mode : false
+    2015-04-27/11:20:22 dump mode : true
+    2015-04-27/11:20:22 dump dir : /home/agent.java/class_dump
+    ...
+
+デフォルト値は「../logs/class_dump」の相対パスに設定されており、ドメインIDとインスタンスIDが追加されてディレクトリが生成されます。
+
+生成されるディレクトリの情報は以下のとおりです。
+
+    /home/agent.java/class_dump_8000_1
+
+---
+
+* デフォルト値：../logs/class_dump
+* タイプ：文字列
+* サンプル値：/var/log/class_dump
+* 再起動：不要
+* 関連オプション
+    * [dump_mode](./agentHelp?key=dump_mode&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+    * [dump_class](./agentHelp?key=dump_class&type=1)
+* サポートバージョン：5.0.0

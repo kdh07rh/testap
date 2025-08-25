@@ -1,0 +1,20 @@
+When using Lettuce library, a user can specify the length of the profile to be collected.
+
+The following is an example profile.
+
+    [REDIS_CHANNEL] : [id: 0x7f827f50, L:/127.0.0.1:56290 - R:127.0.0.1/127.0.0.1:6379]                                
+    [REDIS] : SET, key<Hello> value< Redis! by Lettuce>
+
+    If the option value is set to 24, profile data is collected as follows. 
+
+    [REDIS_CHANNEL] : [id: 0x7f827f50, L:/127.0.0.1:56290 - R:127.0.0.1/127.0.0.1:6379]                                
+    [REDIS] : SET, key<Hello> value< Redis!...
+
+---
+
+* Default : 64
+* Type: Number
+* Restart: not required
+* Option related
+    * [enable_redis](./agentHelp?key=enable_redis&type=1)
+* Version supported: 5.5.3.3

@@ -1,0 +1,21 @@
+If target profile method paramters is an array, this option can be used to show the values of the array
+
+It is recommended to check the desired data and then true this option back to false if the array size is very large.
+
+When this option is set to true, PARAM of the profile information is written in the following format.
+
+    [0003][14:22:26 711][    1][     ] PARAM [
+    1:type=String, value=Hello
+    2:type=String, value=World
+    3:type=Object[], size=3
+    3-1:type=String, value=Sample Value // 3-1 means the first value of the third paramter.
+    3-2:type=Integer, value=222
+    3-3:type=Long, value=333
+    ] java.lang.Object[] org.apache.jsp.methodtest_jsp.sampleMethod(String,String,Object[])
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Supported Version : 5.0.14

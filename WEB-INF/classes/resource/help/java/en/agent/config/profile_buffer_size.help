@@ -1,0 +1,14 @@
+The **profile_buffer_size** option is the specified buffer size to efficiently collect profile data for transactions.
+
+If the number of profiles collected based on the default value is large, profile data transmission is performed in the middle.
+
+When used together with the [collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1) option, a sufficient value must be set before use..
+
+---
+
+* Default : 0
+* Type: Number
+* Restart : not required
+* Options related
+    * [collect_profile_base_on_transaction_time](./agentHelp?key=collect_profile_base_on_transaction_time&type=1)
+* Version supported : 5.5.2.12

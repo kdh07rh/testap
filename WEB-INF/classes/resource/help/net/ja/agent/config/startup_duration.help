@@ -1,0 +1,11 @@
+[startup_url](./agentHelp?type=2&key=startup_url)オプションに設定したURLのリクエスト周期を設定します。
+
+---
+
+* デフォルト値 : 60
+* タイプ : 数字(Number)  (単位: 秒)
+* サンプル値 : 120
+* 再起動 : 不要
+* 連関オプション
+  * [startup_url](./agentHelp?key=startup_url&type=2)
+* サポートバージョン : 5.6.1.4

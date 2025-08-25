@@ -1,0 +1,88 @@
+アプリケーションのGUID設定のときに、非定型フォーマットを処理するため使用します。
+
+** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterGuid {
+      /**
+         * パラメータからGUIDを確認するときに使用します。nullのリターンは無視します。
+         *
+         * @param classMethod  Class + Method 名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return GUIDをリターンします。
+         */
+        String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * パラメータからGUIDを確認するときに使用します。nullのリターンは無視します。
+         *
+         * @param classMethod  Class + Method名
+         * @param returnValue メソッドのリターン値
+         * @return GUIDをリターンします。
+         */   
+        String setGuidByReturn(String classMethod, Object returnValue);
+    }
+
+メソッド説明
+---------------
+
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapper オブジェクト
+public int size() : パラメータ数をリターンします。
+
+public Object getThis() : パラメータを収集したメソッドのオブジェクトをリターンします。
+
+public Object[] getValues() : メソッドのパラメータ配列をリターンします。
+
+public Object get(int idx) : インデックスのパラメータをリターンします。
+
+public Parameter getParameter() : 原本パラメータをリターンします。
+
+setGuidByParameter(String classMethod, Parameter parameter)
+:パラメータからGUID設定時、使用します。
+
+setGuidByReturn(String classMethod, Object returnValue)
+:戻り値からGUID設定時、使用します。
+
+- - -
+
+**設定方法**
+
+実装したアダプタクラスをjennifer.jarと同一パスに「jennifer.impl.XXX.jar」の形で保存します。別途の設定なしで該当ライブラリーが自動的に認識されます。
+バージョン管理のため、jennifer.impl.custom-1.0.1.jarのような形式を使用することをお薦めします。
+
+ライブラリーの追加後、オプションに該当アダプタクラスを登録する必要があります。
+
+ex) aries.runtime.custom.SampleGuid
+
+- - -
+
+**使用例**
+
+    public class SampleGuid extends AbstractDefaultAdapter implements IAdapterGuid
+    {
+        public String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String setGuidByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+    }
+
+- - -
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル例 : aries.runtime.custom.SampleGuid
+* 再起動：不要
+* サポートバージョン：5.0.0

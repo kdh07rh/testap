@@ -1,0 +1,12 @@
+java.sql.Connection objectオブジェクトのリークを追跡し、"DB_CONNECTION_UNCLOSED"イベントの生成可否を決定します。
+
+---
+
+* デフォルト値： true
+* タイプ：Boolean
+* 再起動：必要
+* 関連オプション
+    * [enable_connection_fullstack_trace](./agentHelp?key=enable_connection_fullstack_trace&type=1)
+    * [enable_statement_leak_trace](./agentHelp?key=enable_statement_leak_trace&type=1)
+    * [enable_resultset_leak_trace](./agentHelp?key=enable_resultset_leak_trace&type=1)
+* サポートバージョン：5.0.0

@@ -1,0 +1,11 @@
+When this option is activated, the collection object is listed and automatically registered as a tracking target when the number of collection elements created is equal or larger.
+
+---
+
+* Default value: 10000
+* Type: Number
+* Sample value: 3000
+* Restart: Not required
+* Related options
+    * [collection_auto_stack_trace_count](./agentHelp?key=collection_auto_stack_trace_count&type=1)
+* Supported version: 5.0.0

@@ -1,0 +1,11 @@
+This option is used to limit the length of a parameter which is bound among the classes that implement IDbDataParameter
+
+If the length of a parameter exceeds the default length of 50, the parameter is displayed using an ellipsis ("...:).
+
+---
+
+* Default value: 50
+* Type: Number
+* Sample value: 100
+* Restart: Not required
+* Supported version: 5.5.3.1

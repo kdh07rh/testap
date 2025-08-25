@@ -1,0 +1,17 @@
+アプリケーションがDBコネクションプールからDBコネクションをリターンするときに使用するメソッドを指定します。
+
+このメソッドを設定するときには、（重複追跡を防ぐため）[enable_sql_pointcut](./agentHelp?type=1&key=enable_sql_pointcut)オプションをfalseに設定する必要があります。
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        db.DBManager closeConnection
+        db.DBConnectionManager releaseConnection
+
+* 再起動：必要
+* 関連オプション
+    * [db_connection_get](./agentHelp?key=db_connection_get&type=1)
+* サポートバージョン：5.0.0

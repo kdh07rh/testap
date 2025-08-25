@@ -1,0 +1,18 @@
+이 옵션은 java.sql.Connection 객체의 close 메소드가 명시적으로 호출되지 않을 경우 가비지 컬렉션 시점에 에이전트가 해당 객체를 자동으로 close 할지를 설정하는 옵션이다.
+
+**close 메소드는 java.lang.Object 클래스의 finalize() 을 재정의해서 호출하기 때문에 전적으로 JVM의 가비지 컬렉션 알고리즘에 의지한다.** 
+
+**ApplicationServer 혹은 커넥션 풀 라이브러리에서 JDBC 자원을 관리하고 있는 경우, java.sql.Connection 객체를 자동으로 반환하는 것은 위험할 수 있으니 반드시 확인후 사용해야 한다.**
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_connection_trace](./agentHelp?key=enable_connection_trace&type=1)
+    * [enable_wrapper_connection](./agentHelp?key=enable_wrapper_connection&type=1)  
+* 지원 버전 : 5.0.0

@@ -1,0 +1,13 @@
+In the K8S environment, we cannot distinguish instances using inst names, so we use host names to distinguish instances.
+
+ex) otel_service_name_source = host_name
+
+---]
+
+* Default value: inst_name
+* Format: string
+* Sample value
+    inst_name
+    host_name
+* Restart: Required
+* Supported versions: 5.6.2.15, 5.6.3.1

@@ -1,0 +1,14 @@
+An option to specify the encoding of the SQL query.
+
+All of the data used internally is encoded by default UTF-8. If the collected SQL query are collected in the wrong encoding, it will not be converted to the original encoding even if a separate encoding is specified.
+ 
+---
+
+* Default : UTF-8
+* Type : String
+* Restart : Not Required
+* Related Options 
+    * [sql_parameter_encoding](./agentHelp?key=sql_parameter_encoding&type=1)
+* Supported Version : 5.3.2.1
+
+

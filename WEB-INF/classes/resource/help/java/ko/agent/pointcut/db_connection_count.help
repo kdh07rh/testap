@@ -1,0 +1,70 @@
+이 옵션을 통해 Connection 개수를 카운팅 하는 방법은 지정한 주요 JDBC Connection 클래스가 몇개나 인스턴스화 되었는지를 검사하는 방법을 사용한다.
+
+[enable_reserved_connection_pointcut](./agentHelp?key=enable_reserved_connection_pointcut&type=1) 옵션이 활성화 되면 이미 분석된 클래스에 대한 추적을 한다.
+이미 분석되어 등록되어 있는 클래스 목록은 다음과 같다.
+
+    oracle.jdbc.driver.OracleConnection
+    oracle.jdbc.driver.PhysicalConnection
+    org.gjt.mm.mysql.Connection
+    com.mysql.jdbc.Connection
+    com.mysql.jdbc.ConnectionImpl
+    COM.ibm.db2.jdbc.app.DB2Connection
+    COM.ibm.db2.jdbc.net.DB2Connection
+    COM.ibm.db2os390.sqlj.jdbc.DB2SQLJConnection
+    com.microsoft.jdbc.base.BaseConnection
+    com.sybase.jdbc.SybConnection
+    com.sybase.jdbc2.jdbc.SybConnection
+    com.sybase.jdbc3.jdbc.SybConnection
+    com.ibm.as400.access.AS400JDBCConnection
+    COM.ibm.db2os390.sqlj.jdbc.DB2SQLJConnection
+    com.ibm.websphere.jdbc.base.BaseConnection
+    com.merant.sequelink.jdbc.SequeLinkConnection
+    com.ddtek.jdbc.slbase.BaseConnection
+    net.sourceforge.jtds.jdbc.ConnectionJDBC2
+    sun.jdbc.odbc.JdbcOdbcConnection
+    com.ddtek.jdbc.base.BaseConnection
+    com.ascential.rti.jdbc.base.BaseConnection
+    org.postgresql.jdbc2.AbstractJdbc2Connection
+    org.postgresql.jdbc2.Connection
+    postgresql.jdbc2.Connection
+    macromedia.jdbc.base.BaseConnection
+    unisql.jdbc.driver.UniSQLConnection
+    org.apache.tomcat.dbcp.dbcp.PoolableConnection
+    com.ibm.ws.rsadapter.jdbc.WSJdbcConnection
+    com.ibm.db2.jcc.a.l
+    com.ibm.db2.jcc.b.v
+    com.ibm.db2.jcc.b.o
+    com.ibm.db2.jcc.a.v
+    com.ibm.db2.jcc.b.bb
+    com.ibm.db2.jcc.c.bb
+    com.ibm.db2.jcc.b.eb
+    com.ibm.db2.jcc.am.jb
+    com.ibm.db2.jcc.am.Connection
+    com.ibm.db2.jcc.am.jb
+    com.microsoft.sqlserver.jdbc.SQLServerConnection
+    org.apache.derby.client.am.Connection
+    org.apache.derby.impl.jdbc.Connection
+    org.apache.derby.impl.jdbc.EmbedConnection
+    org.apache.derby.jdbc.AutoloadedDriver
+
+이미 분석되어 등록된 클래스 이외에 추가로 등록하는 클래스는 java.sql.Connection 인터페이스를 구현한 클래스이어야 한다. 
+
+클래스가 정상적으로 BCI(ByteCode Instrumentation) 되면 로그 파일에서 다음과 같은 로그를 확인 할 수 있다.
+
+    ...
+    2015-04-30/15:20:40 INF com.mysql.jdbc.ConnectionImpl is a JDBC Connection
+    ...
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        com.mysql.jdbc.ConnectionImpl
+        oracle.jdbc.driver.OracleConnection
+
+* 재시작 : 필요
+* 연관 옵션
+    * [enable_reserved_connection_pointcut](./agentHelp?key=enable_reserved_connection_pointcut&type=1)
+* 지원 버전 : 5.0.0

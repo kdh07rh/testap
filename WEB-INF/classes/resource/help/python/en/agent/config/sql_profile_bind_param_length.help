@@ -1,0 +1,11 @@
+This option is for limiting the length of bound parameters of the type specified in PEP 249.
+
+If the length of a parameter exceeds the default length of 50, the parameter is displayed using an ellipsis ("...:).
+
+---
+
+* Default value: 50
+* Type: Number
+* Sample value: 100
+* Restart: Not required
+* Supported version: 5.6.1.21

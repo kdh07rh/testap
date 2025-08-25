@@ -1,0 +1,10 @@
+This option allows overlapping of external call profile information.
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not Required
+* Related Options
+    * [complus_inplace_call_trace](./agentHelp?key=complus_inplace_call_trace&type=2)
+* Supported Version : 5.3.3.3

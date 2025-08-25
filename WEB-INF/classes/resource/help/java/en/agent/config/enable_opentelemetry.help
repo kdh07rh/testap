@@ -1,0 +1,27 @@
+"Options for integration with OpenTelemetry that you set in the agent configuration file.
+
+To enable and use the option, you need to do two things: first, you need to set up an option on your data server to collect OpenTelemetry data.
+
+The following options must be set in the jennifer_data.sh configuration file to collect data
+
+    java_options="" ${java_options} -Djennifer.unofficial.opentelemetry.collect.port=4317""
+    
+The port set here is the grpc port that must be set in [server_grpc_port](./agentHelp?key=server_grpc_port&type=1).
+
+Next, we need to configure the OpenTelemetry agent.
+
+    JENNIFER_JAVA_OPTS="" -javaagent:${JENNIFER_HOME}/agent.java/jennifer.jdk8.jar""
+    jennifer_java_options=""${jennifer_java_options} -javaagent:${JENNIFER_HOME}/agent.java/ext/opentelemetry-javaagent.jar""
+
+    
+With this included, when I enable the option, it behaves normally.
+    
+---
+
+* Default: false
+* Format: Boolean
+* Restart: required
+* Associated options
+    * [server_address](./agentHelp?key=server_address&type=1)
+    * [server_grpc_port](./agentHelp?key=server_grpc_port&type=1)
+* Supported versions: 5.6.1.16, 5.6.2"

@@ -1,0 +1,13 @@
+This is an option to make statistics such as application, SQL, Error, and ExternalCall from the agent.
+
+---
+
+* Default : false
+* Type: Boolean
+* Restart : not required
+* Option related
+    * [application_statistic_max_count](./agentHelp?key=application_statistic_max_count&type=1)
+    * [sql_statistic_max_count](./agentHelp?key=sql_statistic_max_count&type=1)
+    * [external_call_statistic_max_count](./agentHelp?key=external_call_statistic_max_count&type=1)
+    * [error_statistic_max_count](./agentHelp?key=error_statistic_max_count&type=1)
+* Version supported : 5.6.1

@@ -1,0 +1,11 @@
+[db_connection_count](./agentHelp?key=db_connection_count&type=1)オプションに登録されているクラスに対してBCI(ByteCode Instrumentation)作業を実施します。
+
+
+---
+
+* デフォルト値 : true
+* タイプ : Boolean
+* 再起動 : 必要
+* 関連オプション
+    * [db_connection_count](./agentHelp?key=db_connection_count&type=1)
+* サポートバージョン: 5.0.10

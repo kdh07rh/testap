@@ -1,0 +1,16 @@
+PreparedStatementを利用して繰り返し分を通して同じSQLを媒介変数のみ変更して実行するプロファイル数が多い場合、性能問題が発生する可能性があります。
+
+そのため、[repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1)オプションに設定された数字までプロファイルデータを収集して、残りプロファイル情報は要約して表示するオプションです。
+
+次のように要約された情報がプロファイルに追加されます。
+
+    ex) "REPEAT_SQL : total count = 10000, total time = 34892 (19719030)"
+
+---
+
+* デフォルト値 : false
+* タイプ : Boolean
+* 関連オプション
+    * [repeat_sql_summary_count](./agentHelp?key=repeat_sql_summary_count&type=1)
+* 再起動 : 不要
+* サポートバージョン : 5.3.3.4

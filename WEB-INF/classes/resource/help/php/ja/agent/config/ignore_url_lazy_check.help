@@ -1,0 +1,20 @@
+このオプションは、[ignore_url](./agentHelp?key=ignore_url&type=3)を設定すると、トランザクションの開始点でそのURLを確認し、トランザクションを無視しました。
+もし、アプリケーション名変更機能を使用する場合は、その機能を使用できませんでした。
+アプリケーション名変更機能を使う時にも、その機能を使うために、トランザクションの開始点ではなく、終了点でアプリケーション名を確認し、そのトランザクションを無視できるようにするオプションです。
+
+
+--
+
+* 既定値 : なし
+* 形式 : 文字列(改行を利用して複数設定可能)
+* サンプル値
+
+        /login
+        /user/register
+
+* 再起動 : 不要
+* 関連オプション
+    * [ignore_url_prefix](./agentHelp?key=ignore_url_prefix&type=3)
+    * [ignore_url_postfix](./agentHelp?key=ignore_url_postfix&type=3)
+    * [ignore_url_lazy_check](./agentHelp?key=ignore_url_lazy_check&type=3)
+* サポートバージョン : 5.6.1.6

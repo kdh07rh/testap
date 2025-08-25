@@ -1,0 +1,8 @@
+DB AUTO_COMMIT_FALSE, COMMIT, ROLLBACK 프로파일을 수집 하지 않도록 설정하는 옵션이다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean 
+* 재시작 : 안함
+* 지원 버전 : 5.5.2

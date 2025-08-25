@@ -1,0 +1,12 @@
+사용자 IP 주소를 구할 때 $_SERVER['REMOTE_ADDR'] 값을 사용하는데 네트워크 환경에 따라 프록시 서버의 주소가 리턴될 수 있다. 이때 프록시 서버에서 별도의 HTTP Header를 통해 사용자 주소를 전달해 주는 경우가 있는데 이 헤더 명을 remote_address_header_key 옵션으로 지정할 수 있다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열
+* 샘플값 : X-REMOTE_ADDRESS
+* 재시작 : 안함
+* 연관 옵션
+    * [remote_address_header_key_delimiter](./agentHelp?key=remote_address_header_key&type=3)
+    * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=3)
+* 지원 버전 : 5.3.1.1

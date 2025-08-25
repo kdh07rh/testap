@@ -1,0 +1,12 @@
+트랜잭션 쓰레드가 일정시간 이상 CPU를 사용할 때 해당 트랜잭션 쓰레드를 자동으로 종료시키고자 할 때 그 기준을 설정하는 옵션이다.
+
+옵션 값의 단위는 밀리세컨드이며 값을 0으로 설정시 [enable_cpu_consuming_thread_auto_kill](./agentHelp?key=enable_cpu_consuming_thread_auto_kill&type=1) 옵션을 true로 적용해도 기능이 동작하지 않는다.
+
+---
+
+* 기본값 : 0
+* 형식 : 숫자(Number), 밀리세컨드
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_cpu_consuming_thread_auto_kill](./agentHelp?key=enable_cpu_consuming_thread_auto_kill&type=1)
+* 지원 버전 : 5.3.2.3

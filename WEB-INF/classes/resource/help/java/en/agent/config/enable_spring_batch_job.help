@@ -1,0 +1,17 @@
+**enable_spring_batch_job** option performs BCI (ByteCode Instrumentation) work for Spring Batch Job..
+
+Spring Batch Step is not required to monitor, set the option to false.
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Required
+* Options related
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_profile_spring_batch](./agentHelp?key=enable_profile_spring_batch&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* Version Supported : 5.5.3

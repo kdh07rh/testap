@@ -1,0 +1,43 @@
+基本的にWebアプリケーションはリクエストURIがアプリケーションサービス名になりますが、Webアプリケーションフレームワークの発展で、アプリケーションサービスがURIだけでは区別できない場合が多くなっています。
+
+このような場合にはリクエストパラメータを使ってアプリケーションサービス名を具体的に設定することができます。
+
+    key1
+    key2
+以前の場合には、次のコードが返還するパラメータの値を使用してアプリケーションサービス名を決定します。
+
+
+    request.getParameter(”key1”);
+    request.getParameter(”key2”);
+
+例えば、特定のリクエストに対するアプリケーションサービス名は以下のように決定されます。
+
+    http://127.0.0.1:8080/app.jsp?key1=a&key2=b  => /app.jsp+(key1=a&key2=b)
+    http://127.0.0.1:8080/app.jsp?key1=a         => /app.jsp+(key1=a)
+    http://127.0.0.1:8080/app.jsp?key1=a&key2=   => /app.jsp+(key1=a)
+    http://127.0.0.1:8080/app.jsp                => /app.jsp
+
+パラメータ値が長い時には、以下の設定にて開始部の一部をコロン(**:**)で表示可能です。
+
+    key1:5
+
+設定値がパラメータ値よりも長い場合には適用されません。また、パラメータが80文字を超えるときは、80文字まで適用されます。
+
+以下は、上記の設定例です。
+
+    request.getParameter("key1").substring(0, 5)
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル値
+
+        parameter1
+        parameter2
+
+* 再起動：不要
+* 関連オプション
+    * [ignore_url_post_request_parsing_prefix](./agentHelp?key=ignore_url_post_request_parsing_prefix&type=1)
+    * [request_set_character_encoding](./agentHelp?key=request_set_character_encoding&type=1)
+* サポートバージョン：5.0.0

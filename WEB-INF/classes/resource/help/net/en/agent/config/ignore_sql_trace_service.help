@@ -1,0 +1,14 @@
+This option is used to register the service name of a transaction that does not require SQL tracking at the time of transaction monitoring to deactivate the SQL tracking.
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        /service.aspx
+        /service_detail.aspx
+
+* Restart: Not required
+* Supported version: 5.0.7
+

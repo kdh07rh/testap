@@ -1,0 +1,13 @@
+remote address를 HTTP Header를 이용해 설정할 때 Header의 값이 여러 개가 표시될 경우 구분자 지정해 분리할 수 있는 옵션이다.
+
+    ex) X-Forwarded-For:192.168.0.1, 192.168.0.99
+
+---
+
+* 기본값: , 
+* 형식 : 문자열
+* 재시작 : 안함
+* 연관 옵션
+    * [remote_address_header_key](./agentHelp?key=remote_address_header_key&type=1)
+    * [remote_address_header_key_idx](./agentHelp?key=remote_address_header_key_idx&type=1)
+* 지원 버전 : 5.6.1.20

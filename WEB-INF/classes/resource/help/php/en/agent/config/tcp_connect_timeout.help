@@ -1,0 +1,10 @@
+Configures the tcp_connect_timeout value when connecting to the data server.
+The unit is 1/1000 second.
+
+---
+
+* Default value: 2000
+* Type: Number
+* Sample value: 5000
+* Restart: Required
+* Supported version: 5.0.0

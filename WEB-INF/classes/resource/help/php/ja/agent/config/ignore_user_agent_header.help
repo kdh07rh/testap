@@ -1,0 +1,15 @@
+[trace_http_user_agent](./agentHelp?key=enable_trace_http_user_agent&type=3)がtrueのとき、このオプションに指定した項目は追跡しません。
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列（改行で複数項目の設定可能）
+* サンプル値
+
+        bingbot
+        googlebot
+
+* 再起動 : 不要
+* 関連オプション
+    * [enable_trace_http_user_agent](./agentHelp?key=enable_trace_http_user_agent&type=3)
+* サポートバージョン : 5.6.0.3

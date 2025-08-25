@@ -1,0 +1,10 @@
+This option determines whether to generate the "DB_RESULTSET_UNCLOSED" event by tracking the leak of java.sql.ResultSet object.
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Not required
+* Related options
+    * [enable_resultset_fullstack_trace](./agentHelp?key=enable_resultset_fullstack_trace&type=1)
+* Supported version: 5.0.0

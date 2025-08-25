@@ -1,0 +1,15 @@
+This option is used to track all HTTP Header information within a transaction
+
+If there are too many Header Information, then this option [profile_http_header](./agentHelp?key=profile_http_header&type=3) can be used to trace specific Header value
+
+---
+
+* Default : false
+* Type: Boolean
+* Restat : Not required
+* Related option
+    * [profile_http_header](./agentHelp?key=profile_http_header&type=3)
+    * [profile_http_parameter](./agentHelp?key=profile_http_parameter&type=3)
+    * [profile_http_parameter_all](./agentHelp?key=profile_http_parameter_all&type=3)
+    * [profile_http_value_length](./agentHelp?key=profile_http_value_length&type=3)
+* Supported version : 5.0.10

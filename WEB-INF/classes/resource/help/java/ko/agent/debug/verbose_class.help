@@ -1,0 +1,23 @@
+이 옵션을 활성화 하면 에이전트가 초기화 된 이후 로드 되는 클래스에 대해 BCI(ByteCode Instrumentation) 작업이 되었는지 여부와 에이전트 로직 수행에 대한 경과 시간이 로그 파일에 기록 된다.
+
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.NotUpdatable 1129 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.JDBC4ResultSet 10600 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.JDBC4UpdatableResultSet 11758 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[BootstrapClassLoader] [sun.misc.FDBigInt 6034 bytes 0 hk 1 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.LicenseConfiguration 502 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.EscapeProcessor 12261 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[48c4d60c] [org.apache.catalina.loader.WebappClassLoader] com.mysql.jdbc.profiler.ProfilerEventHandlerFactory 1942 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.C2BConverter 4797 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.WriteConvertor 965 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.buf.IntermediateOutputStream 1516 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.http.FastHttpDateFormat 4427 bytes 0 hk 0 ms
+    2015-04-24/14:50:06 LOAD:[2f7300c2] [org.apache.catalina.loader.StandardClassLoader] org.apache.tomcat.util.http.HttpMessages 2328 bytes 0 hk 0 ms
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 안함
+* 연관 옵션
+    * [enable](./agentHelp?key=enable&type=1)
+* 지원 버전 : 5.0.0

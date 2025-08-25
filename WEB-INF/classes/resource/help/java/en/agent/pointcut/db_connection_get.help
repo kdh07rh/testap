@@ -1,0 +1,22 @@
+Designates a method to be used when obtaining the DB connection from the DB connection pool when using a framework or a proprietary connection pool created in the application.
+
+The method configured by db_connection_get must return java.sql.Connection.
+
+    db.DBConnectionManager getConnection
+
+When configuring this method, the [enable_sql_pointcut](./agentHelp?type=1&key=enable_sql_pointcut) option should be set to false (to prevent redundant tracking).
+
+---
+
+* Default value: None
+* Type: string (able to configure multiple settings using the line change).
+* Sample value
+
+        db.DBManager getConnection
+        db.DBConnectionManager getConnection
+
+* Restart: Required
+* Related options
+    * [db_connection_close](./agentHelp?key=db_connection_close&type=1)
+    * [enable_jdbc_bootstrap_wrapper_factory](./agentHelp?key=enable_jdbc_bootstrap_wrapper_factory&type=1)
+* Supported version: 5.0.0

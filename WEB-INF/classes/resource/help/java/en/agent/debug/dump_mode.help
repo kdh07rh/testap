@@ -1,0 +1,41 @@
+When this option is activated the class subject to BCI (ByteCode Instrumentation) operation is dumped after BCI operation to determine whether to save as a file.
+
+Although the [dump_mode](./agentHelp?key=dump_mode&type=1) option is performed once when the class is loaded, in the application in a class creating method, it should be activated only when it is required as it may affect the performance. 
+
+As this option is intended for debugging purposes to analyze the byte code at the time of BCI operation for a class, it should be deactivated after use. 
+
+You can check the option configuration in the dump mode section of the agent log file. 
+
+    2015-04-27/11:20:22  Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 debug mode : false
+    2015-04-27/11:20:22 dump mode : true
+    2015-04-27/11:20:22 dump dir : /home/agent.java/class_dump
+    ...
+
+When moving to the path set in the [dump_dir](./agentHelp?key=dump_dir&type=1), content similar to the following is saved.
+
+    drwxr-xr-x  3 albert albert 4096 Mar 31 14:01 com
+    drwxr-xr-x  5 albert albert 4096 Mar 31 14:01 java
+    drwxr-xr-x  4 albert albert 4096 Mar 31 14:01 javax
+    drwxr-xr-x  2 albert albert 4096 Apr  1 14:46 jdbc
+    drwxr-xr-x  6 albert albert 4096 Apr  1 14:46 original
+
+Here, the byte code of the original class in which the BCI operation is not performed is saved in the original directory and the remaining directories are the list of byte codes of classes subject to BCI operation saved in a package form. 
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [dump_dir](./agentHelp?key=dump_dir&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+    * [dump_class](./agentHelp?key=dump_class&type=1)
+* Supported version: 5.0.0

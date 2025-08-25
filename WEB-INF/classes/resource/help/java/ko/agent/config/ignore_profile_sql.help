@@ -1,0 +1,24 @@
+보통 프레임웍을 사용하거나 할 경우 test 용도의 dummy SQL 을 날려 Connection 이 정상적인지 판단 하는 경우가 있는데 이럴 경우 프로파일에 SQL 많이 남아 실제 SQL 을 보기 어려운 경우가 있다.
+이럴 경우 프로파일에서 제외 하고 싶은 SQL 을 등록하면 해당 SQL은 프로파일 정보를 수집하지 않는다.
+
+    select 1
+    select 1 from dual
+
+이런 SQL 이외에 특정 SQL 을 등록하여 프로파일에서 제외 할 수 있다.
+
+---
+
+* 기본값 : 없음
+* 형식 : 문자열(줄바꿈을 이용하여 복수 설정이 가능함)
+* 샘플값
+
+        SELECT 1 FROM DUAL
+        SELECT COUNT(*) FROM DUAL
+
+* 재시작 : 안함
+* 연관 옵션
+    * [enable_sql_pointcut](./agentHelp?key=enable_sql_pointcut&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [ignore_profile_sql_hash](./agentHelp?key=ignore_profile_sql_hash&type=1)
+* 지원 버전 : 5.0.6

@@ -1,0 +1,27 @@
+Spring Batchモニタリング時、Jobに渡されるパラメータを利用してアプリケーション名を表示します。
+
+デフォルトの場合、Job名がアプリケーション名になりますが、このオプションを使用すると指定したパラメータをアプリケーション名に表示することが可能です。
+
+Jobに渡されたパラメータはプロファイルで確認できます。
+
+    ...
+    [0002][14:24:38 363][    2][     ] [Job Parameters] {JobID=1612329878363, month=10, TestJobName=EXAMPLE1}
+    ...
+
+例えば、上記プロファイルのアプリケーション名が"simpleJob"の場合、"TestJobName"をこのオプションに設定するとアプリケーション名が次のようになります。
+
+    変更前：simpleJob  →  変更後：EXAMPLE1:simpleJob  
+
+---
+
+* デフォルト値 : なし
+* タイプ : 文字列
+* 再起動 : 不要
+* 連関オプション
+    * [enable_spring_batch](./agentHelp?key=enable_spring_batch&type=1)
+    * [enable_spring_batch_job](./agentHelp?key=enable_spring_batch_job&type=1)
+    * [enable_spring_batch_step](./agentHelp?key=enable_spring_batch_step&type=1)
+    * [profile_spring_batch_cpu](./agentHelp?key=profile_spring_batch_cpu&type=1)
+    * [enable_batch_exception_event](./agentHelp?key=enable_batch_exception_event&type=1)
+    * [service_naming_by_job_parameter](./agentHelp?key=service_naming_by_job_parameter&type=1)
+* サポートバージョン : 5.5.3

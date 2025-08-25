@@ -1,0 +1,41 @@
+이 옵션을 활성화 하면 BCI(ByteCode Instrumentation) 작업 대상 클래스를 BCI 작업 후 덤프 하여 파일 저장 여부를 설정한다.
+
+[dump_mode](./agentHelp?key=dump_mode&type=1) 옵션은 클래스가 로딩 될 때 한번만 실행되지만 클래스가 생성되는 방식의 애플리케이션에서는 성능에 영향을 미칠 수 있기 때문에 필요한 경우에만 활성화 해서 사용해야 한다. 
+
+이 옵션의 사용 목적은 클래스에 대한 BCI 작업시 바이트 코드를 분석하기 위한 디버그 용도 이므로 사용후 다시 비활성화 하여야 한다. 
+
+옵션 설정여부는 에이전트 로그 파일에 dump mode 부분을 확인 하면 된다. 
+
+    2015-04-27/11:20:22  Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 debug mode : false
+    2015-04-27/11:20:22 dump mode : true
+    2015-04-27/11:20:22 dump dir : /home/agent.java/class_dump
+    ...
+
+[dump_dir](./agentHelp?key=dump_dir&type=1) 에 설정된 경로를 이동 하면 다음과 비슷한 내용이 저장되어 있다.
+
+    drwxr-xr-x  3 albert albert 4096 Mar 31 14:01 com
+    drwxr-xr-x  5 albert albert 4096 Mar 31 14:01 java
+    drwxr-xr-x  4 albert albert 4096 Mar 31 14:01 javax
+    drwxr-xr-x  2 albert albert 4096 Apr  1 14:46 jdbc
+    drwxr-xr-x  6 albert albert 4096 Apr  1 14:46 original
+
+여기서 original 디렉토리는 BCI 작업이 일어나지 않은 원본 클래스의 바이트 코드가 저장되고 나머지 디렉토리는 BCI 작업 대상이 된 클래스의 바이트 코드를 패키지 형식으로 저장한 목록이다. 
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [dump_dir](./agentHelp?key=dump_dir&type=1)
+    * [dump_class_all](./agentHelp?key=dump_class_all&type=1)
+    * [dump_class](./agentHelp?key=dump_class&type=1)
+* 지원 버전 : 5.0.0

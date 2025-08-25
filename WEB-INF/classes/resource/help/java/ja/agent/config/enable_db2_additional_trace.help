@@ -1,0 +1,16 @@
+DB2データベースの追跡のときに、DBセッションにAP（アプリケーション）情報を追加する機能を活性化するオプションです。
+以下のAPIを利用し、DB2 JDBCドライバに追加情報を設定します。
+
+    setDB2ClientWorkstation <- エージェント名
+    setDB2ClientUser <- ユーザ ID
+    setDB2ClientApplicationInformation <- サービス名
+    setDB2ClientAccountingInformation <- トランザクションID
+
+* 但し、DB２ JDBCドライバが上記のAPIをサポートしない場合は動作しません。*
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* サポートバージョン：5.0.0

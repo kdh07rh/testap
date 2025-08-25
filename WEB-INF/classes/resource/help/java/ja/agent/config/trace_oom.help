@@ -1,0 +1,19 @@
+OOM(OutOfMemory)エラーを追跡し、イベントを発生するオプションです。
+
+注意事項としては、OOMの追跡は、*java.lang.OutOfMemoryError*クラスのインスタンスが生成されるタイミングで追跡するので、該当OOMの正確な発生時点とは異なる可能性があります。
+
+このオプションが活性化されると、ログファイルに以下のログが表示されます。
+
+    ...
+    2015-04-28/12:04:27 Agent Control Module initialized(-8803105291542107178)
+    2015-04-28/12:04:27 Agent Control Module loading complete... 
+    ...
+    2015-04-28/12:04:27 [I002] RT Class redefine java.lang.OutOfMemoryError
+    ...
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：必要
+* サポートバージョン：5.0.0

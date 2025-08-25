@@ -1,0 +1,10 @@
+토폴로지 모드를 활성화하면 WCF, SOAP, HTTP 호출에 대한 트랜잭션을 기본으로 추적하여 토폴로지 대시보드와 XView에 토폴로지 정보를 보여준다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [topology_http_header_key](./agentHelp?key=topology_http_header_key&type=2)
+* 지원 버전 : 5.0.8

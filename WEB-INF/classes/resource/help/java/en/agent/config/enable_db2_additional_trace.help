@@ -1,0 +1,16 @@
+This option activates the function of adding the AP (application) information to the DB session when tracking the DB2 database.
+Configure the additional information via the following API in the DB2 JDBC driver.
+
+    setDB2ClientWorkstation <- agent name
+    setDB2ClientUser <- User ID
+    setDB2ClientApplicationInformation <- service name
+    setDB2ClientAccountingInformation <- transaction ID
+
+* This option does not operate If the DB@ JDBC driver does not provide the applicable method. *
+
+---
+
+* Default value: false
+* Format: Boolean
+* Restart: Required
+* Supported version: 5.0.0

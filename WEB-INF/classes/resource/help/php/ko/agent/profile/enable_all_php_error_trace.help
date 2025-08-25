@@ -1,0 +1,8 @@
+이 값이 true이면 모든 PHP ERROR를 수집해 전달한다. (ERROR, WARNING, NOTICE, STRICT, DEPRECATED)
+
+---
+
+* 기본값: false
+* 형식 : Boolean
+* 재시작 : 안함
+* 지원버전 : 5.4.2.2

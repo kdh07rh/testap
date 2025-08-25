@@ -1,0 +1,26 @@
+enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type= 
+1)オプションをtrueに設定した場合のスタックライン数を制限するオプションです。
+
+例えば、オプション値を10にした場合、次のとおりにスタックのラインが10ラインまで出力されます。
+
+    [B010] Recurrsive Call Stack Trace (ERRRCS)
+    at aries.runtime.tracer.c.a.startService(Unknown Source)
+    at aries.base.profile.ProfileService.startService(ProfileService.java:41)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java)
+    at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+    at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:390)
+    at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+    at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+    at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+    at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+    at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:749)
+
+---
+
+* デフォルト値 : 100
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 関連オプション
+    * [recursive_call_max_count](./agentHelp?key=recursive_call_max_count&type=1)
+    * [enable_recursive_call_stacktrace](./agentHelp?key=enable_recursive_call_stacktrace&type=1)
+* サポートバージョン: 5.0.7

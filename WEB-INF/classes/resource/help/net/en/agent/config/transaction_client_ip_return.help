@@ -1,0 +1,22 @@
+This option sets the client IP of the transaction to the return value of a particular method.
+
+The setting is set by entering the entire method descriptor with the return value.
+(Supported return values are strings and byte arrays.)
+
+Sample configuration:
+
+    WebApplication.DefaultPage GetClientIP()System.String
+
+
+---
+
+* Default : None
+* Format : String
+* Sample Value
+
+    example.clientIp getClientIp()System.String
+    
+* Restart : Required
+* Related Options
+    * [transaction_client_ip_parameter](./agentHelp?key=transaction_client_ip_parameter&type=1)
+* Supported Version : 5.6.0.23

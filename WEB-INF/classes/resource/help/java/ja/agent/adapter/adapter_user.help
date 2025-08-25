@@ -1,0 +1,72 @@
+指定のクラスからユーザログインIDを抽出するとき、非定型の処理が必要な状況で使用します。
+
+   ** インターフェース説明 **
+
+    package aries.runtime;
+
+    public interface IAdapterUser {
+        /**
+         * パラメータからユーザ情報を抽出します。戻り値がnullのときは無視されます。
+         *
+         * @param classMethod  クラス + メソッド名
+         * @param parameterWrapper メソッドのパラメータ情報を持っているクラス
+         * @return ユーザIDを返却します。
+         */    
+        String setUserByParameter(String classMethod, ParameterWrapper parameterWrapper);
+        
+        /**
+         * 戻り値からユーザ情報を抽出します。戻り値がnullのときは無視されます。
+         *
+         * @param classMethod  クラス + メソッド名
+         * @param returnValue メソッドのリターン値
+         * @return ユーザIDを返却します。
+         */   
+        String setUserByReturn(String classMethod, Object returnValue);
+    }
+
+---
+**主要オブジェクトのメソッド説明**
+
+###### ParameterWrapperオブジェクト
+    public int size() : パラメータ数を返却します。
+    public Object getThis() : パラメータを収集したメソッドのオブジェクトを返却します。
+    public Object[] getValues() : メソッドのパラメータ配列を返却します。
+    public Object get(int idx) : 該当位置のパラメータを返却します。
+    public Parameter getParameter() : 元のParameterオブジェクトを返却します。
+
+** 設定方法 **
+
+jennifer.impl.XXX.jarの形式でアダプタを実装するクラスをjennifer.jarと同じ位置に置くとき、必要なライブラリが追加設定なしで自動的に認識されます。
+jennifer.impl.custom-1.0.1.jarのような形式を使用すると、バージョンコントロールが可能になります。
+
+    aries.runtime.custom.SampleUser
+
+---
+
+**例**
+
+    public class SampleUser extends AbstractDefaultAdapter implements IAdapterUser
+    {
+        public String setUserByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String setUserByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+    }
+
+---
+
+* デフォルト値：なし
+* タイプ：文字列
+* サンプル例 : aries.runtime.custom.SampleUser
+* 再起動：不要
+* サポートバージョン：5.0.0

@@ -1,0 +1,9 @@
+기본적으로 트랜잭션의 JDBC에 대한 정보 수집시 Servlet/JSP Thread에서의 JDBC 요청만 추적한다.
+만약, 트랜잭션이 Non Servlet/JSP Thread에서 발생하는 JDBC 정보를 추적하려면 해당 옵션을 true로 설정해야 한다.
+
+---
+
+* 기본값 : false
+* 형식 : Boolean
+* 재시작 : 필요
+* 지원 버전 : 5.0.0

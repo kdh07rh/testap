@@ -1,0 +1,28 @@
+This option designates the directory to save the active service dumps.
+
+You can check the option configuration in the service dump dir section of the agent log file. 
+
+    2015-04-27/11:20:22 Agent Enable : true
+    2015-04-27/11:20:22 Agent Base Version 5.0.7.2
+    2015-04-27/11:20:22 Agent Implementation Version 5.0.7.2
+    2015-04-27/11:20:22 Data Server address : 127.0.0.1
+    2015-04-27/11:20:22 Data Server port : 5000
+    2015-04-27/11:20:22 Domain ID : 8000
+    2015-04-27/11:20:22 Instance ID : 1
+    ...
+    2015-04-27/11:20:22 service dump dir : /home/agent.java/service_dump
+    ...
+
+---
+
+* Default value: ../service_dump
+* Type: string
+Sample value: /var/log/service_dump
+* Restart: Not required
+* Related options
+    * [dump_active_service](./agentHelp?key=dump_active_service&type=1)
+    * [dump_active_service_over_count](./agentHelp?key=dump_active_service_over_count&type=1)
+    * [dump_trigger_interval](./agentHelp?key=dump_trigger_interval&type=1)
+    * [static_collection_dump_target](./agentHelp?key=static_collection_dump_target&type=1)
+    * [dump_active_service_enable_sql_parameter](./agentHelp?key=dump_active_service_enable_sql_parameter&type=1)
+* Supported version: 5.0.0

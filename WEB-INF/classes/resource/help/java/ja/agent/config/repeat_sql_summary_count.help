@@ -1,0 +1,10 @@
+[enable_repeat_sql_summary](./agentHelp?key=enable_repeat_sql_summary&type=1)オプション使用時、プロファイルを要約する基準値を設定するオプションです。
+
+---
+
+* デフォルト値 : 100
+* タイプ : 数字(Number)
+* 関連オプション
+    * [enable_repeat_sql_summary](./agentHelp?key=enable_repeat_sql_summary&type=1)
+* 再起動 : 不要
+* サポートバージョン : 5.3.3.4

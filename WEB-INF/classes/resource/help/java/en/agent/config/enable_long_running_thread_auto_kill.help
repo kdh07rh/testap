@@ -1,0 +1,18 @@
+This options is used if you want to automatically terminate a transaction that is running for long time
+
+If this option is set to true, the value of long_running_thread_auto_kill_timeout must be set to a value greater than 0
+
+Caution is needed when using this option because the application will be forced to terminate the thread that is running for long time.
+
+When the thread terminated, agent log shows the following log message.
+
+2015-11-19/17:32:02 [TRACE] [I001] tried to kill long running thread(538 ms):/oracle.jsp
+
+---
+
+* Default Value : false
+* Type: Boolean
+* Restart : Not Required
+* Related Options
+    * [long_running_thread_auto_kill_timeout](./agentHelp?key=long_running_thread_auto_kill_timeout&type=1)
+* Supported Version : 5.0.12

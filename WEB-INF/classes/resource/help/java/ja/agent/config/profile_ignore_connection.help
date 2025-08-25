@@ -1,0 +1,10 @@
+JDBC接続用のOPEN/CLOSE/ROLLBACK/SETAUTOCOMMIT/COMMITはプロファイル情報に記録されますが、プロファイル情報に残したくない情報を指定するために使用します。
+
+---
+
+* デフォルト値： false
+* タイプ：Boolean
+* 再起動：不要
+* 関連オプション
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+* サポートバージョン：5.0.0

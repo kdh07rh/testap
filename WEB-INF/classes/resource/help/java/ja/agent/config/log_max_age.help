@@ -1,0 +1,23 @@
+ログファイルの保存期間を設定します。
+
+0 ~ 365の値を設定できます。単位は日数です。
+
+デフォルト値(0)の場合はログファイルを削除せず永久保存します。
+次のように設定した場合、今日基準7日以前ログファイルが削除されます。
+
+    ex) log_max_age = 7
+
+
+---
+
+  * デフォルト値 : 0
+  * タイプ : 数字(Number)
+  * 再起動 : 不要
+  * 連関オプション
+    * [log_dir](./agentHelp?key=log_dir&type=1)
+    * [log_file](./agentHelp?key=log_file&type=1)
+    * [log_level](./agentHelp?key=log_level&type=1)
+    * [log_encoding](./agentHelp?key=log_encoding&type=1)
+    * [log_rotation](./agentHelp?key=log_rotation&type=1)
+    * [logging_output_period](./agentHelp?key=logging_output_period&type=1)
+  * サポートバージョン : 5.0.0

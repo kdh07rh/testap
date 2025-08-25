@@ -1,0 +1,21 @@
+Redis ライブラリモニタリング時に収集するプロファイルの長さを指定します。
+
+プロファイルの例です。
+
+    [REDIS_CHANNEL] : [id: 0x7f827f50, L:/127.0.0.1:56290 - R:127.0.0.1/127.0.0.1:6379]                                
+    [REDIS] : SET, key<Hello> value< Redis! by Lettuce>
+
+    
+このオプションを24に設定すると次のようにプロファイルを収集します。
+
+    [REDIS_CHANNEL] : [id: 0x7f827f50, L:/127.0.0.1:56290 - R:127.0.0.1/127.0.0.1:6379]                                
+    [REDIS] : SET, key<Hello> value< Redis!...
+
+---
+
+* デフォルト値 : 64
+* タイプ : 数字(Number)
+* 再起動 : 不要
+* 連関オプション
+    * [enable_redis](./agentHelp?key=enable_redis&type=3)
+* サポートバージョン : 5.6.0.3

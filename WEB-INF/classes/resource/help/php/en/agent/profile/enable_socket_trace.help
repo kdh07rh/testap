@@ -1,0 +1,8 @@
+Determines whether to track the socket connection.
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Not required
+* Supported version: 5.0.0

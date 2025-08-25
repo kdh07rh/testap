@@ -1,0 +1,9 @@
+Added to the profile data to view the output of System.Diagnostics.Trace.Write... method on the detailed XView.
+ 
+ ---
+  
+ * Default value: true
+ * Type: Boolean
+ * Sample value: false
+ * Restart: Not required
+ * Supported version: 5.0.7

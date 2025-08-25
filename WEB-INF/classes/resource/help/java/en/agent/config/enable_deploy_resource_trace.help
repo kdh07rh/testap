@@ -1,0 +1,13 @@
+This option let you decide whether you want to collect resources of applications that are deployed to the  WAS or not
+The collected information can be seen in the X-View chart. The deployment indicator is shown as vertical line and deployment resources can be shown as pop-up by selecting a deployment indicator
+
+This option enable_deploy_event_trace must be enabled in order to use this option
+
+---
+
+* Default : true
+* Type : Boolean
+* Restart : Required
+* Related Options
+    * [enable_deploy_event_trace](./agentHelp?key=enable_deploy_event_trace&type=1)
+* Supported Version : 5.0.15

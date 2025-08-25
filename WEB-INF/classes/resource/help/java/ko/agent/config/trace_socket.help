@@ -1,0 +1,12 @@
+Socket 관련 추적을 위해 사용하는 옵션이다.
+
+실제 추적은 Socket의 getInputStream(), getOutputStream()을 통해 만들어지는 Stream에 대한 추적을 한다.
+
+---
+
+* 기본값 : true
+* 형식 : Boolean
+* 재시작 : 필요
+* 연관 옵션
+    * [trace_socket_wrapper](./agentHelp?key=trace_socket_wrapper&type=1)
+* 지원 버전 : 5.0.0

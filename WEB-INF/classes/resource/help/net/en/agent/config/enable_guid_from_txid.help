@@ -1,0 +1,11 @@
+By default, a GUID value should be configured to the HTTP header to track a transaction that is carried out in a multi-tier structure. However, if there is no GUID value to configure to the HTTP header, this option configures a transaction ID as a GUID.
+ 
+ ---
+ 
+ * Default value: false
+ * Type: Boolean
+ * Restart: Not required
+ * Related options
+  * [enable_multi_tier_trace](./agentHelp?key=enable_multi_tier_trace&type=2)
+  * [guid_http_header_key](./agentHelp?key=guid_http_header_key&type=2)
+ * Supported version: 5.0.7

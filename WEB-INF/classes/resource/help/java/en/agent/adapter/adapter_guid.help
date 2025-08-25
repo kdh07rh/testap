@@ -1,0 +1,78 @@
+Used to process an atypical format when extracting a GUID from the application.
+
+** Inteface Description **
+
+    package aries.runtime;
+
+    public interface IAdapterGuid {
+        /**
+        *
+        * Used when extracting a GUID from a parameter. Neglected when the return value is null.
+        *
+        * @param classMethod  Class + Method name
+        * @param parameterWrapper Method paramter wrapper class information
+        * @return GUID
+        */    
+        String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper);
+
+        /**
+        *
+        * Used when extracting a GUID from a return value. Neglected when the return value is null.
+        *
+        * @param classMethod  Class + Method name
+        * @param returnValue Method return value
+        * @return GUID 
+        */ 
+        String setGuidByReturn(String classMethod, Object returnValue);
+    }
+
+
+- - -
+
+***Method Description of the main object**
+
+ ###### ParameterWrapper Description
+    public int size() : Return number of paramters
+    public Object getThis() : Return an object of the method that collects the parameter
+    public Object[] getValues() : Return an array of method paramters
+    public Object get(int idx) : Return the parameter of the specified index
+    public Parameter getParameter() : Return original Parameter of the object
+
+- - -
+
+** How to configure **
+
+When placing the class implementing the adapter in the format of jennifer.impl.XXX.jar at the same position as jennifer.jar, the applicable library is automatically recognized without additional settings.
+The use of a format such as jennifer.impl.custom-1.0.1.jar enables version control.
+
+    ex) aries.runtime.custom.SampleGuid
+
+- - -
+
+**Sample Implementation**
+
+  public class SampleGuid extends AbstractDefaultAdapter implements IAdapterGuid
+    {
+        public String setGuidByParameter(String classMethod, ParameterWrapper parameterWrapper)
+        {
+            return order(classMethod, parameterWrapper);
+        }
+
+        public String setGuidByReturn(String classMethod, Object returnValue)
+        {
+            if (returnValue != null && returnValue instanceof String)
+            {
+                return (String) returnValue;
+            }
+
+            return classMethod;
+        }
+    }
+    
+---
+
+* Default value: None
+* Type: string
+* Sample Value : aries.runtime.custom.SampleGuid
+* Restart: Not required
+* Supported version: 5.0.0

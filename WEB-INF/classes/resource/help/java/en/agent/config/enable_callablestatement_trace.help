@@ -1,0 +1,13 @@
+This option is used to track the java.sql.CallableStatement object when activating [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1).
+
+---
+
+* Default value: true
+* Format: Boolean
+* Restart: Required
+* Related options
+    * [enable_sql_trace](./agentHelp?key=enable_sql_trace&type=1)
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+    * [auto_callablestatement_close](./agentHelp?key=auto_callablestatement_close&type=1)
+* Supported version: 5.0.6

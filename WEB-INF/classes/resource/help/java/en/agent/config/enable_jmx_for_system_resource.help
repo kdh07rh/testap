@@ -1,0 +1,20 @@
+System resources (CPU,Memory) by default are collected using JMX (Java Management Extensions) except for Linux-based OS
+
+
+If JMX is not supported by the JVM, then set this option to "false", and system resources information must be gathered using the JNI settings
+
+If this option is enabled, you might see similar log to the following
+
+    ...
+    2015-09-21/14:33:27 [I001] Agent Runtime Module initialized
+    2015-09-21/14:33:27 [I003] CPU : loaded jmx for Java HotSpot(TM) 64-Bit Server VM(24.75-b04)
+    2015-09-21/14:33:27 no agent5 native lib on '/home/agent.java/libs
+    2015-09-21/14:33:27 [I004] Memory : loaded jmx for Java HotSpot(TM) 64-Bit Server VM(24.75-b04)
+    ...
+
+---
+
+* Default value : true
+* Type : Boolean
+* Restart : Required
+* Supported version : 5.0.11

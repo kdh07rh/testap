@@ -1,0 +1,19 @@
+This option allows you to query and set the DB session ID by running separate SQL in the DB to query the DB session ID.
+
+The setting is made by concatenating the SQL that queries the class and DB session ID that are used when connecting the actual Connection object using a colon (:).
+
+The following is an example configuration for Oracle DB.
+
+    oracle:select SYS_CONTEXT ('USERENV','SESSIONID') sid from dual
+
+Note that the DB session ID tracking function works only when the Connection object is traceable.
+
+---
+
+* Default : None
+* Format : String (DB:SQL)
+* Restart : Not Required
+* Related Options
+    * [enable_jdbc_wrapper](./agentHelp?key=enable_jdbc_wrapper&type=1)
+    * [enable_jdbc_vendor_wrapper](./agentHelp?key=enable_jdbc_vendor_wrapper&type=1)
+* Supported Version : 5.2.2

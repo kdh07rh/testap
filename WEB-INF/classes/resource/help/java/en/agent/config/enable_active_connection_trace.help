@@ -1,0 +1,8 @@
+f the *enable_active_connection_trace** option is enabled, the collection of the active connection is obtained based on the time when SQL is executed, not the time when the connection is actually returned. 
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : not required
+* Version supported : 5.6.0.9

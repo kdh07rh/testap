@@ -1,0 +1,19 @@
+If this option is true, comments included in SQL query are removed
+
+If there is below query, comments are removed and saved.
+
+    /* 12345abcde */ SELECT * FROM TABLE
+
+After applied, query should be shown like below.
+
+    SELECT * FROM TABLE
+
+
+This option is used when the comment contains randomly generated code or string, and the they are not cached and all of the them are stored, which affects performance..
+
+---
+
+* Default : false
+* Type : Boolean
+* Restart : Not required
+* Version supported : 5.4.3.2

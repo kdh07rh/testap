@@ -1,0 +1,34 @@
+This option is used to profiling MongoDB
+
+The default value true, is used to start monitoring and recognizing MongoDB java driver. The type of the profile is almost the same as JDBC driver of the RDB
+
+Java supports both drivers (2.1 to 3.2.0) of the Sync method and does not monitor the Java driver of the Async method.
+
+Agent log relevant classes like similar to the following when loaded
+
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.InternalStreamConnection
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.MongoCollectionImpl
+    2016-01-06/15:30:07 [TRACE] [I001] BCI MongoDB com.mongodb.connection.DefaultConnectionPool$PooledConnection
+
+
+Here is an example of the collected profile.
+
+    [0014][13:34:28 170][   15][  240] SQL-EXECUTE [24 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0015][13:34:28 195][   25][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database1" , "count" : 1}
+    [0016][13:34:28 195][    0][  263] SQL-EXECUTE [1 ms]
+                                       MONGODB-INSERT(collection: test.testCollection)
+
+    [0017][13:34:28 196][    1][     ] MONGODB-QUERY { "name" : "MongoDB" , "type" : "database2" , "count" : 2}
+
+---
+
+* Default : true
+* Type : Boolean 
+* Restart : Required 
+* Related Options
+    * [enable_mongodb_connection_trace](./agentHelp?key=enable_mongodb_connection_trace&type=1)
+    * [mongodb_collect_object_base_elapsed_time](./agentHelp?key=mongodb_collect_object_base_elapsed_time&type=1)
+    * [mongodb_collect_object_base_length](./agentHelp?key=mongodb_collect_object_base_length&type=1)
+* Supported Version : 5.0.12

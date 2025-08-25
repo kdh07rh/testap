@@ -1,0 +1,10 @@
+This option is used for tracking Nio Socket Channel.
+
+The traced information is collected only by the profile and cannot be viewed in the "Analysis -> Socket" screen.
+
+---
+
+  * Default : false 
+  * Type : Boolean
+  * Restart: not required
+  * Version supported : 5.0.0
